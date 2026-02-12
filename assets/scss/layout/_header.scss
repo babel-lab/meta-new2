@@ -20,6 +20,10 @@
         gap: var(--space-16);
       }
     }
+
+    & ~ .ma-section {
+      --anchor-offset: var(--anchor-offset);
+    }
   }
   background: var(--color-black);
   color: var(--color-white);

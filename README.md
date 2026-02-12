@@ -1,48 +1,113 @@
-# 網頁 Vite 範例
+# Meta New 前端切版交付專案
 
-## Node.js 版本
-  - 專案的 Node.js 版本需為 v18 以上
-  - 查看自己版本指令：`node -v`
+此專案為 **純前端靜態切版專案**，使用 Vite 建置， 用途為提供 **PHP
+工程師進行後端套版整合**。
 
+🔗 GitHub Pages Demo\
+https://`<你的GitHub帳號>`{=html}.github.io/`<repo名稱>`{=html}/
 
-## 指令列表
-- `npm install` - 初次下載該範例專案後，需要使用 npm install 來安裝套件
-- `npm run dev` - 執行開發模式
-  - 若沒有自動開啟瀏覽器，可嘗試手動在瀏覽器上輸入
-    `http://localhost:5173/<專案名稱>/pages/index.html`
-- `npm run build` - 執行編譯模式（不會開啟瀏覽器）
-- `npm run deploy` - 自動化部署
+📦 最終交付目錄\
+`dist/`
 
-## 資料夾結構
-  - assets # 靜態資源放置處
-    - images # 圖片放置處
-    - scss # SCSS 的樣式放置處
+------------------------------------------------------------------------
 
-  - layout # ejs 模板放置處
-  - pages # 頁面放置處
+## 一、專案定位（非常重要）
 
-- JavaScript 程式碼可寫在 main.js 檔案
+本專案 **不是完整網站**，而是：
 
-### 注意事項
-- 已將 pages 資料夾內的 index.html 預設為首頁，建議不要任意修改 index.html 的檔案名稱
-- .gitignore 檔案是用來忽略掉不該上傳到 GitHub 的檔案（例如 node_modules），請不要移除 .gitignore
+✅ UI 切版實作\
+✅ RWD 響應式設計\
+✅ CSS Design Token 架構\
+✅ 前端互動效果（Drawer / Swiper 等）\
+✅ 提供後端套版基礎 HTML
 
-## 開發模式的監聽
-vite 專案執行開發模式 `npm run dev` 後即會自動監聽，不需要使用 `Live Sass Compiler` 的 `Watch SCSS` 功能
+本專案 **不包含**
 
+❌ PHP 程式\
+❌ API 串接\
+❌ 資料邏輯\
+❌ 權限 / Session / 表單處理
 
-## 部署 gh-pages 流程說明
-### Windows 版本
-1. 在 GitHub 建立一個新的 Repository
+------------------------------------------------------------------------
 
-2. 部署前請務必先將原始碼上傳到 GitHub Repository 也就是初始化 GitHub，因此通常第一步驟會在專案終端機輸入以下指令
-```cmd
-git init # 若已經初始化過就可以不用輸入
-git add .
-git commit -m 'first commit'
-git branch -M main
-git remote add origin [GitHub Repositories Url]
-git push -u origin main // 僅限第一次輸入，往後只需要輸入 git push
-```
+## 二、專案目錄結構
 
-3. 初始化完畢後，執行 `npm run deploy` 指令進行自動化部署
+. ├─ public/ \# 靜態資源（圖片 / icon / 字型） ├─ src/ │ ├─ styles/ \#
+SCSS（tokens / components / layout） │ └─ scripts/ \# JS 行為 ├─ pages/
+\# 各頁面模板（開發用） ├─ layout/ \# 共用 layout（開發用） ├─ dist/ \#
+✅ Build 後正式交付內容 ├─ vite.config.js └─ package.json
+
+⚠️ 後端請只使用 `dist/`，不要引用 `src/` 或 `pages/`。
+
+------------------------------------------------------------------------
+
+## 三、正式交付流程
+
+npm run build
+
+Build 完成後，所有正式網站檔案會輸出至：
+
+dist/
+
+此資料夾即為 👉 提供 PHP 整合的唯一來源。
+
+------------------------------------------------------------------------
+
+## 四、PHP 工程師整合指引（請閱讀）
+
+### 1️⃣ 套版來源
+
+請以：
+
+dist/\*.html
+
+作為 PHP View 拆版基礎，例如：
+
+  dist HTML    PHP View
+  ------------ -----------
+  index.html   index.php
+  about.html   about.php
+
+------------------------------------------------------------------------
+
+### 2️⃣ 靜態資源位置
+
+所有資源皆位於：
+
+dist/assets/\
+dist/images/\
+dist/fonts/
+
+前端目前使用 **絕對路徑寫法**
+
+/images/xxx.png\
+/assets/xxx.css
+
+後端請將其 Mapping 至實際網站靜態目錄，例如：
+
+/public/images/\
+/static/assets/
+
+------------------------------------------------------------------------
+
+### 3️⃣ CSS / JS 載入方式
+
+Vite build 後會產生 **帶 hash 的檔名**，請直接引用 dist
+內產生檔案，不要改回固定檔名。
+
+------------------------------------------------------------------------
+
+## 五、注意事項
+
+❌ 不需要 npm install\
+❌ 不需要 Vite\
+❌ 不需要 Node.js
+
+後端只需使用 build 後靜態檔案即可。
+
+------------------------------------------------------------------------
+
+## 六、聯絡資訊
+
+前端切版負責人：`<你的名字>`{=html}\
+最後更新日期：`<YYYY-MM-DD>`{=html}
