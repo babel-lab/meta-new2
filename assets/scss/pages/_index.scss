@@ -152,6 +152,7 @@
 .ma-service {
   background: var(--color-black);
   padding-top: var(--space-48);
+  padding-bottom: 0;
   .ma-inner {
     //border-width: 1px 0;
     //border-style: solid;
@@ -196,7 +197,7 @@
     scroll-margin-top: var(--anchor-offset);
 
     gap: var(--space-16);
-    padding-block: var(--space-32);
+    padding: var(--space-48) var(--space-32);
     border-top: 1px solid var(--color-gray-500);
     .ma-service__title-zh {
       padding-bottom: var(--space-8);
