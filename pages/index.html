@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en">
+  <%- include('./layout/head'); -%>
+  <body>
+    <%- include('./layout/header'); -%>
+    <main>
+      <!-- hero-banner -->
+      <section class="ma-section ma-hero">
+        <!-- 文字區（固定不動） -->
+        <div class="ma-container">
+          <div class="ma-inner">
+            <div class="ma-hero__text">
+              <div class="ma-hero__titles">
+                <h2 class="ma-hero__title-en">Metaassets</h2>
+                <h1 class="ma-hero__title-zh">讓藝術成為資產</h1>
+                <h3 class="ma-hero__subtitle">Turning Art into Assets</h3>
+              </div>
+              <p class="ma-hero__desc">ACT 鏈證，為藝術資產建立可信制度</p>
+              <a
+                href="https://virtual.metaassets.asia/exhibitions/DEMO"
+                class="ma-btn ma-btn--gold"
+              >
+                進入虛擬實境展示
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 小圓點 -->
+        <div class="swiper-pagination ma-hero__pagination"></div>
+
+        <!-- 漸層遮罩（固定） -->
+        <div class="ma-hero__overlay" aria-hidden="true"></div>
+
+        <!-- 背景輪播：只放媒體 -->
+        <div class="swiper ma-hero__swiper">
+          <div class="swiper-wrapper">
+            <!-- Slide 1: JPG -->
+            <div class="swiper-slide">
+              <img
+                src="https://news.postwings.art/uploads/banners//20250923-BANNER(1920X1080PX).jpeg"
+                alt="Banner 1"
+              />
+            </div>
+
+            <!-- Slide 2: JPG -->
+            <div class="swiper-slide">
+              <img
+                src="https://news.postwings.art/uploads/banners//20251224-%E7%BE%85%E6%95%8F%E8%8F%81banner-1920x1080-2.jpg"
+                alt="Banner 2"
+              />
+            </div>
+
+            <!-- Slide 3: MP4 -->
+            <div class="swiper-slide">
+              <video
+                src="https://cdn.metaassets.asia/artworks/artwork_1127_20230713044052.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+              ></video>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- art-assets -->
+      <section class="ma-section ma-assets" id="ma-assets">
+        <div class="ma-container">
+          <div class="ma-inner">
+            <h3 class="ma-section__title">藝術資產</h3>
+            <a href="search.html" class="ma-section__link">more</a>
+          </div>
+
+          <!--
+  顯示規則：
+  - 桌機：每頁顯示 8 個卡片 / - 手機：每頁顯示 4 個卡片
+  - 顯示數量由 index.html 最下方的 Swiper 初始化設定控制
+
+  注意事項（給後端）：
+  - 卡片類型 class（.ma-card--act-art / .ma-card--print-art）
+    由程式依資料類型動態產生，不手動寫死於 HTML
+    .ma-card__category 的<h4>文字有2種: 鏈證藝術, 鏈證版畫
+
+  - 卡片按鈕文字亦由程式判斷：
+    無價格 → 顯示「了解更多」
+    有價格 → 顯示「詢問收藏」
+-->
+          <div class="swiper ma-assets__swiper">
+            <!-- Swiper 主體 -->
+            <div class="swiper-wrapper">
+              <!-- 依資料量輸出 n 筆 -->
+              <!-- card 01: 有價錢, 按鈕字"詢問收藏" -->
+              <div class="swiper-slide">
+                <article class="ma-card ma-card--act-art">
+                  <!-- 左：圖片區 -->
+                  <div class="ma-card__media">
+                    <img
+                      src="https://images.unsplash.com/photo-1579541814924-49fef17c5be5?q=80&w=670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="Artwork"
+                    />
+                  </div>
+                  <!-- 右：內容區 -->
+                  <div class="ma-card__content">
+                    <div class="ma-card__category">
+                      <h4>鏈證藝術</h4>
+                      <span class="ma-card__icon" aria-hidden="true"></span>
+                    </div>
+                    <div class="ma-card__header">
+                      <h6 class="ma-card__title">Seeing Eyes</h6>
+                      <h5 class="ma-card__author">理查德・博伊德・鄧洛普</h5>
+                    </div>
+                    <div class="ma-card__body">
+                      <p class="ma-card__info">
+                        <span>丙烯畫 / 畫布</span>
+                        <span>100 × 100 × 100 cm</span>
+                      </p>
+                      <!-- 沒價錢需在<SPAN>填入 &nbsp; 防跑版 -->
+                      <p class="ma-card__price">
+                        <span>1,000.00</span>
+                        <span>ETH(USD)</span>
+                      </p>
+                    </div>
+                    <div class="ma-card__footer">
+                      <p class="ma-card__id">
+                        <span>M2023APG000147PA</span>
+                      </p>
+                      <!-- 有價錢按鈕字: 詢問收藏 -->
+                      <a href="#" class="ma-btn ma-btn--gray-dark">詢問收藏</a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <!-- card 02: 範例資料" -->
+              <div class="swiper-slide">
+                <article class="ma-card ma-card--print-art">
+                  <!-- 左：圖片區 -->
+                  <div class="ma-card__media">
+                    <img
+                      src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?q=80&w=1019&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="Artwork"
+                    />
+                  </div>
+                  <!-- 右：內容區 -->
+                  <div class="ma-card__content">
+                    <div class="ma-card__category">
+                      <h4>鏈證版畫</h4>
+                      <span class="ma-card__icon" aria-hidden="true"></span>
+                    </div>
+                    <div class="ma-card__header">
+                      <h6 class="ma-card__title">Seeing Eyes</h6>
+                      <h5 class="ma-card__author">理查德・博伊德・鄧洛普</h5>
+                    </div>
+                    <div class="ma-card__body">
+                      <p class="ma-card__info">
+                        <span>丙烯畫 / 畫布</span>
+                        <span>100 × 100 × 100 cm</span>
+                      </p>
+                      <!-- 沒價錢需在<SPAN>填入 &nbsp; 防跑版 -->
+                      <p class="ma-card__price">
+                        <span>&nbsp;</span>
+                        <span>&nbsp;</span>
+                      </p>
+                    </div>
+                    <div class="ma-card__footer">
+                      <p class="ma-card__id">
+                        <span>M2023APG000147PA</span>
+                      </p>
+                      <!-- 沒有價錢按鈕字: 了解更多 -->
+                      <a href="#" class="ma-btn ma-btn--gray-dark">了解更多</a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <!-- more card ...   -->
+              <%- include('./layout/card-sample'); -%>
+            </div>
+            <!-- 小圓點（一定要在 swiper 裡） -->
+            <div class="swiper-pagination ma-assets__pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- pro-banner -->
+      <section class="ma-section ma-promo">
+        <!-- 背景輪播：只放媒體 -->
+        <div class="swiper ma-promo__swiper">
+          <div class="swiper-wrapper">
+            <!-- Slide 1: JPG -->
+            <div class="swiper-slide">
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://virtual.metaassets.asia/exhibitions/zhaoerdaiart"
+                aria-label="前往趙二呆線上展覽"
+              >
+                <img
+                  src="https://news.postwings.art/uploads/banners//20251210-%E6%9D%8E%E5%81%A5%E5%84%80banner-1920x1080.jpg"
+                  alt="趙二呆藝術作品展覽橫幅"
+                />
+              </a>
+            </div>
+
+            <!-- Slide 2: JPG -->
+            <div class="swiper-slide">
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://virtual.metaassets.asia/exhibitions/LiChienYi"
+                aria-label="前往李健儀線上展覽"
+              >
+                <img
+                  src="https://news.postwings.art/uploads/banners//20260106-%E8%B6%99%E4%BA%8C%E5%91%86banner-1920x1080-2.jpg"
+                  alt="李健儀數位藝術展覽橫幅"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- 小圓點 -->
+        <div class="swiper-pagination ma-promo__pagination"></div>
+      </section>
+
+      <!-- collect-art -->
+      <section class="ma-section ma-collect" id="ma-collect">
+        <div class="ma-container">
+          <div class="ma-inner">
+            <h3 class="ma-section__title">收藏推薦</h3>
+            <a href="search.html" class="ma-section__link">more</a>
+          </div>
+
+          <!--
+  顯示規則：
+  - 桌機：每頁顯示 8 個卡片 / - 手機：每頁顯示 4 個卡片
+  - 顯示數量由 index.html 最下方的 Swiper 初始化設定控制
+
+  注意事項（給後端）：
+  - 卡片類型 class（.ma-card--act-art / .ma-card--print-art）
+    由程式依資料類型動態產生，不手動寫死於 HTML
+    .ma-card__category 的<h4>文字有2種: 鏈證藝術, 鏈證版畫
+
+  - 卡片按鈕文字亦由程式判斷：
+    無價格 → 顯示「了解更多」
+    有價格 → 顯示「詢問收藏」
+-->
+          <div class="swiper ma-collect__swiper">
+            <!-- Swiper 主體 -->
+            <div class="swiper-wrapper">
+              <!-- 依資料量輸出 n 筆 -->
+              <!-- card 01: 有價錢, 按鈕字"詢問收藏" -->
+              <div class="swiper-slide">
+                <article class="ma-card ma-card--act-art">
+                  <!-- 左：圖片區 -->
+                  <div class="ma-card__media">
+                    <img
+                      src="https://images.unsplash.com/photo-1584446922442-7ac6b8c118f3?q=80&w=756&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="Artwork"
+                    />
+                  </div>
+                  <!-- 右：內容區 -->
+                  <div class="ma-card__content">
+                    <div class="ma-card__category">
+                      <h4>鏈證藝術</h4>
+                      <span class="ma-card__icon" aria-hidden="true"></span>
+                    </div>
+                    <div class="ma-card__header">
+                      <h6 class="ma-card__title">Seeing Eyes</h6>
+                      <h5 class="ma-card__author">理查德・博伊德・鄧洛普</h5>
+                    </div>
+                    <div class="ma-card__body">
+                      <p class="ma-card__info">
+                        <span>丙烯畫 / 畫布</span>
+                        <span>100 × 100 × 100 cm</span>
+                      </p>
+                      <!-- 沒價錢需在<SPAN>填入 &nbsp; 防跑版 -->
+                      <p class="ma-card__price">
+                        <span>1,000.00</span>
+                        <span>ETH(USD)</span>
+                      </p>
+                    </div>
+                    <div class="ma-card__footer">
+                      <p class="ma-card__id">
+                        <span>M2023APG000147PA</span>
+                      </p>
+                      <!-- 有價錢按鈕字: 詢問收藏 -->
+                      <a
+                        href="https://virtual.metaassets.asia/artworks/M2024APG000010PA"
+                        class="ma-btn ma-btn--gray-light"
+                        >詢問收藏</a
+                      >
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <!-- card 02: 範例資料" -->
+              <div class="swiper-slide">
+                <article class="ma-card ma-card--print-art">
+                  <!-- 左：圖片區 -->
+                  <div class="ma-card__media">
+                    <img
+                      src="https://images.unsplash.com/flagged/photo-1567934150921-7632371abb32?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="Artwork"
+                    />
+                  </div>
+                  <!-- 右：內容區 -->
+                  <div class="ma-card__content">
+                    <div class="ma-card__category">
+                      <h4>鏈證版畫</h4>
+                      <span class="ma-card__icon" aria-hidden="true"></span>
+                    </div>
+                    <div class="ma-card__header">
+                      <h6 class="ma-card__title">Seeing Eyes</h6>
+                      <h5 class="ma-card__author">理查德・博伊德・鄧洛普</h5>
+                    </div>
+                    <div class="ma-card__body">
+                      <p class="ma-card__info">
+                        <span>丙烯畫 / 畫布</span>
+                        <span>100 × 100 × 100 cm</span>
+                      </p>
+                      <!-- 沒價錢需在<SPAN>填入 &nbsp; 防跑版 -->
+                      <p class="ma-card__price">
+                        <span>&nbsp;</span>
+                        <span>&nbsp;</span>
+                      </p>
+                    </div>
+                    <div class="ma-card__footer">
+                      <p class="ma-card__id">
+                        <span>M2023APG000147PA</span>
+                      </p>
+                      <!-- 沒有價錢按鈕字: 了解更多 -->
+                      <a
+                        href="https://virtual.metaassets.asia/artworks/M2024APG000001PA"
+                        class="ma-btn ma-btn--gray-light"
+                        >了解更多</a
+                      >
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <!-- more card ...   -->
+              <%- include('./layout/card-sample2'); -%>
+            </div>
+            <!-- 小圓點（一定要在 swiper 裡） -->
+            <div class="swiper-pagination ma-collect__pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- service -->
+      <section class="ma-section ma-service">
+        <div class="ma-container">
+          <div class="ma-inner">
+            <div class="ma-service__intro">
+              <!-- 左邊區塊 -->
+              <div class="ma-service__text">
+                <div class="ma-service__titles">
+                  <h2 class="ma-service__title-zh">
+                    <span>藝術品 X 區塊鏈</span><span>藝術世界的信任系統</span>
+                  </h2>
+
+                  <p class="ma-service__title-en">
+                    <span>Artworks X Blockchain</span>
+                    <span>The Trust System of the Art World</span>
+                  </p>
+                </div>
+
+                <a href="line.html" class="ma-btn ma-btn--outline-gold"
+                  >我想加入鏈證</a
+                >
+              </div>
+              <!-- 右邊區塊 -->
+              <div class="ma-service__desc">
+                <p>
+                  長久以來,藝術世界的信任多仰賴專業眼光、個人聲譽與分散的紀錄系統。
+                </p>
+                <p>
+                  透過將區塊鏈技術導入藝術品的認證與資產管理，我們正在建立一套新的信任系統，讓作品擁有可驗證的身分、清楚的溯源脈絡，以及長期可追溯的紀錄基礎。
+                  這套系統並非取代藝術本身,而是為創作、收藏、傳承與流通，提供一個穩定且可信的制度支撐。
+                </p>
+                <div class="ma-action-group ma-action-group--features">
+                  <div class="ma-action">
+                    <div class="ma-action__icon" aria-hidden="true">
+                      <img src="/images/icon-scan.svg" alt="" />
+                    </div>
+                    <p>典藏級掃描</p>
+                  </div>
+
+                  <div class="ma-action">
+                    <div class="ma-action__icon" aria-hidden="true">
+                      <img src="/images/icon-chain.svg" alt="" />
+                    </div>
+                    <p>ACT 資產鏈證</p>
+                  </div>
+
+                  <div class="ma-action">
+                    <div class="ma-action__icon" aria-hidden="true">
+                      <img src="/images/icon-fingerprint.svg" alt="" />
+                    </div>
+                    <p>數位特徵鑑定</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ma-service__about" id="ma-service__about">
+              <!-- 上邊區塊 -->
+              <div class="ma-service__text">
+                <div class="ma-service__titles">
+                  <h2 class="ma-service__title-zh">
+                    <span>關於 Metaassets</span>
+                  </h2>
+
+                  <p class="ma-service__title-en">
+                    <span>About Metaassets</span>
+                  </p>
+                </div>
+              </div>
+              <!-- 下邊區塊 -->
+              <div class="ma-service__desc">
+                <p>
+                  Metaassets團隊利用區塊鏈技術，協助當代藝術的藝術工作者，持續打造屬於當代藝術的Web3.0生態運用，虛實整合的藝術資產憑證發行服務，讓當代藝術的藝術家可以快速打造屬於自己的當代藝術元宇宙，透過線上虛實整合的展覽服務，擴大當代藝術品的曝光時間與廣度，不受地域影響，也可以與國際接軌，打造無國界的當代藝術展覽服務。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <%- include('./layout/footer'); -%>
+
+    <script type="module" src="../ma-main.js"></script>
+
+    <!-- 首頁輪播套件 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- ma-hero -->
+    <script>
+      const heroSwiper = new Swiper(".ma-hero__swiper", {
+        loop: true,
+        pagination: {
+          el: ".ma-hero__pagination",
+          clickable: true,
+          bulletClass: "ma-swiper-dot", // 對應您現有的 .dot 樣式
+          bulletActiveClass: "is-active",
+          renderBullet: function (index, className) {
+            return '<span class="' + className + '"></span>';
+          },
+        },
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+      });
+    </script>
+    <!-- ma-assets -->
+    <script>
+      const assetsSwiper = new Swiper(".ma-assets__swiper", {
+        loop: false,
+        watchOverflow: true,
+        roundLengths: true,
+
+        slidesPerView: 1,
+        grid: { rows: 4, fill: "row" },
+        spaceBetween: 48,
+
+        pagination: {
+          el: ".ma-assets__pagination",
+          clickable: true,
+          bulletClass: "ma-swiper-dot",
+          bulletActiveClass: "is-active",
+          renderBullet: (index, className) =>
+            `<span class="${className}"></span>`,
+        },
+
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+            grid: { rows: 4 },
+          },
+        },
+      });
+    </script>
+    <!-- ma-promo -->
+    <script>
+      const promoSwiper = new Swiper(".ma-promo__swiper", {
+        loop: true,
+        pagination: {
+          el: ".ma-promo__pagination",
+          clickable: true,
+          bulletClass: "ma-swiper-dot",
+          bulletActiveClass: "is-active",
+          renderBullet: function (index, className) {
+            return '<span class="' + className + '"></span>';
+          },
+        },
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+      });
+    </script>
+    <!-- ma-assets -->
+    <script>
+      const collectSwiper = new Swiper(".ma-collect__swiper", {
+        loop: false,
+        watchOverflow: true,
+        roundLengths: true,
+
+        slidesPerView: 1,
+        grid: { rows: 4, fill: "row" },
+        spaceBetween: 48,
+
+        pagination: {
+          el: ".ma-collect__pagination",
+          clickable: true,
+          bulletClass: "ma-swiper-dot",
+          bulletActiveClass: "is-active",
+          renderBullet: (index, className) =>
+            `<span class="${className}"></span>`,
+        },
+
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+            grid: { rows: 4 },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

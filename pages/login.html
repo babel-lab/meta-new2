@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <%- include('./layout/head'); -%>
+  <body>
+    <%- include('./layout/header'); -%>
+    <main>
+      <section class="ma-section ma-login">
+        <div class="ma-container">
+          <div class="ma-login__card">
+            <!-- 標題 -->
+            <header class="ma-login__header">
+              <h1 class="ma-login__title">錢包登入</h1>
+            </header>
+
+            <!-- 表單 -->
+            <form class="ma-login__form" action="#" method="post">
+              <!-- 姓名 -->
+              <div class="ma-form-field">
+                <input
+                  type="text"
+                  name="name"
+                  class="ma-input"
+                  placeholder="輸入姓名"
+                  required
+                />
+              </div>
+
+              <!-- 電話 -->
+              <div class="ma-form-field">
+                <input
+                  type="tel"
+                  name="phone"
+                  class="ma-input"
+                  placeholder="輸入電話號碼"
+                  required
+                />
+                <p class="ma-form-error">輸入資訊有誤，請再輸入一次</p>
+              </div>
+
+              <!-- 驗證碼 -->
+              <div class="ma-form-field">
+                <input
+                  type="text"
+                  name="otp"
+                  class="ma-input"
+                  placeholder="輸入驗證碼"
+                />
+                <p class="ma-form-error">
+                  驗證碼時效已過，請再重新輸入<br />
+                  號碼發送一次
+                </p>
+              </div>
+
+              <!-- 記住我 -->
+              <label class="ma-checkbox">
+                <input type="checkbox" name="remember" />
+                <span>記住我</span>
+              </label>
+
+              <!-- 按鈕 -->
+              <button
+                type="submit"
+                class="ma-btn ma-btn--gray-dark ma-login__submit"
+              >
+                登入
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <%- include('./layout/footer'); -%>
+
+    <script type="module" src="../ma-main.js"></script>
+  </body>
+</html>

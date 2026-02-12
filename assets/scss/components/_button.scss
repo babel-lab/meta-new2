@@ -1,0 +1,67 @@
+/* ma-btn：文字導向、可擴充的按鈕基底 */
+.ma-btn {
+  @include inline-flex(row, center, center, var(--spacing-8));
+  padding: var(--btn-padding-y) var(--btn-padding-x);
+  border-radius: var(--btn-radius);
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+
+  transition:
+    background-color 200ms,
+    color 200ms,
+    opacity 200ms;
+}
+
+/* =========================================================
+   Button Variants – Color Based
+   ========================================================= */
+
+/* 黑底白字 */
+.ma-btn--black-white {
+  background: var(--color-gray-950);
+  color: var(--color-white);
+}
+
+/* 黑底金字 */
+.ma-btn--black-gold {
+  background: var(--color-gray-950);
+  color: var(--color-brand-primary);
+}
+
+/* 深灰 */
+.ma-btn--gray-dark {
+  background: var(--color-gray-700);
+  color: var(--color-white);
+  &:hover {
+    background: var(--color-gray-950);
+    color: var(--color-brand-primary);
+  }
+}
+
+/* 淺灰 */
+.ma-btn--gray-light {
+  background: var(--color-gray-300);
+  color: var(--color-gray-800);
+  &:hover {
+    background: var(--color-brand-primary-mid);
+    color: var(--color-white);
+  }
+}
+
+/* 金色 */
+.ma-btn--gold {
+  background: var(--gradient-gold-reverse);
+  color: var(--color-white);
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+/* 金框 */
+.ma-btn--outline-gold {
+  color: var(--color-white);
+  border-radius: 0;
+  border: 1px solid;
+  border-image: var(--gradient-gold-reverse) 1;
+}

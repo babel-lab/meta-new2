@@ -1,0 +1,38 @@
+/* Swiper 容器一定要有高度，wrapper/slide 也要 100% */
+.swiper,
+.swiper-wrapper,
+.swiper-slide {
+  height: 100%;
+}
+
+.swiper {
+  //小圓點下移距離
+  --swiper-pagination-safe: var(--space-52);
+  padding-bottom: var(--swiper-pagination-safe);
+}
+.swiper-slide {
+  position: relative;
+}
+
+.swiper-pagination {
+  @include inline-flex(row, center, center, var(--space-16));
+  .ma-swiper-dot:only-child {
+    display: none;
+  }
+}
+
+/* --- 輪播分頁點（如果用 Swiper，優先用 .swiper-pagination；此為客製點） --- */
+.ma-swiper-dot {
+  width: var(--dot-xs);
+  height: var(--dot-xs);
+  border-radius: 50%;
+  background-color: var(--color-gray-700);
+  cursor: pointer;
+  @include respond-min($bp-md) {
+    width: var(--dot-md);
+    height: var(--dot-md);
+  }
+}
+.ma-swiper-dot.is-active {
+  background-color: var(--color-gray-500);
+}

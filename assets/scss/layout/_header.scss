@@ -1,0 +1,96 @@
+.ma-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  &.is-sticky {
+    @include respond-min($bp-md) {
+      padding-block: var(--space-24);
+      .ma-navbar {
+        display: none;
+      }
+      .ma-action-group--desktop {
+        //display: none;
+        margin-left: auto;
+        button {
+          display: none;
+        }
+      }
+      .ma-action-group--mobile {
+        display: flex;
+        gap: var(--space-16);
+      }
+    }
+  }
+  background: var(--color-black);
+  color: var(--color-white);
+  //STICKY HEADER 高度
+  padding-block: var(--space-24);
+  @include respond-min($bp-md) {
+    padding-top: var(--space-48);
+    padding-bottom: var(--space-24);
+  }
+
+  .ma-inner {
+    @include flex-between("center", var(--space-16));
+    @include respond-min($bp-md) {
+      gap: var(--space-16);
+    }
+  }
+
+  .ma-header__logo {
+    width: 186px;
+    height: 40px;
+    @include respond-min($bp-md) {
+      width: 200px;
+      height: 44px;
+    }
+  }
+}
+
+.ma-action-group {
+  @include flex-center(row, var(--space-16));
+
+  &--desktop {
+    display: none;
+    @include respond-min($bp-md) {
+      @include inline-flex(row, center, flex-start, var(--space-24));
+    }
+  }
+  &--mobile {
+    @include inline-flex(row, center, flex-start, var(--space-24));
+    @include respond-min($bp-md) {
+      display: none;
+    }
+  }
+}
+
+//導覽列
+.ma-navbar {
+  padding-top: var(--space-32);
+  padding-bottom: var(--space-24);
+  background: var(--color-black);
+  border-bottom: 1px solid var(--border-white);
+
+  display: none;
+  @include respond-min($bp-md) {
+    display: block;
+  }
+  &__links {
+    color: var(--color-white);
+    @include inline-flex(row, center, flex-start, var(--space-24));
+    > a {
+      position: relative;
+      display: inline-block;
+    }
+    > a.is-active::after {
+      position: absolute;
+      content: "";
+      display: block;
+      margin-top: var(--space-4);
+      width: 100%;
+      height: 2px;
+      background: var(--gradient-gold-reverse);
+      border-radius: 2px;
+    }
+  }
+}

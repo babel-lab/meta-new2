@@ -1,0 +1,87 @@
+<header class="ma-header">
+  <div class="ma-container">
+    <div class="ma-inner">
+      <a href="index.html" class="ma-header__logo">
+        <img src="/images/logo.png" alt="Metaassets" />
+      </a>
+      <!-- 大版導覽列 -->
+      <nav
+        class="ma-action-group ma-action-group--desktop"
+        aria-label="Header actions"
+      >
+        <a href="order.html">訂單查詢</a>
+        <a href="login.html">錢包登入</a>
+        <button
+          id="lang-toggle-pc"
+          class="ma-icon-btn"
+          type="button"
+          aria-label="Language"
+        >
+          <img src="/images/icon_lang.png" alt="" />
+        </button>
+      </nav>
+      <!-- 小版導覽列 -->
+      <div class="ma-action-group ma-action-group--mobile">
+        <button
+          id="menu-toggle"
+          class="ma-icon-btn"
+          type="button"
+          aria-label="Menu"
+        >
+          <img src="/images/icon_bar.png" alt="" />
+        </button>
+        <button
+          id="lang-toggle-mobile"
+          class="ma-icon-btn"
+          type="button"
+          aria-label="Language"
+        >
+          <img src="/images/icon_lang.png" alt="" />
+        </button>
+      </div>
+    </div>
+
+    <!-- 導覽列 -->
+    <nav class="ma-navbar" aria-label="Primary">
+      <div class="ma-navbar__links">
+        <a href="#" class="is-active">ACT 鏈證</a>
+        <a href="#ma-assets">藝術資產</a>
+        <a href="#ma-collect">收藏推薦</a>
+        <a href="search.html">鏈證搜尋</a>
+        <a href="#ma-service__about">關於 Metaassets</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- 導覽列選單 -->
+<div id="menu-overlay" class="ma-overlay"></div>
+<div id="mobile-drawer" class="ma-drawer" tabindex="-1" aria-hidden="true">
+  <div class="ma-inner">
+    <div id="menu-content" class="ma-mobile-menu ma-mobile-menu--nav">
+      <a href="#" class="is-active">ACT 鏈證</a>
+      <a href="#ma-assets">藝術資產</a>
+      <a href="#ma-collect">收藏推薦</a>
+      <a href="search.html">鏈證搜尋</a>
+      <a href="#ma-service__about">關於 Metaassets</a>
+
+      <div class="ma-action-group is-column">
+        <a href="order.html" class="ma-btn ma-btn--black-white">訂單查詢</a>
+        <a href="login.html" class="ma-btn ma-btn--black-gold">錢包登入</a>
+      </div>
+    </div>
+
+    <div
+      id="lang-content"
+      class="ma-mobile-menu ma-mobile-menu--lang is-hidden"
+    >
+      <a href="#!" class="is-active">中 文</a>
+      <a href="#!">English</a>
+      <a href="#!">日本語</a>
+      <a href="#!">한국어</a>
+      <a href="#!">Español</a>
+      <a href="#!">Français</a>
+      <a href="#!">Deutsch</a>
+    </div>
+  </div>
+</div>

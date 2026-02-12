@@ -1,0 +1,73 @@
+.ma-footer {
+  padding-bottom: clamp(var(--space-32), 5vw, var(--space-64));
+  background: var(--gradient-dark-soft);
+  color: var(--color-white);
+  .ma-inner {
+    padding-top: var(--space-52);
+    border-top: 1px solid transparent;
+    border-image: var(--gradient-gold-reverse) 1;
+  }
+  &__content {
+    @include flex-col(var(--space-24));
+    align-items: flex-start;
+    width: 100%;
+    @include respond-min($bp-md) {
+      margin-left: auto;
+      width: 65%;
+    }
+    > div {
+      width: 100%;
+    }
+  }
+  &__header {
+    position: relative;
+    padding-bottom: var(--space-16);
+    border-bottom: 1px solid var(--color-white);
+    &::before {
+      position: absolute;
+      top: calc(var(--space-32) * -1);
+      content: "";
+      display: inline-block;
+      width: var(--icon-sm);
+      height: var(--icon-sm);
+      background-repeat: no-repeat;
+      background-position: center;
+      //background-size: contain;
+
+      /* 預設：不顯示 */
+      background-image: url("/images/icon_footer.png");
+      @include respond-min($bp-md) {
+        position: absolute;
+        top: var(--space-8);
+        left: calc(var(--space-48) * -1);
+      }
+    }
+  }
+  &__groups {
+    max-height: unset;
+    @include flex-col(var(--space-16));
+    flex-wrap: no-wrap;
+    @include respond-min($bp-md) {
+      max-height: 22em;
+      flex-wrap: wrap;
+    }
+  }
+  &__group {
+    width: fit-content;
+    &--contact {
+      li:last-child a {
+        display: inline-block;
+        max-width: 100%;
+        overflow-wrap: anywhere;
+        font-size: var(--fs-small);
+      }
+    }
+  }
+  ul {
+    padding: 0;
+    list-style-type: none;
+    li::marker {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <%- include('./layout/head'); -%>
+  <body>
+    <%- include('./layout/header'); -%>
+    <main>
+      <section class="ma-section ma-line">
+        <div class="ma-container">
+          <div class="ma-inner">
+            <!-- QR Card -->
+            <div class="ma-line__content" aria-label="LINE QR Code">
+              <div class="ma-line_qrcode">
+                <img
+                  class="ma-qr-card__img"
+                  src="/images/line.png"
+                  alt="LINE QR Code"
+                  loading="lazy"
+                />
+              </div>
+              <p class="ma-qr-card__desc">掃描行動條碼加入好友</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <%- include('./layout/footer'); -%>
+
+    <script type="module" src="../ma-main.js"></script>
+  </body>
+</html>

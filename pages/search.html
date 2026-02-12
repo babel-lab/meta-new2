@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <%- include('./layout/head'); -%>
+  <body>
+    <%- include('./layout/header'); -%>
+    <!-- breadcrumb（可放在 page/section 上方） -->
+    <nav class="ma-breadcrumb" aria-label="Breadcrumb">
+      <ol class="ma-breadcrumb__list">
+        <li class="ma-breadcrumb__item"><a href="/">首頁</a></li>
+        <li class="ma-breadcrumb__sep" aria-hidden="true">›</li>
+        <li class="ma-breadcrumb__item" aria-current="page">鏈證搜尋</li>
+      </ol>
+    </nav>
+    <main>
+      <!-- search form -->
+      <form
+        class="ma-form ma-search"
+        role="search"
+        action="/search"
+        method="get"
+      >
+        <fieldset class="ma-fieldset">
+          <legend class="ma-sr-only">鏈證搜尋</legend>
+
+          <label class="ma-sr-only" for="search-q"
+            >請輸入想要搜尋的藝術品名稱、藝術家、認證編號</label
+          >
+
+          <div class="ma-field ma-field--search">
+            <!-- 左：icon（純裝飾，aria-hidden） -->
+            <span class="ma-field__icon" aria-hidden="true">
+              <!-- 你也可以改成 <img> 或你自己的 icon 系統 -->
+              <svg viewBox="0 0 24 24" width="20" height="20" focusable="false">
+                <path
+                  fill="currentColor"
+                  d="M10 4a6 6 0 1 1 3.87 10.58l4.27 4.27-1.41 1.41-4.27-4.27A6 6 0 0 1 10 4m0 2a4 4 0 1 0 0 8a4 4 0 0 0 0-8"
+                />
+              </svg>
+            </span>
+
+            <!-- 中：input -->
+            <input
+              id="search-q"
+              class="ma-input ma-input--search"
+              type="search"
+              name="q"
+              placeholder="請輸入想要搜尋的藝術品名稱、藝術家、認證編號"
+              autocomplete="off"
+            />
+
+            <!-- 右：clear（用 reset） -->
+            <button
+              class="ma-field__clear"
+              type="reset"
+              aria-label="清除搜尋內容"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+        </fieldset>
+      </form>
+    </main>
+
+    <%- include('./layout/footer'); -%>
+
+    <script type="module" src="../ma-main.js"></script>
+  </body>
+</html>

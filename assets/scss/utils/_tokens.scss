@@ -1,0 +1,251 @@
+/* 顏色 字級 scale 間距系統 圓角 陰影 Z-index 層級 */
+/* =========================================================
+   Project Style Guide (Design Spec Layer)
+   - Tokens only (no component styles here)
+   ========================================================= */
+
+:root {
+  /* =======================================================
+     1) Colors
+     ======================================================= */
+
+  /* Core colors */
+  --color-black: #000000; /* Tailwind: text-black / bg-black */
+  --color-white: #ffffff; /* Tailwind: text-white / bg-white */
+
+  /* Brand */
+  --color-brand-primary: #d8b269; /* 金 */
+  --color-brand-secondary: #000000; /* 黑 */
+  --color-brand-tertiary: #ffffff; /* 白 */
+
+  --color-brand-primary-mid: #caa965;
+  --color-brand-primary-soft: #e6c98b; /* hover / gradient */
+  --color-brand-primary-dark: #b9964f; /* active / border */
+
+  /* Neutral / Gray scale */
+  /* Neutral / Gray scale */
+  --color-gray-950: #202020;
+  --color-gray-900: #272727;
+  --color-gray-800: #373737;
+  --color-gray-700: #5c5c5c;
+  --color-gray-600: #868686;
+  --color-gray-500: #a9a9a9;
+  --color-gray-400: #c5c5c5;
+  --color-gray-300: #c7c7c7;
+  --color-gray-200: #e8e8e8;
+
+  /* Overlay / Backdrop */
+  --color-overlay: rgba(0, 0, 0, 0.55);
+
+  /* Text (base) */
+  --text-color: var(--color-black);
+
+  /* =======================================================
+     2) Link Tokens
+     ======================================================= */
+  /* Base (normal state) */
+  --link-color: var(--text-color); /* 預設跟隨區塊文字色 */
+  --link-decoration: none;
+
+  --link-underline-offset: 3px;
+
+  /* Hover / Active */
+  --link-hover-color: var(--color-brand-primary);
+  --link-hover-decoration: underline;
+
+  /* Motion */
+  --link-transition: 200ms;
+
+  /* =======================================================
+     3) Border
+     ======================================================= */
+  --border-gray-dark: var(--color-gray-500);
+  --border-gray-light: var(--color-gray-400);
+  --border-white: var(--color-white);
+
+  /* =======================================================
+     4) Gradients
+     ======================================================= */
+  --gradient-gold: linear-gradient(90deg, #83581c 0%, #efd560 100%);
+  --gradient-gold-reverse: linear-gradient(90deg, #efd560 0%, #83581c 100%);
+  --gradient-dark: linear-gradient(180deg, #000000 0%, #434343 100%);
+
+  --gradient-dark-soft: linear-gradient(
+    180deg,
+    #000000 0%,
+    #000000 25%,
+    #1f1f1f 50%,
+    #2e2e2e 70%,
+    #3f3f3f 100%
+  );
+
+  /* =======================================================
+     5) Typography
+     ======================================================= */
+
+  /* Font family layers */
+  --font-serif: "EB Garamond", "Adobe Garamond Pro", "Noto Serif TC", serif;
+  --font-system:
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Main font (project default) */
+  --font-main: var(--font-serif), var(--font-system);
+
+  /* Type scale */
+  --fs-h1: clamp(36px, 6vw, 48px);
+  --fs-h2: clamp(28px, 3.6vw, 36px);
+  --fs-h3: clamp(18px, 2.6vw, 24px);
+  --fs-h4: clamp(18px, 2vw, 22px);
+  --fs-h5: clamp(16px, 2vw, 18px);
+  --fs-h6: 16px;
+
+  --fs-body: 16px; /* Tailwind: text-base */
+  --fs-small: 15px; /* Tailwind: text-sm */
+
+  /* UI semantic */
+  --fs-ui-title: 18px; /* Tailwind: text-lg */
+  --fs-ui-meta: 14px; /* Tailwind: text-sm */
+
+  /* Font Weight Scale */
+  --fw-light: 300; /* Tailwind: font-light */
+  --fw-regular: 400; /* Tailwind: font-normal */
+  --fw-medium: 500; /* Tailwind: font-medium */
+  --fw-semibold: 600; /* Tailwind: font-semibold */
+  --fw-bold: 700; /* Tailwind: font-bold */
+
+  /* Font weight */
+  --fw-h1: var(--fw-semibold);
+  --fw-h2: var(--fw-semibold);
+  --fw-h3: var(--fw-medium);
+  --fw-h4: var(--fw-medium);
+  --fw-h5: var(--fw-medium);
+  --fw-h6: var(--fw-medium);
+
+  /* Body weight */
+  --fw-body: 400; /* Tailwind: font-normal */
+  --fw-strong: 600; /* Tailwind: font-semibold */
+
+  /* Line height */
+  --lh-body: 1.6; /* Tailwind: leading-[1.6] (or approx leading-relaxed) */
+  --lh-heading: 1.25; /* Tailwind: leading-tight */
+
+  /* =======================================================
+     6) Layout: Container
+     ======================================================= */
+  --container-max: 1200px;
+  --container-padding-x-lg: 32px; /* desktop */
+  --container-padding-x-md: 16px; /* tablet */
+  --container-padding-x-sm: 8px; /* mobile */
+
+  /* =======================================================
+     7) Spacing: Section
+     ======================================================= */
+  /* desktop */
+  --section-padding-top-lg: 24px; /* Tailwind: pt-6 */
+  --section-padding-bottom-lg: 42px; /* Tailwind: (no default) approx pb-10(40px) + 2px */
+
+  /* mobile */
+  --section-padding-top-sm: 16px; /* Tailwind: pt-4 */
+  --section-padding-bottom-sm: 32px; /* Tailwind: pb-8 */
+
+  /* Spacing (px-based, intuitive) */
+  --space-2: 2px;
+  --space-4: 4px; /* Tailwind: 1  (e.g., p-1 / gap-1) */
+  --space-8: 8px; /* Tailwind: 2  (p-2 / gap-2) */
+  --space-12: 12px; /* Tailwind: 3  (p-3 / gap-3) */
+  --space-16: 16px; /* Tailwind: 4  (p-4 / gap-4) */
+  --space-24: 24px; /* Tailwind: 6  (p-6 / gap-6) */
+  --space-32: 32px; /* Tailwind: 8  (p-8 / gap-8) */
+  --space-40: 40px; /* Tailwind: 10 (p-10 / gap-10) */
+  --space-48: 48px; /* Tailwind: 12 (p-12 / gap-12) */
+  --space-52: 52px; /* Custom spacing (非 Tailwind 預設 scale) */
+  --space-64: 64px; /* Tailwind: 16 (p-16 / gap-16) */
+
+  /* =======================================================
+     8) Radius / Shadow
+     ======================================================= */
+  --radius-sm: 4px; /* Tailwind: rounded */
+  --radius-md: 8px; /* Tailwind: rounded-lg */
+  --radius-lg: 16px; /* Tailwind: rounded-2xl */
+
+  --box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+
+  /* =======================================================
+     9) Button Spec
+     ======================================================= */
+  --btn-padding-y: 8px; /* Tailwind: py-2 */
+  --btn-padding-x: 24px; /* Tailwind: px-4 */
+  --btn-radius: var(--radius-md); /* Tailwind: rounded-lg */
+  --btn-font-weight: 500; /* Tailwind: font-medium */
+  --btn-transition: 200ms; /* Tailwind: duration-200 */
+
+  /* =======================================================
+    10) Icon Button Spec
+   ======================================================= */
+  --icon-btn-size: 40px; /* hit area, Tailwind: w-10 h-10 */
+  --icon-btn-radius: var(--radius-md); /* Tailwind: rounded-lg */
+  --icon-btn-transition: var(--btn-transition);
+
+  /* =======================================================
+     11) Icon Scale
+     ======================================================= */
+  /* UI icon */
+  --icon-xs: 16px;
+  --icon-sm: 20px;
+  --icon-md: 24px;
+  --icon-lg: 32px;
+  --icon-xl: 40px;
+  --icon-2xl: 48px;
+
+  /* Visual icon */
+  --icon-visual-md: 64px;
+  --icon-visual-lg: 80px;
+  --icon-visual-xl: 96px;
+
+  /* Dot scale（指示 / 輪播） */
+  --dot-xs: 10px;
+  --dot-md: 12px;
+
+  /* =======================================================
+     12) Z-index
+     ======================================================= */
+  --z-base: 1; /* 一般內容層 */
+  --z-header: 100; /* Header / sticky nav */
+  --z-overlay: 200; /* 半透明遮罩（overlay / mask） */
+  --z-drawer: 300; /* 側邊抽屜（drawer） */
+  --z-modal: 1000; /* Modal / Dialog（最高層） */
+
+  /* =========================================================
+     13) Anchor Offset (for sticky header jump link fix)
+    ========================================================= */
+
+  /* 預設：mobile header 高度 */
+  --anchor-offset: 56px;
+
+  /* =======================================================
+     14) Accessibility
+     ======================================================= */
+  --focus-ring: 0 0 0 3px rgba(216, 178, 105, 0.35);
+  /* Tailwind: focus:outline-none focus:ring-[3px] focus:ring-[rgba(216,178,105,0.35)] (or focus:ring-2 + custom color) */
+}
+
+/* =========================================================
+   Breakpoints Tokens (RWD)
+   設計斷點，以 min-width 為基準
+   此段為 SCSS mixins 用，Tailwind 可忽略
+   ========================================================= */
+
+/* Desktop */
+$bp-xl: 120em; // 1920px | Tailwind: 2xl↑ (1536px+) 以上超大螢幕
+$bp-lg: 75em; // 1200px | Tailwind: xl (1280px) 前一級，介於 lg ~ xl
+$bp-md: 64em; // 1024px | Tailwind: lg (1024px)
+
+/* Tablet */
+$bp-tablet: 62em; // 992px  | Tailwind: ≈ lg- (介於 md(768) ~ lg(1024))
+$bp-tablet-sm: 60em; // 960px  | Tailwind: ≈ md+ ~ lg-
+
+/* Mobile */
+$bp-mobile-lg: 50em; // 800px | Tailwind: md (768px) ~ lg (1024px)
+$bp-mobile: 37.5em; // 600px | Tailwind: < sm (640px 以下)
+$bp-mobile-sm: 32.25em; // 500px | Tailwind: < sm（小手機）
+$bp-mobile-xs: 22.5em; // 360px | Tailwind: < sm（極小裝置）

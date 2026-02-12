@@ -1,0 +1,54 @@
+/* --- 抽屜選單核心樣式 --- */
+.ma-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--color-overlay);
+  z-index: var(--z-overlay);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.ma-overlay.is-show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* -- Drawer --*/
+.ma-drawer {
+  position: fixed;
+  //top: var(--header-height-mobile);
+  right: 0;
+  //height: 100vh;
+  z-index: var(--z-drawer);
+  transform: translateX(110%);
+  transition: transform 0.25s ease;
+  outline: none;
+}
+
+.ma-drawer.is-open {
+  transform: translateX(0);
+}
+
+/* -- Drawer Menu --*/
+/* --- 導覽列選單（小版）--- */
+.ma-mobile-menu {
+  background-color: var(--color-gray-800);
+  padding: var(--space-24) var(--space-48);
+  @include flex-col(var(--space-16));
+  align-items: center;
+  color: var(--color-white);
+}
+
+.ma-mobile-menu a.is-active {
+  color: var(--color-brand-primary);
+}
+
+.ma-mobile-btn {
+  background-color: var(--color-gray-950);
+}
+.ma-mobile-btn.white {
+  color: var(--color-white);
+}
+.ma-mobile-btn.gold {
+  color: var(--color-brand-primary);
+}

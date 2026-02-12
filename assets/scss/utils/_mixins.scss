@@ -1,0 +1,159 @@
+/* =========================================================
+   _mixins.scss (recommended)
+   - RWD helpers
+   - Flex semantic helpers (minimal)
+   ========================================================= */
+
+/* =======================
+   1) RWD Media Query
+   ======================= */
+@mixin respond-min($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin respond-max($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin respond-between($min, $max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+/* =======================
+   2) Flex Semantics (keep small)
+   ======================= */
+/* =========================================================
+   Flex Mixins (Practical Set)
+   - 目的：常用、語意清楚、避免過度抽象
+   - 命名原則：
+     - flex-center：水平+垂直都置中（不給調，最安全）
+     - flex-align-center：垂直置中，水平可控
+     - flex-between：space-between 常用情境
+     - flex-row / flex-col：只管方向與 gap（不綁對齊）
+========================================================= */
+
+/* -----------------------------------------
+   1) Generic (完全自訂)
+----------------------------------------- */
+@mixin flex($dir: row, $align: stretch, $justify: flex-start, $gap: 0) {
+  display: flex;
+  flex-direction: $dir;
+  align-items: $align;
+  justify-content: $justify;
+  gap: $gap;
+}
+
+/* -----------------------------------------
+   2) Center (完全置中)
+   - loading / empty state / icon button wrapper
+----------------------------------------- */
+@mixin flex-center($dir: row, $gap: 0) {
+  display: flex;
+  flex-direction: $dir;
+  align-items: center;
+  justify-content: center;
+  gap: $gap;
+}
+
+/* -----------------------------------------
+   3) Align center (垂直置中，水平可控)
+   - header bar / list item / toolbar
+----------------------------------------- */
+@mixin flex-align-center($dir: row, $justify: flex-start, $gap: 0) {
+  display: flex;
+  flex-direction: $dir;
+  align-items: center;
+  justify-content: $justify;
+  gap: $gap;
+}
+
+/* -----------------------------------------
+   4) Between (兩端對齊)
+   - header inner / card header / row split
+----------------------------------------- */
+@mixin flex-between($align: center, $gap: 0) {
+  display: flex;
+  align-items: $align;
+  justify-content: space-between;
+  gap: $gap;
+}
+
+/* -----------------------------------------
+   5) Row / Col primitives（只管方向）
+   - 不綁 align / justify，避免語意誤導
+----------------------------------------- */
+@mixin flex-row($gap: 0) {
+  display: flex;
+  flex-direction: row;
+  gap: $gap;
+}
+
+@mixin flex-col($gap: 0) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+/* -----------------------------------------
+   6) Inline-flex (需要跟文字同列、或按鈕內排版)
+----------------------------------------- */
+@mixin inline-flex($dir: row, $align: center, $justify: center, $gap: 0) {
+  display: inline-flex;
+  flex-direction: $dir;
+  align-items: $align;
+  justify-content: $justify;
+  gap: $gap;
+}
+
+/* -----------------------------------------
+   7) Responsive direction helper
+   - 小版直式、大版橫式（最常用 RWD 需求）
+   - 需搭配你的 respond-min mixin
+----------------------------------------- */
+@mixin flex-dir-responsive(
+  $mobile-dir: column,
+  $desktop-dir: row,
+  $bp: $bp-md
+) {
+  display: flex;
+  flex-direction: $mobile-dir;
+
+  @include respond-min($bp) {
+    flex-direction: $desktop-dir;
+  }
+}
+
+/* =========================================================
+   Flex Item Utilities
+   - 用在 flex container 內的「子元素」
+========================================================= */
+
+/* 常用：撐滿剩餘空間（卡片內容 / drawer 主體） */
+@mixin flex-grow {
+  flex: 1 1 auto;
+  min-height: 0; // 防止 overflow / scroll 失效
+}
+
+// =========================================================
+// Text Ellipsis / Line Clamp
+// - $lines = 1: 單行省略 (...)
+// - $lines > 1: 多行省略 (...)
+// =========================================================
+@mixin text-ellipsis($lines: 1) {
+  @if $lines == 1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  } @else {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lines; // clamp 行數
+    overflow: hidden;
+  }
+}

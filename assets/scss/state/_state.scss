@@ -1,0 +1,32 @@
+/* =========================================================
+   Global States
+========================================================= */
+
+.is-active {
+  /* semantic only */
+}
+
+.is-scroll-locked {
+  overflow: hidden;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+.is-disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.is-loading {
+  cursor: wait;
+}
+
+.is-row {
+  flex-direction: row !important;
+}
+
+.is-column {
+  flex-direction: column !important;
+}
