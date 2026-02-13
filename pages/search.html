@@ -3,62 +3,224 @@
   <%- include('./layout/head'); -%>
   <body>
     <%- include('./layout/header'); -%>
-    <!-- breadcrumb（可放在 page/section 上方） -->
-    <nav class="ma-breadcrumb" aria-label="Breadcrumb">
-      <ol class="ma-breadcrumb__list">
-        <li class="ma-breadcrumb__item"><a href="/">首頁</a></li>
-        <li class="ma-breadcrumb__sep" aria-hidden="true">›</li>
-        <li class="ma-breadcrumb__item" aria-current="page">鏈證搜尋</li>
-      </ol>
-    </nav>
-    <main>
-      <!-- search form -->
-      <form
-        class="ma-form ma-search"
-        role="search"
-        action="/search"
-        method="get"
-      >
-        <fieldset class="ma-fieldset">
-          <legend class="ma-sr-only">鏈證搜尋</legend>
 
-          <label class="ma-sr-only" for="search-q"
-            >請輸入想要搜尋的藝術品名稱、藝術家、認證編號</label
-          >
-
-          <div class="ma-field ma-field--search">
-            <!-- 左：icon（純裝飾，aria-hidden） -->
-            <span class="ma-field__icon" aria-hidden="true">
-              <!-- 你也可以改成 <img> 或你自己的 icon 系統 -->
-              <svg viewBox="0 0 24 24" width="20" height="20" focusable="false">
-                <path
-                  fill="currentColor"
-                  d="M10 4a6 6 0 1 1 3.87 10.58l4.27 4.27-1.41 1.41-4.27-4.27A6 6 0 0 1 10 4m0 2a4 4 0 1 0 0 8a4 4 0 0 0 0-8"
-                />
-              </svg>
-            </span>
-
-            <!-- 中：input -->
-            <input
-              id="search-q"
-              class="ma-input ma-input--search"
-              type="search"
-              name="q"
-              placeholder="請輸入想要搜尋的藝術品名稱、藝術家、認證編號"
-              autocomplete="off"
-            />
-
-            <!-- 右：clear（用 reset） -->
-            <button
-              class="ma-field__clear"
-              type="reset"
-              aria-label="清除搜尋內容"
+    <main class="ma-main">
+      <!-- 麵包屑導覽列 -->
+      <nav class="ma-breadcrumb" aria-label="Breadcrumb">
+        <div class="ma-container">
+          <ol class="ma-breadcrumb__list">
+            <li class="ma-breadcrumb__item"><a href="/">首頁</a></li>
+            <li class="ma-breadcrumb__item" aria-current="page">鏈證搜尋</li>
+          </ol>
+        </div>
+      </nav>
+      <!-- 搜尋區 -->
+      <section class="ma-section ma-search" aria-label="搜尋">
+        <div class="ma-container">
+          <div class="ma-inner">
+            <!-- search form  -->
+            <form
+              class="ma-form ma-search"
+              role="search"
+              action="/search"
+              method="get"
             >
-              <span aria-hidden="true">×</span>
-            </button>
+              <fieldset class="ma-fieldset">
+                <legend class="ma-sr-only">鏈證搜尋</legend>
+
+                <label class="ma-sr-only" for="search-q"
+                  >請輸入想要搜尋的藝術品名稱、藝術家、認證編號</label
+                >
+
+                <div class="ma-field ma-field--search">
+                  <!-- 左：icon（純裝飾，aria-hidden） -->
+                  <span class="ma-field__icon" aria-hidden="true">
+                    <!-- 你也可以改成 <img> 或你自己的 icon 系統 -->
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="20"
+                      height="20"
+                      focusable="false"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M10 4a6 6 0 1 1 3.87 10.58l4.27 4.27-1.41 1.41-4.27-4.27A6 6 0 0 1 10 4m0 2a4 4 0 1 0 0 8a4 4 0 0 0 0-8"
+                      />
+                    </svg>
+                  </span>
+
+                  <!-- 中：input -->
+                  <input
+                    id="search-q"
+                    class="ma-input ma-input--search"
+                    type="search"
+                    name="q"
+                    placeholder="請輸入想要搜尋的藝術品名稱、藝術家、認證編號"
+                    autocomplete="off"
+                  />
+
+                  <!-- 右：clear（用 reset） -->
+                  <button
+                    class="ma-field__clear"
+                    type="reset"
+                    aria-label="清除搜尋內容"
+                  >
+                    <span aria-hidden="true">×</span>
+                  </button>
+                </div>
+              </fieldset>
+            </form>
           </div>
-        </fieldset>
-      </form>
+        </div>
+      </section>
+      <!-- 結果區 -->
+      <!-- art-assets -->
+      <section class="ma-section ma-assets">
+        <div class="ma-container">
+          <div class="ma-inner">
+            <h3 class="ma-section__title">藝術資產</h3>
+            <a href="search.html" class="ma-section__link">more</a>
+          </div>
+
+          <!--
+  顯示規則：
+  - 桌機：每頁顯示 8 個卡片 / - 手機：每頁顯示 4 個卡片
+  - 顯示數量由 index.html 最下方的 Swiper 初始化設定控制
+
+  注意事項（給後端）：
+  - 卡片類型 class（.ma-card--act-art / .ma-card--print-art）
+    由程式依資料類型動態產生，不手動寫死於 HTML
+    .ma-card__category 的<h4>文字有2種: 鏈證藝術, 鏈證版畫
+
+  - 卡片按鈕文字亦由程式判斷：
+    無價格 → 顯示「了解更多」
+    有價格 → 顯示「詢問收藏」
+
+  - 此SECTION的按鈕連結為: 若沒登入則連至登入 login.html
+-->
+          <div class="swiper ma-assets__swiper">
+            <!-- Swiper 主體 -->
+            <div class="swiper-wrapper">
+              <!-- 依資料量輸出 n 筆 -->
+              <!-- card 01: 有價錢, 按鈕字"詢問收藏" -->
+              <div class="swiper-slide">
+                <article class="ma-card ma-card--act-art">
+                  <!-- 左：圖片區 -->
+                  <div class="ma-card__media">
+                    <img
+                      src="https://images.unsplash.com/photo-1579541814924-49fef17c5be5?q=80&w=670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="Artwork"
+                    />
+                  </div>
+                  <!-- 右：內容區 -->
+                  <div class="ma-card__content">
+                    <div class="ma-card__category">
+                      <h4>鏈證藝術</h4>
+                      <span class="ma-card__icon" aria-hidden="true"></span>
+                    </div>
+                    <div class="ma-card__header">
+                      <h6 class="ma-card__title">Seeing Eyes</h6>
+                      <h5 class="ma-card__author">理查德・博伊德・鄧洛普</h5>
+                    </div>
+                    <div class="ma-card__body">
+                      <p class="ma-card__info">
+                        <span>丙烯畫 / 畫布</span>
+                        <span>100 × 100 × 100 cm</span>
+                      </p>
+                      <!-- 沒價錢需在<SPAN>填入 &nbsp; 防跑版 -->
+                      <p class="ma-card__price">
+                        <span>1,000.00</span>
+                        <span>ETH(USD)</span>
+                      </p>
+                    </div>
+                    <div class="ma-card__footer">
+                      <p class="ma-card__id">
+                        <span>M2023APG000147PA</span>
+                      </p>
+                      <!-- 有價錢按鈕字: 詢問收藏 -->
+                      <a href="login.html" class="ma-btn ma-btn--gray-dark"
+                        >詢問收藏</a
+                      >
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <!-- card 02: 範例資料" -->
+              <div class="swiper-slide">
+                <article class="ma-card ma-card--print-art">
+                  <!-- 左：圖片區 -->
+                  <div class="ma-card__media">
+                    <img
+                      src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?q=80&w=1019&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="Artwork"
+                    />
+                  </div>
+                  <!-- 右：內容區 -->
+                  <div class="ma-card__content">
+                    <div class="ma-card__category">
+                      <h4>鏈證版畫</h4>
+                      <span class="ma-card__icon" aria-hidden="true"></span>
+                    </div>
+                    <div class="ma-card__header">
+                      <h6 class="ma-card__title">Seeing Eyes</h6>
+                      <h5 class="ma-card__author">理查德・博伊德・鄧洛普</h5>
+                    </div>
+                    <div class="ma-card__body">
+                      <p class="ma-card__info">
+                        <span>丙烯畫 / 畫布</span>
+                        <span>100 × 100 × 100 cm</span>
+                      </p>
+                      <!-- 沒價錢需在<SPAN>填入 &nbsp; 防跑版 -->
+                      <p class="ma-card__price">
+                        <span>&nbsp;</span>
+                        <span>&nbsp;</span>
+                      </p>
+                    </div>
+                    <div class="ma-card__footer">
+                      <p class="ma-card__id">
+                        <span>M2023APG000147PA</span>
+                      </p>
+                      <!-- 沒有價錢按鈕字: 了解更多 -->
+                      <a href="login.html" class="ma-btn ma-btn--gray-dark"
+                        >了解更多</a
+                      >
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <!-- more card ...   -->
+              <%- include('./layout/card-sample'); -%>
+            </div>
+            
+
+            
+          </div>
+        </div>
+      </section>
+      
+      
+      <!-- 說明區 -->
+      <section class="ma-section ma-desc" aria-labelledby="desc-title">
+        <div class="ma-container">
+          <div class="ma-inner ma-desc__inner">
+            <h6 class="ma-desc__title" id="desc-title">重要免責聲明</h5>
+
+            <div class="ma-desc__content">
+              <p class="ma-desc__paragraph">
+                不論您的目的為何，我們所提供內容之任何部分均不構成財務建議、法律建議或任何形式的建議。利用或根據我們的內容應謹慎並自負風險。根據我們的內容作出決策前，請務必自行研究、回顧、分析並驗證這些資訊。交易是牽涉高度風險的活動，可能導致重大損失，因此決策前，請向您的財務顧問諮詢。我們網站上的內容不涉及任何遊說或要約之意圖。
+              </p>
+
+              <p class="ma-desc__paragraph">
+                Metaassets
+                藝術資產憑證的任何購買者（即拍賣的獲勝者及其受讓人和其後的繼任者，「購買者」）在收藏
+                Metaassets 藝術資產憑證時應承認並同意以下條款和條件：買方應獲得
+                Metaassets 藝術資產憑證（NFT）的所有權，但 Metaassets
+                藝術資產憑證的任何版權、商標權或任何其他知識產權不得轉讓給買方，仍歸原著作者所有。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <%- include('./layout/footer'); -%>
