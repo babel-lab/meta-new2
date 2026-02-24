@@ -32,6 +32,24 @@ body {
   }
 }
 
+/* =========================================================
+   Page Theme (light/dark)
+   ========================================================= */
+
+.ma-page {
+  /* 預設 light（可以不寫 --light，直接當預設） */
+  --page-bg: var(--color-white);
+  --page-text: var(--color-dark);
+
+  background: var(--page-bg);
+  color: var(--page-text);
+
+  &--dark {
+    --page-bg: var(--color-black);
+    --page-text: var(--color-white);
+  }
+}
+
 /* Remove default margins */
 h1,
 h2,
@@ -137,34 +155,60 @@ small {
 /* ---------------------------------------------------------
    3) Typography utility classes (可選)
 --------------------------------------------------------- */
+/* H1 */
+.ma-text-h1,
 .heading-h1 {
   font-size: var(--fs-h1);
   font-weight: var(--fw-h1);
 }
 
+/* H2 */
+.ma-text-h2,
 .heading-h2 {
   font-size: var(--fs-h2);
   font-weight: var(--fw-h2);
 }
 
+/* H3 */
+.ma-text-h3,
 .heading-h3 {
   font-size: var(--fs-h3);
   font-weight: var(--fw-h3);
 }
 
+/* H4 */
+.ma-text-h4,
 .heading-h4 {
   font-size: var(--fs-h4);
   font-weight: var(--fw-h4);
 }
 
+/* H5 */
+.ma-text-h5,
 .heading-h5 {
   font-size: var(--fs-h5);
   font-weight: var(--fw-h5);
 }
 
+/* H6 */
+.ma-text-h6,
 .heading-h6 {
   font-size: var(--fs-h6);
   font-weight: var(--fw-h6);
+}
+.ma-text-h1,
+.ma-text-h2,
+.ma-text-h3,
+.ma-text-h4,
+.ma-text-h5,
+.ma-text-h6,
+.heading-h1,
+.heading-h2,
+.heading-h3,
+.heading-h4,
+.heading-h5,
+.heading-h6 {
+  line-height: var(--lh-heading, 1.2);
 }
 
 /* ---------------------------------------------------------
@@ -196,7 +240,10 @@ small {
    6) Layout: Section spacing
    - Vertical spacing between major sections
 --------------------------------------------------------- */
+/* 一般 section：吃頁面預設（不要在每塊 section 再寫一次） */
 .ma-section {
+  background: transparent; // 讓它吃 page 背景
+  color: inherit; // 讓文字跟著 page 走
   scroll-margin-top: var(--anchor-offset);
   padding-top: clamp(
     var(--section-padding-top-sm),
@@ -209,6 +256,10 @@ small {
     5vw,
     var(--section-padding-bottom-lg)
   );
+}
+.ma-section .ma-section__title {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-h3);
 }
 /* ---------------------------------------------------------
    7) Focus styles (Accessibility)

@@ -1,0 +1,110 @@
+/* =========================================================
+   _form.scss
+   - 共用表單元素放最上面，避免各區塊重寫
+   ========================================================= */
+
+/* Base */
+form {
+  width: 100%;
+}
+
+/* =========================================================
+   1) Global Form Controls (共用)
+   ========================================================= */
+
+/* 你可以依專案習慣調整 selector 範圍：
+   - 若你希望全站都吃到：直接用 input/textarea/select
+   - 若你希望只吃設計系統區塊：可改成 .ma-form input... 之類
+*/
+input,
+textarea,
+select {
+  color: var(--color-black);
+  //font-size: 14px;
+  //line-height: 1.4;
+}
+
+/* Placeholder 統一 */
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-gray-500);
+}
+
+/* Focus 統一：不要 outline（包含鍵盤 focus） */
+input:focus,
+textarea:focus,
+select:focus,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: none;
+}
+
+/* 如果你也希望不要出現 Safari/Chrome 的外框陰影，可加這段 */
+input:focus,
+textarea:focus,
+select:focus {
+  box-shadow: none;
+}
+
+/* =========================================================
+   2) Search Form (元件層：只放「search 特有」的結構與行為)
+   ========================================================= */
+
+.ma-search-form {
+  &__box {
+    display: flex;
+    align-items: center;
+    gap: 0;
+
+    /* 🔑 寬度控制在 box */
+    width: 100%;
+    @include respond-min($bp-md) {
+      width: 60%;
+    }
+    background-color: var(--color-white);
+    border: 1px solid var(--border-gray-light);
+    height: 44px;
+    padding: clamp(var(--space-4), 1vw, var(--space-16));
+    border-radius: var(--radius-lg);
+  }
+
+  /* Icon Buttons inside search */
+  .ma-icon-btn {
+    flex-shrink: 0;
+    opacity: 0.8;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  /* 左側放大鏡（純裝飾） */
+  &__icon {
+    pointer-events: none;
+  }
+
+  /* Search Input：只保留「search 欄位才需要」的 layout/reset */
+  &__input {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+
+    /* 移除 browser 預設 search 樣式 */
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      display: none;
+    }
+  }
+
+  /* Clear Button */
+  &__clear {
+    // reset 行為由 browser 處理
+  }
+}

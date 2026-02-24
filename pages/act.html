@@ -1,12 +1,390 @@
 <!doctype html>
 <html lang="en">
   <%- include('./layout/head'); -%>
-  <body>
+
+  <body class="ma-page ma-page--dark">
     <%- include('./layout/header'); -%>
-    <main class="ma-main">ACT</main>
+
+    <main class="ma-main">
+      <!-- 麵包屑導覽列: -->
+      <!-- 目前頁面連結加上: .is-active -->
+      <nav class="ma-breadcrumb" aria-label="Breadcrumb">
+        <div class="ma-container">
+          <ol class="ma-breadcrumb__list">
+            <li class="ma-breadcrumb__item"><a href="index.html">首頁</a></li>
+            <li class="ma-breadcrumb__item is-active" aria-current="page">
+              ACT 鏈證
+            </li>
+          </ol>
+        </div>
+      </nav>
+      <section class="ma-section ma-act">
+        <div class="ma-container">
+          <div class="ma-inner">
+            <!-- 0: intro -->
+            <article class="ma-act__item ma-act__item--intro">
+              <div class="ma-act__content">
+                <div class="ma-act__media">
+                  <img src="/images/act_image.png" alt="ACT 藝術資産鏈證" />
+                </div>
+
+                <div class="ma-act__body">
+                  <h1 class="ma-act__page-title">ACT 藝術資產鏈證</h1>
+                  <p class="ma-act__desc">
+                    藝術品的身份、價值與流通，被世界理解與信任。 ACT
+                    是一套以區塊鏈 RWA
+                    運用為基礎的藝術資產鏈證系統，為藝術品建立可驗證身份、可追溯來源，以及跨國流通的信任基礎。
+                  </p>
+                  <div class="ma-act__cta">
+                    <a href="line.html" class="ma-btn ma-btn--outline-gold"
+                      >直接加入鏈證</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 01 -->
+            <article class="ma-act__item ma-act__item--step">
+              <div class="ma-act__content">
+                <div class="ma-act__media">
+                  <img src="/images/act_01_image.png" alt="什麼是 ACT ?" />
+                </div>
+
+                <div class="ma-act__body">
+                  <header class="ma-act__header">
+                    <p class="ma-act__no">01</p>
+                    <h2 class="ma-act__title">什麼是 ACT ?</h2>
+                  </header>
+
+                  <p class="ma-act__desc">
+                    藝術品的身份、價值與流通，被世界理解與信任。 ACT
+                    是一套以區塊鏈 RWA
+                    運用為基礎的藝術資產鏈證系統，為藝術品建立可驗證身份、可追溯來源，以及跨國流通的信任基礎。
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- 02 -->
+            <article class="ma-act__item ma-act__item--step">
+              <div class="ma-act__content">
+                <div class="ma-act__media">
+                  <img
+                    src="/images/act_02_image.png"
+                    alt="藝術品最堅固的價值防護"
+                  />
+                </div>
+
+                <div class="ma-act__body">
+                  <header class="ma-act__header">
+                    <p class="ma-act__no">02</p>
+                    <h2 class="ma-act__title">藝術品最堅固的價值防護</h2>
+                  </header>
+
+                  <p class="ma-act__desc">
+                    ACT為藝術品建立一套結合以太坊區塊鏈與制度設計的價值防護機制:
+                  </p>
+
+                  <ol class="ma-act__list">
+                    <li>藝術家在世真跡證明：由藝術家本人建立的真跡認定。</li>
+                    <li>
+                      <span class="ma-act__text-accent">專利</span
+                      >智慧財產權管理上鏈：作品權利清楚記錄，避免爭議。
+                    </li>
+                    <li>
+                      可控式公開實價登入：經同意登錄，讓市場在信任中走向更健全的發展。
+                    </li>
+                    <li>
+                      二級市場版稅機制：作品流通後，藝術家仍可參與其長期價值。
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </article>
+
+            <!-- 03 -->
+            <article class="ma-act__item ma-act__item--step">
+              <div class="ma-act__content">
+                <div class="ma-act__media">
+                  <img
+                    src="/images/act_03_image.png"
+                    alt="藝術品數位特徵鑑定"
+                  />
+                </div>
+
+                <div class="ma-act__body">
+                  <header class="ma-act__header">
+                    <p class="ma-act__no">03</p>
+                    <h2 class="ma-act__title">藝術品數位特徵鑑定</h2>
+                  </header>
+
+                  <p class="ma-act__kicker">
+                    真偽可驗證 ｜ 身分可追溯 ｜ 資產可流通 ｜ 制度化信任
+                  </p>
+                  <p class="ma-act__desc">
+                    ACT
+                    鏈證內建「數位特徵鑑定」機制，將藝術品的關鍵影像特徵與權利資訊轉化為可驗證的數據，並永久封存於區塊鏈中，形成專屬且不可竄改的藝術資產憑證。
+                  </p>
+                </div>
+              </div>
+
+              <div class="ma-act__icons">
+                <div class="ma-act__icon-card">
+                  <div class="ma-act__icon-wrap" aria-hidden="true">
+                    <img
+                      class="ma-act__icon"
+                      src="/images/act_03_icon01.png"
+                      alt=""
+                    />
+                  </div>
+                  <h3 class="ma-act__icon-title">數位身分上鏈</h3>
+                  <p class="ma-act__icon-desc">
+                    藝術家或著作權人認證，生成唯一 Token
+                    ID，記錄作品特徵與權利資訊。
+                  </p>
+                </div>
+
+                <div class="ma-act__icon-card">
+                  <div class="ma-act__icon-wrap" aria-hidden="true">
+                    <img
+                      class="ma-act__icon"
+                      src="/images/act_03_icon02.png"
+                      alt=""
+                    />
+                  </div>
+                  <h3 class="ma-act__icon-title">影像識別</h3>
+                  <p class="ma-act__icon-desc">
+                    高解析影像比對鏈上資料，分析筆觸、色彩、肌理與構圖。
+                  </p>
+                </div>
+
+                <div class="ma-act__icon-card">
+                  <div class="ma-act__icon-wrap" aria-hidden="true">
+                    <img
+                      class="ma-act__icon"
+                      src="/images/act_03_icon03.png"
+                      alt=""
+                    />
+                  </div>
+                  <h3 class="ma-act__icon-title">鑑定報告生成</h3>
+                  <p class="ma-act__icon-desc">
+                    產出清楚、可重現的鑑定結論與依據報告。
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- 04 -->
+            <article class="ma-act__item ma-act__item--step">
+              <div class="ma-act__content">
+                <div class="ma-act__media">
+                  <img
+                    src="/images/act_04_image.png"
+                    alt="藝術家生前最終、最權威的真跡證書"
+                  />
+                </div>
+
+                <div class="ma-act__body">
+                  <header class="ma-act__header">
+                    <p class="ma-act__no">04</p>
+                    <h2 class="ma-act__title">
+                      藝術家生前最終、最權威的真跡證書
+                    </h2>
+                  </header>
+
+                  <p class="ma-act__desc">
+                    成熟的藝術生涯，不只在於創作完成作品，也在於生前為作品留下清楚、不可被誤解的定義。
+                  </p>
+                </div>
+              </div>
+
+              <div class="ma-act__icons">
+                <div class="ma-act__icon-card">
+                  <div class="ma-act__icon-wrap" aria-hidden="true">
+                    <img
+                      class="ma-act__icon"
+                      src="/images/act_04_icon01.png"
+                      alt=""
+                    />
+                  </div>
+                  <h3 class="ma-act__icon-title">藝術家本人認定</h3>
+                  <p class="ma-act__icon-desc">
+                    藝術家在世時的親自確認，確保作品創意與歸屬由本人清楚界定。
+                  </p>
+                </div>
+
+                <div class="ma-act__icon-card">
+                  <div class="ma-act__icon-wrap" aria-hidden="true">
+                    <img
+                      class="ma-act__icon"
+                      src="/images/act_04_icon02.png"
+                      alt=""
+                    />
+                  </div>
+                  <h3 class="ma-act__icon-title">建立於全球化區塊鏈基礎</h3>
+                  <p class="ma-act__icon-desc">
+                    透過不可竄改性，讓作品資訊得以長期保存，具跨時域的可追溯性。
+                  </p>
+                </div>
+
+                <div class="ma-act__icon-card">
+                  <div class="ma-act__icon-wrap" aria-hidden="true">
+                    <img
+                      class="ma-act__icon"
+                      src="/images/act_04_icon03.png"
+                      alt=""
+                    />
+                  </div>
+                  <h3 class="ma-act__icon-title">支援作品未來流通與版稅機制</h3>
+                  <p class="ma-act__icon-desc">
+                    為作品的展覽、授權與後續流通建立依據，讓創作者的權益能在未來持續被尊重與實現。
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- 05 -->
+            <article class="ma-act__item ma-act__item--step">
+              <div class="ma-act__content">
+                <div class="ma-act__media">
+                  <img
+                    src="/images/act_05_image.png"
+                    alt="讓收藏成為可被證明的資產"
+                  />
+                </div>
+
+                <div class="ma-act__body">
+                  <header class="ma-act__header">
+                    <p class="ma-act__no">05</p>
+                    <h2 class="ma-act__title">讓收藏成為可被證明的資產</h2>
+                  </header>
+
+                  <p class="ma-act__desc">
+                    ACT
+                    讓藝術品從『被擁有』，進一步成為「可被證明、可被管理的藝術資產」。
+                  </p>
+
+                  <ol class="ma-act__list">
+                    <li>
+                      不可篡改的鏈證：透過區塊鏈技術，確保作品資訊不可被竄改，為長期可信的鏈上證明。
+                    </li>
+                    <li>
+                      市場行情登入：經經同意的交易紀錄，累積可參考的市場資訊，建立更清楚、理性的價格脈絡。
+                    </li>
+                    <li>
+                      跨國交易流通：全球化鏈上紀錄，降低跨域的交易不確定性，能更順暢地進入國際市場。
+                    </li>
+                    <li>
+                      世代傳承資產：為收藏建立清楚的歸屬紀錄，協助在世代交接傳承時，維持價值的完整性。
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </article>
+
+            <!-- 06 -->
+            <article class="ma-act__item ma-act__item--step">
+              <div class="ma-act__content">
+                <div class="ma-act__media">
+                  <img
+                    src="/images/act_06_image.png"
+                    alt="Metaassets 交易平台與藝術品庫房集保中心"
+                  />
+                </div>
+
+                <div class="ma-act__body">
+                  <header class="ma-act__header">
+                    <p class="ma-act__no">
+                      06 <span class="ma-act__badge">COMING SOON</span>
+                    </p>
+                    <h2 class="ma-act__title">
+                      <span>Metaassets 交易平台</span
+                      ><span>與藝術品庫房集保中心</span>
+                    </h2>
+                  </header>
+
+                  <p class="ma-act__desc">
+                    ACT
+                    串聯鏈上證明、交易平台與實體庫房，讓藝術品的價值在數位與現實世界中同時成立。
+                  </p>
+                </div>
+              </div>
+
+              <div class="ma-act__icons">
+                <div class="ma-act__icon-card">
+                  <div class="ma-act__icon-wrap" aria-hidden="true">
+                    <img
+                      class="ma-act__icon"
+                      src="/images/act_06_icon01.png"
+                      alt=""
+                    />
+                  </div>
+                  <h3 class="ma-act__icon-title">
+                    <span>Metaassets</span><span>元宇宙資產交易平台</span>
+                  </h3>
+                  <p class="ma-act__icon-desc">
+                    作為藝術品的鏈上交易中樞，負責 ACT
+                    的發行、流通與權利移轉，讓藝術品的交易與授權，在鏈上清楚成立。
+                  </p>
+                </div>
+
+                <div class="ma-act__icon-card">
+                  <div class="ma-act__icon-wrap" aria-hidden="true">
+                    <img
+                      class="ma-act__icon"
+                      src="/images/act_06_icon02.png"
+                      alt=""
+                    />
+                  </div>
+                  <h3 class="ma-act__icon-title">
+                    <span>藝術品庫房</span><span>集保中心</span>
+                  </h3>
+                  <p class="ma-act__icon-desc">
+                    結合集保、交易與展示的專業藝術資產設施，以國際高規格藝術庫房體系為設計基礎，同時具備安全集保、交易交割與開放式展示的功能。
+                  </p>
+                </div>
+
+                <div class="ma-act__icon-card">
+                  <div class="ma-act__icon-wrap" aria-hidden="true">
+                    <img
+                      class="ma-act__icon"
+                      src="/images/act_06_icon03.png"
+                      alt=""
+                    />
+                  </div>
+                  <h3 class="ma-act__icon-title">
+                    <span>藝術資產交割與</span><span>驗證中心</span>
+                  </h3>
+                  <p class="ma-act__icon-desc">
+                    ACT 交易成立，即代表實體作品交付與權利成立。
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- CTA: 結尾區塊 -->
+            <article class="ma-act__item ma-act__item--cta">
+              <div class="ma-act__content">
+                <div class="ma-act__body">
+                  <p class="ma-act__desc">
+                    如有藝術品或收藏品交易需求，須先完成溯源認證並轉化為ACT，以確保交易的可信與安全。
+                  </p>
+                  <p>是否方便為您進一步說明相關服務內容？</p>
+                  <div class="ma-act__cta">
+                    <a href="line.html" class="ma-btn ma-btn--outline-gold"
+                      >好，我想加入鏈證和更詳細了解</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <%- include('./layout/footer'); -%>
-
     <script type="module" src="../ma-main.js"></script>
   </body>
 </html>

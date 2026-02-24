@@ -1,0 +1,29 @@
+/* =========================================================
+   List (Block)
+   ========================================================= */
+
+.ma-list {
+  &__wrap {
+    @include flex-col(var(--space-64));
+  }
+
+  &__grid {
+    --list-gap: var(--space-48);
+    @include flex-row(var(--list-gap));
+    flex-wrap: wrap;
+
+    // desktop / tablet up
+    // 2 欄：扣掉 1 個 gap，平均分給左右兩欄
+    @include respond-min($bp-md) {
+      > .ma-list__item {
+        flex: 0 0 calc(50% - (var(--list-gap) / 2));
+        max-width: calc(50% - (var(--list-gap) / 2));
+      }
+    }
+  }
+
+  &__item {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}

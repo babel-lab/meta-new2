@@ -1,3 +1,7 @@
+/* =========================================================
+   _index.scss
+   ========================================================= */
+
 /* ma-hero */
 .ma-hero,
 .ma-promo {
@@ -10,38 +14,52 @@
   height: 400px;
   overflow: hidden;
   background: var(--color-black);
+
   @include respond-min($bp-md) {
     height: 520px;
   }
+
   .ma-container {
     height: 100%;
   }
+
   .ma-inner {
     pointer-events: none;
     position: absolute;
     z-index: 3;
     height: 100%;
   }
-  .ma-hero__text {
+
+  &__text {
     pointer-events: auto;
     @include flex-col(var(--space-24));
     align-items: flex-start;
     justify-content: center;
     color: var(--color-white);
   }
-  .ma-hero__titles {
+
+  &__titles {
     @include flex-col(var(--space-4));
   }
-  .ma-hero__title-en {
+
+  &__title-en {
+    font-size: var(--fs-h2);
     font-weight: var(--fw-light);
   }
-  .ma-hero__title-zh {
+
+  &__title-zh {
     font-weight: var(--fw-medium);
   }
-  .ma-hero__desc {
+
+  &__subtitle {
+    font-size: var(--fs-h3);
+  }
+
+  &__desc {
     margin-top: var(--space-8);
   }
-  .ma-hero__overlay {
+
+  &__overlay {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -58,10 +76,11 @@
   }
 
   /* Swiper 對應CLASS */
-  .ma-hero__swiper {
+  &__swiper {
     position: absolute;
     inset: 0; //須有
     z-index: 0;
+
     img,
     video {
       width: 100%;
@@ -71,10 +90,22 @@
   }
 }
 
+//首頁特調
+.ma-hero {
+  & ~ .ma-assets {
+    background: var(--gradient-dark-soft);
+  }
+  & ~ .ma-collect {
+    background: var(--color-white);
+    color: var(--color-black);
+  }
+}
+
 /* ma-assets */
 .ma-assets {
-  background: var(--gradient-dark-soft);
+  //background: var(--gradient-dark-soft);
   padding-block: var(--space-48);
+
   .ma-inner {
     color: var(--color-white);
     padding-block: var(--space-24);
@@ -93,6 +124,7 @@
       --card-category-color: var(--color-brand-primary);
       --card-category-icon: url("/images/icon_assets_actart.png");
     }
+
     &--print-art {
       --card-category-icon: url("/images/icon_assets_printart.png");
     }
@@ -105,14 +137,17 @@
   width: 100%;
   height: 400px;
   overflow: hidden;
+
   @include respond-min($bp-md) {
     height: 440px;
   }
+
   /* Swiper 對應CLASS */
-  .ma-promo__swiper {
+  &__swiper {
     position: absolute;
     inset: 0; //須有
     z-index: 0;
+
     img,
     video {
       width: 100%;
@@ -125,12 +160,14 @@
 /* ma-collect */
 .ma-collect {
   padding-top: var(--space-48);
+
   .ma-inner {
     padding-block: var(--space-24);
     justify-content: space-between;
     border-bottom: 1px solid var(--color-black);
     margin-bottom: var(--space-48);
   }
+
   .ma-card {
     /* theme override：只改 ma-card 的變數 */
     --card-bg: var(--color-gray-200);
@@ -139,9 +176,11 @@
 
     /* 類別色字 */
     --card-category-color: var(--color-gray-600);
+
     &--act-art {
       --card-category-icon: url("/images/icon_collect_actart.png");
     }
+
     &--print-art {
       --card-category-icon: url("/images/icon_collect_printart.png");
     }
@@ -153,6 +192,7 @@
   background: var(--color-black);
   padding-top: var(--space-48);
   padding-bottom: 0;
+
   .ma-inner {
     //border-width: 1px 0;
     //border-style: solid;
@@ -162,20 +202,12 @@
     padding-block: var(--space-32);
     @include flex-col($gap: 0);
     color: var(--color-white);
-    p {
-      font-size: var(--fs-small);
-    }
   }
 
   &__intro,
   &__about {
     padding-block: var(--space-32);
     @include flex-col(var(--space-48));
-
-    .ma-service__text,
-    .ma-service__desc {
-      width: 100%;
-    }
   }
 
   &__intro {
@@ -183,30 +215,43 @@
       margin-top: var(--space-16);
       width: fit-content;
     }
+
     @include respond-min($bp-mobile-lg) {
       @include flex-row(var(--space-32));
+
       .ma-service__text {
         width: 40%;
       }
+
       .ma-service__desc {
         width: 60%;
       }
     }
   }
+
   &__about {
     scroll-margin-top: var(--anchor-offset);
-
     gap: var(--space-16);
     padding: var(--space-48) var(--space-32);
     border-top: 1px solid var(--color-gray-500);
+
     .ma-service__title-zh {
       padding-bottom: var(--space-8);
+    }
+  }
+
+  &__desc {
+    width: 100%;
+
+    & p {
+      font-size: var(--fs-small);
     }
   }
 
   &__title-zh,
   p {
     padding-bottom: var(--space-16);
+
     span {
       display: block;
     }
@@ -215,11 +260,17 @@
   &__title-zh {
     font-weight: var(--fw-light);
   }
+
+  &__title-en {
+    font-size: var(--fs-h5);
+  }
+
   .ma-action-group--features {
     margin-top: var(--space-32);
     justify-content: space-between;
     align-items: flex-start;
   }
+
   /* 單一 ICON 模組 */
   .ma-action {
     @include flex-col(var(--space-8));

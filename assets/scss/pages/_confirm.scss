@@ -1,0 +1,17 @@
+.ma-confirm {
+  .ma-inner {
+    margin: auto;
+    width: 80%;
+    @include flex-col(var(--space-48));
+  }
+
+  &__artwork {
+  }
+
+  &__group {
+    @include flex-col(var(--space-48));
+    @include respond-min($bp-md) {
+      @include flex-row(var(--space-48));
+    }
+  }
+}

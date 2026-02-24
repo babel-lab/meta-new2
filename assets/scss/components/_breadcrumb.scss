@@ -1,0 +1,71 @@
+/* components/_breadcrumb.scss */
+.ma-breadcrumb {
+  padding: var(--space-16) 0;
+  font-size: var(--font-sm);
+
+  &__list {
+    @include flex-row(var(--space-8));
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    &:not(:last-child)::after {
+      content: ">";
+      margin-left: var(--space-8);
+      opacity: 0.6;
+    }
+  }
+
+  /* =========================
+     White background (default)
+     ========================= */
+  /*
+  &--light {
+    background-color: var(--color-white);
+    color: var(--color-gray-700);
+
+    a {
+      color: var(--color-gray-700);
+
+      &:hover {
+        color: var(--color-brand-primary);
+      }
+    }
+
+    //[aria-current="page"] {
+    .is-active {
+      color: var(--color-gray-900);
+      font-weight: 500;
+    }
+  }
+*/
+  /* =========================
+     Dark background
+     ========================= */
+  /*
+  &--dark {
+    background-color: var(--color-black);
+    color: rgba(255, 255, 255, 0.75);
+
+    a {
+      color: rgba(255, 255, 255, 0.75);
+
+      &:hover {
+        color: var(--color-brand-primary-soft);
+      }
+    }
+
+    //[aria-current="page"] {
+    .is-active {
+      color: #ffffff;
+      font-weight: 500;
+    }
+
+    &__item:not(:last-child)::after {
+      color: rgba(255, 255, 255, 0.4);
+    }
+  }
+    */
+}

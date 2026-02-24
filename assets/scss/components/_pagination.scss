@@ -1,0 +1,107 @@
+/* =========================================================
+   Pagination Component
+   - Block: ma-pagination
+   - Elements: __btn, __pages, __ellipsis
+   - States: .is-active, .is-disabled
+   ========================================================= */
+
+.ma-pagination {
+  @include flex-row(var(--space-12));
+  justify-content: center;
+
+  /* ✅ 跟著 page 主題字色走（.ma-page 的 color） */
+  color: inherit;
+
+  /* active 狀態（保留你說的：金底 OK） */
+  --pagination-active-bg: var(--color-brand-primary);
+  --pagination-active-fg: var(--color-black);
+
+  /* hover 想變金色 */
+  --pagination-hover: var(--color-brand-primary);
+
+  &__btn {
+    min-width: 44px;
+    height: 44px;
+    padding: 0 12px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+
+    /* ✅ 字色跟著主題 */
+    color: inherit;
+
+    /* ✅ 邊框跟著字色（最穩：currentColor） */
+    border: 1px solid currentColor;
+    border-radius: 8px;
+
+    cursor: pointer;
+    user-select: none;
+
+    transition:
+      color 0.2s ease,
+      border-color 0.2s ease,
+      background-color 0.2s ease;
+
+    &:hover:not(.is-active):not(:disabled) {
+      color: var(--pagination-hover);
+      border-color: currentColor; /* hover 時邊框跟著 hover 字色 */
+    }
+
+    &.is-active {
+      background: var(--pagination-active-bg);
+      color: var(--pagination-active-fg);
+      border-color: var(--pagination-active-bg);
+      cursor: default;
+    }
+
+    &:disabled,
+    &.is-disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    /* 箭頭按鈕（如果你真的要比一般字大，留；不然可整段刪掉） */
+    &--prev,
+    &--next {
+      padding: 0;
+      line-height: 1;
+    }
+  }
+
+  &__pages {
+    display: flex;
+    align-items: center;
+    gap: var(--space-12);
+
+    max-width: 60vw;
+    overflow: hidden;
+  }
+
+  &__ellipsis {
+    min-width: 24px;
+    text-align: center;
+
+    /* ✅ 省掉 color-mix：用透明度就好，也能跟著主題字色 */
+    opacity: 0.6;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  @media (max-width: 768px) {
+    gap: var(--space-8);
+
+    &__pages {
+      max-width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}

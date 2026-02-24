@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <%- include('./layout/head'); -%>
+
+  <body class="ma-page ma-page--dark">
+    <%- include('./layout/header'); -%>
+
+    <main class="ma-main">
+      <!-- 會進入購買頁是: 鏈證藝術, .ma-assets -->
+      <section
+        class="ma-section ma-assets ma-confirm"
+        aria-labelledby="ma-confirm-heading"
+      >
+        <div class="ma-container">
+          <h2 class="ma-section__title">購買確認</h2>
+          <div class="ma-inner">
+            <!-- 左：作品圖 -->
+            <figure class="ma-confirm__artwork">
+              <img
+                class="ma-confirm__artwork-img"
+                src="https://images.unsplash.com/photo-1579541814924-49fef17c5be5?q=80&w=1000&auto=format&fit=crop"
+                alt="Seeing Eyes"
+              />
+            </figure>
+
+            <!--
+  顯示規則：
+ 
+  注意事項（給後端）：
+  - 卡片類型 class（.ma-card--act-art / .ma-card--print-art）
+    由程式依資料類型動態產生，不手動寫死於 HTML
+    .ma-card__category 的<h4>文字有2種: 鏈證藝術, 鏈證版畫
+-->
+            <!-- 右：共用卡片 + 提示 + 按鈕 -->
+            <div class="ma-confirm__group">
+              <article class="ma-card ma-card--act-art" aria-label="作品資訊">
+                <div class="ma-card__content">
+                  <div class="ma-card__category">
+                    <span class="ma-card__category-text">鏈證藝術</span>
+                    <span class="ma-card__icon" aria-hidden="true"></span>
+                  </div>
+
+                  <div class="ma-card__header">
+                    <h3 class="ma-card__title">Seeing Eyes</h3>
+                    <p class="ma-card__author">理查德・博伊德・鄧洛普</p>
+                  </div>
+
+                  <div class="ma-card__body">
+                    <p class="ma-card__info">
+                      <span>丙烯畫 / 畫布</span>
+                      <span>100 × 100 × 100 cm</span>
+                    </p>
+                    <p class="ma-card__price">
+                      <span>1,000.00</span>
+                      <span>ETH(USD)</span>
+                    </p>
+                  </div>
+
+                  <div class="ma-card__footer">
+                    <p class="ma-card__id">
+                      <span>M2023APG000147PA</span>
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <div class="ma-confirm__prompt" aria-label="購買前確認">
+                <p class="ma-confirm__prompt-text">
+                  確認詢問此藏家收藏<br />
+                  藝術品嗎？
+                </p>
+
+                <div class="ma-confirm__actions" aria-label="操作按鈕">
+                  <button
+                    type="button"
+                    class="ma-btn ma-btn--gray-dark"
+                    onclick="history.back()"
+                  >
+                    返回
+                  </button>
+
+                  <a href="message.html" class="ma-btn ma-btn--outline-gold">
+                    確認
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <%- include('./layout/footer'); -%>
+    <script type="module" src="../ma-main.js"></script>
+  </body>
+</html>

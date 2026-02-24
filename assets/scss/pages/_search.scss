@@ -1,6 +1,47 @@
+/* =========================================================
+   List Grid (shared layout skeleton)
+   - used by ma-assets / ma-collect (and future sections)
+   ========================================================= */
+
+.ma-list-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ma-list-grid__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.ma-list-grid__item {
+  flex: 0 0 calc(50% - 8px); /* desktop 2 cols */
+  min-width: 0;
+}
+
+@media (max-width: 767px) {
+  .ma-list-grid {
+    gap: 16px;
+  }
+
+  .ma-list-grid__list {
+    gap: 12px;
+  }
+
+  .ma-list-grid__item {
+    flex: 0 0 100%; /* mobile 1 col */
+  }
+}
+
 .ma-desc {
   .ma-inner {
     @include flex-col(var(--space-16));
+  }
+  &__title {
+    font-size: var(--fs-body); // 視覺小
+    font-weight: var(--fw-medium);
+    text-transform: none;
   }
   p {
     font-size: var(--fs-small);
