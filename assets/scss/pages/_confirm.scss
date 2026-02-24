@@ -1,17 +1,41 @@
 .ma-confirm {
-  .ma-inner {
+  .ma-container {
+    @include flex-col(var(--space-32));
+  }
+  &__wrap {
     margin: auto;
     width: 80%;
-    @include flex-col(var(--space-48));
+    @include flex-col(var(--space-32));
   }
 
   &__artwork {
+    margin: auto;
+    display: flex;
+    width: 100%;
   }
 
   &__group {
+    // 小版：直式 1 排 1 個
     @include flex-col(var(--space-48));
+
+    // 中大版：同一排 2 個（50/50）
     @include respond-min($bp-md) {
-      @include flex-row(var(--space-48));
+      @include flex-row(var(--space-32));
+      align-items: center;
+
+      // 讓兩個子區塊各佔一半
+      > .ma-card,
+      > .ma-confirm__prompt {
+        flex: 1 1 0;
+        min-width: 0; // 避免內容太長把版面撐爆
+      }
+
+      > .ma-card {
+        width: 100%;
+      }
     }
+  }
+  &__prompt {
+    text-align: center;
   }
 }
