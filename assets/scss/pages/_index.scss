@@ -90,19 +90,6 @@
   }
 }
 
-/* 共用 */
-.ma-assets,
-.ma-collect {
-  .ma-section__header {
-    padding-block: var(--space-24);
-    @include flex-row(var(--space-24));
-    justify-content: space-between;
-    width: 100%;
-    border-bottom: 1px solid var(--page-text);
-    margin-bottom: var(--space-48);
-  }
-}
-
 //首頁特調
 .ma-hero {
   & ~ .ma-assets {

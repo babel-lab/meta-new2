@@ -237,30 +237,58 @@ small {
 }
 
 /* ---------------------------------------------------------
-   6) Layout: Section spacing
-   - Vertical spacing between major sections
+   6) Layout: Section
+   - Base spacing + theme inheritance
 --------------------------------------------------------- */
-/* 一般 section：吃頁面預設（不要在每塊 section 再寫一次） */
+
+/* Section block：只管「區塊間距/繼承」，不要塞視覺樣式 */
 .ma-section {
-  background: transparent; // 讓它吃 page 背景
-  color: inherit; // 讓文字跟著 page 走
+  background: transparent; /* 吃 page 背景 */
+  color: inherit; /* 吃 page 文字色 */
   scroll-margin-top: var(--anchor-offset);
-  padding-top: clamp(
+
+  padding-block: clamp(
     var(--section-padding-top-sm),
     3vw,
     var(--section-padding-top-lg)
   );
 
-  padding-bottom: clamp(
-    var(--section-padding-bottom-sm),
-    5vw,
-    var(--section-padding-bottom-lg)
-  );
+  /* 若你上下 padding 想分開可再拆回來
+  padding-top: clamp(...);
+  padding-bottom: clamp(...);
+  */
 }
-.ma-section .ma-section__title {
+
+/* ---------------------------------------------------------
+   6.1) Section Title (shared)
+   - Default title scale for section headings
+--------------------------------------------------------- */
+
+.ma-section__title {
   font-size: var(--fs-h3);
   font-weight: var(--fw-h3);
 }
+
+/* ---------------------------------------------------------
+   6.2) Section Header (shared)
+   - Divider follows current text color
+   - Header is optional: section can exist without it
+--------------------------------------------------------- */
+/* 共用 */
+//.ma-assets,
+//.ma-collect {
+.ma-section__header {
+  padding-block: var(--space-24);
+  @include flex-row(var(--space-24));
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: var(--space-48);
+
+  /* 底線跟著「目前文字色」(= currentColor) */
+  border-bottom: 1px solid currentColor;
+}
+//}
+
 /* ---------------------------------------------------------
    7) Focus styles (Accessibility)
 --------------------------------------------------------- */
