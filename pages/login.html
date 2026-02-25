@@ -1,77 +1,121 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-Hant">
   <%- include('./layout/head'); -%>
-  <body>
+
+  <body class="ma-page ma-page--dark">
     <%- include('./layout/header'); -%>
+
     <main class="ma-main">
-      <section class="ma-section ma-login">
+      <section class="ma-section ma-login" aria-labelledby="ma-login-title">
         <div class="ma-container">
-          <div class="ma-login__card">
-            <!-- 標題 -->
-            <header class="ma-login__header">
-              <h1 class="ma-login__title">錢包登入</h1>
-            </header>
-
-            <!-- 表單 -->
-            <form class="ma-login__form" action="confirm.html" method="post">
-              <!-- 姓名 -->
-              <div class="ma-form-field">
-                <input
-                  type="text"
-                  name="name"
-                  class="ma-input"
-                  placeholder="輸入姓名"
-                  required
-                />
+          <div class="ma-inner">
+            <article
+              class="ma-form-panel ma-form-panel--narrow ma-login__content"
+            >
+              <div class="ma-form-panel__header">
+                <h2 class="ma-form__title">錢包登入</h2>
+                <span class="ma-form-divider" aria-hidden="true"></span>
               </div>
+              <div class="ma-form-panel__body">
+                <!-- 登入後頁面要換連結, 目前為暫放連結 -->
+                <form
+                  class="ma-login-form ma-form-stack"
+                  action="confirm.html"
+                  method="post"
+                  novalidate
+                >
+                  <!-- 姓名 -->
+                  <div class="ma-field">
+                    <label class="ma-field__label u-sr-only" for="login-name"
+                      >姓名</label
+                    >
+                    <div class="ma-field__control">
+                      <input
+                        class="ma-field__input"
+                        id="login-name"
+                        name="name"
+                        type="text"
+                        autocomplete="name"
+                        placeholder="輸入姓名"
+                        aria-invalid="false"
+                      />
+                    </div>
+                  </div>
 
-              <!-- 電話 -->
-              <div class="ma-form-field">
-                <input
-                  type="tel"
-                  name="phone"
-                  class="ma-input"
-                  placeholder="輸入電話號碼"
-                  required
-                />
-                <p class="ma-form-error">輸入資訊有誤，請再輸入一次</p>
+                  <!-- 電話 -->
+                  <div class="ma-field is-error">
+                    <label class="ma-field__label u-sr-only" for="login-phone"
+                      >電話號碼</label
+                    >
+                    <div class="ma-field__control">
+                      <input
+                        class="ma-field__input"
+                        id="login-phone"
+                        name="phone"
+                        type="tel"
+                        inputmode="tel"
+                        autocomplete="tel"
+                        placeholder="輸入電話號碼"
+                        aria-invalid="true"
+                        aria-describedby="login-phone-error"
+                      />
+                    </div>
+                    <p class="ma-field__error" id="login-phone-error">
+                      輸入資訊有誤，請再輸入一次
+                    </p>
+                  </div>
+
+                  <!-- 驗證碼 -->
+                  <div class="ma-field is-error">
+                    <label class="ma-field__label u-sr-only" for="login-otp"
+                      >驗證碼</label
+                    >
+                    <div class="ma-field__control">
+                      <input
+                        class="ma-field__input"
+                        id="login-otp"
+                        name="otp"
+                        type="text"
+                        inputmode="numeric"
+                        autocomplete="one-time-code"
+                        placeholder="輸入驗證碼"
+                        aria-invalid="true"
+                        aria-describedby="login-otp-error"
+                      />
+                    </div>
+                    <p class="ma-field__error" id="login-otp-error">
+                      驗證碼時效已過，請再重新輸入<br />號碼發送一次
+                    </p>
+                  </div>
+
+                  <!-- 記住我 -->
+                  <div class="ma-login-form__row">
+                    <label class="ma-check">
+                      <input
+                        class="ma-check__input"
+                        type="checkbox"
+                        name="remember"
+                      />
+                      <span class="ma-check__box" aria-hidden="true"></span>
+                      <span class="ma-check__label">記住我</span>
+                    </label>
+                  </div>
+
+                  <!-- Submit -->
+                  <div class="ma-form__actions">
+                    <button class="ma-btn ma-btn--gray-dark" type="submit">
+                      登 入
+                    </button>
+                  </div>
+                </form>
               </div>
-
-              <!-- 驗證碼 -->
-              <div class="ma-form-field">
-                <input
-                  type="text"
-                  name="otp"
-                  class="ma-input"
-                  placeholder="輸入驗證碼"
-                />
-                <p class="ma-form-error">
-                  驗證碼時效已過，請再重新輸入<br />
-                  號碼發送一次
-                </p>
-              </div>
-
-              <!-- 記住我 -->
-              <label class="ma-checkbox">
-                <input type="checkbox" name="remember" />
-                <span>記住我</span>
-              </label>
-
-              <!-- 按鈕 -->
-              <button
-                type="submit"
-                class="ma-btn ma-btn--gray-dark ma-login__submit"
-              >
-                登入
-              </button>
-            </form>
+            </article>
           </div>
         </div>
       </section>
     </main>
 
     <%- include('./layout/footer'); -%>
-
     <script type="module" src="../ma-main.js"></script>
   </body>
 </html>

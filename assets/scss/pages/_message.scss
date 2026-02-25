@@ -1,0 +1,45 @@
+/* =========================================================
+   _message.scss
+   - Success / Info Message Page
+   - Page scope: .ma-message
+   ========================================================= */
+
+.ma-message {
+  .ma-inner {
+    padding: var(--space-64);
+  }
+
+  /* message 內容卡片：改用 .ma-form-panel 當殼
+     所以這裡不要再寫 background / radius / padding */
+  &__content {
+    /* 若你希望 message 卡片內容永遠置中，可留這兩個 */
+    text-align: center;
+  }
+
+  /* 中央 icon 圈圈（message 專有） */
+  &__icon {
+    width: 84px;
+    height: 84px;
+    border-radius: 999px;
+
+    border: 3px solid var(--color-brand-primary);
+
+    @include flex-row(0);
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__icon-img {
+    display: block;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+
+  /* 文字排版（只留 message 專有的限制） */
+  &__desc {
+    margin: 0;
+    max-width: 36ch;
+    opacity: 0.92;
+  }
+}

@@ -1,32 +1,38 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-Hant">
   <%- include('./layout/head'); -%>
-  <!-- 有些頁面的背景色是黑色 -->
+
   <body class="ma-page ma-page--dark">
     <%- include('./layout/header'); -%>
-    <main class="ma-main"></main>
-      <section class="ma-section ma-line">
+
+    <main class="ma-main">
+      <section class="ma-section ma-line" aria-labelledby="ma-line-title">
         <div class="ma-container">
           <div class="ma-inner">
-            <!-- QR Card -->
-            <div class="ma-line__content" aria-label="LINE QR Code">
-              <div class="ma-line_qrcode">
-                <img
-                  class="ma-qr-card__img"
-                  src="/images/line.png"
-                  alt="LINE QR Code"
-                  loading="lazy"
-                />
+            <article
+              class="ma-form-panel ma-form-panel--center ma-line__content"
+            >
+              <div
+                class="ma-form-panel__body ma-form-stack ma-form-stack--loose"
+              >
+                <figure class="ma-line__qrcode" aria-label="LINE QR Code">
+                  <img
+                    class="ma-line__qrcode-img"
+                    src="/images/line.png"
+                    alt="LINE QR Code"
+                    loading="lazy"
+                  />
+                </figure>
+
+                <p class="ma-line__desc">掃描行動條碼加入好友</p>
               </div>
-              <p class="ma-qr-card__desc">掃描行動條碼加入好友</p>
-            </div>
+            </article>
           </div>
         </div>
       </section>
     </main>
 
     <%- include('./layout/footer'); -%>
-
     <script type="module" src="../ma-main.js"></script>
   </body>
 </html>

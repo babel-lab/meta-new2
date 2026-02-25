@@ -1,7 +1,5 @@
 import "./assets/scss/ma-main.scss";
 
-console.log("Metaassets New Website!");
-
 //HEADER STICKY
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector(".ma-header");

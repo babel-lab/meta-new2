@@ -1,9 +1,13 @@
 /* =========================================================
    _form.scss
-   - 共用表單元素放最上面，避免各區塊重寫
+   - Global form system
+   - Base reset + shared components
    ========================================================= */
 
-/* Base */
+/* =========================================================
+   Base
+   ========================================================= */
+
 form {
   width: 100%;
 }
@@ -12,25 +16,28 @@ form {
    1) Global Form Controls (共用)
    ========================================================= */
 
-/* 你可以依專案習慣調整 selector 範圍：
-   - 若你希望全站都吃到：直接用 input/textarea/select
-   - 若你希望只吃設計系統區塊：可改成 .ma-form input... 之類
+/*
+  selector 使用 input / textarea / select
+  - 若未來要限縮作用範圍，可改為 .ma-form input...
 */
 input,
 textarea,
 select {
   color: var(--color-black);
-  //font-size: 14px;
-  //line-height: 1.4;
+  font-family: inherit;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  letter-spacing: 0.04em;
 }
 
 /* Placeholder 統一 */
 input::placeholder,
 textarea::placeholder {
   color: var(--color-gray-500);
+  opacity: 1;
 }
 
-/* Focus 統一：不要 outline（包含鍵盤 focus） */
+/* Focus 統一（鍵盤與滑鼠） */
 input:focus,
 textarea:focus,
 select:focus,
@@ -40,7 +47,7 @@ select:focus-visible {
   outline: none;
 }
 
-/* 如果你也希望不要出現 Safari/Chrome 的外框陰影，可加這段 */
+/* 移除瀏覽器預設陰影 */
 input:focus,
 textarea:focus,
 select:focus {
@@ -48,7 +55,365 @@ select:focus {
 }
 
 /* =========================================================
-   2) Search Form (元件層：只放「search 特有」的結構與行為)
+   2) Accessibility Helper
+   ========================================================= */
+
+.u-sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* =========================================================
+   2.1) Form Heading (共用標題)
+   - 語意建議：用 h2（頁面 h1 留給 page title）
+   - Usage: <h2 class="ma-form__title">...</h2>
+   ========================================================= */
+
+.ma-form__title {
+  margin: 0;
+  font-size: var(--fs-h5);
+  font-weight: var(--fw-h5);
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  color: inherit;
+}
+
+/* =========================================================
+   3) Field Component (共用欄位)
+   - Block: ma-field
+   ========================================================= */
+
+.ma-field {
+  --field-bg: var(--color-white);
+  --field-fg: var(--color-black);
+  --field-placeholder: var(--color-gray-500);
+  --field-radius: var(--radius-lg);
+  --field-height: 56px;
+
+  width: 100%;
+
+  &__control {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: var(--field-height);
+    padding: 0 var(--space-24);
+
+    background: var(--field-bg);
+    border-radius: var(--field-radius);
+  }
+
+  &__input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+    color: var(--field-fg);
+
+    &::placeholder {
+      color: var(--field-placeholder);
+    }
+  }
+
+  &__error {
+    margin-top: var(--space-12);
+    text-align: center;
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    color: inherit;
+    opacity: 0.95;
+  }
+
+  /* 狀態：錯誤（目前只負責語意，不強制紅框） */
+  &.is-error {
+    // 若未來要視覺化錯誤，可在這裡加
+    // .ma-field__control {
+    //   outline: 1px solid var(--color-danger);
+    // }
+  }
+}
+
+/* =========================================================
+   4) Checkbox Component
+   - Block: ma-check
+   - Usage:
+     <label class="ma-check">
+       <input class="ma-check__input" type="checkbox" name="agree" />
+       <span class="ma-check__box" aria-hidden="true"></span>
+       <span class="ma-check__label">我同意服務條款</span>
+     </label>
+
+   - Notes:
+     1) 結構必須是 input + box（相鄰），因為使用 &__input:checked + &__box
+     2) 顏色走主題：--page-bg / --page-text
+   ========================================================= */
+
+.ma-check {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-12);
+  cursor: pointer;
+  user-select: none;
+
+  /* Checkbox tokens（可被 section / page 覆寫） */
+  --check-size: 18px;
+  --check-border: var(--page-text); /* 外框色 */
+  --check-bg-checked: var(--page-text); /* 勾選後底色 */
+  --check-tick: var(--page-bg); /* 勾勾顏色（反白） */
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &__box {
+    width: var(--check-size);
+    height: var(--check-size);
+    border: 2px solid var(--check-border);
+    border-radius: 2px;
+    display: inline-block;
+    flex-shrink: 0;
+    position: relative;
+
+    /* 勾勾（預設隱藏） */
+    &::after {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 1px;
+      width: 5px;
+      height: 10px;
+      border: 2px solid var(--check-tick);
+      border-top: 0;
+      border-left: 0;
+      transform: rotate(45deg);
+      opacity: 0;
+    }
+  }
+
+  &__label {
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+  }
+
+  /* checked 狀態 */
+  &__input:checked + &__box {
+    background: var(--check-bg-checked);
+
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  /* 鍵盤 focus（A11y） */
+  &__input:focus-visible + &__box {
+    outline: 2px solid var(--page-text);
+    outline-offset: 2px;
+  }
+}
+
+/* =========================================================
+   4.1) Radio Component
+   - Block: ma-radio
+   - Usage:
+     <label class="ma-radio">
+       <input class="ma-radio__input" type="radio" name="pay" value="card" />
+       <span class="ma-radio__circle" aria-hidden="true"></span>
+       <span class="ma-radio__label">信用卡</span>
+     </label>
+
+   - Notes:
+     1) 結構必須是 input + circle（相鄰），因為使用 &__input:checked + &__circle
+     2) 顏色走主題：--page-bg / --page-text
+   ========================================================= */
+
+.ma-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-12);
+  cursor: pointer;
+  user-select: none;
+
+  /* Radio tokens（可被 section / page 覆寫） */
+  --radio-size: 18px;
+  --radio-border: var(--page-text); /* 外框色 */
+  --radio-bg-checked: var(--page-text); /* 勾選後底色 */
+  --radio-dot: var(--page-bg); /* 中心點顏色（反白） */
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &__circle {
+    width: var(--radio-size);
+    height: var(--radio-size);
+    border: 2px solid var(--radio-border);
+    border-radius: 999px;
+    display: inline-block;
+    flex-shrink: 0;
+    position: relative;
+
+    /* 中心點（預設隱藏） */
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--radio-dot);
+      transform: translate(-50%, -50%);
+      opacity: 0;
+    }
+  }
+
+  &__label {
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+  }
+
+  /* checked 狀態 */
+  &__input:checked + &__circle {
+    background: var(--radio-bg-checked);
+
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  /* 鍵盤 focus（A11y） */
+  &__input:focus-visible + &__circle {
+    outline: 2px solid var(--page-text);
+    outline-offset: 2px;
+  }
+}
+
+/* =========================================================
+   5) Form Divider (共用裝飾線)
+   - Block: ma-form-divider
+   - Usage: <span class="ma-form-divider"></span>
+   ========================================================= */
+
+.ma-form-divider {
+  display: block;
+  width: 100%;
+  height: 2px;
+
+  border: 1px solid;
+  border-image: var(--gradient-gold-reverse) 1;
+
+  opacity: 0.9;
+  border-radius: 999px;
+
+  margin: var(--space-24) 0;
+
+  /* 修飾用 modifiers */
+  &--tight {
+    margin: var(--space-12) 0;
+  }
+
+  &--loose {
+    margin: var(--space-48) 0;
+  }
+
+  &--center {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* =========================================================
+   5.1) Form Panel (共用灰黑圓角容器)
+   - Block: ma-form-panel
+   - Usage: <article class="ma-form-panel">...</article>
+   ========================================================= */
+
+.ma-form-panel {
+  margin: auto;
+  //width: min(720px, 100%);
+  background: var(--color-gray-800);
+  border-radius: var(--radius-md);
+  padding: var(--space-32);
+  color: inherit;
+
+  /* 內部預設排版：有 header、有 body */
+  @include flex-col(var(--space-48));
+  align-items: center;
+  //text-align: center;
+
+  /* RWD：小版別太擠 */
+  @include respond-max($bp-md) {
+    padding: var(--space-32) var(--space-24);
+  }
+
+  &__header {
+    width: 100%;
+    @include flex-col(0);
+    align-items: flex-start;
+    //text-align: left;
+  }
+
+  &__body {
+    width: 100%;
+  }
+
+  /* 窄版卡片（login / message 常用） */
+  &--narrow {
+    width: min(520px, 100%);
+  }
+  /* 窄版卡片（line 常用） */
+  &--center {
+    text-align: center;
+    align-items: center;
+
+    /* 若 header/body 內有文字，確保一起置中 */
+    .ma-form-panel__body {
+      text-align: center;
+    }
+  }
+}
+
+/* =========================================================
+   5.2) Form Stack (表單垂直間距版型)
+   - Block: ma-form-stack
+   - Usage: <form class="ma-form-stack">...</form>
+   ========================================================= */
+
+.ma-form-stack {
+  width: 100%;
+  @include flex-col(var(--space-16));
+  align-items: center;
+
+  /* 讓欄位自己 100% */
+  > * {
+    width: 100%;
+  }
+
+  /* 常見：表單內容通常是窄一點 */
+  &--narrow {
+    width: min(440px, 100%);
+  }
+
+  /* 更鬆的間距（message / line 可用） */
+  &--loose {
+    @include flex-col(var(--space-24));
+  }
+}
+
+/* =========================================================
+   6) Search Form (元件層：只放「search 特有」的結構與行為)
    ========================================================= */
 
 .ma-search-form {
@@ -106,5 +471,33 @@ select:focus {
   /* Clear Button */
   &__clear {
     // reset 行為由 browser 處理
+  }
+}
+
+/* =========================================================
+   Form Actions
+   - 依 button 數量自動排版
+========================================================= */
+
+.ma-form__actions {
+  //@include flex-col(var(--space-8));
+
+  @include flex-row(var(--space-12));
+  /* 預設：直覺是滿寬 */
+  > .ma-btn {
+    flex: 1 1 auto;
+  }
+
+  /* 兩顆以上：自動均分 */
+  > .ma-btn + .ma-btn {
+    flex: 1 1 0;
+  }
+
+  /* 小版：仍然直排（若你想） */
+  @media (max-width: 480px) {
+    flex-direction: column;
+  }
+
+  @include respond-min($bp-md) {
   }
 }

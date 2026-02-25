@@ -90,6 +90,19 @@
   }
 }
 
+/* 共用 */
+.ma-assets,
+.ma-collect {
+  .ma-section__header {
+    padding-block: var(--space-24);
+    @include flex-row(var(--space-24));
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid var(--page-text);
+    margin-bottom: var(--space-48);
+  }
+}
+
 //首頁特調
 .ma-hero {
   & ~ .ma-assets {
@@ -98,21 +111,15 @@
   & ~ .ma-collect {
     background: var(--color-white);
     color: var(--color-black);
+    .ma-section__header {
+      border-bottom: 1px solid var(--page-bg);
+    }
   }
 }
 
 /* ma-assets */
 .ma-assets {
-  //background: var(--gradient-dark-soft);
   padding-block: var(--space-48);
-
-  .ma-inner {
-    color: var(--color-white);
-    padding-block: var(--space-24);
-    justify-content: space-between;
-    border-bottom: 1px solid var(--color-white);
-    margin-bottom: var(--space-48);
-  }
 
   .ma-card {
     /* theme override：只改 ma-card 的變數 */
@@ -160,13 +167,6 @@
 /* ma-collect */
 .ma-collect {
   padding-top: var(--space-48);
-
-  .ma-inner {
-    padding-block: var(--space-24);
-    justify-content: space-between;
-    border-bottom: 1px solid var(--color-black);
-    margin-bottom: var(--space-48);
-  }
 
   .ma-card {
     /* theme override：只改 ma-card 的變數 */

@@ -20,6 +20,7 @@
 
     // 中大版：同一排 2 個（50/50）
     @include respond-min($bp-md) {
+      border-right: 1px solid white;
       @include flex-row(var(--space-32));
       align-items: center;
 
@@ -35,7 +36,13 @@
       }
     }
   }
+
   &__prompt {
+    @include flex-col(var(--space-16));
     text-align: center;
+    padding: var(--space-16);
+  }
+  .ma-card__content {
+    width: 100%;
   }
 }

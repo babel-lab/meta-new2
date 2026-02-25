@@ -67,7 +67,14 @@
 }
 
 /* 金框(非漸層) */
-.ma-btn--outline-gold2 {
-  color: var(--color-white);
+.ma-btn--outline-gold-solid {
+  color: var(--color-brand-primary);
   border: 1px solid var(--color-brand-primary);
+}
+
+/* 金框(非漸層、方形) */
+.ma-btn--outline-gold-solid-square {
+  color: var(--color-brand-primary);
+  border: 1px solid var(--color-brand-primary);
+  border-radius: 0;
 }

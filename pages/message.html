@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <%- include('./layout/head'); -%>
+  <!-- 有些頁面的背景色是黑色 -->
+  <body class="ma-page ma-page--dark">
+    <%- include('./layout/header'); -%>
+    <main class="ma-main">
+      <section class="ma-section ma-message" aria-labelledby="ma-message-title">
+        <div class="ma-container">
+          <div class="ma-inner">
+            <article
+              class="ma-form-panel ma-form-panel--narrow ma-message__content"
+              role="status"
+              aria-live="polite"
+            >
+              <div
+                class="ma-form-panel__body ma-form-stack ma-form-stack--loose"
+              >
+                <span class="ma-form-divider" aria-hidden="true"></span>
+
+                <div class="ma-message__icon" aria-hidden="true">
+                  <img
+                    class="ma-message__icon-img"
+                    src="/images/icon_check.png"
+                    alt=""
+                  />
+                </div>
+
+                <h2 id="ma-message-title" class="ma-form__title">
+                  您好！感謝您耐心填寫和確認！
+                </h2>
+
+                <p class="ma-message__desc">
+                  我們將與藏家確認收藏意願，請等待一個禮拜工作天，我們將主動以電話與您聯繫。
+                </p>
+
+                <span class="ma-form-divider" aria-hidden="true"></span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <%- include('./layout/footer'); -%>
+
+    <script type="module" src="../ma-main.js"></script>
+  </body>
+</html>
