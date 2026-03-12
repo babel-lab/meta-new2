@@ -92,7 +92,23 @@
   <!-- 有些頁面的背景色是黑色 .ma-pager--dark -->
   <!-- 使用在後台頁在 body 加上 class 樣式 .ma-user -->
   <body class="ma-page ma-page--dark ma-user">
-    <header class="ma-header">
+    <!--
+  Header / Mobile Drawer 靜態 HTML 交接說明
+
+  本檔為靜態交接版，登入前 / 登入後內容皆已寫在 HTML 註解中。
+
+  使用方式：
+  1. 大版右上角按鈕：登入前 / 登入後 二擇一
+  2. 小版會員頁籤：登入後才顯示
+  3. 小版會員選單：登入後才顯示
+  4. 小版底部按鈕：登入前 / 登入後 二擇一
+
+  後端工程師整合時：
+  - 未登入：保留登入前區塊，移除登入後區塊
+  - 已登入：保留登入後區塊，移除登入前區塊
+-->
+
+<header class="ma-header">
   <div class="ma-container">
     <div class="ma-inner">
       <a href="../index.html" class="ma-header__logo">
@@ -106,18 +122,22 @@
       >
         <!-- =========================
              大版右上角：登入前 / 登入後 二擇一
-             PHP 工程師依登入狀態輸出對應連結
+             靜態 HTML 交接版：
+             - 未登入：保留「登入前區塊」
+             - 已登入：保留「登入後區塊」
+             - 另一組請刪除或註解
              ========================= -->
 
-        <!-- 登入前顯示：登入/設定 -->
-
+        <!-- 登入前區塊：開始 -->
         <a href="../login-setting.html">登入/設定</a>
+        <!-- 登入前區塊：結束 -->
 
-        <!-- 登入後顯示：查看鏈證 -->
+        <!-- 登入後區塊：開始 -->
         <!--
-
         <a href="../user/assets.html">查看鏈證</a>
--->
+        -->
+        <!-- 登入後區塊：結束 -->
+
         <!-- ========================= -->
 
         <button
@@ -204,7 +224,14 @@
           探　索
         </button>
 
-        <!-- 會員頁籤：登入後才顯示 -->
+        <!-- =========================
+             會員頁籤：登入後才顯示
+             靜態 HTML 交接版：
+             - 未登入：整段刪除或註解
+             - 已登入：保留此按鈕
+             ========================= -->
+
+        <!-- 會員頁籤區塊：開始 -->
         <button
           type="button"
           class="ma-mobile-menu__tab"
@@ -214,6 +241,7 @@
         >
           波波雞
         </button>
+        <!-- 會員頁籤區塊：結束 -->
       </div>
 
       <!-- 探索選單 -->
@@ -224,11 +252,11 @@
       >
         <!-- 當前頁在連結上樣式: class="is-active"-->
         <div class="ma-mobile-menu__links">
-          <a target="_blank" href="../act.html" class="is-active"
-            >ACT 鏈證</a
-          >
+          <a target="_blank" href="../act.html" class="is-active">
+            ACT 鏈證
+          </a>
 
-          <a href="../index.html#ma-assets"> 藝術資產 </a>
+          <a href="../index.html#ma-assets">藝術資產</a>
 
           <a href="../index.html#ma-collect">收藏推薦</a>
 
@@ -240,7 +268,14 @@
         </div>
       </div>
 
-      <!-- 會員選單：登入後才看的到 -->
+      <!-- =========================
+           會員選單：登入後才看的到
+           靜態 HTML 交接版：
+           - 未登入：整段刪除或註解
+           - 已登入：保留此區塊
+           ========================= -->
+
+      <!-- 會員選單區塊：開始 -->
       <div
         class="ma-mobile-menu__panel"
         data-menu-panel="member"
@@ -249,9 +284,9 @@
       >
         <!-- 當前頁在連結上樣式: class="is-active"-->
         <div class="ma-mobile-menu__links">
-          <a href="../user/assets.html" class="is-active"
-            >藝術資產</a
-          >
+          <a href="../user/assets.html" class="is-active">
+            藝術資產
+          </a>
 
           <a href="../user/transaction-records.html">
             交易鏈證紀錄
@@ -266,15 +301,19 @@
           <a href="../line.html">問題詢問</a>
         </div>
       </div>
+      <!-- 會員選單區塊：結束 -->
 
       <!-- 底部操作區 -->
       <div class="ma-mobile-menu__footer">
         <!-- =========================
              小版底部按鈕：登入前 / 登入後 二擇一
-             PHP 工程師依登入狀態輸出對應區塊
+             靜態 HTML 交接版：
+             - 未登入：保留「登入前區塊」
+             - 已登入：保留「登入後區塊」
+             - 另一組請刪除或註解
              ========================= -->
 
-        <!-- 登入前顯示 -->
+        <!-- 登入前區塊：開始 -->
         <!--
         <a
           href="../login.html"
@@ -290,9 +329,15 @@
           設定
         </a>
         -->
+        <!-- 登入前區塊：結束 -->
 
-        <!-- 登入後顯示 -->
-        <a href="#" class="ma-mobile-menu__footer-btn">查看鏈證</a>
+        <!-- 登入後區塊：開始 -->
+        <a
+          href="../user/assets.html"
+          class="ma-mobile-menu__footer-btn"
+        >
+          查看鏈證
+        </a>
 
         <a
           href="../login-setting.html"
@@ -300,6 +345,7 @@
         >
           登入/設定
         </a>
+        <!-- 登入後區塊：結束 -->
 
         <!-- ========================= -->
       </div>
