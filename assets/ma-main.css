@@ -3047,7 +3047,7 @@ html:not(.is-js-ready) .ma-drawer {
 }
 .ma-member-asset-card__media {
   width: 100%;
-  height: 240px;
+  max-height: 240px;
   overflow: hidden;
 }
 @media (min-width: 32.25em) {
@@ -3448,7 +3448,7 @@ html:not(.is-js-ready) .ma-drawer {
   color: var(--color-gray-500);
   display: flex;
   flex-direction: row;
-  gap: var(--space-8);
+  gap: var(--space-16);
   flex-wrap: wrap;
   justify-content: flex-start;
 }
