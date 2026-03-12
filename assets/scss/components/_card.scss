@@ -6,6 +6,7 @@
 
   /* 類別色字 */
   --card-category-color: var(--color-gray-600);
+
   /* icon 預設 */
   --card-category-icon: none;
 
@@ -14,7 +15,9 @@
 
   width: 100%;
   height: 100%; //要有（僅在父層有高度時有效）
+
   @include flex-col(0);
+
   border-radius: var(--radius-md);
   align-items: stretch;
   box-shadow: var(--box-shadow);
@@ -26,6 +29,7 @@
   }
 
   /* ===== 文字特調 ===== */
+
   &__category-text {
     font-size: var(--fs-h5);
     font-weight: var(--fw-h5);
@@ -37,16 +41,19 @@
     @include text-ellipsis(1);
   }
 
-  &__author {
+  &__artist {
     font-size: var(--fs-h5);
     font-weight: var(--fw-h5);
     @include text-ellipsis(1);
   }
 
   /* ===== modifier：只改變數（不要直接打子元素） ===== */
+
   &--act-art {
     --card-category-color: var(--color-brand-primary);
-    --card-category-icon: url("/images/icon_assets_actart.png"); /* 先給預設，可被 section 覆蓋 */
+
+    /* 先給預設，可被 section 覆蓋 */
+    --card-category-icon: url("/images/icon_assets_actart.png");
   }
 
   &--print-art {
@@ -55,10 +62,12 @@
   }
 
   /* ===== elements ===== */
+
   &__media {
     width: 100%;
     height: 220px;
     overflow: hidden;
+
     position: relative; //要有
 
     @include respond-min($bp-md) {
@@ -70,8 +79,10 @@
 
     img {
       position: absolute;
+
       width: 100%;
       height: 100%; /* 關鍵 ③：吃滿容器高度 */
+
       object-fit: cover; /* 不變形裁切 */
       display: block;
     }
@@ -79,7 +90,12 @@
 
   &__content {
     padding: var(--space-24) var(--space-24);
+
     @include flex-col(var(--space-4));
+
+    /* 讓內容區撐滿卡片高度 */
+    flex: 1 1 auto;
+    height: 100%;
 
     @include respond-min($bp-md) {
       width: 60%;
@@ -88,19 +104,51 @@
 
   &__header {
     padding-bottom: var(--space-4);
+
     @include flex-col(var(--space-4));
+
     border-bottom: 1px solid var(--card-header-divider);
   }
 
   &__body {
+    /* 吃掉中間剩餘高度 */
     @include flex-grow;
+
+    @include flex-col(var(--space-16));
+
     font-size: var(--fs-small);
+  }
+
+  /* 價格區 */
+  &__pricing {
+    @include flex-row(var(--space-8));
+
+    /* 沒有價格時保持高度 */
+    min-height: 1.5em;
+  }
+
+  /* 編號 / 版數 區 */
+  &__info-group {
+    @include flex-row(var(--space-16));
+    flex-wrap: wrap;
+
+    @include respond-min($bp-md) {
+      @include flex-col(var(--space-0));
+    }
+  }
+
+  /* 版數 */
+  &__edition {
+    /* 沒有版數時保持高度 */
+    min-height: 1.5em;
   }
 
   &__footer {
     margin-top: auto;
+
     @include flex-between(center, var(--space-8));
     flex-wrap: wrap;
+
     font-size: var(--fs-small);
 
     .ma-btn {
@@ -112,15 +160,26 @@
   &__category {
     @include flex-row(var(--space-8));
     align-items: center;
+
     font-weight: var(--fw-bold);
+
     margin-bottom: var(--space-4);
+
     color: var(--card-category-color);
   }
 
-  &__icon {
+  &__meta {
+    span {
+      display: block;
+    }
+  }
+
+  &__category-icon {
     @include inline-flex(row, center, center, 0);
+
     width: var(--icon-xs);
     height: var(--icon-xs);
+
     background-repeat: no-repeat;
     background-position: center;
 

@@ -1,0 +1,27 @@
+.ma-member-layout {
+  .ma-inner {
+    @include flex-col(var(--space-32));
+
+    @include respond-min($bp-md) {
+      @include flex-row(var(--space-48));
+    }
+  }
+  &__sidebar {
+    text-align: center;
+    padding: 2em 2em 1em 2em;
+    padding: var(--space-32) var(--space-32) var(--space-16) var(--space-32);
+    min-width: 280px;
+    width: fit-content;
+    height: fit-content;
+    flex-shrink: 0;
+    background: var(--color-gray-800);
+    display: none;
+    @include respond-min($bp-md) {
+      display: block;
+    }
+  }
+
+  &__main {
+    flex: 1;
+  }
+}

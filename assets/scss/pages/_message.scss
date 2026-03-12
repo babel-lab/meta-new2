@@ -16,6 +16,10 @@
     text-align: center;
   }
 
+  &__body {
+    @include flex-col(var(--space-16));
+  }
+
   /* 中央 icon 圈圈（message 專有） */
   &__icon {
     width: 84px;

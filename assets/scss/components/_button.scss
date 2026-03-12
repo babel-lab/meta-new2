@@ -13,6 +13,14 @@
     opacity 200ms;
 }
 
+/* 按鈕失效樣式 */
+.ma-btn:disabled,
+.ma-btn.is-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 /* =========================================================
    Button Variants – Color Based
    ========================================================= */
@@ -75,6 +83,21 @@
 /* 金框(非漸層、方形) */
 .ma-btn--outline-gold-solid-square {
   color: var(--color-brand-primary);
+  background: var(--color-black);
   border: 1px solid var(--color-brand-primary);
-  border-radius: 0;
+  //border-radius: 0;
+}
+
+/* 像連結的按鈕 */
+.ma-btn--link-gold {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--color-brand-primary);
+  font-size: var(--fs-body);
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }

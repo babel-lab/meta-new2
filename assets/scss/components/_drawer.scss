@@ -1,45 +1,204 @@
 /* --- 抽屜選單核心樣式 --- */
+
+/* JS 尚未接手前，避免頁面切換時先閃出抽屜 */
+html:not(.is-js-ready) .ma-overlay,
+html:not(.is-js-ready) .ma-drawer {
+  visibility: hidden;
+  pointer-events: none;
+  transition: none !important;
+}
+
 .ma-overlay {
   position: fixed;
   inset: 0;
   background: var(--color-overlay);
   z-index: var(--z-overlay);
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    visibility 0s linear 0.25s;
 }
+
 .ma-overlay.is-show {
   opacity: 1;
+  visibility: visible;
   pointer-events: auto;
+  transition:
+    opacity 0.25s ease,
+    visibility 0s linear 0s;
 }
 
-/* -- Drawer --*/
+/* --- Drawer --- */
 .ma-drawer {
   position: fixed;
-  //top: var(--header-height-mobile);
+  top: var(--anchor-offset);
   right: 0;
-
-  //height: 100vh;
+  min-width: min(100%, 20rem);
   z-index: var(--z-drawer);
+
   transform: translateX(110%);
-  transition: transform 0.25s ease;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease,
+    visibility 0s linear 0.25s;
+
   outline: none;
 }
 
 .ma-drawer.is-open {
   transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease,
+    visibility 0s linear 0s;
 }
 
-/* -- Drawer Menu --*/
-/* --- 導覽列選單（小版）--- */
-.ma-mobile-menu {
-  background-color: var(--color-gray-800);
-  padding: var(--space-24) var(--space-48);
-  @include flex-col(var(--space-16));
+.ma-drawer__panel {
+  width: 100%;
+  height: 100%;
+  background: var(--color-gray-800);
+  display: flex;
+  flex-direction: column;
+}
+.ma-drawer__header {
+  min-height: 4.75rem;
+  padding: var(--space-16) var(--space-20);
+  background: var(--color-black);
+  display: flex;
   align-items: center;
-  color: var(--color-white);
+  justify-content: space-between;
 }
 
+.ma-drawer__logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.ma-drawer__logo img {
+  display: block;
+  max-width: 10rem;
+  height: auto;
+}
+
+.ma-drawer__tools {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+}
+
+/* --- Drawer Menu --- */
+.ma-mobile-menu {
+  flex: 1;
+  background-color: var(--color-gray-800);
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.ma-mobile-menu.is-hidden {
+  display: none;
+}
+
+/* --- tabs --- */
+.ma-mobile-menu__tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #434343;
+}
+
+.ma-mobile-menu__tab {
+  position: relative;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--color-white);
+  min-height: 4rem;
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+}
+
+.ma-mobile-menu__tab.is-active::after {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 0;
+  height: 1px;
+  background: var(--color-brand-primary);
+}
+
+/* --- panel --- */
+.ma-mobile-menu__panel {
+  flex: 1;
+  padding: var(--space-48) var(--space-24);
+  overflow-y: auto;
+}
+
+.ma-mobile-menu__panel[hidden] {
+  display: none;
+}
+
+.ma-mobile-menu__links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-16);
+}
+
+.ma-mobile-menu__links a {
+  color: var(--color-white);
+  text-decoration: none;
+  line-height: 1.6;
+}
+
+.ma-mobile-menu__links a.is-active {
+  color: var(--color-brand-primary);
+}
+
+/* 語言選單可沿用 */
+.ma-mobile-menu__links--lang {
+  padding-top: var(--space-32);
+}
+
+/* --- footer --- */
+.ma-mobile-menu__footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: auto;
+}
+
+.ma-mobile-menu__footer-btn {
+  min-height: var(--space-48);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: #5a5a5a;
+  color: var(--color-white);
+  border: 0;
+}
+
+.ma-mobile-menu__footer-btn--dark {
+  background: #2c2c2c;
+}
+
+.ma-mobile-menu__footer-btn.is-active {
+  color: var(--color-brand-primary);
+}
+
+/* 舊樣式保留相容 */
 .ma-mobile-menu a.is-active {
   color: var(--color-brand-primary);
 }
@@ -47,9 +206,55 @@
 .ma-mobile-btn {
   background-color: var(--color-gray-950);
 }
+
 .ma-mobile-btn.white {
   color: var(--color-white);
 }
+
 .ma-mobile-btn.gold {
   color: var(--color-brand-primary);
+}
+
+/* =========================================================
+   漢堡按鈕 → 開啟後變 X
+   說明：
+   1. 平常沿用原本的 icon_bar.png
+   2. 當 JS 幫 #menu-toggle 加上 .is-active 時
+      隱藏原本 img，改用 ::before / ::after 畫出 X
+   3. 不需改 HEADER.EJS 結構，PHP 工程師也較好接手
+========================================================= */
+#menu-toggle {
+  position: relative;
+}
+
+#menu-toggle img {
+  display: block;
+  transition: opacity 0.2s ease;
+}
+
+#menu-toggle.is-active img {
+  opacity: 0;
+}
+
+/* 開啟狀態時顯示 X */
+#menu-toggle.is-active::before,
+#menu-toggle.is-active::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.5rem;
+  height: 2px;
+  background-color: var(--color-white);
+  transform-origin: center;
+}
+
+/* 斜線 1 */
+#menu-toggle.is-active::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* 斜線 2 */
+#menu-toggle.is-active::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
 }

@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
-  <%- include('./layout/head'); -%>
+  <%- include('./layout/head', { pathPrefix: '' }); -%>
 
+  <!-- 有些頁面的背景色是黑色 .ma-pager--dark -->
   <body class="ma-page ma-page--dark">
-    <%- include('./layout/header'); -%>
-
+    <%- include('./layout/header', { pathPrefix: '' }); -%>
     <main class="ma-main">
       <!-- 麵包屑導覽列: -->
       <!-- 目前頁面連結加上: .is-active -->
@@ -384,7 +384,6 @@
       </section>
     </main>
 
-    <%- include('./layout/footer'); -%>
-    <script type="module" src="../ma-main.js"></script>
+    <%- include('./layout/footer', { pathPrefix: '' }); -%>
   </body>
 </html>

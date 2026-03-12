@@ -1,0 +1,75 @@
+.ma-assign-transaction {
+  .ma-confrim__wrap {
+    @include flex-col(var(--space-32));
+  }
+  .ma-confirm__artwork {
+    max-height: 400px;
+    width: fit-content;
+    @include respond-min($bp-mobile-sm) {
+      max-height: 500px;
+    }
+  }
+  .ma-form-panel__body {
+    @include flex-col(var(--space-16));
+  }
+
+  .ma-form-panel__header {
+    color: var(--color-brand-primary);
+    padding-bottom: var(--space-12);
+    border-bottom: 1px solid var(--color-gray-700);
+  }
+
+  .ma-assign-transaction-form {
+    &__group--artwork {
+      .ma-assign-transaction-form__group-title {
+        color: var(--color-gray-500);
+      }
+    }
+    &__group--artwork,
+    &__group--location {
+      padding: var(--space-16);
+      background: var(--color-gray-900);
+    }
+
+    &__pricing,
+    &__buyer-field {
+      width: 100%;
+      @include respond-min($bp-mobile-sm) {
+        width: 40%;
+      }
+    }
+
+    &__pricing {
+      margin-left: auto;
+    }
+    &__buyer-row {
+      margin-top: var(--space-16);
+      @include flex-row(var(--space-16));
+      align-items: center;
+    }
+
+    &__meta {
+      margin-top: var(--space-16);
+    }
+    &__ma-form-panel {
+      @include flex-row(var(--space-16));
+      align-items: center;
+    }
+
+    &__exchange {
+      flex-shrink: 0;
+      text-align: right;
+    }
+    &__options {
+      @include flex-row(var(--space-16));
+      flex-wrap: wrap;
+      @include respond-min($bp-mobile-sm) {
+        gap: var(--space-24);
+      }
+    }
+
+    &__error {
+      color: var(--act-danger);
+    }
+  }
+}

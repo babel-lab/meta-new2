@@ -1,0 +1,69 @@
+<!-- 
+    UI Template: Login Setting Success Page
+    --------------------------------
+    此頁為設定成功提示頁 (UI only)。
+    預設顯示「設定成功」訊息後，2秒自動導回首頁。
+
+    前端用途：
+    - 提供設定成功的視覺提示
+    - 模擬系統設定成功流程
+
+    後端整合建議：
+    - 後端設定成功後可 redirect 到此頁
+    - 或直接由後端控制 redirect
+    - 若後端已有流程控制，可移除下方 timeout script
+  -->
+
+<!doctype html>
+<html lang="en">
+  <%- include('./layout/head', { pathPrefix: '' }); -%>
+
+  <!-- 有些頁面的背景色是黑色 .ma-pager--dark -->
+  <body class="ma-page ma-page--dark">
+    <%- include('./layout/header', { pathPrefix: '' }); -%>
+
+    <main class="ma-main">
+      <section
+        class="ma-section ma-message"
+        aria-labelledby="ma-login-success-title"
+      >
+        <div class="ma-container">
+          <div class="ma-inner">
+            <article
+              class="ma-form-panel ma-form-panel--compact ma-message__content"
+              role="status"
+              aria-live="polite"
+            >
+              <div
+                class="ma-form-panel__body ma-form-stack ma-form-stack--loose"
+              >
+                <div class="ma-message__icon" aria-hidden="true">
+                  <img
+                    class="ma-message__icon-img"
+                    src="/images/icon_check.png"
+                    alt=""
+                  />
+                </div>
+
+                <h2 id="ma-login-success-title" class="ma-form__title">
+                  設定成功
+                </h2>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <%- include('./layout/footer', { pathPrefix: '' }); -%>
+    <!-- 
+      使用者設定成功，自動跳轉首頁
+      使用 location.replace() 避免使用者按「返回」又回到設定成功頁
+    -->
+    <script>
+      setTimeout(function () {
+        window.location.replace("index.html");
+      }, 2000);
+    </script>
+  </body>
+</html>

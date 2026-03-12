@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <%- include('./layout/head', { pathPrefix: '../' }); -%>
+
+  <!-- 有些頁面的背景色是黑色 .ma-page--dark -->
+  <!-- 使用在後台頁 body 加上 class 樣式 .ma-user -->
+  <body class="ma-page ma-page--dark ma-user">
+    <%- include('./layout/header', { pathPrefix: '../' }); -%>
+
+    <main class="ma-main">
+      <!-- 麵包屑導覽列 -->
+      <!-- 目前會員後台尚無 dashboard 首頁，暫以藝術資產頁作為會員中心入口 -->
+      <%- include('./layout/breadcrumb', { homeHref: '../index.html',
+      parentLabel: '會員中心', parentHref: 'assets.html', currentLabel:
+      '指定給我的交易' }); -%>
+
+      <!-- 搜尋區 -->
+      <%- include('./layout/search-bar'); -%>
+
+      <section
+        class="ma-section ma-transaction-assigned ma-member-layout"
+        aria-labelledby="ma-transaction-assigned-title"
+      >
+        <div class="ma-container">
+          <div class="ma-inner">
+            <!-- 左側會員欄 -->
+            <%- include('./layout/member-sidebar'); -%>
+
+            <!-- 右側主內容區 -->
+            <div class="ma-member-layout__main">
+              <!-- header -->
+
+              <div class="ma-transaction-assigned__header">
+                <h3 class="ma-transaction-assigned__title">你的訊息</h3>
+                <!-- 上下筆控制 -->
+                <div
+                  class="ma-transaction-assigned__nav"
+                  aria-label="Message navigation"
+                >
+                  <button
+                    class="ma-transaction-assigned__nav-btn ma-transaction-assigned__nav-btn--prev"
+                    aria-label="Previous messages"
+                  >
+                    &lt;
+                  </button>
+
+                  <button
+                    class="ma-transaction-assigned__nav-btn ma-transaction-assigned__nav-btn--next"
+                    aria-label="Next messages"
+                  >
+                    &gt;
+                  </button>
+                </div>
+              </div>
+
+              <!-- 無資料狀態 -->
+              <!-- 無資料時顯示這塊 -->
+              <!--
+              <div class="ma-transaction-assigned__empty">
+                <p class="ma-transaction-assigned__empty-text">目前沒有任何訊息</p>
+              </div>
+              -->
+
+              <!-- 有資料狀態 -->
+
+              <!--
+後端整合說明：
+1. 未讀訊息請在 .ma-transaction-assigned__item 加上 .ma-transaction-assigned__item--new
+2. 已讀訊息維持 .ma-transaction-assigned__item 即可
+3. 若為未讀，可顯示 NEW 與「新訊息」
+4. 若為已讀，可只顯示「訊息」
+-->
+              <!-- list -->
+              <div class="ma-transaction-assigned__list">
+                <!-- item (NEW) -->
+                <article
+                  class="ma-transaction-assigned__item ma-transaction-assigned__item--new"
+                >
+                  <div class="ma-transaction-assigned__meta">
+                    <span class="ma-transaction-assigned__status">NEW</span>
+                    <span class="ma-transaction-assigned__type">新訊息</span>
+                  </div>
+
+                  <div class="ma-transaction-assigned__content">
+                    <span
+                      class="ma-transaction-assigned__arrow"
+                      aria-hidden="true"
+                      >▸</span
+                    >
+
+                    <a
+                      href="transaction-assigned-detail.html"
+                      class="ma-transaction-assigned__subject"
+                    >
+                      羅倫佐指定與你鏈證交易
+                    </a>
+                  </div>
+
+                  <time
+                    class="ma-transaction-assigned__date"
+                    datetime="2026-02-25"
+                  >
+                    02/25/2026
+                  </time>
+                </article>
+
+                <!-- item -->
+                <article class="ma-transaction-assigned__item">
+                  <div class="ma-transaction-assigned__meta">
+                    <span class="ma-transaction-assigned__type">訊息</span>
+                  </div>
+
+                  <div class="ma-transaction-assigned__content">
+                    <span
+                      class="ma-transaction-assigned__arrow"
+                      aria-hidden="true"
+                      >▸</span
+                    >
+
+                    <a
+                      href="transaction-assigned-detail.html"
+                      class="ma-transaction-assigned__subject"
+                    >
+                      羅倫佐指定與你鏈證交易
+                    </a>
+                  </div>
+
+                  <time
+                    class="ma-transaction-assigned__date"
+                    datetime="2026-02-25"
+                  >
+                    02/25/2026
+                  </time>
+                </article>
+
+                <!-- item -->
+                <article class="ma-transaction-assigned__item">
+                  <div class="ma-transaction-assigned__meta">
+                    <span class="ma-transaction-assigned__type">訊息</span>
+                  </div>
+
+                  <div class="ma-transaction-assigned__content">
+                    <span
+                      class="ma-transaction-assigned__arrow"
+                      aria-hidden="true"
+                      >▸</span
+                    >
+
+                    <a
+                      href="transaction-assigned-detail.html"
+                      class="ma-transaction-assigned__subject"
+                    >
+                      羅倫佐指定與你鏈證交易
+                    </a>
+                  </div>
+
+                  <time
+                    class="ma-transaction-assigned__date"
+                    datetime="2026-02-25"
+                  >
+                    02/25/2026
+                  </time>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <%- include('./layout/footer', { pathPrefix: '../' }); -%>
+  </body>
+</html>

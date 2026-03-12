@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <%- include('./layout/head', { pathPrefix: '../' }); -%>
+
+  <!-- 有些頁面的背景色是黑色 .ma-page--dark -->
+  <!-- 使用在後台頁 body 加上 class 樣式 .ma-user -->
+  <body class="ma-page ma-page--dark ma-user">
+    <%- include('./layout/header', { pathPrefix: '../' }); -%>
+
+    <main class="ma-main">
+      <!-- 麵包屑導覽列 -->
+      <!-- 目前會員後台尚無 dashboard 首頁，暫以藝術資產頁作為會員中心入口 -->
+      <%- include('./layout/breadcrumb', { homeHref: '../index.html',
+      parentLabel: '會員中心', parentHref: 'assets.html', currentLabel:
+      '個人錢包設定' }); -%>
+
+      <section
+        class="ma-section ma-login-change"
+        aria-labelledby="ma-login-change-title"
+      >
+        <div class="ma-container">
+          <div class="ma-inner">
+            <!-- 左側會員欄 -->
+            <%- include('./layout/member-sidebar'); -%>
+
+            <!-- 右側主內容區 -->
+            <div class="ma-member-layout__main">
+              <article
+                class="ma-form-panel ma-form-panel--narrow ma-login-change__panel"
+              >
+                <div class="ma-form-panel__header">
+                  <h2 class="ma-form__title">重新設定登入錢包</h2>
+                </div>
+
+                <div class="ma-form-panel__body">
+                  <!--
+                  後端整合說明：
+                  1. 姓名 / 手機欄位可由後端判斷是否顯示預設值
+                  2. 點擊「取得驗證碼」後，由後端或 API 發送 OTP
+                  3. 若驗證碼過期，於 ma-field 加上 .is-error
+                  4. 錯誤訊息可由後端決定是否輸出
+                -->
+                  <form
+                    class="ma-login-change-form ma-form-stack"
+                    action="login-change-success.html"
+                    method="get"
+                  >
+                    <!-- 姓名 -->
+                    <div class="ma-field ma-login-change-form__field">
+                      <div class="ma-login-change-form__row">
+                        <label
+                          class="ma-login-change-form__label"
+                          for="login-change-name"
+                        >
+                          姓　　名
+                        </label>
+
+                        <div class="ma-field__control">
+                          <input
+                            class="ma-field__input"
+                            id="login-change-name"
+                            name="name"
+                            type="text"
+                            autocomplete="name"
+                            placeholder=""
+                            aria-invalid="false"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- 手機 -->
+                    <div class="ma-field ma-login-change-form__field">
+                      <div class="ma-login-change-form__row">
+                        <label
+                          class="ma-login-change-form__label"
+                          for="login-change-phone"
+                        >
+                          手　　機
+                        </label>
+
+                        <div class="ma-login-change-form__phone-group">
+                          <div class="ma-field__control">
+                            <input
+                              class="ma-field__input"
+                              id="login-change-phone"
+                              name="phone"
+                              type="tel"
+                              inputmode="tel"
+                              autocomplete="tel"
+                              placeholder=""
+                              aria-invalid="false"
+                            />
+                          </div>
+
+                          <div class="ma-login-change-form__otp-action">
+                            <button
+                              type="button"
+                              class="ma-btn ma-btn--link-gold"
+                            >
+                              取得驗證碼
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- 驗證碼 -->
+                    <div class="ma-field ma-login-change-form__field is-error">
+                      <div class="ma-login-change-form__otp-block">
+                        <div class="ma-field__control">
+                          <input
+                            class="ma-field__input"
+                            id="login-change-otp"
+                            name="otp"
+                            type="text"
+                            inputmode="numeric"
+                            autocomplete="one-time-code"
+                            placeholder="輸入驗證碼"
+                            aria-invalid="true"
+                            aria-describedby="login-change-otp-error"
+                          />
+                        </div>
+
+                        <!-- 若驗證碼時效已過, 出現錯誤提示文字 -->
+                        <p
+                          id="login-change-otp-error"
+                          class="ma-field__error ma-login-change-form__error"
+                        >
+                          驗證碼時效已過，請再重新<br />
+                          輸入號碼發送一次
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="ma-form__actions ma-login-change-form__actions">
+                      <button
+                        class="ma-btn ma-btn--outline-gold-solid-square"
+                        type="submit"
+                      >
+                        確 認
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <%- include('./layout/footer', { pathPrefix: '../' }); -%>
+  </body>
+</html>

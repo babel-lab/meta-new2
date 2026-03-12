@@ -1,0 +1,162 @@
+/* =========================================================
+   Transaction Assigned Detail
+   指定給我的交易 - 詳細內容頁
+   ========================================================= */
+
+.ma-transaction-assigned-detail {
+  color: var(--color-white);
+
+  &__panel {
+    padding: var(--space-24);
+    background: var(--color-gray-800);
+    border-radius: var(--radius-sm);
+  }
+
+  &__header {
+    margin-bottom: var(--space-16);
+  }
+
+  &__page-title {
+    margin: 0;
+    font-size: var(--fs-body);
+    font-weight: 500;
+    color: var(--color-gray-500);
+    padding: var(--space-8) 0;
+  }
+  /* =========================
+     message bar
+     ========================= */
+  &__message-bar {
+    @include flex-row(var(--space-8));
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-24);
+    padding: var(--space-8);
+    background: var(--color-gray-900);
+    color: var(--color-gray-500);
+    border: 1px solid var(--color-gray-700);
+  }
+
+  &__back {
+    @include inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--icon-lg);
+    height: var(--icon-lg);
+  }
+
+  &__back:hover {
+    color: var(--color-white);
+  }
+
+  &__message-type {
+  }
+
+  &__message-arrow {
+    font-size: var(--fs-body);
+  }
+
+  &__message-subject {
+    flex: 1 1 auto;
+    font-size: var(--fs-small);
+    font-weight: 500;
+  }
+
+  &__message-date {
+    color: var(--color-gray-500);
+  }
+
+  /* =========================
+     body
+     ========================= */
+  &__body {
+    @include flex-col(var(--space-16));
+    align-items: flex-start;
+    @include respond-min($bp-mobile) {
+      @include flex-row(var(--space-32));
+    }
+  }
+  &__media {
+    width: 100%;
+    max-height: 380px;
+    @include respond-min($bp-mobile-sm) {
+      flex: 0 0 35%;
+      max-width: 35%;
+    }
+
+    img {
+      display: block;
+      //width: 100%;
+      height: 100%;
+      margin: auto;
+      object-fit: contain;
+      object-position: top;
+    }
+  }
+
+  &__info {
+    width: 100%;
+    @include flex-col(0);
+
+    @include respond-min($bp-mobile-sm) {
+      gap: var(--space-8);
+      flex: 1 1 0;
+    }
+  }
+
+  /* =========================
+     section
+     ========================= */
+  &__section {
+    width: 100%;
+  }
+
+  &__section-title {
+    margin: 0 0 var(--space-16);
+    font-size: var(--fs-small);
+    font-weight: 500;
+    color: var(--color-gray-500);
+  }
+
+  /* =========================
+     artwork info
+     ========================= */
+  &__artwork-meta {
+    @include flex-col(0);
+  }
+
+  &__artwork-id {
+    font-size: var(--fs-ui-title);
+    font-weight: 500;
+  }
+
+  &__pricing {
+    @include flex-row(var(--space-16));
+  }
+
+  /* =========================
+     divider
+     ========================= */
+  &__divider {
+    margin: var(--space-24) 0;
+    border: 0;
+    border-top: 1px solid var(--color-gray-700);
+  }
+
+  /* =========================
+     location
+     ========================= */
+  &__location {
+    @include flex-col(0);
+  }
+
+  /* =========================
+     actions
+     ========================= */
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: auto;
+    padding-top: var(--space-32);
+  }
+}

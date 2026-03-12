@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <%- include('./layout/head', { pathPrefix: '../' }); -%>
+
+  <!-- 有些頁面的背景色是黑色 .ma-pager--dark -->
+  <!-- 使用在後台頁在 body 加上 class 樣式 .ma-user -->
+  <body class="ma-page ma-page--dark ma-user">
+    <%- include('./layout/header', { pathPrefix: '../' }); -%>
+
+    <main class="ma-main">
+      <section
+        class="ma-section ma-assign-transaction"
+        aria-labelledby="ma-assign-transaction-title"
+      >
+        <div class="ma-container">
+          <div class="ma-inner">
+            <div class="ma-confrim__wrap">
+              <!-- 圖片區塊 -->
+              <figure class="ma-confirm__artwork">
+                <img
+                  class="ma-confirm__artwork-img"
+                  src="https://images.unsplash.com/photo-1579541814924-49fef17c5be5?q=80&w=1000&auto=format&fit=crop"
+                  alt="Seeing Eyes"
+                />
+              </figure>
+              <!-- 交易資訊填寫區塊 -->
+              <!-- 
+              後端串接提醒：
+              1. action / method 先暫放
+              2. 有錯誤時，可在對應區塊加上 .is-error
+              3. error 訊息沒有錯時可不輸出，或加 hidden
+            -->
+              <!-- METHOD在GITHUB上暫改GET-->
+              <form
+                class="ma-assign-transaction-form ma-form-stack"
+                action="message-transaction-confirm.html"
+                method="get"
+              >
+                <article class="ma-form-panel ma-assign-transaction__panel">
+                  <div class="ma-form-panel__header">指定交易資訊填寫</div>
+
+                  <div class="ma-form-panel__body">
+                    <!-- =========================
+                   1. 藝術品資訊 + 定價
+                   ========================= -->
+                    <div
+                      class="ma-assign-transaction-form__group ma-assign-transaction-form__group--artwork"
+                      aria-labelledby="assign-artwork-title"
+                    >
+                      <div class="ma-assign-transaction-form__group-head">
+                        <span class="ma-assign-transaction-form__group-title">
+                          藝術品資訊
+                        </span>
+                      </div>
+
+                      <div class="ma-assign-transaction-form__artwork">
+                        <!-- 左：資訊 -->
+                        <div class="ma-assign-transaction-form__artwork-info">
+                          <p class="ma-assign-transaction-form__serial">
+                            M2023APG000147PA
+                          </p>
+
+                          <p class="ma-assign-transaction-form__category">
+                            鏈證藝術
+                          </p>
+
+                          <p class="ma-assign-transaction-form__name">
+                            Seeing Eyes
+                          </p>
+
+                          <p class="ma-assign-transaction-form__artist">
+                            理查德·博伊德-鄧洛普
+                          </p>
+
+                          <div class="ma-assign-transaction-form__meta">
+                            <p class="ma-assign-transaction-form__meta-item">
+                              丙烯畫 / 壓克力
+                            </p>
+                            <p class="ma-assign-transaction-form__meta-item">
+                              100 X 100 X 100 cm
+                            </p>
+                          </div>
+                        </div>
+
+                        <!-- 右：定價 -->
+                        <div class="ma-assign-transaction-form__pricing">
+                          <div class="ma-assign-transaction-form__pricing-head">
+                            <label
+                              class="ma-assign-transaction-form__pricing-label"
+                              for="assign-price"
+                            >
+                              輸入定價
+                            </label>
+
+                            <!-- 有錯誤時才顯示 -->
+                            <p
+                              class="ma-assign-transaction-form__error"
+                              id="assign-price-error"
+                            >
+                              此欄位輸入需大於零
+                            </p>
+                          </div>
+
+                          <div class="ma-assign-transaction-form__pricing-row">
+                            <div
+                              class="ma-field is-error ma-assign-transaction-form__price-field"
+                            >
+                              <label class="u-sr-only" for="assign-price">
+                                輸入定價（USD）
+                              </label>
+
+                              <div class="ma-field__control">
+                                <input
+                                  class="ma-field__input"
+                                  id="assign-price"
+                                  name="price"
+                                  type="number"
+                                  min="0"
+                                  step="0.01"
+                                  inputmode="decimal"
+                                  placeholder=""
+                                  aria-invalid="true"
+                                  aria-describedby="assign-price-error"
+                                />
+                              </div>
+                            </div>
+
+                            <p class="ma-assign-transaction-form__exchange">
+                              USD ≈ 1,000.00 ETH
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- =========================
+                   2. 地點選擇（單選 → radio）
+                   ========================= -->
+                    <div
+                      class="ma-assign-transaction-form__group ma-assign-transaction-form__group--location"
+                      aria-labelledby="assign-location-title"
+                    >
+                      <div class="ma-assign-transaction-form__group-head">
+                        <span class="ma-assign-transaction-form__group-title">
+                          地點勾選
+                        </span>
+
+                        <!-- 有錯誤時才顯示 -->
+                        <p
+                          class="ma-assign-transaction-form__error"
+                          id="assign-location-error"
+                        >
+                          必須選擇一個地點
+                        </p>
+                      </div>
+
+                      <!-- 
+                  規則：只能選一個地點，所以用 radio
+                  後端若回填選取值，只要比對 checked 即可
+                -->
+                      <div
+                        class="ma-assign-transaction-form__options"
+                        role="radiogroup"
+                        aria-describedby="assign-location-error"
+                      >
+                        <label class="ma-radio">
+                          <input
+                            class="ma-radio__input"
+                            type="radio"
+                            name="location"
+                            value="boart"
+                          />
+                          <span
+                            class="ma-radio__circle"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="ma-radio__label">波翼藝術</span>
+                        </label>
+
+                        <label class="ma-radio">
+                          <input
+                            class="ma-radio__input"
+                            type="radio"
+                            name="location"
+                            value="boart-2"
+                          />
+                          <span
+                            class="ma-radio__circle"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="ma-radio__label">波翼藝術</span>
+                        </label>
+
+                        <label class="ma-radio">
+                          <input
+                            class="ma-radio__input"
+                            type="radio"
+                            name="location"
+                            value="boart-3"
+                          />
+                          <span
+                            class="ma-radio__circle"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="ma-radio__label">波翼藝術</span>
+                        </label>
+
+                        <label class="ma-radio">
+                          <input
+                            class="ma-radio__input"
+                            type="radio"
+                            name="location"
+                            value="boart-4"
+                          />
+                          <span
+                            class="ma-radio__circle"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="ma-radio__label">波翼藝術</span>
+                        </label>
+
+                        <label class="ma-radio">
+                          <input
+                            class="ma-radio__input"
+                            type="radio"
+                            name="location"
+                            value="boart-5"
+                          />
+                          <span
+                            class="ma-radio__circle"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="ma-radio__label">波翼藝術</span>
+                        </label>
+
+                        <label class="ma-radio">
+                          <input
+                            class="ma-radio__input"
+                            type="radio"
+                            name="location"
+                            value="boart-6"
+                          />
+                          <span
+                            class="ma-radio__circle"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="ma-radio__label">波翼藝術</span>
+                        </label>
+
+                        <label class="ma-radio">
+                          <input
+                            class="ma-radio__input"
+                            type="radio"
+                            name="location"
+                            value="boart-7"
+                          />
+                          <span
+                            class="ma-radio__circle"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="ma-radio__label">波翼藝術</span>
+                        </label>
+
+                        <label class="ma-radio">
+                          <input
+                            class="ma-radio__input"
+                            type="radio"
+                            name="location"
+                            value="boart-8"
+                          />
+                          <span
+                            class="ma-radio__circle"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="ma-radio__label">波翼藝術</span>
+                        </label>
+                      </div>
+                    </div>
+
+                    <!-- =========================
+                   3. 交易對象資訊
+                   ========================= -->
+                    <div
+                      class="ma-assign-transaction-form__group ma-assign-transaction-form__group--buyer"
+                      aria-labelledby="assign-buyer-title"
+                    >
+                      <div class="ma-assign-transaction-form__group-head">
+                        <span class="ma-assign-transaction-form__group-title">
+                          輸入交易對象資訊
+                        </span>
+
+                        <!-- 有錯誤時才顯示 -->
+                        <p
+                          class="ma-assign-transaction-form__error"
+                          id="assign-buyer-phone-error"
+                        >
+                          此欄位不行為空白
+                        </p>
+                      </div>
+
+                      <div class="ma-assign-transaction-form__buyer-row">
+                        <div class="ma-assign-transaction-form__buyer-label">
+                          手　　機
+                        </div>
+
+                        <div
+                          class="ma-field is-error ma-assign-transaction-form__buyer-field"
+                        >
+                          <label class="u-sr-only" for="assign-buyer-phone">
+                            交易對象手機
+                          </label>
+
+                          <div class="ma-field__control">
+                            <input
+                              class="ma-field__input"
+                              id="assign-buyer-phone"
+                              name="buyerPhone"
+                              type="tel"
+                              inputmode="tel"
+                              autocomplete="tel"
+                              placeholder=""
+                              aria-invalid="true"
+                              aria-describedby="assign-buyer-phone-error"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <!-- =========================
+                   4. 按鈕區
+                   ========================= -->
+                <div class="ma-form__actions">
+                  <a class="ma-btn ma-btn--gray-dark" href="assets.html">
+                    取消
+                  </a>
+                  <button
+                    class="ma-btn ma-btn--outline-gold-solid-square"
+                    type="submit"
+                  >
+                    確認
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <%- include('./layout/footer', { pathPrefix: '../' }); -%>
+  </body>
+</html>

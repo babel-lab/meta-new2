@@ -39,13 +39,14 @@
   /* Text (base) */
   --text-color: var(--color-black);
 
+  /* 危險 / 強調警示色 */
+  --act-danger: #e53737;
   /* =======================================================
      2) Link Tokens
      ======================================================= */
   /* Base (normal state) */
   --link-color: var(--text-color); /* 預設跟隨區塊文字色 */
   --link-decoration: none;
-
   --link-underline-offset: 3px;
 
   /* Hover / Active */
@@ -141,7 +142,7 @@
      ======================================================= */
   /* desktop */
   --section-padding-top-lg: 24px; /* Tailwind: pt-6 */
-  --section-padding-bottom-lg: 42px; /* Tailwind: (no default) approx pb-10(40px) + 2px */
+  --section-padding-bottom-lg: 42px; /* Tailwind: approx pb-10(40px) + 2px */
 
   /* mobile */
   --section-padding-top-sm: 16px; /* Tailwind: pt-4 */
@@ -149,22 +150,22 @@
 
   /* Spacing (px-based, intuitive) */
   --space-2: 2px;
-  --space-4: 4px; /* Tailwind: 1  (e.g., p-1 / gap-1) */
-  --space-8: 8px; /* Tailwind: 2  (p-2 / gap-2) */
-  --space-12: 12px; /* Tailwind: 3  (p-3 / gap-3) */
-  --space-16: 16px; /* Tailwind: 4  (p-4 / gap-4) */
-  --space-24: 24px; /* Tailwind: 6  (p-6 / gap-6) */
-  --space-32: 32px; /* Tailwind: 8  (p-8 / gap-8) */
-  --space-40: 40px; /* Tailwind: 10 (p-10 / gap-10) */
-  --space-48: 48px; /* Tailwind: 12 (p-12 / gap-12) */
-  --space-52: 52px; /* Custom spacing (非 Tailwind 預設 scale) */
-  --space-64: 64px; /* Tailwind: 16 (p-16 / gap-16) */
+  --space-4: 4px; /* Tailwind: 1 */
+  --space-8: 8px; /* Tailwind: 2 */
+  --space-12: 12px; /* Tailwind: 3 */
+  --space-16: 16px; /* Tailwind: 4 */
+  --space-24: 24px; /* Tailwind: 6 */
+  --space-32: 32px; /* Tailwind: 8 */
+  --space-40: 40px; /* Tailwind: 10 */
+  --space-48: 48px; /* Tailwind: 12 */
+  --space-52: 52px; /* Custom spacing */
+  --space-64: 64px; /* Tailwind: 16 */
 
   /* =======================================================
      8) Radius / Shadow
      ======================================================= */
   --radius-sm: 4px; /* Tailwind: rounded */
-  --radius-md: 8px; /* Tailwind: rounded-lg */
+  --radius-md: 6px; /* Tailwind: rounded-lg */
   --radius-lg: 16px; /* Tailwind: rounded-2xl */
 
   --box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
@@ -179,8 +180,8 @@
   --btn-transition: 200ms; /* Tailwind: duration-200 */
 
   /* =======================================================
-    10) Icon Button Spec
-   ======================================================= */
+     10) Icon Button Spec
+     ======================================================= */
   --icon-btn-size: 40px; /* hit area, Tailwind: w-10 h-10 */
   --icon-btn-radius: var(--radius-md); /* Tailwind: rounded-lg */
   --icon-btn-transition: var(--btn-transition);
@@ -206,7 +207,39 @@
   --dot-md: 12px;
 
   /* =======================================================
-     12) Z-index
+     12) Header / Navigation Spec
+     header 與導覽列會用到的 token
+     ======================================================= */
+
+  /* Header padding */
+  --header-padding-y-mobile: var(--space-24);
+  --header-padding-top-desktop: var(--space-48);
+  --header-padding-bottom-desktop: var(--space-24);
+  --header-padding-y-sticky-desktop: var(--space-24);
+
+  /* Header layout gap */
+  --header-inner-gap: var(--space-16);
+  --header-action-gap-mobile: var(--space-24);
+  --header-action-gap-desktop: var(--space-24);
+
+  /* Logo size */
+  --logo-width-sm: 186px;
+  --logo-height-sm: 40px;
+  --logo-width-lg: 200px;
+  --logo-height-lg: 44px;
+
+  /* Navbar spacing */
+  --navbar-padding-top: var(--space-32);
+  --navbar-padding-bottom: var(--space-24);
+  --navbar-link-gap: var(--space-24);
+
+  /* Active line under nav link */
+  --nav-active-line-offset: var(--space-4);
+  --nav-active-line-height: 2px;
+  --nav-active-line-radius: 2px;
+
+  /* =======================================================
+     13) Z-index
      ======================================================= */
   --z-base: 1; /* 一般內容層 */
   --z-header: 100; /* Header / sticky nav */
@@ -215,17 +248,17 @@
   --z-modal: 1000; /* Modal / Dialog（最高層） */
 
   /* =========================================================
-     13) Anchor Offset (for sticky header jump link fix)
-    ========================================================= */
+     14) Anchor Offset (for sticky header jump link fix)
+     ========================================================= */
 
   /* 預設：mobile header 高度 */
   --anchor-offset: 64px;
 
   /* =======================================================
-     14) Accessibility
+     15) Accessibility
      ======================================================= */
   --focus-ring: 0 0 0 3px rgba(216, 178, 105, 0.35);
-  /* Tailwind: focus:outline-none focus:ring-[3px] focus:ring-[rgba(216,178,105,0.35)] (or focus:ring-2 + custom color) */
+  /* Tailwind: focus:outline-none focus:ring-[3px] focus:ring-[rgba(216,178,105,0.35)] */
 }
 
 /* =========================================================
@@ -235,16 +268,16 @@
    ========================================================= */
 
 /* Desktop */
-$bp-xl: 120em; // 1920px | Tailwind: 2xl↑ (1536px+) 以上超大螢幕
-$bp-lg: 75em; // 1200px | Tailwind: xl (1280px) 前一級，介於 lg ~ xl
-$bp-md: 64em; // 1024px | Tailwind: lg (1024px)
+$bp-xl: 120em; // 1920px
+$bp-lg: 75em; // 1200px
+$bp-md: 64em; // 1024px
 
 /* Tablet */
-$bp-tablet: 62em; // 992px  | Tailwind: ≈ lg- (介於 md(768) ~ lg(1024))
-$bp-tablet-sm: 60em; // 960px  | Tailwind: ≈ md+ ~ lg-
+$bp-tablet: 62em; // 992px
+$bp-tablet-sm: 60em; // 960px
 
 /* Mobile */
-$bp-mobile-lg: 50em; // 800px | Tailwind: md (768px) ~ lg (1024px)
-$bp-mobile: 37.5em; // 600px | Tailwind: < sm (640px 以下)
-$bp-mobile-sm: 32.25em; // 500px | Tailwind: < sm（小手機）
-$bp-mobile-xs: 22.5em; // 360px | Tailwind: < sm（極小裝置）
+$bp-mobile-lg: 50em; // 800px
+$bp-mobile: 37.5em; // 600px
+$bp-mobile-sm: 32.25em; // 500px
+$bp-mobile-xs: 22.5em; // 360px

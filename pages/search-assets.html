@@ -1,60 +1,20 @@
 <!doctype html>
 <html lang="en">
-  <%- include('./layout/head'); -%>
-  <!-- 有些頁面的背景色是黑色 -->
+  <%- include('./layout/head', { pathPrefix: '' }); -%>
+
+  <!-- 有些頁面的背景色是黑色 .ma-pager--dark -->
   <body class="ma-page ma-page--dark">
-    <%- include('./layout/header'); -%>
+    <%- include('./layout/header', { pathPrefix: '' }); -%>
 
     <main class="ma-main">
       <!-- 麵包屑導覽列: -->
       <!-- 目前頁面連結加上: .is-active -->
-      <nav class="ma-breadcrumb" aria-label="Breadcrumb">
-        <div class="ma-container">
-          <ol class="ma-breadcrumb__list">
-            <li class="ma-breadcrumb__item"><a href="index.html">首頁</a></li>
-            <li class="ma-breadcrumb__item is-active" aria-current="page">
-              鏈證搜尋
-            </li>
-          </ol>
-        </div>
-      </nav>
+      <%- include('./layout/breadcrumb', { homeHref: 'index.html', currentLabel:
+      '鏈證搜尋' }); -%>
+
       <!-- 搜尋區 -->
-      <section class="ma-section ma-search" aria-label="搜尋">
-        <div class="ma-container">
-          <div class="ma-inner">
-            <!-- search form -->
-            <form class="ma-search-form ma-search-form--dark" role="search">
-              <div class="ma-search-form__box">
-                <!-- 放大鏡：裝飾 -->
-                <button
-                  type="button"
-                  class="ma-icon-btn ma-search-form__icon"
-                  aria-hidden="true"
-                  tabindex="-1"
-                >
-                  <img src="/images/icon_search.png" alt="" />
-                </button>
+      <%- include('./layout/search-bar'); -%>
 
-                <input
-                  type="search"
-                  name="q"
-                  class="ma-search-form__input"
-                  placeholder="請輸入想要搜尋的藝術品名稱、藝術家、認證編號"
-                />
-
-                <!-- 清除 -->
-                <button
-                  type="reset"
-                  class="ma-icon-btn ma-search-form__clear"
-                  aria-label="清除搜尋內容"
-                >
-                  <img src="/images/icon_clear.png" alt="" />
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </section>
       <!-- 結果區 -->
 
       <!-- 結果列表: 大版是8個一頁, 小版是4個一頁.-->
@@ -77,7 +37,7 @@
   注意事項（給後端）：
   - 卡片類型 class（.ma-card--act-art / .ma-card--print-art）
     由程式依資料類型動態產生，不手動寫死於 HTML
-    .ma-card__category 的<h4>文字有2種: 鏈證藝術, 鏈證版畫
+    .ma-card__category 的<h4>文字有2種: 藝術鏈證, 藏品鏈證
 
   - 卡片按鈕文字亦由程式判斷：
     無價格 → 顯示「了解更多」
@@ -89,7 +49,8 @@
             <!-- 後端輸出 N 筆（依每頁筆數） -->
             <div class="ma-list__grid">
               <!-- 依資料量輸出 n 筆 -->
-              <!-- card 01: 有價錢, 按鈕字"詢問收藏" -->
+
+              <!-- card 01：有價錢，按鈕字「詢問收藏」 -->
               <div class="ma-list__item">
                 <article class="ma-card ma-card--act-art">
                   <!-- 左：圖片區 -->
@@ -99,40 +60,73 @@
                       alt="Artwork"
                     />
                   </div>
+
                   <!-- 右：內容區 -->
                   <div class="ma-card__content">
                     <div class="ma-card__category">
-                      <span class="ma-card__category-text">鏈證藝術</span>
-                      <span class="ma-card__icon" aria-hidden="true"></span>
+                      <span class="ma-card__category-text">藝術鏈證</span>
+                      <span
+                        class="ma-card__category-icon"
+                        aria-hidden="true"
+                      ></span>
                     </div>
+
                     <div class="ma-card__header">
                       <h3 class="ma-card__title">Seeing Eyes</h3>
-                      <p class="ma-card__author">理查德・博伊德・鄧洛普</p>
+                      <p class="ma-card__artist">理查德・博伊德・鄧洛普</p>
                     </div>
+
                     <div class="ma-card__body">
-                      <p class="ma-card__info">
-                        <span>丙烯畫 / 畫布</span>
-                        <span>100 × 100 × 100 cm</span>
+                      <p class="ma-card__meta">
+                        <span class="ma-card__meta-item">丙烯畫 / 畫布</span>
+                        <span class="ma-card__meta-item"
+                          >100 × 100 × 100 cm</span
+                        >
                       </p>
-                      <!-- 沒價錢需在<SPAN>填入 &nbsp; 防跑版 -->
-                      <p class="ma-card__price">
-                        <span>1,000.00</span>
-                        <span>ETH(USD)</span>
-                      </p>
-                    </div>
-                    <div class="ma-card__footer">
-                      <p class="ma-card__id">
-                        <span>M2023APG000147PA</span>
-                      </p>
-                      <!-- 有價錢按鈕字: 詢問收藏 -->
-                      <a href="login.html" class="ma-btn ma-btn--gray-dark"
-                        >詢問收藏</a
+
+                      <!-- 沒價錢需在 span 填入 &nbsp; 防跑版 -->
+                      <div
+                        class="ma-card__pricing"
+                        aria-label="Artwork pricing"
                       >
+                        <p class="ma-card__price ma-card__price--crypto">
+                          <span class="ma-card__price-value">1,000.00</span>
+                          <span class="ma-card__price-unit">ETH</span>
+                        </p>
+                        <span class="ma-card__price-equal" aria-hidden="true"
+                          >≈</span
+                        >
+                        <p class="ma-card__price ma-card__price--fiat">
+                          <span class="ma-card__price-value">&nbsp;</span>
+                          <span class="ma-card__price-unit">USD</span>
+                        </p>
+                      </div>
+
+                      <div class="ma-card__footer">
+                        <!-- 編號 / 版數 -->
+                        <div class="ma-card__info-group">
+                          <p class="ma-card__id">M2023APG000147PA</p>
+                          <!-- 沒有版數需在 span 填入 &nbsp; 防跑版 -->
+                          <p class="ma-card__edition" aria-label="無版數">
+                            <span class="ma-card__edition-current">&nbsp;</span>
+                            <span class="ma-card__edition-separator"
+                              >&nbsp;</span
+                            >
+                            <span class="ma-card__edition-total">&nbsp;</span>
+                          </p>
+                        </div>
+
+                        <!-- 有價錢按鈕字：詢問收藏 -->
+                        <a href="confirm.html" class="ma-btn ma-btn--gray-dark"
+                          >詢問收藏</a
+                        >
+                      </div>
                     </div>
                   </div>
                 </article>
               </div>
-              <!-- card 02: 範例資料" -->
+
+              <!-- card 02：無價錢 -->
               <div class="ma-list__item">
                 <article class="ma-card ma-card--print-art">
                   <!-- 左：圖片區 -->
@@ -142,35 +136,67 @@
                       alt="Artwork"
                     />
                   </div>
+
                   <!-- 右：內容區 -->
                   <div class="ma-card__content">
                     <div class="ma-card__category">
-                      <span class="ma-card__category-text">鏈證版畫</span>
-                      <span class="ma-card__icon" aria-hidden="true"></span>
+                      <span class="ma-card__category-text">藏品鏈證</span>
+                      <span
+                        class="ma-card__category-icon"
+                        aria-hidden="true"
+                      ></span>
                     </div>
+
                     <div class="ma-card__header">
                       <h3 class="ma-card__title">Seeing Eyes</h3>
-                      <p class="ma-card__author">理查德・博伊德・鄧洛普</p>
+                      <p class="ma-card__artist">理查德・博伊德・鄧洛普</p>
                     </div>
+
                     <div class="ma-card__body">
-                      <p class="ma-card__info">
-                        <span>丙烯畫 / 畫布</span>
-                        <span>100 × 100 × 100 cm</span>
+                      <p class="ma-card__meta">
+                        <span class="ma-card__meta-item">丙烯畫 / 畫布</span>
+                        <span class="ma-card__meta-item"
+                          >100 × 100 × 100 cm</span
+                        >
                       </p>
-                      <!-- 沒價錢需在<SPAN>填入 &nbsp; 防跑版 -->
-                      <p class="ma-card__price">
-                        <span>&nbsp;</span>
-                        <span>&nbsp;</span>
-                      </p>
-                    </div>
-                    <div class="ma-card__footer">
-                      <p class="ma-card__id">
-                        <span>M2023APG000147PA</span>
-                      </p>
-                      <!-- 沒有價錢按鈕字: 了解更多 -->
-                      <a href="login.html" class="ma-btn ma-btn--gray-dark"
-                        >了解更多</a
+
+                      <!-- 沒價錢需在 span 填入 &nbsp; 防跑版 -->
+                      <div
+                        class="ma-card__pricing"
+                        aria-label="Artwork pricing"
                       >
+                        <p class="ma-card__price ma-card__price--crypto">
+                          <span class="ma-card__price-value">&nbsp;</span>
+                          <span class="ma-card__price-unit">&nbsp;</span>
+                        </p>
+                        <span class="ma-card__price-equal" aria-hidden="true"
+                          >&nbsp;</span
+                        >
+                        <p class="ma-card__price ma-card__price--fiat">
+                          <span class="ma-card__price-value">&nbsp;</span>
+                          <span class="ma-card__price-unit">&nbsp;</span>
+                        </p>
+                      </div>
+
+                      <div class="ma-card__footer">
+                        <!-- 編號 / 版數 -->
+                        <div class="ma-card__info-group">
+                          <p class="ma-card__id">M2023APG000147PA</p>
+                          <!-- 沒有版數需在 span 填入 &nbsp; 防跑版 -->
+                          <p class="ma-card__edition" aria-label="無版數">
+                            <span class="ma-card__edition-current">&nbsp;</span>
+                            <span class="ma-card__edition-separator"
+                              >&nbsp;</span
+                            >
+                            <span class="ma-card__edition-total">&nbsp;</span>
+                          </p>
+                        </div>
+
+                        <!-- 沒有價錢按鈕字：了解更多 -->
+                        <a href="line.html" class="ma-btn ma-btn--gray-dark"
+                          >了解更多</a
+                        >
+                      </div>
                     </div>
                   </div>
                 </article>
@@ -180,39 +206,8 @@
             </div>
 
             <!-- 分頁導覽 -->
-            <nav class="ma-pagination" aria-label="Pagination">
-              <!-- Prev -->
-              <button
-                class="ma-pagination__btn ma-pagination__btn--prev"
-                aria-label="Previous page"
-              >
-                ‹
-              </button>
-
-              <!-- Pages -->
-              <div class="ma-pagination__pages">
-                <button
-                  class="ma-pagination__btn is-active"
-                  aria-current="page"
-                >
-                  1
-                </button>
-                <button class="ma-pagination__btn">2</button>
-                <button class="ma-pagination__btn">3</button>
-                <button class="ma-pagination__btn">4</button>
-                <button class="ma-pagination__btn">5</button>
-                <span class="ma-pagination__ellipsis">…</span>
-                <button class="ma-pagination__btn">134</button>
-              </div>
-
-              <!-- Next -->
-              <button
-                class="ma-pagination__btn ma-pagination__btn--next"
-                aria-label="Next page"
-              >
-                ›
-              </button>
-            </nav>
+            <!-- 分頁按鈕: 大版是1到5頁..., 小版是1到3頁...-->
+            <%- include('./layout/pagination') %>
           </div>
         </div>
       </section>
@@ -241,8 +236,6 @@
       </section>
     </main>
 
-    <%- include('./layout/footer'); -%>
-
-    <script type="module" src="../ma-main.js"></script>
+    <%- include('./layout/footer', { pathPrefix: '' }); -%>
   </body>
 </html>

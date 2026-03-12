@@ -1,0 +1,384 @@
+/* =========================================================
+   Member Assets Page
+   與 ma-assets 視覺接近，但為會員後台資產頁獨立樣式
+   ========================================================= */
+
+.ma-member-assets {
+  padding: var(--space-32, 32px) 0 var(--space-48, 48px);
+
+  &__inner {
+    @include flex-col(var(--space-24));
+  }
+
+  &__list {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   Card
+   ========================================================= */
+
+.ma-member-asset-card {
+  --card-category-color: var(--color-brand-primary, #d8b269);
+  --card-category-icon: none;
+
+  &--act-art {
+    --card-category-color: var(--color-brand-primary, #d8b269);
+    --card-category-icon: url("/images/icon_assets_actart.png");
+  }
+
+  &--print-art {
+    --card-category-color: var(--color-gray-600);
+    --card-category-icon: url("/images/icon_assets_printart.png");
+  }
+
+  @include flex-col(var(--space-24));
+  height: 100%;
+  padding: var(--space-24);
+  color: var(--color-white, #fff);
+  background: var(--color-gray-800);
+
+  &__top {
+    @include flex-row(var(--space-16));
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-bottom: var(--space-12);
+    border-bottom: 1px solid var(--color-gray-700);
+  }
+
+  &__serial-wrap {
+    @include flex-col(0);
+  }
+  &__category {
+    @include flex-row(var(--space-8));
+    align-items: center;
+
+    font-weight: var(--fw-bold);
+
+    margin-bottom: var(--space-4);
+
+    color: var(--card-category-color, var(--color-brand-primary, #d8b269));
+  }
+
+  &__category-icon {
+    @include inline-flex(row, center, center, 0);
+
+    width: var(--icon-xs);
+    height: var(--icon-xs);
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: var(--card-category-icon);
+  }
+  &__setting {
+    flex-shrink: 0;
+    min-width: 56px;
+    padding: 0;
+    color: var(--color-gray-500);
+    font: inherit;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color-brand-primary, #d8b269);
+    }
+  }
+
+  &__main {
+    @include flex-col(var(--space-16));
+
+    @include respond-min($bp-mobile-sm) {
+      @include flex-row(var(--space-16));
+      align-items: flex-start;
+    }
+  }
+
+  &__media {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+
+    @include respond-min($bp-mobile-sm) {
+      flex: 0 0 40%;
+      max-width: 40%;
+      height: 320px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: top;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+
+    @include respond-min($bp-mobile-sm) {
+      flex: 1 1 0;
+    }
+  }
+
+  &__header {
+    margin-bottom: var(--space-16);
+  }
+
+  /* 編號 / 版數 區 */
+  &__info-group {
+    @include flex-col(var(0));
+
+    @include respond-min($bp-md) {
+      @include flex-row(var(--space-16));
+      flex-wrap: wrap;
+    }
+  }
+
+  &__footer {
+    margin-top: auto;
+    margin-bottom: var(--space-16);
+
+    @include flex-between(center, var(--space-8));
+    flex-wrap: wrap;
+
+    font-size: var(--fs-small);
+
+    .ma-btn {
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+  }
+  &__title {
+    font-size: var(--fs-small);
+  }
+
+  &__artist {
+    margin: 0;
+    font-size: var(--fs-ui-title);
+  }
+
+  &__meta {
+    @include flex-col(0);
+    margin-bottom: var(--space-24);
+  }
+
+  &__meta-text {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-gray-500);
+  }
+
+  &__pricing {
+    margin-bottom: 20px;
+    min-height: 32px;
+    @include flex-row(var(--space-16));
+    &--crypto {
+      @include flex-row(var(--space-16));
+    }
+  }
+
+  &__price {
+  }
+
+  &__action-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 12px;
+  }
+
+  &__detail,
+  &__report {
+    border-top: 1px solid var(--color-gray-700);
+    background: var(--color-gray-900);
+  }
+
+  &__detail-toggle {
+    @include flex-row(var(--space-16));
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: var(--space-16);
+    color: var(--color-white, #fff);
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+
+  .ma-member-asset-card__detail-icon {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg);
+    transition: transform 0.25s ease;
+    margin-top: -2px;
+  }
+
+  .ma-member-asset-card__detail-toggle[aria-expanded="true"]
+    .ma-member-asset-card__detail-icon {
+    transform: rotate(-135deg);
+  }
+
+  &__detail-toggle[aria-expanded="true"] &__detail-icon::after {
+    opacity: 0;
+  }
+
+  &__detail-panel {
+    display: none;
+    padding: var(--space-16);
+  }
+
+  &__detail.is-open &__detail-panel {
+    display: block;
+  }
+
+  &__detail-scroll {
+    max-height: 320px;
+    padding: var(--space-16);
+    overflow-y: auto;
+    color: var(--color-gray-500);
+  }
+
+  &__report {
+    @include flex-row(var(--space-8));
+    align-items: center;
+    padding: var(--space-16);
+  }
+
+  &__report-status {
+    color: var(--color-white, #fff);
+  }
+
+  /* 當後面有下載連結時才出現 "/" */
+  &__report-link::before {
+    content: "/";
+    margin: 0 var(--sapce-8);
+    color: var(--color-white);
+  }
+
+  &__report-link {
+    color: var(--color-white, #fff);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-brand-primary, #d8b269);
+    }
+  }
+}
+
+/* =========================================================
+   Modal
+   ========================================================= */
+
+/* =========================================================
+   Member Asset Modal
+   ========================================================= */
+
+.ma-member-asset-modal {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal, 999);
+  display: none;
+
+  &.is-show {
+    display: block;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+  }
+
+  &__dialog {
+    position: relative;
+    z-index: 1;
+    width: min(920px, calc(100% - 32px));
+    margin: 10vh auto 0;
+    padding: 56px var(--space-48) var(--space-48);
+    color: var(--color-white);
+    background: var(--color-gray-800);
+    border: 1px solid var(--color-gray-700);
+  }
+
+  &__close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    color: var(--color-white);
+    font-size: var(--fs-h2);
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+
+  &__form {
+    width: 100%;
+  }
+
+  &__row {
+    @include flex-row(var(--space-16));
+    align-items: start;
+    flex-wrap: wrap;
+    &--top {
+      align-items: center;
+    }
+
+    &--price {
+      align-items: center;
+      margin-bottom: 1em;
+    }
+  }
+
+  &__title,
+  &__label {
+    font-size: var(--fs-h5);
+    font-weight: var(--fw-h5);
+  }
+
+  &__label-col {
+    flex-shrink: 0;
+  }
+
+  &__divider {
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin: var(--space-24) 0 var(--space-32);
+    background: var(--color-gray-700);
+  }
+
+  &__option-group {
+    @include flex-row(var(--space-24));
+    flex-wrap: wrap;
+    padding: var(--space-16);
+    justify-content: space-around;
+    background: var(--color-gray-700);
+    border-radius: var(--radius-sm);
+  }
+
+  &__price-line {
+    @include flex-row(var(--space-24));
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__field {
+    .ma-field__control {
+      height: 40px;
+      padding: 0 var(--space-12);
+      border-radius: 4px;
+    }
+  }
+}

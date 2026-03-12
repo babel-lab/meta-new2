@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <%- include('./layout/head', { pathPrefix: '../' }); -%>
+
+  <!-- 有些頁面的背景色是黑色 .ma-pager--dark -->
+  <!-- 使用在後台頁在 body 加上 class 樣式 .ma-user -->
+  <body class="ma-page ma-page--dark ma-user">
+    <%- include('./layout/header', { pathPrefix: '../' }); -%>
+
+    <main class="ma-main">
+      <section class="ma-section ma-message" aria-labelledby="ma-message-title">
+        <div class="ma-container">
+          <div class="ma-inner">
+            <article
+              class="ma-form-panel ma-form-panel--narrow ma-message__content ma-message__content--confirm"
+              role="status"
+              aria-live="polite"
+            >
+              <div
+                class="ma-form-panel__body ma-form-stack ma-form-stack--loose"
+              >
+                <!-- 上方金線 -->
+                <span class="ma-form-divider" aria-hidden="true"></span>
+
+                <h2 id="ma-message-title" class="ma-form__title">
+                  藝術品送件與鑑定流程提醒
+                </h2>
+
+                <div class="ma-message__body">
+                  <p class="ma-message__text">
+                    付款完成後，請將藝術品送至<br />
+                    指定交易地點：
+                  </p>
+
+                  <p class="ma-message__text ma-message__text--address">
+                    波翼藝術中心<br />
+                    台北市中山區建國北路二段37號B1<br />
+                    聯絡電話：02 - 2501 - 4322
+                  </p>
+
+                  <p class="ma-message__text">
+                    Metaassets 將於收到作品後進行完整鑑定，並完成上架至
+                    ACT（RWA）供指定的買家購買。
+                  </p>
+
+                  <p class="ma-message__text">
+                    鑑定與上架流程完成後，系統將以簡訊通知買家。
+                  </p>
+
+                  <p class="ma-message__text ma-message__text--fee">
+                    本次服務費用為 NTD 12,000 元整。
+                  </p>
+                </div>
+
+                <div class="ma-message__actions">
+                  <!-- 可依實際流程改成返回資產列表、會員中心或首頁 -->
+                  <a
+                    href="message-transaction-success.html"
+                    class="ma-btn ma-btn--outline-gold-solid-square"
+                  >
+                    確認
+                  </a>
+                </div>
+
+                <!-- 下方金線 -->
+                <span class="ma-form-divider" aria-hidden="true"></span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <%- include('./layout/footer', { pathPrefix: '../' }); -%>
+  </body>
+</html>

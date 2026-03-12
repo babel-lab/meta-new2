@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <%- include('./layout/head', { pathPrefix: '../' }); -%>
+
+  <!-- 有些頁面的背景色是黑色 .ma-page--dark -->
+  <!-- 使用在後台頁 body 加上 class 樣式 .ma-user -->
+  <body class="ma-page ma-page--dark ma-user">
+    <%- include('./layout/header', { pathPrefix: '../' }); -%>
+
+    <main class="ma-main">
+      <!-- 麵包屑導覽列 -->
+      <!-- 目前會員後台尚無 dashboard 首頁，暫以藝術資產頁作為會員中心入口 -->
+      <%- include('./layout/breadcrumb', { homeHref: '../index.html',
+      parentLabel: '會員中心', parentHref: 'assets.html', currentLabel:
+      '錢包設定成功' }); -%>
+
+      <section
+        class="ma-section ma-message"
+        aria-labelledby="ma-login-success-title"
+      >
+        <div class="ma-container">
+          <div class="ma-inner">
+            <article
+              class="ma-form-panel ma-form-panel--compact ma-message__content"
+              role="status"
+              aria-live="polite"
+            >
+              <div
+                class="ma-form-panel__body ma-form-stack ma-form-stack--loose"
+              >
+                <div class="ma-message__icon" aria-hidden="true">
+                  <img
+                    class="ma-message__icon-img"
+                    src="/images/icon_check.png"
+                    alt=""
+                  />
+                </div>
+
+                <h2 id="ma-login-success-title" class="ma-form__title">
+                  登入成功
+                </h2>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <%- include('./layout/footer', { pathPrefix: '../' }); -%>
+  </body>
+</html>

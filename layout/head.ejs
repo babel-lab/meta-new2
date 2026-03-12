@@ -1,24 +1,29 @@
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" href="/images/logo.ico" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Metaassets｜藝術資產交易平台</title>
-  <!-- 此為測試用GA, 正式上線要換官網GA4 -->
-  <!-- Google tag (gtag.js) -->
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-VTZNRHLELH"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", "G-VTZNRHLELH");
-  </script>
+
+  <link rel="icon" href="images/logo.ico" />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="images/favicon-32x32.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="images/favicon-16x16.png"
+  />
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="images/apple-touch-icon.png"
+  />
+
   <meta
     name="description"
     content="Metaassets 是專注於藝術資產與 NFT 的交易與認證平台，提供藝術品數位憑證、防偽驗證與區塊鏈資產管理服務。"
@@ -29,16 +34,13 @@
   />
   <link rel="canonical" href="https://www.metaassets.io/" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Noto+Serif+TC:wght@400;500;600&display=swap"
     rel="stylesheet"
   />
+
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#000000" />
 
@@ -49,7 +51,7 @@
     property="og:description"
     content="Metaassets 是專注於藝術資產與 NFT 的交易與認證平台，提供藝術品數位憑證、防偽驗證與區塊鏈資產管理服務。"
   />
-  <meta property="og:image" content="/images/og-image.jpg" />
+  <meta property="og:image" content="<%= pathPrefix %>images/og-image.jpg" />
   <meta property="og:site_name" content="Metaassets" />
 
   <meta name="twitter:card" content="summary_large_image" />
@@ -63,12 +65,22 @@
   />
   <meta name="twitter:image" content="https://www.metaassets.io/og-image.jpg" />
 
-  <!-- 首頁輪播套件 -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-VTZNRHLELH"
+  ></script>
+  <!-- 上線後改正式GA4 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-VTZNRHLELH");
+  </script>
+
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
   />
-
-  <!-- 自訂 CSS -->
-  <link rel="stylesheet" href="/assets/css/main.css" />
 </head>

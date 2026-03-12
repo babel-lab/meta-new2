@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <%- include('./layout/head', { pathPrefix: '../' }); -%>
+
+  <!-- 有些頁面的背景色是黑色 .ma-page--dark -->
+  <!-- 使用在後台頁 body 加上 class 樣式 .ma-user -->
+  <body class="ma-page ma-page--dark ma-user">
+    <%- include('./layout/header', { pathPrefix: '../' }); -%>
+
+    <main class="ma-main">
+      <!-- 麵包屑導覽列 -->
+      <!-- 目前會員後台尚無 dashboard 首頁，暫以藝術資產頁作為會員中心入口 -->
+      <%- include('./layout/breadcrumb', { homeHref: '../index.html',
+      parentLabel: '會員中心', parentHref: 'assets.html', currentLabel:
+      '指定給我的交易' }); -%>
+
+      <!-- 搜尋區 -->
+      <%- include('./layout/search-bar'); -%>
+
+      <section
+        class="ma-section ma-transaction-assigned-detail ma-member-layout"
+        aria-labelledby="ma-transaction-assigned-detail-title"
+      >
+        <div class="ma-container">
+          <div class="ma-inner">
+            <!-- 左側會員欄 -->
+            <%- include('./layout/member-sidebar'); -%>
+
+            <!-- 右側主內容區 -->
+            <div class="ma-member-layout__main">
+              <div class="ma-transaction-assigned-detail__panel">
+                <!-- 頁面標題 -->
+                <div class="ma-transaction-assigned-detail__header">
+                  <h3 class="ma-transaction-assigned-detail__page-title">
+                    你的訊息
+                  </h3>
+                </div>
+
+                <!-- 訊息列 -->
+                <div
+                  class="ma-transaction-assigned-detail__message-bar"
+                  aria-label="Message summary"
+                >
+                  <a
+                    href="transaction-assigned.html"
+                    class="ma-transaction-assigned-detail__back"
+                    aria-label="返回指定給我的交易列表"
+                  >
+                    &lt;
+                  </a>
+
+                  <span class="ma-transaction-assigned-detail__message-type">
+                    訊息
+                  </span>
+
+                  <span
+                    class="ma-transaction-assigned-detail__message-arrow"
+                    aria-hidden="true"
+                  >
+                    ▾
+                  </span>
+
+                  <h3 class="ma-transaction-assigned-detail__message-subject">
+                    羅倫佐指定與你鏈證交易
+                  </h3>
+
+                  <time
+                    class="ma-transaction-assigned-detail__message-date"
+                    datetime="2026-02-25"
+                  >
+                    02/25/2026
+                  </time>
+                </div>
+
+                <!-- 內容主體 -->
+                <div class="ma-transaction-assigned-detail__body">
+                  <!-- 左：作品圖 -->
+                  <div class="ma-transaction-assigned-detail__media">
+                    <img
+                      src="https://images.unsplash.com/photo-1578926375605-eaf7559b1458?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGFpbnRpbmd8ZW58MHx8MHx8fDA%3D"
+                      alt="藝術作品圖：Seeing Eyes"
+                    />
+                  </div>
+
+                  <!-- 右：資訊 -->
+                  <div class="ma-transaction-assigned-detail__info">
+                    <!-- 藝術品資訊 -->
+                    <div class="ma-transaction-assigned-detail__section">
+                      <h3 class="ma-transaction-assigned-detail__section-title">
+                        藝術品資訊
+                      </h3>
+
+                      <div class="ma-transaction-assigned-detail__artwork-meta">
+                        <p class="ma-transaction-assigned-detail__artwork-id">
+                          M2023APG000147PA
+                        </p>
+
+                        <p class="ma-transaction-assigned-detail__artwork-type">
+                          鏈證藝術
+                        </p>
+
+                        <p class="ma-transaction-assigned-detail__artwork-name">
+                          Seeing Eyes
+                        </p>
+
+                        <p class="ma-transaction-assigned-detail__artist">
+                          理查德·博伊德-鄧洛普
+                        </p>
+
+                        <p class="ma-transaction-assigned-detail__spec">
+                          丙烯畫 / 壓克力
+                        </p>
+
+                        <p class="ma-transaction-assigned-detail__size">
+                          100 X 100 X 100 cm
+                        </p>
+
+                        <!-- 價格 -->
+                        <div
+                          class="ma-transaction-assigned-detail__pricing"
+                          aria-label="Artwork pricing"
+                        >
+                          <p
+                            class="ma-transaction-assigned-detail__price ma-transaction-assigned-detail__price--crypto"
+                          >
+                            <span
+                              class="ma-transaction-assigned-detail__price-value"
+                              >1,000.00</span
+                            >
+                            <span
+                              class="ma-transaction-assigned-detail__price-unit"
+                              >ETH</span
+                            >
+                          </p>
+
+                          <span
+                            class="ma-transaction-assigned-detail__price-equal"
+                            aria-hidden="true"
+                          >
+                            ≈
+                          </span>
+
+                          <p
+                            class="ma-transaction-assigned-detail__price ma-transaction-assigned-detail__price--fiat"
+                          >
+                            <!-- 沒有 USD 價格時填入 &nbsp; -->
+                            <span
+                              class="ma-transaction-assigned-detail__price-value"
+                              >1,000.00</span
+                            >
+                            <span
+                              class="ma-transaction-assigned-detail__price-unit"
+                              >USD</span
+                            >
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <hr
+                      class="ma-transaction-assigned-detail__divider"
+                      aria-hidden="true"
+                    />
+
+                    <!-- 交易地點 -->
+                    <div class="ma-transaction-assigned-detail__section">
+                      <h3 class="ma-transaction-assigned-detail__section-title">
+                        交易地點
+                      </h3>
+
+                      <div class="ma-transaction-assigned-detail__location">
+                        <p
+                          class="ma-transaction-assigned-detail__location-name"
+                        >
+                          波翼藝術中心
+                        </p>
+                        <p
+                          class="ma-transaction-assigned-detail__location-address"
+                        >
+                          台北市中山區建國北路一段37號B1
+                        </p>
+                        <p
+                          class="ma-transaction-assigned-detail__location-phone"
+                        >
+                          聯絡電話：02 - 2501 - 4322
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- 按鈕 -->
+                    <!-- 按鈕按下後, 就加 disabled , 讓按鈕失效. 頁面停在這裡 -->
+                    <div class="ma-transaction-assigned-detail__actions">
+                      <button
+                        type="button"
+                        class="ma-btn ma-btn--outline-gold-solid-square"
+                        disabled
+                      >
+                        接受指定交易
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <%- include('./layout/footer', { pathPrefix: '../' }); -%>
+  </body>
+</html>

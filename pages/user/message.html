@@ -1,9 +1,11 @@
 <!doctype html>
 <html lang="en">
-  <%- include('./layout/head'); -%>
-  <!-- 有些頁面的背景色是黑色 -->
-  <body class="ma-page ma-page--dark">
-    <%- include('./layout/header'); -%>
+  <%- include('./layout/head', { pathPrefix: '' }); -%>
+
+  <!-- 有些頁面的背景色是黑色 .ma-pager--dark -->
+  <!-- 使用在後台頁在 body 加上 class 樣式 .ma-user -->
+  <body class="ma-page ma-page--dark ma-user">
+    <%- include('./layout/header', { pathPrefix: '' }); -%>
     <main class="ma-main">
       <section class="ma-section ma-message" aria-labelledby="ma-message-title">
         <div class="ma-container">
@@ -42,8 +44,6 @@
       </section>
     </main>
 
-    <%- include('./layout/footer'); -%>
-
-    <script type="module" src="../ma-main.js"></script>
+    <%- include('./layout/footer', { pathPrefix: '' }); -%>
   </body>
 </html>

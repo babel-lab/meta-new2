@@ -14,16 +14,15 @@
               class="ma-form-panel ma-form-panel--narrow ma-login__content"
             >
               <div class="ma-form-panel__header">
-                <h2 class="ma-form__title">錢包登入</h2>
+                <h2 class="ma-form__title">錢包設定</h2>
                 <span class="ma-form-divider" aria-hidden="true"></span>
               </div>
 
               <div class="ma-form-panel__body">
-                <!-- 登入後頁面要換連結, 目前為暫放連結 -->
-                <!-- METHOD在GITHUB上暫改GET-->
+                <!-- METHOD在GITHUB上暫改GET -->
                 <form
                   class="ma-login-form ma-form-stack"
-                  action="login-success.html"
+                  action="./login-setting-success.html"
                   method="get"
                 >
                   <!-- 姓名 -->
@@ -116,17 +115,13 @@
 
                   <!-- Submit -->
                   <div class="ma-form__actions">
-                    <button class="ma-btn ma-btn--gray-dark" type="submit">
-                      登 入
-                    </button>
-
-                    <!-- 連到 user 資料夾 -->
-                    <a
-                      class="ma-btn ma-btn--gray-dark"
-                      href="login-setting.html"
-                    >
-                      設定
+                    <a href="login.html" class="ma-btn ma-btn--gray-dark">
+                      取消
                     </a>
+
+                    <button class="ma-btn ma-btn--gray-dark" type="submit">
+                      確認
+                    </button>
                   </div>
                 </form>
               </div>

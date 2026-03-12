@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <%- include('./layout/head', { pathPrefix: '../' }); -%>
+
+  <!-- 有些頁面的背景色是黑色 .ma-page--dark -->
+  <body class="ma-page ma-page--dark">
+    <%- include('./layout/header', { pathPrefix: '../' }); -%>
+
+    <main class="ma-main">
+      <section
+        class="ma-section ma-message ma-message--transaction-success"
+        aria-labelledby="ma-transaction-success-title"
+      >
+        <div class="ma-container">
+          <div class="ma-inner">
+            <article
+              class="ma-form-panel ma-form-panel--narrow ma-message__content"
+              role="status"
+              aria-live="polite"
+            >
+              <div
+                class="ma-form-panel__body ma-form-stack ma-form-stack--loose"
+              >
+                <!-- 成功圖示：沿用登入成功頁既有結構 -->
+                <div class="ma-message__icon" aria-hidden="true">
+                  <img
+                    class="ma-message__icon-img"
+                    src="/images/icon_check.png"
+                    alt=""
+                  />
+                </div>
+
+                <!-- 主標題 -->
+                <header class="ma-message__header">
+                  <h2
+                    id="ma-transaction-success-title"
+                    class="ma-form__title ma-message__title"
+                  >
+                    Metaassets 藝術品信任交易通知
+                  </h2>
+
+                  <p class="ma-message__serial">
+                    編號<span class="ma-message__serial-value"
+                      >M2023APG000147PA</span
+                    >
+                  </p>
+                </header>
+
+                <!-- 說明文字 -->
+                <div class="ma-message__body">
+                  <p class="ma-message__text">
+                    您有一筆藝術品交易申請已成立。<br />
+                    申請完成請將藝術品送至指定地點鑑定與交易：
+                  </p>
+
+                  <!-- 地點資訊 -->
+                  <div class="ma-message__location">
+                    <p class="ma-message__location-name">波翼藝術中心</p>
+                    <p class="ma-message__location-address">
+                      台北市中山區建國北路二段37號B1
+                    </p>
+                    <p class="ma-message__location-phone">
+                      聯絡電話：
+                      <a href="tel:02-2501-4322" class="ma-message__phone-link">
+                        02 - 2501 - 4322
+                      </a>
+                    </p>
+                  </div>
+
+                  <!-- 結尾文字 -->
+                  <p class="ma-message__text ma-message__text--closing">
+                    Metaassets 將協助完成驗收與交付流程，<br />
+                    感謝您的信任與支持。
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <%- include('./layout/footer', { pathPrefix: '../' }); -%>
+  </body>
+</html>

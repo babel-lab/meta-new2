@@ -3,13 +3,10 @@ import { ViteEjsPlugin } from "vite-plugin-ejs";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 import { glob } from "glob";
-
 import liveReload from "vite-plugin-live-reload";
 
-/**
- * 將 pages/xxx.html 輸出成 dist/xxx.html
- * 不要保留 pages 資料夾層級（給 GitHub Pages 用）
- */
+const projectRoot = fileURLToPath(new URL(".", import.meta.url));
+
 function moveOutputPlugin() {
   return {
     name: "move-output",
@@ -27,8 +24,10 @@ function moveOutputPlugin() {
 }
 
 export default defineConfig(({ command }) => {
+  const BASE_URL = command === "serve" ? "/" : "/meta-new2/";
+
   return {
-    base: command === "serve" ? "/" : "/meta-new/",
+    base: BASE_URL,
 
     plugins: [
       liveReload([
@@ -36,7 +35,19 @@ export default defineConfig(({ command }) => {
         "./pages/**/*.ejs",
         "./pages/**/*.html",
       ]),
-      ViteEjsPlugin(),
+
+      ViteEjsPlugin(
+        {
+          BASE_URL,
+        },
+        {
+          ejs: {
+            root: projectRoot,
+            views: [projectRoot],
+          },
+        },
+      ),
+
       moveOutputPlugin(),
     ],
 
@@ -49,9 +60,9 @@ export default defineConfig(({ command }) => {
     },
 
     build: {
-      minify: false, // JS 不壓縮
-      cssMinify: false, // CSS 不壓縮
-      sourcemap: true, // 可追 source（可拿掉）
+      minify: false,
+      cssMinify: false,
+      sourcemap: false,
 
       rollupOptions: {
         input: Object.fromEntries(
@@ -67,30 +78,18 @@ export default defineConfig(({ command }) => {
         ),
 
         output: {
-          /**
-           * JS 檔名固定（不加 hash）
-           */
           entryFileNames: "assets/[name].js",
           chunkFileNames: "assets/[name].js",
-
-          /**
-           * CSS / 圖片 / 字體 也固定名稱
-           */
           assetFileNames: (assetInfo) => {
             const ext = path.extname(assetInfo.name || "");
 
-            if (ext === ".css") {
-              return "assets/[name].css";
-            }
-
+            if (ext === ".css") return "assets/[name].css";
             if (/\.(png|jpe?g|svg|gif|webp)$/i.test(ext)) {
               return "images/[name][extname]";
             }
-
             if (/\.(woff2?|ttf|otf)$/i.test(ext)) {
               return "fonts/[name][extname]";
             }
-
             return "assets/[name][extname]";
           },
         },

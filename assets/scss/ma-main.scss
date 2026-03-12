@@ -27,3 +27,18 @@
 @import "./pages/_confirm.scss";
 
 @import "./pages/_message.scss";
+
+/* 6) Pages（頁面覆蓋） */
+@import "./pages/user/member-layout.scss";
+@import "./pages/user/member-sidebar.scss";
+@import "./pages/user/assets.scss";
+
+@import "./pages/user/assign-transaction.scss";
+
+@import "./pages/user/transaction-records.scss";
+
+@import "./pages/user/transaction-assigned.scss";
+
+@import "./pages/user/transaction-assigned-detail.scss";
+
+@import "./pages/user/login-change.scss";

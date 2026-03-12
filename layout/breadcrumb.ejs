@@ -1,0 +1,26 @@
+<!-- 麵包屑導覽列 -->
+<nav class="ma-breadcrumb" aria-label="Breadcrumb">
+  <div class="ma-container">
+    <ol class="ma-breadcrumb__list">
+
+      <li class="ma-breadcrumb__item">
+        <a href="<%= homeHref || 'index.html' %>">首頁</a>
+      </li>
+
+      <% if (typeof parentLabel !== 'undefined' && parentLabel) { %>
+        <li class="ma-breadcrumb__item">
+          <% if (typeof parentHref !== 'undefined' && parentHref) { %>
+            <a href="<%= parentHref %>"><%= parentLabel %></a>
+          <% } else { %>
+            <span><%= parentLabel %></span>
+          <% } %>
+        </li>
+      <% } %>
+
+      <li class="ma-breadcrumb__item is-active" aria-current="page">
+        <%= currentLabel %>
+      </li>
+
+    </ol>
+  </div>
+</nav>

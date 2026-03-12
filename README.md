@@ -1,113 +1,256 @@
-# Meta New 前端切版交付專案
+# META-NEW2 Frontend Template
 
-此專案為 **純前端靜態切版專案**，使用 Vite 建置， 用途為提供 **PHP
-工程師進行後端套版整合**。
+Frontend template for the **MetaAssets platform**.
 
-🔗 GitHub Pages Demo\
-https://`<你的GitHub帳號>`{=html}.github.io/`<repo名稱>`{=html}/
+Repository: **META-NEW2**
 
-📦 最終交付目錄\
-`dist/`
+This version includes updated frontend navigation and new member backend pages.
+The project is built with **Vite + EJS + SCSS** and will later be integrated with a **PHP backend**.
 
-------------------------------------------------------------------------
+---
 
-## 一、專案定位（非常重要）
+# Project Overview
 
-本專案 **不是完整網站**，而是：
+This repository contains the **UI template layer** for the MetaAssets website.
 
-✅ UI 切版實作\
-✅ RWD 響應式設計\
-✅ CSS Design Token 架構\
-✅ 前端互動效果（Drawer / Swiper 等）\
-✅ 提供後端套版基礎 HTML
+Main updates in this version:
 
-本專案 **不包含**
+- Updated **Frontend Navigation**
+- Added **Member Backend Pages**
+- Updated **terminology**
+- Added **ETH / USD price display**
+- Added **Edition count display**
 
-❌ PHP 程式\
-❌ API 串接\
-❌ 資料邏輯\
-❌ 權限 / Session / 表單處理
+This project currently contains **frontend UI templates only**.
 
-------------------------------------------------------------------------
+Backend logic will be implemented separately.
 
-## 二、專案目錄結構
+---
 
-. ├─ public/ \# 靜態資源（圖片 / icon / 字型） ├─ src/ │ ├─ styles/ \#
-SCSS（tokens / components / layout） │ └─ scripts/ \# JS 行為 ├─ pages/
-\# 各頁面模板（開發用） ├─ layout/ \# 共用 layout（開發用） ├─ dist/ \#
-✅ Build 後正式交付內容 ├─ vite.config.js └─ package.json
+# Main Updates in META-NEW2
 
-⚠️ 後端請只使用 `dist/`，不要引用 `src/` 或 `pages/`。
+## 1. Navigation Update
 
-------------------------------------------------------------------------
+The main navigation menu has been updated.
 
-## 三、正式交付流程
+Navigation changes based on login state.
+
+### Before Login
+
+錢包登入 / 設定
+
+### After Login
+
+查看鏈證
+
+Inside `header.ejs`, there are commented sections showing how to switch navigation depending on login status.
+
+Example:
+
+<!-- Login state control -->
+
+<!-- Before login -->
+
+<a href="login.html">錢包登入 / 設定</a>
+
+<!-- After login -->
+
+<a href="user/assets.html">查看鏈證</a>
+
+Backend developers should output the appropriate section based on login state.
+
+---
+
+# 2. Terminology Update
+
+Several terms were updated across the platform.
+
+| Old Term | New Term |
+| -------- | -------- |
+| 鏈證藝術 | 藝術鍊證 |
+| 藏品鏈證 | 藏品鍊證 |
+| 認證藝術 | 認證藝術 |
+| 藝術藏品 | 藝術藏品 |
+
+Please ensure backend data uses the **new terminology**.
+
+---
+
+# 3. Artwork Card Data Fields
+
+Artwork cards now include additional information.
+
+New fields:
+
+- ETH price
+- USD price
+- Edition count
+
+Example display:
+
+1,000.00 ETH  
+(3,000 USD)
+
+Edition: 5
+
+If a field is missing, the UI currently uses `&nbsp;` to maintain layout alignment.
+
+---
+
+# 4. Member Backend Pages
+
+This version introduces **member backend pages**.
+
+Location:
+
+pages/user/
+
+Example pages:
+
+assets.html  
+records.html  
+assigned.html  
+assigned-message.html  
+transaction-assigned-detail.html
+
+These pages share a common layout including:
+
+- Member sidebar
+- Breadcrumb navigation
+- Content area
+
+---
+
+# Layout Structure
+
+Shared layout components are stored in:
+
+layout/
+
+Important files:
+
+header.ejs  
+breadcrumb.ejs  
+pagination.ejs  
+sidebar.ejs
+
+---
+
+# Frontend Technology
+
+This project uses:
+
+- Vite
+- EJS
+- SCSS
+- BEM CSS architecture
+
+Example CSS naming:
+
+ma-card  
+ma-card**title  
+ma-card**price  
+ma-card\_\_edition
+
+---
+
+# Build Instructions
+
+Install dependencies:
+
+npm install
+
+Run development server:
+
+npm run dev
+
+Build production files:
 
 npm run build
 
-Build 完成後，所有正式網站檔案會輸出至：
+---
+
+# Build Output
+
+After running build, files will be generated in:
 
 dist/
 
-此資料夾即為 👉 提供 PHP 整合的唯一來源。
+Example structure:
 
-------------------------------------------------------------------------
+dist  
+ ├─ assets  
+ │ ├─ js  
+ │ └─ css  
+ ├─ images  
+ ├─ index.html  
+ ├─ search-assets.html  
+ ├─ search-collect.html  
+ └─ user
 
-## 四、PHP 工程師整合指引（請閱讀）
+The **dist folder** contains the final frontend files for deployment.
 
-### 1️⃣ 套版來源
+---
 
-請以：
+# Backend Integration Notes
 
-dist/\*.html
+Backend developers should handle:
 
-作為 PHP View 拆版基礎，例如：
+Login state control  
+Artwork data population  
+Prices and edition data  
+User account data  
+Transaction records
 
-  dist HTML    PHP View
-  ------------ -----------
-  index.html   index.php
-  about.html   about.php
+Some links currently use placeholder values `#` which should be replaced with backend routes.
 
-------------------------------------------------------------------------
+---
 
-### 2️⃣ 靜態資源位置
+# Important Notes
 
-所有資源皆位於：
+This repository provides **UI templates only**.
 
-dist/assets/\
-dist/images/\
-dist/fonts/
+No API integration is included.
 
-前端目前使用 **絕對路徑寫法**
+Backend developers should integrate:
 
-/images/xxx.png\
-/assets/xxx.css
+Wallet login  
+Artwork data  
+Transaction data  
+User account system
 
-後端請將其 Mapping 至實際網站靜態目錄，例如：
+---
 
-/public/images/\
-/static/assets/
+# Folder Structure
 
-------------------------------------------------------------------------
+Example simplified structure:
 
-### 3️⃣ CSS / JS 載入方式
+META-NEW2
 
-Vite build 後會產生 **帶 hash 的檔名**，請直接引用 dist
-內產生檔案，不要改回固定檔名。
+src  
+ ├─ assets  
+ │ ├─ scss  
+ │ ├─ js  
+ │ └─ images  
+ │
+├─ layout  
+ │ ├─ header.ejs  
+ │ ├─ breadcrumb.ejs  
+ │ ├─ pagination.ejs  
+ │
+├─ pages  
+ │ ├─ index.html  
+ │ ├─ search-assets.html  
+ │ ├─ search-collect.html  
+ │
+│ └─ user  
+ │ ├─ assets.html  
+ │ ├─ records.html  
+ │ ├─ assigned.html  
+ │ └─ assigned-message.html
 
-------------------------------------------------------------------------
+---
 
-## 五、注意事項
+# Author
 
-❌ 不需要 npm install\
-❌ 不需要 Vite\
-❌ 不需要 Node.js
-
-後端只需使用 build 後靜態檔案即可。
-
-------------------------------------------------------------------------
-
-## 六、聯絡資訊
-
-前端切版負責人：`<你的名字>`{=html}\
-最後更新日期：`<YYYY-MM-DD>`{=html}
+MetaAssets Frontend

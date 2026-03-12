@@ -1,9 +1,10 @@
 <!doctype html>
 <html lang="en">
-  <%- include('./layout/head'); -%>
-  <!-- 有些頁面的背景色是黑色 -->
+  <%- include('./layout/head', { pathPrefix: '' }); -%>
+
+  <!-- 有些頁面的背景色是黑色 .ma-pager--dark -->
   <body class="ma-page ma-page--dark">
-    <%- include('./layout/header'); -%>
+    <%- include('./layout/header', { pathPrefix: '' }); -%>
     <main class="ma-main">
       <!-- hero-banner -->
       <section class="ma-section ma-hero">
@@ -85,13 +86,14 @@
   注意事項（給後端）：
   - 卡片類型 class（.ma-card--act-art / .ma-card--print-art）
     由程式依資料類型動態產生，不手動寫死於 HTML
-    .ma-card__category 的<h4>文字有2種: 鏈證藝術, 鏈證版畫
+    .ma-card__category 的<h4>文字有2種: 藝術鏈證, 藏品鏈證
 
   - 卡片按鈕文字亦由程式判斷：
     無價格 → 顯示「了解更多」
     有價格 → 顯示「詢問收藏」
 
-  - 此SECTION的按鈕連結為: 若沒登入則連至登入 login.html
+  - 此SECTION的「詢問收藏」按鈕連結為: 若沒登入則連至登入 login.html, 若已登入則連至confirm.html
+  「了解更多」按鈕連結為: line.html
 -->
           <div class="swiper ma-assets__swiper">
             <!-- Swiper 主體 -->
@@ -107,35 +109,63 @@
                       alt="Artwork"
                     />
                   </div>
+
                   <!-- 右：內容區 -->
                   <div class="ma-card__content">
                     <div class="ma-card__category">
-                      <span class="ma-card__category-text">鏈證藝術</span>
-                      <span class="ma-card__icon" aria-hidden="true"></span>
+                      <span class="ma-card__category-text">藝術鏈證</span>
+                      <span
+                        class="ma-card__category-icon"
+                        aria-hidden="true"
+                      ></span>
                     </div>
+
                     <div class="ma-card__header">
                       <h3 class="ma-card__title">Seeing Eyes</h3>
-                      <p class="ma-card__author">理查德・博伊德・鄧洛普</p>
+                      <p class="ma-card__artist">理查德・博伊德・鄧洛普</p>
                     </div>
+
                     <div class="ma-card__body">
-                      <p class="ma-card__info">
-                        <span>丙烯畫 / 畫布</span>
-                        <span>100 × 100 × 100 cm</span>
+                      <p class="ma-card__meta">
+                        <span class="ma-card__meta-item">丙烯畫 / 畫布</span>
+                        <span class="ma-card__meta-item"
+                          >100 × 100 × 100 cm</span
+                        >
                       </p>
-                      <!-- 沒價錢需在<SPAN>填入 &nbsp; 防跑版 -->
-                      <p class="ma-card__price">
-                        <span>1,000.00</span>
-                        <span>ETH(USD)</span>
-                      </p>
-                    </div>
-                    <div class="ma-card__footer">
-                      <p class="ma-card__id">
-                        <span>M2023APG000147PA</span>
-                      </p>
-                      <!-- 有價錢按鈕字: 詢問收藏 -->
-                      <a href="login.html" class="ma-btn ma-btn--gray-dark"
-                        >詢問收藏</a
+
+                      <!-- 沒價錢需在 span 填入 &nbsp; 防跑版 -->
+                      <div
+                        class="ma-card__pricing"
+                        aria-label="Artwork pricing"
                       >
+                        <p class="ma-card__price ma-card__price--crypto">
+                          <span class="ma-card__price-value">1,000.00</span>
+                          <span class="ma-card__price-unit">ETH</span>
+                        </p>
+                        <span class="ma-card__price-equal" aria-hidden="true"
+                          >≈</span
+                        >
+                        <p class="ma-card__price ma-card__price--fiat">
+                          <span class="ma-card__price-value">1,000.00</span>
+                          <span class="ma-card__price-unit">USD</span>
+                        </p>
+                      </div>
+
+                      <div class="ma-card__footer">
+                        <!-- 編號 / 版數 -->
+                        <div class="ma-card__info-group">
+                          <p class="ma-card__id">M2023APG000147PA</p>
+                          <p class="ma-card__edition">
+                            <span class="ma-card__edition-current">02</span>
+                            <span class="ma-card__edition-separator">/</span>
+                            <span class="ma-card__edition-total">30</span>
+                          </p>
+                        </div>
+
+                        <a href="login.html" class="ma-btn ma-btn--gray-dark"
+                          >詢問收藏</a
+                        >
+                      </div>
                     </div>
                   </div>
                 </article>
@@ -150,35 +180,66 @@
                       alt="Artwork"
                     />
                   </div>
+
                   <!-- 右：內容區 -->
                   <div class="ma-card__content">
                     <div class="ma-card__category">
-                      <span class="ma-card__category-text">鏈證版畫</span>
-                      <span class="ma-card__icon" aria-hidden="true"></span>
+                      <span class="ma-card__category-text">藏品鏈證</span>
+                      <span
+                        class="ma-card__category-icon"
+                        aria-hidden="true"
+                      ></span>
                     </div>
+
                     <div class="ma-card__header">
                       <h3 class="ma-card__title">Seeing Eyes</h3>
-                      <p class="ma-card__author">理查德・博伊德・鄧洛普</p>
+                      <p class="ma-card__artist">理查德・博伊德・鄧洛普</p>
                     </div>
+
                     <div class="ma-card__body">
-                      <p class="ma-card__info">
-                        <span>丙烯畫 / 畫布</span>
-                        <span>100 × 100 × 100 cm</span>
+                      <p class="ma-card__meta">
+                        <span class="ma-card__meta-item">丙烯畫 / 畫布</span>
+                        <span class="ma-card__meta-item"
+                          >100 × 100 × 100 cm</span
+                        >
                       </p>
-                      <!-- 沒價錢需在<SPAN>填入 &nbsp; 防跑版 -->
-                      <p class="ma-card__price">
-                        <span>&nbsp;</span>
-                        <span>&nbsp;</span>
-                      </p>
-                    </div>
-                    <div class="ma-card__footer">
-                      <p class="ma-card__id">
-                        <span>M2023APG000147PA</span>
-                      </p>
-                      <!-- 沒有價錢按鈕字: 了解更多 -->
-                      <a href="login.html" class="ma-btn ma-btn--gray-dark"
-                        >了解更多</a
+
+                      <!-- 沒價錢需在 span 填入 &nbsp; 防跑版 -->
+                      <div
+                        class="ma-card__pricing"
+                        aria-label="Artwork pricing"
                       >
+                        <p class="ma-card__price ma-card__price--crypto">
+                          <span class="ma-card__price-value">&nbsp;</span>
+                          <span class="ma-card__price-unit">&nbsp;</span>
+                        </p>
+                        <span class="ma-card__price-equal" aria-hidden="true"
+                          >&nbsp;</span
+                        >
+                        <p class="ma-card__price ma-card__price--fiat">
+                          <span class="ma-card__price-value">&nbsp;</span>
+                          <span class="ma-card__price-unit">&nbsp;</span>
+                        </p>
+                      </div>
+
+                      <div class="ma-card__footer">
+                        <!-- 編號 / 版數 -->
+                        <div class="ma-card__info-group">
+                          <p class="ma-card__id">M2023APG000147PA</p>
+                          <!-- 沒編號 / 版數 需在 span 填入 &nbsp; 防跑版 -->
+                          <p class="ma-card__edition" aria-label="無版數">
+                            <span class="ma-card__edition-current">&nbsp;</span>
+                            <span class="ma-card__edition-separator"
+                              >&nbsp;</span
+                            >
+                            <span class="ma-card__edition-total">&nbsp;</span>
+                          </p>
+                        </div>
+
+                        <a href="login.html" class="ma-btn ma-btn--gray-dark"
+                          >了解更多</a
+                        >
+                      </div>
                     </div>
                   </div>
                 </article>
@@ -265,11 +326,11 @@
   注意事項（給後端）：
   - 卡片類型 class（.ma-card--act-art / .ma-card--print-art）
     由程式依資料類型動態產生，不手動寫死於 HTML
-    .ma-card__category 的<h4>文字有2種: 鏈證藝術, 鏈證版畫
+    .ma-card__category 的<h4>文字有2種: 認證藝術, 藝術藏品
 
   - 卡片按鈕文字亦由程式判斷：
     無價格 → 顯示「了解更多」
-    有價格 → 顯示「詢問收藏」
+    有價格 → 顯示「了解更多」
 
   - 此SECTION的按鈕連結為: POSTWINGS官網的作品購買頁
 -->
@@ -277,7 +338,8 @@
             <!-- Swiper 主體 -->
             <div class="swiper-wrapper">
               <!-- 依資料量輸出 n 筆 -->
-              <!-- card 01: 有價錢, 按鈕字"詢問收藏" -->
+
+              <!-- card 01：有價錢 -->
               <div class="swiper-slide">
                 <article class="ma-card ma-card--act-art">
                   <!-- 左：圖片區 -->
@@ -287,42 +349,72 @@
                       alt="Artwork"
                     />
                   </div>
+
                   <!-- 右：內容區 -->
                   <div class="ma-card__content">
                     <div class="ma-card__category">
-                      <span class="ma-card__category-text">鏈證藝術</span>
-                      <span class="ma-card__icon" aria-hidden="true"></span>
+                      <span class="ma-card__category-text">認證藝術</span>
+                      <span
+                        class="ma-card__category-icon"
+                        aria-hidden="true"
+                      ></span>
                     </div>
+
                     <div class="ma-card__header">
                       <h3 class="ma-card__title">Seeing Eyes</h3>
-                      <p class="ma-card__author">理查德・博伊德・鄧洛普</p>
+                      <p class="ma-card__artist">理查德・博伊德・鄧洛普</p>
                     </div>
+
                     <div class="ma-card__body">
-                      <p class="ma-card__info">
-                        <span>丙烯畫 / 畫布</span>
-                        <span>100 × 100 × 100 cm</span>
+                      <p class="ma-card__meta">
+                        <span class="ma-card__meta-item">丙烯畫 / 畫布</span>
+                        <span class="ma-card__meta-item"
+                          >100 × 100 × 100 cm</span
+                        >
                       </p>
-                      <!-- 沒價錢需在<SPAN>填入 &nbsp; 防跑版 -->
-                      <p class="ma-card__price">
-                        <span>1,000.00</span>
-                        <span>ETH(USD)</span>
-                      </p>
-                    </div>
-                    <div class="ma-card__footer">
-                      <p class="ma-card__id">
-                        <span>M2023APG000147PA</span>
-                      </p>
-                      <!-- 有價錢按鈕字: 詢問收藏 -->
-                      <a
-                        href="https://virtual.metaassets.asia/artworks/M2024APG000010PA"
-                        class="ma-btn ma-btn--gray-light"
-                        >詢問收藏</a
+
+                      <!-- 沒價錢需在 span 填入 &nbsp; 防跑版 -->
+                      <div
+                        class="ma-card__pricing"
+                        aria-label="Artwork pricing"
                       >
+                        <p class="ma-card__price ma-card__price--crypto">
+                          <span class="ma-card__price-value">1,000.00</span>
+                          <span class="ma-card__price-unit">ETH</span>
+                        </p>
+                        <span class="ma-card__price-equal" aria-hidden="true"
+                          >≈</span
+                        >
+                        <p class="ma-card__price ma-card__price--fiat">
+                          <span class="ma-card__price-value">1,000.00</span>
+                          <span class="ma-card__price-unit">USD</span>
+                        </p>
+                      </div>
+
+                      <div class="ma-card__footer">
+                        <!-- 編號 / 版數 -->
+                        <div class="ma-card__info-group">
+                          <p class="ma-card__id">M2023APG000147PA</p>
+                          <p class="ma-card__edition">
+                            <span class="ma-card__edition-current">02</span>
+                            <span class="ma-card__edition-separator">/</span>
+                            <span class="ma-card__edition-total">30</span>
+                          </p>
+                        </div>
+
+                        <!-- 收藏推薦區塊按鈕字固定為：了解更多 -->
+                        <a
+                          href="https://virtual.metaassets.asia/artworks/M2024APG000010PA"
+                          class="ma-btn ma-btn--gray-light"
+                          >了解更多</a
+                        >
+                      </div>
                     </div>
                   </div>
                 </article>
               </div>
-              <!-- card 02: 範例資料" -->
+
+              <!-- card 02：無價錢 -->
               <div class="swiper-slide">
                 <article class="ma-card ma-card--print-art">
                   <!-- 左：圖片區 -->
@@ -332,37 +424,69 @@
                       alt="Artwork"
                     />
                   </div>
+
                   <!-- 右：內容區 -->
                   <div class="ma-card__content">
                     <div class="ma-card__category">
-                      <span class="ma-card__category-text">鏈證版畫</span>
-                      <span class="ma-card__icon" aria-hidden="true"></span>
+                      <span class="ma-card__category-text">藝術藏品</span>
+                      <span
+                        class="ma-card__category-icon"
+                        aria-hidden="true"
+                      ></span>
                     </div>
+
                     <div class="ma-card__header">
                       <h3 class="ma-card__title">Seeing Eyes</h3>
-                      <p class="ma-card__author">理查德・博伊德・鄧洛普</p>
+                      <p class="ma-card__artist">理查德・博伊德・鄧洛普</p>
                     </div>
+
                     <div class="ma-card__body">
-                      <p class="ma-card__info">
-                        <span>丙烯畫 / 畫布</span>
-                        <span>100 × 100 × 100 cm</span>
+                      <p class="ma-card__meta">
+                        <span class="ma-card__meta-item">丙烯畫 / 畫布</span>
+                        <span class="ma-card__meta-item"
+                          >100 × 100 × 100 cm</span
+                        >
                       </p>
-                      <!-- 沒價錢需在<SPAN>填入 &nbsp; 防跑版 -->
-                      <p class="ma-card__price">
-                        <span>&nbsp;</span>
-                        <span>&nbsp;</span>
-                      </p>
-                    </div>
-                    <div class="ma-card__footer">
-                      <p class="ma-card__id">
-                        <span>M2023APG000147PA</span>
-                      </p>
-                      <!-- 沒有價錢按鈕字: 了解更多 -->
-                      <a
-                        href="https://virtual.metaassets.asia/artworks/M2024APG000001PA"
-                        class="ma-btn ma-btn--gray-light"
-                        >了解更多</a
+
+                      <!-- 沒價錢需在 span 填入 &nbsp; 防跑版 -->
+                      <div
+                        class="ma-card__pricing"
+                        aria-label="Artwork pricing"
                       >
+                        <p class="ma-card__price ma-card__price--crypto">
+                          <span class="ma-card__price-value">&nbsp;</span>
+                          <span class="ma-card__price-unit">&nbsp;</span>
+                        </p>
+                        <span class="ma-card__price-equal" aria-hidden="true"
+                          >&nbsp;</span
+                        >
+                        <p class="ma-card__price ma-card__price--fiat">
+                          <span class="ma-card__price-value">&nbsp;</span>
+                          <span class="ma-card__price-unit">&nbsp;</span>
+                        </p>
+                      </div>
+
+                      <div class="ma-card__footer">
+                        <!-- 編號 / 版數 -->
+                        <div class="ma-card__info-group">
+                          <p class="ma-card__id">M2023APG000147PA</p>
+                          <!-- 沒有版數需在 span 填入 &nbsp; 防跑版 -->
+                          <p class="ma-card__edition" aria-label="無版數">
+                            <span class="ma-card__edition-current">&nbsp;</span>
+                            <span class="ma-card__edition-separator"
+                              >&nbsp;</span
+                            >
+                            <span class="ma-card__edition-total">&nbsp;</span>
+                          </p>
+                        </div>
+
+                        <!-- 收藏推薦區塊按鈕字固定為：了解更多 -->
+                        <a
+                          href="https://virtual.metaassets.asia/artworks/M2024APG000001PA"
+                          class="ma-btn ma-btn--gray-light"
+                          >了解更多</a
+                        >
+                      </div>
                     </div>
                   </div>
                 </article>
@@ -455,10 +579,7 @@
         </div>
       </section>
     </main>
-
-    <%- include('./layout/footer'); -%>
-
-    <script type="module" src="../ma-main.js"></script>
+    <%- include('./layout/footer', { pathPrefix: '' }); -%>
 
     <!-- 首頁輪播套件 JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

@@ -13,11 +13,26 @@
     flex-wrap: wrap;
 
     // desktop / tablet up
-    // 2 欄：扣掉 1 個 gap，平均分給左右兩欄
+    // 預設 2 欄：扣掉 1 個 gap，平均分給左右兩欄
     @include respond-min($bp-md) {
       > .ma-list__item {
         flex: 0 0 calc(50% - (var(--list-gap) / 2));
         max-width: calc(50% - (var(--list-gap) / 2));
+      }
+    }
+
+    // 單欄模式（例如：會員後台資產頁）
+    &--single {
+      > .ma-list__item {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+
+      @include respond-min($bp-md) {
+        > .ma-list__item {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
       }
     }
   }

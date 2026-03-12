@@ -248,9 +248,9 @@ small {
   scroll-margin-top: var(--anchor-offset);
 
   padding-block: clamp(
-    var(--section-padding-top-sm),
+    var(--section-padding-bottom-sm),
     3vw,
-    var(--section-padding-top-lg)
+    var(--section-padding-bottom-lg)
   );
 
   /* 若你上下 padding 想分開可再拆回來

@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <%- include('./layout/head', { pathPrefix: '../' }); -%>
+
+  <!-- 有些頁面的背景色是黑色 .ma-page--dark -->
+  <!-- 使用在後台頁 body 加上 class 樣式 .ma-user -->
+  <body class="ma-page ma-page--dark ma-user">
+    <%- include('./layout/header', { pathPrefix: '../' }); -%>
+
+    <main class="ma-main">
+      <!-- 麵包屑導覽列 -->
+      <!-- 目前會員後台尚無 dashboard 首頁，暫以藝術資產頁作為會員中心入口 -->
+      <%- include('./layout/breadcrumb', { homeHref: '../index.html',
+      parentLabel: '會員中心', parentHref: 'assets.html', currentLabel:
+      '交易記錄' }); -%>
+
+      <!-- 搜尋區 -->
+      <%- include('./layout/search-bar'); -%>
+
+      <section
+        class="ma-section ma-member-records ma-member-layout ma-member-layout--records"
+      >
+        <div class="ma-container">
+          <div class="ma-inner">
+            <!-- 左側會員欄 -->
+            <%- include('./layout/member-sidebar'); -%>
+
+            <!-- 右側主內容區 -->
+            <div class="ma-member-layout__main">
+              <!-- 無資料狀態 -->
+              <!-- 無資料時顯示這塊 -->
+              <!--
+              <div class="ma-member-records__empty">
+                <p class="ma-member-records__empty-text">目前沒有交易記錄</p>
+              </div>
+              -->
+
+              <!-- 有資料狀態 -->
+              <div class="ma-member-records__list ma-list__wrap">
+                <div class="ma-list__grid ma-list__grid--single">
+                  <!-- record card 01 -->
+                  <div class="ma-list__item">
+                    <article
+                      class="ma-member-record-card ma-member-record-card--act-art"
+                    >
+                      <!-- 上方資訊列：類型 / 編號 / 電話 / 日期 -->
+                      <div class="ma-member-record-card__top">
+                        <div class="ma-member-record-card__top-left">
+                          <div class="ma-member-record-card__category">
+                            <span class="ma-member-record-card__category-text"
+                              >鏈證藝術</span
+                            >
+                            <span
+                              class="ma-member-record-card__category-icon"
+                              aria-hidden="true"
+                            ></span>
+                          </div>
+
+                          <!-- 編號 + 版數 -->
+                          <div class="ma-member-record-card__info-group">
+                            <p class="ma-member-record-card__serial">
+                              M2023APG000147PA
+                            </p>
+                            <!-- 版數 -->
+                            <!-- 沒有版數需填入 &nbsp; -->
+                            <p
+                              class="ma-member-record-card__edition"
+                              aria-label="Edition information"
+                            >
+                              <span
+                                class="ma-member-record-card__edition-current"
+                                >02</span
+                              >
+                              <span
+                                class="ma-member-record-card__edition-separator"
+                                >/</span
+                              >
+                              <span class="ma-member-record-card__edition-total"
+                                >30</span
+                              >
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="ma-member-record-card__top-meta">
+                          <p class="ma-member-record-card__phone">
+                            0800-406-449
+                          </p>
+                          <p class="ma-member-record-card__date">
+                            2024 / 09 / 10　23:49
+                          </p>
+                        </div>
+                      </div>
+
+                      <!-- 主內容 -->
+                      <div class="ma-member-record-card__main">
+                        <!-- 左：作品圖 -->
+                        <div class="ma-member-record-card__media">
+                          <img
+                            src="https://images.unsplash.com/photo-1579783928621-7a13d66a62d1?q=80&w=990&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Seeing Eyes artwork"
+                          />
+                        </div>
+
+                        <!-- 右：作品與交易資訊 -->
+                        <div class="ma-member-record-card__content">
+                          <!-- 作品資訊 -->
+                          <div class="ma-member-record-card__artwork">
+                            <div class="ma-member-record-card__header">
+                              <p class="ma-member-record-card__title">
+                                Seeing Eyes
+                              </p>
+                              <p class="ma-member-record-card__artist">
+                                理查德.博伊德-鄧洛普
+                              </p>
+                            </div>
+
+                            <div class="ma-member-record-card__meta">
+                              <p class="ma-member-record-card__meta-text">
+                                丙烯畫 / 壓克力
+                              </p>
+                              <p class="ma-member-record-card__meta-text">
+                                100 X 100 X 100 cm
+                              </p>
+                            </div>
+                            <!-- 價格 -->
+                            <div
+                              class="ma-member-record-card__pricing"
+                              aria-label="Artwork pricing"
+                            >
+                              <p
+                                class="ma-member-asset-card__price ma-member-asset-card__price--crypto"
+                              >
+                                <span class="ma-member-asset-card__price-value"
+                                  >1,000.00</span
+                                >
+                                <span class="ma-member-asset-card__price-unit"
+                                  >ETH</span
+                                >
+                              </p>
+
+                              <span
+                                class="ma-member-asset-card__price-equal"
+                                aria-hidden="true"
+                              >
+                                ≈
+                              </span>
+
+                              <p
+                                class="ma-member-asset-card__price ma-member-asset-card__price--fiat"
+                              >
+                                <!-- 沒有 USD 價格時填入 &nbsp; -->
+                                <span class="ma-member-asset-card__price-value"
+                                  >1,000.00</span
+                                >
+                                <span class="ma-member-asset-card__price-unit"
+                                  >USD</span
+                                >
+                              </p>
+                            </div>
+                          </div>
+
+                          <!-- 交易資訊 -->
+                          <div class="ma-member-record-card__transaction">
+                            <div class="ma-member-record-card__location-block">
+                              <p class="ma-member-record-card__location-title">
+                                交易地點
+                              </p>
+
+                              <div
+                                class="ma-member-record-card__location-content"
+                              >
+                                <p class="ma-member-record-card__location-name">
+                                  波翼藝術中心
+                                </p>
+                                <p class="ma-member-record-card__location-text">
+                                  台北市中山區建國北路二段37號B1
+                                </p>
+                                <p class="ma-member-record-card__location-text">
+                                  聯絡電話：02 - 2501 - 4322
+                                </p>
+                              </div>
+                            </div>
+
+                            <div class="ma-member-record-card__action">
+                              <span
+                                class="ma-member-record-card__status ma-member-record-card__status--done"
+                              >
+                                已交易
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+
+                  <!-- record card 02 -->
+                  <!-- record card 01 -->
+                  <div class="ma-list__item">
+                    <article
+                      class="ma-member-record-card ma-member-record-card--act-art"
+                    >
+                      <!-- 上方資訊列：類型 / 編號 / 電話 / 日期 -->
+                      <div class="ma-member-record-card__top">
+                        <div class="ma-member-record-card__top-left">
+                          <div class="ma-member-record-card__category">
+                            <span class="ma-member-record-card__category-text"
+                              >鏈證藝術</span
+                            >
+                            <span
+                              class="ma-member-record-card__category-icon"
+                              aria-hidden="true"
+                            ></span>
+                          </div>
+
+                          <!-- 編號 + 版數 -->
+                          <div class="ma-member-record-card__info-group">
+                            <p class="ma-member-record-card__serial">
+                              M2023APG000147PA
+                            </p>
+                            <!-- 版數 -->
+                            <!-- 沒有版數需填入 &nbsp; -->
+                            <p
+                              class="ma-member-record-card__edition"
+                              aria-label="Edition information"
+                            >
+                              <span
+                                class="ma-member-record-card__edition-current"
+                                >&nbsp;</span
+                              >
+                              <span
+                                class="ma-member-record-card__edition-separator"
+                                >&nbsp;</span
+                              >
+                              <span class="ma-member-record-card__edition-total"
+                                >&nbsp;</span
+                              >
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="ma-member-record-card__top-meta">
+                          <p class="ma-member-record-card__phone">
+                            0800-406-449
+                          </p>
+                          <p class="ma-member-record-card__date">
+                            2024 / 09 / 10　23:49
+                          </p>
+                        </div>
+                      </div>
+
+                      <!-- 主內容 -->
+                      <div class="ma-member-record-card__main">
+                        <!-- 左：作品圖 -->
+                        <div class="ma-member-record-card__media">
+                          <img
+                            src="https://images.unsplash.com/photo-1579541814924-49fef17c5be5?q=80&w=670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Seeing Eyes artwork"
+                          />
+                        </div>
+
+                        <!-- 右：作品與交易資訊 -->
+                        <div class="ma-member-record-card__content">
+                          <!-- 作品資訊 -->
+                          <div class="ma-member-record-card__artwork">
+                            <div class="ma-member-record-card__header">
+                              <p class="ma-member-record-card__title">
+                                Seeing Eyes
+                              </p>
+                              <p class="ma-member-record-card__artist">
+                                理查德.博伊德-鄧洛普
+                              </p>
+                            </div>
+
+                            <div class="ma-member-record-card__meta">
+                              <p class="ma-member-record-card__meta-text">
+                                丙烯畫 / 壓克力
+                              </p>
+                              <p class="ma-member-record-card__meta-text">
+                                100 X 100 X 100 cm
+                              </p>
+                            </div>
+                            <!-- 價格 -->
+                            <div
+                              class="ma-member-record-card__pricing"
+                              aria-label="Artwork pricing"
+                            >
+                              <p
+                                class="ma-member-asset-card__price ma-member-asset-card__price--crypto"
+                              >
+                                <span class="ma-member-asset-card__price-value"
+                                  >1,000.00</span
+                                >
+                                <span class="ma-member-asset-card__price-unit"
+                                  >ETH</span
+                                >
+                              </p>
+
+                              <span
+                                class="ma-member-asset-card__price-equal"
+                                aria-hidden="true"
+                              >
+                                ≈
+                              </span>
+
+                              <p
+                                class="ma-member-asset-card__price ma-member-asset-card__price--fiat"
+                              >
+                                <!-- 沒有 USD 價格時填入 &nbsp; -->
+                                <span class="ma-member-asset-card__price-value"
+                                  >1,000.00</span
+                                >
+                                <span class="ma-member-asset-card__price-unit"
+                                  >USD</span
+                                >
+                              </p>
+                            </div>
+                          </div>
+
+                          <!-- 交易資訊 -->
+                          <div class="ma-member-record-card__transaction">
+                            <div class="ma-member-record-card__location-block">
+                              <p class="ma-member-record-card__location-title">
+                                交易地點
+                              </p>
+
+                              <div
+                                class="ma-member-record-card__location-content"
+                              >
+                                <p class="ma-member-record-card__location-name">
+                                  波翼藝術中心
+                                </p>
+                                <p class="ma-member-record-card__location-text">
+                                  台北市中山區建國北路二段37號B1
+                                </p>
+                                <p class="ma-member-record-card__location-text">
+                                  聯絡電話：02 - 2501 - 4322
+                                </p>
+                              </div>
+                            </div>
+
+                            <div class="ma-member-record-card__action">
+                              <span
+                                class="ma-member-record-card__status ma-member-record-card__status--done"
+                              >
+                                已交易
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+
+                  <!-- more card ... -->
+                </div>
+
+                <!-- 分頁導覽 -->
+                <%- include('./layout/pagination') %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <%- include('./layout/footer', { pathPrefix: '../' }); -%>
+  </body>
+</html>

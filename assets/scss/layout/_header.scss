@@ -1,100 +1,208 @@
+/* =========================================================
+   Header / Navbar
+   - 上方主導覽列
+   - 含 sticky 狀態
+   - 含 desktop / mobile actions
+   ========================================================= */
+
 .ma-header {
   position: sticky;
   top: 0;
   z-index: var(--z-header);
+
+  background: var(--color-black);
+  color: var(--color-white);
+
+  /* =======================================================
+     Header 區塊內的連結預設 token 覆寫
+     因全域 --link-color 預設為黑字，
+     但 header 為黑底，所以在這裡改為白字。
+     ======================================================= */
+  --link-color: var(--color-white);
+  --link-hover-color: var(--color-brand-primary);
+
+  /* STICKY HEADER 高度（mobile 預設） */
+  padding-block: var(--header-padding-y-mobile);
+
+  @include respond-min($bp-md) {
+    padding-top: var(--header-padding-top-desktop);
+    padding-bottom: var(--header-padding-bottom-desktop);
+  }
+
+  /* =======================================================
+     Sticky 狀態：
+     1. desktop header 高度縮小
+     2. 隱藏桌機主導覽
+     3. 顯示 mobile action（語言 / menu）
+     ======================================================= */
   &.is-sticky {
     @include respond-min($bp-md) {
-      padding-block: var(--space-24);
+      padding-block: var(--header-padding-y-sticky-desktop);
+
       .ma-navbar {
         display: none;
       }
+
       .ma-action-group--desktop {
-        //display: none;
         margin-left: auto;
+
         button {
           display: none;
         }
       }
+
       .ma-action-group--mobile {
         display: flex;
-        gap: var(--space-16);
+        gap: var(--header-inner-gap);
       }
     }
-
-    & ~ .ma-section {
-      --anchor-offset: var(--anchor-offset);
-    }
-  }
-  background: var(--color-black);
-  color: var(--color-white);
-  //STICKY HEADER 高度
-  padding-block: var(--space-24);
-  @include respond-min($bp-md) {
-    padding-top: var(--space-48);
-    padding-bottom: var(--space-24);
   }
 
   .ma-inner {
-    @include flex-between("center", var(--space-16));
+    @include flex-between("center", var(--header-inner-gap));
+
     @include respond-min($bp-md) {
-      gap: var(--space-16);
+      gap: var(--header-inner-gap);
     }
   }
 
   .ma-header__logo {
-    width: 186px;
-    height: 40px;
+    width: var(--logo-width-sm);
+    height: var(--logo-height-sm);
+
     @include respond-min($bp-md) {
-      width: 200px;
-      height: 44px;
+      width: var(--logo-width-lg);
+      height: var(--logo-height-lg);
     }
   }
 }
 
+/* =========================================================
+   Header Action Group
+   - 右上角操作區
+   - desktop / mobile 顯示切換
+   ========================================================= */
+
 .ma-action-group {
-  @include flex-center(row, var(--space-16));
+  @include flex-center(row, var(--header-inner-gap));
+
+  /* Header 內 a 連結共用 link token */
+  a {
+    color: var(--link-color);
+    text-decoration: var(--link-decoration);
+    text-underline-offset: var(--link-underline-offset);
+    transition:
+      color var(--link-transition),
+      text-decoration-color var(--link-transition);
+
+    &:hover,
+    &:focus-visible {
+      color: var(--link-hover-color);
+      text-decoration: var(--link-hover-decoration);
+    }
+  }
 
   &--desktop {
     display: none;
+
     @include respond-min($bp-md) {
-      @include inline-flex(row, center, flex-start, var(--space-24));
+      @include inline-flex(
+        row,
+        center,
+        flex-start,
+        var(--header-action-gap-desktop)
+      );
     }
   }
+
   &--mobile {
-    @include inline-flex(row, center, flex-start, var(--space-24));
+    @include inline-flex(
+      row,
+      center,
+      flex-start,
+      var(--header-action-gap-mobile)
+    );
+
     @include respond-min($bp-md) {
       display: none;
     }
   }
 }
 
-//導覽列
+/* =========================================================
+   Navbar
+   - 桌機主導覽列
+   ========================================================= */
+
 .ma-navbar {
-  padding-top: var(--space-32);
-  padding-bottom: var(--space-24);
+  padding-top: var(--navbar-padding-top);
+  padding-bottom: var(--navbar-padding-bottom);
   background: var(--color-black);
   border-bottom: 1px solid var(--border-white);
 
   display: none;
+
   @include respond-min($bp-md) {
     display: block;
   }
+
   &__links {
     color: var(--color-white);
-    @include inline-flex(row, center, flex-start, var(--space-24));
+    @include inline-flex(row, center, flex-start, var(--navbar-link-gap));
+
     > a {
       position: relative;
       display: inline-block;
+
+      color: var(--link-color);
+      text-decoration: var(--link-decoration);
+      text-underline-offset: var(--link-underline-offset);
+      transition:
+        color var(--link-transition),
+        text-decoration-color var(--link-transition);
+
+      &:hover,
+      &:focus-visible {
+        color: var(--link-hover-color);
+        text-decoration: var(--link-hover-decoration);
+      }
     }
+
+    /* =====================================================
+       Active 狀態底線
+       - 使用 token 控制 offset / height / radius
+       ===================================================== */
     > a.is-active::after {
       position: absolute;
       content: "";
       display: block;
-      margin-top: var(--space-4);
+      margin-top: var(--nav-active-line-offset);
       width: 100%;
-      height: 2px;
+      height: var(--nav-active-line-height);
       background: var(--gradient-gold-reverse);
-      border-radius: 2px;
+      border-radius: var(--nav-active-line-radius);
     }
   }
+}
+
+/* =========================================================
+   Mobile Drawer : Language Menu
+   - 語言選單寬度較窄
+   - 文字置中
+   - 下方保留空間
+   ========================================================= */
+
+.ma-mobile-menu--lang {
+  //width: 280px; /* 語言選單比主選單窄 */
+  margin-inline: auto;
+}
+
+.ma-mobile-menu__links--lang {
+  width: 100%;
+  //max-width: 18rem;
+  margin-inline: auto;
+  padding-top: var(--space-32);
+  padding-bottom: var(--space-40);
+  text-align: center;
+  line-height: 2;
 }
