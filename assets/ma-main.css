@@ -1944,7 +1944,6 @@ html:not(.is-js-ready) .ma-drawer {
 .ma-mobile-menu__tabs {
   display: flex;
   justify-content: space-around;
-  background: var(--color-gray-700);
 }
 .ma-mobile-menu__tab {
   flex: 1 0 auto;
