@@ -126,7 +126,10 @@
   }
 
   &__header {
-    margin-bottom: var(--space-16);
+    margin-bottom: var(--space-8);
+    @include respond-min($bp-mobile-sm) {
+      margin-bottom: var(--space-16);
+    }
   }
 
   /* 編號 / 版數 區 */
@@ -164,7 +167,10 @@
 
   &__meta {
     @include flex-col(0);
-    margin-bottom: var(--space-24);
+    margin-bottom: var(--space-8);
+    @include respond-min($bp-md) {
+      margin-bottom: var(--space-16);
+    }
   }
 
   &__meta-text {
@@ -175,8 +181,7 @@
   }
 
   &__pricing {
-    margin-bottom: 20px;
-    min-height: 32px;
+    margin-bottom: var(--space-16);
     @include flex-row(var(--space-16));
     &--crypto {
       @include flex-row(var(--space-16));

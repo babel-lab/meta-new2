@@ -13,7 +13,10 @@
   }
 
   &__header {
-    margin-bottom: var(--space-16);
+    margin-bottom: 0;
+    @include respond-min($bp-mobile) {
+      margin-bottom: var(--space-16);
+    }
   }
 
   &__page-title {
@@ -27,7 +30,7 @@
      message bar
      ========================= */
   &__message-bar {
-    @include flex-row(var(--space-8));
+    @include flex-row(0);
     align-items: center;
     flex-wrap: wrap;
     margin-bottom: var(--space-24);
@@ -35,6 +38,9 @@
     background: var(--color-gray-900);
     color: var(--color-gray-500);
     border: 1px solid var(--color-gray-700);
+    @include respond-min($bp-mobile) {
+      gap: var(--space-8);
+    }
   }
 
   &__back {
@@ -112,10 +118,13 @@
   }
 
   &__section-title {
-    margin: 0 0 var(--space-16);
+    margin: 0 0 var(--space-8);
     font-size: var(--fs-small);
     font-weight: 500;
     color: var(--color-gray-500);
+    @include respond-min($bp-mobile) {
+      margin: 0 0 var(--space-16);
+    }
   }
 
   /* =========================

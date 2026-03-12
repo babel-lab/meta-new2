@@ -56,11 +56,12 @@
 
   &__top-meta {
     color: var(--color-gray-500);
-    @include flex-row(var(--space-16));
+    @include flex-row(0);
     flex-wrap: wrap;
     justify-content: flex-start;
-    @include respond-min($bp-md) {
+    @include respond-min($bp-mobile) {
       justify-content: flex-end;
+      gap: var(--space-16);
     }
   }
 
@@ -153,7 +154,10 @@
   }
 
   &__location-title {
-    margin-bottom: var(--space-8);
+    margin-bottom: 0;
+    @include respond-min($bp-mobile-sm) {
+      margin-bottom: var(--space-8);
+    }
   }
 
   &__location-content {
