@@ -1,0 +1,537 @@
+<!-- 
+    UI Template: Login Setting Success Page
+    --------------------------------
+    此頁為設定成功提示頁 (UI only)。
+    預設顯示「設定成功」訊息後，2秒自動導回首頁。
+
+    前端用途：
+    - 提供設定成功的視覺提示
+    - 模擬系統設定成功流程
+
+    後端整合建議：
+    - 後端設定成功後可 redirect 到此頁
+    - 或直接由後端控制 redirect
+    - 若後端已有流程控制，可移除下方 timeout script
+  -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Metaassets｜藝術資產交易平台</title>
+
+  <link rel="icon" href="images/logo.ico" />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="images/favicon-32x32.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="images/favicon-16x16.png"
+  />
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="images/apple-touch-icon.png"
+  />
+
+  <meta
+    name="description"
+    content="Metaassets 是專注於藝術資產與 NFT 的交易與認證平台，提供藝術品數位憑證、防偽驗證與區塊鏈資產管理服務。"
+  />
+  <meta
+    name="keywords"
+    content="Metaassets,藝術資產,NFT 認證,藝術品數位憑證,區塊鏈資產管理"
+  />
+  <link rel="canonical" href="https://www.metaassets.io/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Noto+Serif+TC:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#000000" />
+
+  <meta property="og:url" content="https://www.metaassets.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Metaassets｜藝術資產交易與 NFT 認證平台" />
+  <meta
+    property="og:description"
+    content="Metaassets 是專注於藝術資產與 NFT 的交易與認證平台，提供藝術品數位憑證、防偽驗證與區塊鏈資產管理服務。"
+  />
+  <meta property="og:image" content="images/og-image.jpg" />
+  <meta property="og:site_name" content="Metaassets" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta
+    name="twitter:title"
+    content="Metaassets｜藝術資產交易與 NFT 認證平台"
+  />
+  <meta
+    name="twitter:description"
+    content="專注於藝術資產與 NFT 的交易、認證與區塊鏈資產管理服務。"
+  />
+  <meta name="twitter:image" content="https://www.metaassets.io/og-image.jpg" />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-VTZNRHLELH"
+  ></script>
+  <!-- 上線後改正式GA4 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-VTZNRHLELH");
+  </script>
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+  <script type="module" crossorigin src="/meta-new2/assets/ma-main.js"></script>
+  <link rel="stylesheet" crossorigin href="/meta-new2/assets/ma-main.css">
+</head>
+
+  <!-- 有些頁面的背景色是黑色 .ma-pager--dark -->
+  <body class="ma-page ma-page--dark">
+    <header class="ma-header">
+  <div class="ma-container">
+    <div class="ma-inner">
+      <a href="index.html" class="ma-header__logo">
+        <img src="/meta-new2/images/logo.png" alt="Metaassets" />
+      </a>
+
+      <!-- 大版導覽列 -->
+      <nav
+        class="ma-action-group ma-action-group--desktop"
+        aria-label="Header actions"
+      >
+        <!-- =========================
+             大版右上角：登入前 / 登入後 二擇一
+             PHP 工程師依登入狀態輸出對應連結
+             ========================= -->
+
+        <!-- 登入前顯示：登入/設定 -->
+        <!--
+        <a href="login-setting.html">登入/設定</a>
+        -->
+
+        <!-- 登入後顯示：查看鏈證 -->
+
+        <a href="user/assets.html">查看鏈證</a>
+
+        <!-- ========================= -->
+
+        <button
+          id="lang-toggle-pc"
+          class="ma-icon-btn"
+          type="button"
+          aria-label="Language"
+        >
+          <img src="/meta-new2/images/icon_lang.png" alt="" />
+        </button>
+      </nav>
+
+      <!-- 小版導覽列 -->
+      <div class="ma-action-group ma-action-group--mobile">
+        <button
+          id="menu-toggle"
+          class="ma-icon-btn"
+          type="button"
+          aria-label="Menu"
+          aria-controls="mobile-drawer"
+          aria-expanded="false"
+        >
+          <img src="/meta-new2/images/icon_bar.png" alt="" />
+        </button>
+
+        <button
+          id="lang-toggle-mobile"
+          class="ma-icon-btn"
+          type="button"
+          aria-label="Language"
+        >
+          <img src="/meta-new2/images/icon_lang.png" alt="" />
+        </button>
+      </div>
+    </div>
+
+    <!-- 桌機主導覽 -->
+    <nav class="ma-navbar" aria-label="Primary">
+      <div class="ma-navbar__links">
+        <a target="_blank" href="act.html" class="is-active">
+          ACT 鏈證
+        </a>
+
+        <a href="index.html#ma-assets">藝術資產</a>
+
+        <a href="index.html#ma-collect">收藏推薦</a>
+
+        <a href="search-assets.html">鏈證搜尋</a>
+
+        <a href="index.html#ma-service__about">
+          關於 Metaassets
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- 導覽列選單 -->
+<div id="menu-overlay" class="ma-overlay"></div>
+
+<div
+  id="mobile-drawer"
+  class="ma-drawer"
+  tabindex="-1"
+  aria-hidden="true"
+  hidden
+>
+  <div class="ma-drawer__panel">
+    <!-- 主選單內容 -->
+    <div id="menu-content" class="ma-mobile-menu ma-mobile-menu--nav">
+      <!-- 上方頁籤 -->
+      <div
+        class="ma-mobile-menu__tabs"
+        role="tablist"
+        aria-label="Mobile menu tabs"
+      >
+        <button
+          type="button"
+          class="ma-mobile-menu__tab is-active"
+          data-menu-tab="explore"
+          role="tab"
+          aria-selected="true"
+        >
+          探　索
+        </button>
+
+        <!-- 會員頁籤：登入後才顯示 -->
+        <button
+          type="button"
+          class="ma-mobile-menu__tab"
+          data-menu-tab="member"
+          role="tab"
+          aria-selected="false"
+        >
+          波波雞
+        </button>
+      </div>
+
+      <!-- 探索選單 -->
+      <div
+        class="ma-mobile-menu__panel is-active"
+        data-menu-panel="explore"
+        role="tabpanel"
+      >
+        <!-- 當前頁在連結上樣式: class="is-active"-->
+        <div class="ma-mobile-menu__links">
+          <a target="_blank" href="act.html" class="is-active"
+            >ACT 鏈證</a
+          >
+
+          <a href="index.html#ma-assets"> 藝術資產 </a>
+
+          <a href="index.html#ma-collect">收藏推薦</a>
+
+          <a href="search-assets.html">鏈證搜尋</a>
+
+          <a href="index.html#ma-service__about">
+            關於 Metaassets
+          </a>
+        </div>
+      </div>
+
+      <!-- 會員選單：登入後才看的到 -->
+      <div
+        class="ma-mobile-menu__panel"
+        data-menu-panel="member"
+        role="tabpanel"
+        hidden
+      >
+        <!-- 當前頁在連結上樣式: class="is-active"-->
+        <div class="ma-mobile-menu__links">
+          <a href="user/assets.html" class="is-active"
+            >藝術資產</a
+          >
+
+          <a href="user/transaction-records.html">
+            交易鏈證紀錄
+          </a>
+
+          <a href="user/transaction-assigned.html">
+            指定給我的交易
+          </a>
+
+          <a href="user/login-change.html">個人錢包設定</a>
+
+          <a href="line.html">問題詢問</a>
+        </div>
+      </div>
+
+      <!-- 底部操作區 -->
+      <div class="ma-mobile-menu__footer">
+        <!-- =========================
+             小版底部按鈕：登入前 / 登入後 二擇一
+             PHP 工程師依登入狀態輸出對應區塊
+             ========================= -->
+
+        <!-- 登入前顯示 -->
+        <!--
+        <a
+          href="login.html"
+          class="ma-mobile-menu__footer-btn"
+        >
+          登入
+        </a>
+
+        <a
+          href="login-setting.html"
+          class="ma-mobile-menu__footer-btn ma-mobile-menu__footer-btn--dark is-active"
+        >
+          設定
+        </a>
+        -->
+
+        <!-- 登入後顯示 -->
+        <a href="#" class="ma-mobile-menu__footer-btn">查看鏈證</a>
+
+        <a
+          href="login-setting.html"
+          class="ma-mobile-menu__footer-btn ma-mobile-menu__footer-btn--dark is-active"
+        >
+          登入/設定
+        </a>
+
+        <!-- ========================= -->
+      </div>
+    </div>
+
+    <!-- 語言選單 -->
+    <div
+      id="lang-content"
+      class="ma-mobile-menu ma-mobile-menu--lang is-hidden"
+    >
+      <div class="ma-mobile-menu__links ma-mobile-menu__links--lang">
+        <a href="#!" class="is-active">中 文</a>
+        <a href="#!">English</a>
+        <a href="#!">日本語</a>
+        <a href="#!">한국어</a>
+        <a href="#!">Español</a>
+        <a href="#!">Français</a>
+        <a href="#!">Deutsch</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <main class="ma-main">
+      <section
+        class="ma-section ma-message"
+        aria-labelledby="ma-login-success-title"
+      >
+        <div class="ma-container">
+          <div class="ma-inner">
+            <article
+              class="ma-form-panel ma-form-panel--compact ma-message__content"
+              role="status"
+              aria-live="polite"
+            >
+              <div
+                class="ma-form-panel__body ma-form-stack ma-form-stack--loose"
+              >
+                <div class="ma-message__icon" aria-hidden="true">
+                  <img
+                    class="ma-message__icon-img"
+                    src="/meta-new2/images/icon_check.png"
+                    alt=""
+                  />
+                </div>
+
+                <h2 id="ma-login-success-title" class="ma-form__title">
+                  設定成功
+                </h2>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="ma-footer">
+  <div class="ma-container">
+    <div class="ma-inner">
+      <div class="ma-footer__content">
+        <div class="ma-footer__header">
+          <h4 class="ma-footer__heading" aria-hidden="true">Contacts</h4>
+        </div>
+        <div class="ma-footer__groups">
+          <!-- 相關服務 -->
+          <div
+            class="ma-footer__group ma-footer__group--service"
+            aria-label="相關服務"
+          >
+            <h5 class="ma-footer__title">相關服務</h5>
+            <ul class="ma-footer__list">
+              <li>
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                  >藝術資產管理服務</a
+                >
+              </li>
+              <li>
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                  >ACT 藝術資產鏈證發行</a
+                >
+              </li>
+              <li>
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                  >3DVR 線上導覽藝廊 建置</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- 策略聯盟 -->
+          <div
+            class="ma-footer__group ma-footer__group--alliance"
+            aria-label="藝術資產策略聯盟"
+          >
+            <h5 class="ma-footer__title">藝術資產策略聯盟</h5>
+            <ul class="ma-footer__list">
+              <li>
+                <a
+                  href="https://www.bossmen.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >BossMen 博士門</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://uprint.com.tw/about/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >uPrint 布萊特</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://ones-digital.com/zh/%E9%A6%96%E9%A0%81/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Ones 加伊創意</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- 相關企業 -->
+          <div
+            class="ma-footer__group ma-footer__group--partner"
+            aria-label="相關企業"
+          >
+            <h5 class="ma-footer__title">相關企業</h5>
+            <ul class="ma-footer__list">
+              <li>
+                <a
+                  href="https://www.fantasy-tours.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >上順旅行社</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.shunbuilding.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >上順不動產</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.postwings.art/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >POST WINGS 波翼藝術</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- 法律顧問 -->
+          <div
+            class="ma-footer__group ma-footer__group--legal"
+            aria-label="法律顧問"
+          >
+            <h5 class="ma-footer__title">法律顧問</h5>
+            <ul class="ma-footer__list">
+              <li>
+                <a
+                  href="https://www.law-answer.com/firm/071282/c001831.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >五翰法律事務所</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- 聯絡資訊 -->
+          <div
+            class="ma-footer__group ma-footer__group--contact"
+            aria-label="聯絡我們"
+          >
+            <h5 class="ma-footer__title">聯絡我們</h5>
+            <ul class="ma-footer__list">
+              <li>
+                <a href="mailto:service@metaassets.com.tw"
+                  >service@metaassets.com.tw</a
+                >
+              </li>
+              <li><a href="tel:0903257803">0930-257-803</a></li>
+              <li>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=台北市中山區建國北路二段3巷37號B1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  台北市中山區建國北路二段3巷37號B1
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="ma-footer__copyright">
+          <p>Copyright © 2026 元宇宙資產股份有限公司 版權所有</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <!-- 
+      使用者設定成功，自動跳轉首頁
+      使用 location.replace() 避免使用者按「返回」又回到設定成功頁
+    -->
+    <script>
+      setTimeout(function () {
+        window.location.replace("index.html");
+      }, 2000);
+    </script>
+  </body>
+</html>

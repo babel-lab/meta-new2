@@ -1,0 +1,2235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Metaassets｜藝術資產交易平台</title>
+
+  <link rel="icon" href="images/logo.ico" />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="images/favicon-32x32.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="images/favicon-16x16.png"
+  />
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="images/apple-touch-icon.png"
+  />
+
+  <meta
+    name="description"
+    content="Metaassets 是專注於藝術資產與 NFT 的交易與認證平台，提供藝術品數位憑證、防偽驗證與區塊鏈資產管理服務。"
+  />
+  <meta
+    name="keywords"
+    content="Metaassets,藝術資產,NFT 認證,藝術品數位憑證,區塊鏈資產管理"
+  />
+  <link rel="canonical" href="https://www.metaassets.io/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Noto+Serif+TC:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#000000" />
+
+  <meta property="og:url" content="https://www.metaassets.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Metaassets｜藝術資產交易與 NFT 認證平台" />
+  <meta
+    property="og:description"
+    content="Metaassets 是專注於藝術資產與 NFT 的交易與認證平台，提供藝術品數位憑證、防偽驗證與區塊鏈資產管理服務。"
+  />
+  <meta property="og:image" content="images/og-image.jpg" />
+  <meta property="og:site_name" content="Metaassets" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta
+    name="twitter:title"
+    content="Metaassets｜藝術資產交易與 NFT 認證平台"
+  />
+  <meta
+    name="twitter:description"
+    content="專注於藝術資產與 NFT 的交易、認證與區塊鏈資產管理服務。"
+  />
+  <meta name="twitter:image" content="https://www.metaassets.io/og-image.jpg" />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-VTZNRHLELH"
+  ></script>
+  <!-- 上線後改正式GA4 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-VTZNRHLELH");
+  </script>
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+  <script type="module" crossorigin src="/meta-new2/assets/ma-main.js"></script>
+  <link rel="stylesheet" crossorigin href="/meta-new2/assets/ma-main.css">
+</head>
+
+  <!-- 有些頁面的背景色是黑色 .ma-pager--dark -->
+  <body class="ma-page ma-page--dark">
+    <header class="ma-header">
+  <div class="ma-container">
+    <div class="ma-inner">
+      <a href="index.html" class="ma-header__logo">
+        <img src="/meta-new2/images/logo.png" alt="Metaassets" />
+      </a>
+
+      <!-- 大版導覽列 -->
+      <nav
+        class="ma-action-group ma-action-group--desktop"
+        aria-label="Header actions"
+      >
+        <!-- =========================
+             大版右上角：登入前 / 登入後 二擇一
+             PHP 工程師依登入狀態輸出對應連結
+             ========================= -->
+
+        <!-- 登入前顯示：登入/設定 -->
+        <!--
+        <a href="login-setting.html">登入/設定</a>
+        -->
+
+        <!-- 登入後顯示：查看鏈證 -->
+
+        <a href="user/assets.html">查看鏈證</a>
+
+        <!-- ========================= -->
+
+        <button
+          id="lang-toggle-pc"
+          class="ma-icon-btn"
+          type="button"
+          aria-label="Language"
+        >
+          <img src="/meta-new2/images/icon_lang.png" alt="" />
+        </button>
+      </nav>
+
+      <!-- 小版導覽列 -->
+      <div class="ma-action-group ma-action-group--mobile">
+        <button
+          id="menu-toggle"
+          class="ma-icon-btn"
+          type="button"
+          aria-label="Menu"
+          aria-controls="mobile-drawer"
+          aria-expanded="false"
+        >
+          <img src="/meta-new2/images/icon_bar.png" alt="" />
+        </button>
+
+        <button
+          id="lang-toggle-mobile"
+          class="ma-icon-btn"
+          type="button"
+          aria-label="Language"
+        >
+          <img src="/meta-new2/images/icon_lang.png" alt="" />
+        </button>
+      </div>
+    </div>
+
+    <!-- 桌機主導覽 -->
+    <nav class="ma-navbar" aria-label="Primary">
+      <div class="ma-navbar__links">
+        <a target="_blank" href="act.html" class="is-active">
+          ACT 鏈證
+        </a>
+
+        <a href="index.html#ma-assets">藝術資產</a>
+
+        <a href="index.html#ma-collect">收藏推薦</a>
+
+        <a href="search-assets.html">鏈證搜尋</a>
+
+        <a href="index.html#ma-service__about">
+          關於 Metaassets
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- 導覽列選單 -->
+<div id="menu-overlay" class="ma-overlay"></div>
+
+<div
+  id="mobile-drawer"
+  class="ma-drawer"
+  tabindex="-1"
+  aria-hidden="true"
+  hidden
+>
+  <div class="ma-drawer__panel">
+    <!-- 主選單內容 -->
+    <div id="menu-content" class="ma-mobile-menu ma-mobile-menu--nav">
+      <!-- 上方頁籤 -->
+      <div
+        class="ma-mobile-menu__tabs"
+        role="tablist"
+        aria-label="Mobile menu tabs"
+      >
+        <button
+          type="button"
+          class="ma-mobile-menu__tab is-active"
+          data-menu-tab="explore"
+          role="tab"
+          aria-selected="true"
+        >
+          探　索
+        </button>
+
+        <!-- 會員頁籤：登入後才顯示 -->
+        <button
+          type="button"
+          class="ma-mobile-menu__tab"
+          data-menu-tab="member"
+          role="tab"
+          aria-selected="false"
+        >
+          波波雞
+        </button>
+      </div>
+
+      <!-- 探索選單 -->
+      <div
+        class="ma-mobile-menu__panel is-active"
+        data-menu-panel="explore"
+        role="tabpanel"
+      >
+        <!-- 當前頁在連結上樣式: class="is-active"-->
+        <div class="ma-mobile-menu__links">
+          <a target="_blank" href="act.html" class="is-active"
+            >ACT 鏈證</a
+          >
+
+          <a href="index.html#ma-assets"> 藝術資產 </a>
+
+          <a href="index.html#ma-collect">收藏推薦</a>
+
+          <a href="search-assets.html">鏈證搜尋</a>
+
+          <a href="index.html#ma-service__about">
+            關於 Metaassets
+          </a>
+        </div>
+      </div>
+
+      <!-- 會員選單：登入後才看的到 -->
+      <div
+        class="ma-mobile-menu__panel"
+        data-menu-panel="member"
+        role="tabpanel"
+        hidden
+      >
+        <!-- 當前頁在連結上樣式: class="is-active"-->
+        <div class="ma-mobile-menu__links">
+          <a href="user/assets.html" class="is-active"
+            >藝術資產</a
+          >
+
+          <a href="user/transaction-records.html">
+            交易鏈證紀錄
+          </a>
+
+          <a href="user/transaction-assigned.html">
+            指定給我的交易
+          </a>
+
+          <a href="user/login-change.html">個人錢包設定</a>
+
+          <a href="line.html">問題詢問</a>
+        </div>
+      </div>
+
+      <!-- 底部操作區 -->
+      <div class="ma-mobile-menu__footer">
+        <!-- =========================
+             小版底部按鈕：登入前 / 登入後 二擇一
+             PHP 工程師依登入狀態輸出對應區塊
+             ========================= -->
+
+        <!-- 登入前顯示 -->
+        <!--
+        <a
+          href="login.html"
+          class="ma-mobile-menu__footer-btn"
+        >
+          登入
+        </a>
+
+        <a
+          href="login-setting.html"
+          class="ma-mobile-menu__footer-btn ma-mobile-menu__footer-btn--dark is-active"
+        >
+          設定
+        </a>
+        -->
+
+        <!-- 登入後顯示 -->
+        <a href="#" class="ma-mobile-menu__footer-btn">查看鏈證</a>
+
+        <a
+          href="login-setting.html"
+          class="ma-mobile-menu__footer-btn ma-mobile-menu__footer-btn--dark is-active"
+        >
+          登入/設定
+        </a>
+
+        <!-- ========================= -->
+      </div>
+    </div>
+
+    <!-- 語言選單 -->
+    <div
+      id="lang-content"
+      class="ma-mobile-menu ma-mobile-menu--lang is-hidden"
+    >
+      <div class="ma-mobile-menu__links ma-mobile-menu__links--lang">
+        <a href="#!" class="is-active">中 文</a>
+        <a href="#!">English</a>
+        <a href="#!">日本語</a>
+        <a href="#!">한국어</a>
+        <a href="#!">Español</a>
+        <a href="#!">Français</a>
+        <a href="#!">Deutsch</a>
+      </div>
+    </div>
+  </div>
+</div>
+    <main class="ma-main">
+      <!-- hero-banner -->
+      <section class="ma-section ma-hero">
+        <!-- 文字區（固定不動） -->
+        <div class="ma-container">
+          <div class="ma-inner">
+            <div class="ma-hero__text">
+              <div class="ma-hero__titles">
+                <p class="ma-hero__title-en">Metaassets</p>
+                <h1 class="ma-hero__title-zh">讓藝術成為資產</h1>
+                <p class="ma-hero__subtitle">Turning Art into Assets</p>
+              </div>
+              <p class="ma-hero__desc">ACT 鏈證，為藝術資產建立可信制度</p>
+              <a
+                href="https://virtual.metaassets.asia/exhibitions/DEMO"
+                class="ma-btn ma-btn--gold"
+              >
+                進入虛擬實境展示
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 小圓點 -->
+        <div class="swiper-pagination ma-hero__pagination"></div>
+
+        <!-- 漸層遮罩（固定） -->
+        <div class="ma-hero__overlay" aria-hidden="true"></div>
+
+        <!-- 背景輪播：只放媒體 -->
+        <div class="swiper ma-hero__swiper">
+          <div class="swiper-wrapper">
+            <!-- Slide 1: JPG -->
+            <div class="swiper-slide">
+              <img
+                src="https://news.postwings.art/uploads/banners//20250923-BANNER(1920X1080PX).jpeg"
+                alt="Banner 1"
+              />
+            </div>
+
+            <!-- Slide 2: JPG -->
+            <div class="swiper-slide">
+              <img
+                src="https://news.postwings.art/uploads/banners//20251224-%E7%BE%85%E6%95%8F%E8%8F%81banner-1920x1080-2.jpg"
+                alt="Banner 2"
+              />
+            </div>
+
+            <!-- Slide 3: MP4 -->
+            <div class="swiper-slide">
+              <video
+                src="https://cdn.metaassets.asia/artworks/artwork_1127_20230713044052.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+              ></video>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- art-assets -->
+      <section class="ma-section ma-assets" id="ma-assets">
+        <div class="ma-container">
+          <div class="ma-inner">
+            <!-- Section Header -->
+            <div class="ma-section__header">
+              <h2 class="ma-section__title">藝術資產</h2>
+              <a href="search-assets.html" class="ma-section__link">more</a>
+            </div>
+          </div>
+
+          <!--
+  顯示規則：
+  - 桌機：每頁顯示 8 個卡片 / - 手機：每頁顯示 4 個卡片
+  - 顯示數量由 index.html 最下方的 Swiper 初始化設定控制
+
+  注意事項（給後端）：
+  - 卡片類型 class（.ma-card--act-art / .ma-card--print-art）
+    由程式依資料類型動態產生，不手動寫死於 HTML
+    .ma-card__category 的<h4>文字有2種: 藝術鏈證, 藏品鏈證
+
+  - 卡片按鈕文字亦由程式判斷：
+    無價格 → 顯示「了解更多」
+    有價格 → 顯示「詢問收藏」
+
+  - 此SECTION的「詢問收藏」按鈕連結為: 若沒登入則連至登入 login.html, 若已登入則連至confirm.html
+  「了解更多」按鈕連結為: line.html
+-->
+          <div class="swiper ma-assets__swiper">
+            <!-- Swiper 主體 -->
+            <div class="swiper-wrapper">
+              <!-- 依資料量輸出 n 筆 -->
+              <!-- card 01: 有價錢, 按鈕字"詢問收藏" -->
+              <div class="swiper-slide">
+                <article class="ma-card ma-card--act-art">
+                  <!-- 左：圖片區 -->
+                  <div class="ma-card__media">
+                    <img
+                      src="https://images.unsplash.com/photo-1579541814924-49fef17c5be5?q=80&w=670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="Artwork"
+                    />
+                  </div>
+
+                  <!-- 右：內容區 -->
+                  <div class="ma-card__content">
+                    <div class="ma-card__category">
+                      <span class="ma-card__category-text">藝術鏈證</span>
+                      <span
+                        class="ma-card__category-icon"
+                        aria-hidden="true"
+                      ></span>
+                    </div>
+
+                    <div class="ma-card__header">
+                      <h3 class="ma-card__title">Seeing Eyes</h3>
+                      <p class="ma-card__artist">理查德・博伊德・鄧洛普</p>
+                    </div>
+
+                    <div class="ma-card__body">
+                      <p class="ma-card__meta">
+                        <span class="ma-card__meta-item">丙烯畫 / 畫布</span>
+                        <span class="ma-card__meta-item"
+                          >100 × 100 × 100 cm</span
+                        >
+                      </p>
+
+                      <!-- 沒價錢需在 span 填入 &nbsp; 防跑版 -->
+                      <div
+                        class="ma-card__pricing"
+                        aria-label="Artwork pricing"
+                      >
+                        <p class="ma-card__price ma-card__price--crypto">
+                          <span class="ma-card__price-value">1,000.00</span>
+                          <span class="ma-card__price-unit">ETH</span>
+                        </p>
+                        <span class="ma-card__price-equal" aria-hidden="true"
+                          >≈</span
+                        >
+                        <p class="ma-card__price ma-card__price--fiat">
+                          <span class="ma-card__price-value">1,000.00</span>
+                          <span class="ma-card__price-unit">USD</span>
+                        </p>
+                      </div>
+
+                      <div class="ma-card__footer">
+                        <!-- 編號 / 版數 -->
+                        <div class="ma-card__info-group">
+                          <p class="ma-card__id">M2023APG000147PA</p>
+                          <p class="ma-card__edition">
+                            <span class="ma-card__edition-current">02</span>
+                            <span class="ma-card__edition-separator">/</span>
+                            <span class="ma-card__edition-total">30</span>
+                          </p>
+                        </div>
+
+                        <a href="login.html" class="ma-btn ma-btn--gray-dark"
+                          >詢問收藏</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <!-- card 02: 範例資料" -->
+              <div class="swiper-slide">
+                <article class="ma-card ma-card--print-art">
+                  <!-- 左：圖片區 -->
+                  <div class="ma-card__media">
+                    <img
+                      src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?q=80&w=1019&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="Artwork"
+                    />
+                  </div>
+
+                  <!-- 右：內容區 -->
+                  <div class="ma-card__content">
+                    <div class="ma-card__category">
+                      <span class="ma-card__category-text">藏品鏈證</span>
+                      <span
+                        class="ma-card__category-icon"
+                        aria-hidden="true"
+                      ></span>
+                    </div>
+
+                    <div class="ma-card__header">
+                      <h3 class="ma-card__title">Seeing Eyes</h3>
+                      <p class="ma-card__artist">理查德・博伊德・鄧洛普</p>
+                    </div>
+
+                    <div class="ma-card__body">
+                      <p class="ma-card__meta">
+                        <span class="ma-card__meta-item">丙烯畫 / 畫布</span>
+                        <span class="ma-card__meta-item"
+                          >100 × 100 × 100 cm</span
+                        >
+                      </p>
+
+                      <!-- 沒價錢需在 span 填入 &nbsp; 防跑版 -->
+                      <div
+                        class="ma-card__pricing"
+                        aria-label="Artwork pricing"
+                      >
+                        <p class="ma-card__price ma-card__price--crypto">
+                          <span class="ma-card__price-value">&nbsp;</span>
+                          <span class="ma-card__price-unit">&nbsp;</span>
+                        </p>
+                        <span class="ma-card__price-equal" aria-hidden="true"
+                          >&nbsp;</span
+                        >
+                        <p class="ma-card__price ma-card__price--fiat">
+                          <span class="ma-card__price-value">&nbsp;</span>
+                          <span class="ma-card__price-unit">&nbsp;</span>
+                        </p>
+                      </div>
+
+                      <div class="ma-card__footer">
+                        <!-- 編號 / 版數 -->
+                        <div class="ma-card__info-group">
+                          <p class="ma-card__id">M2023APG000147PA</p>
+                          <!-- 沒編號 / 版數 需在 span 填入 &nbsp; 防跑版 -->
+                          <p class="ma-card__edition" aria-label="無版數">
+                            <span class="ma-card__edition-current">&nbsp;</span>
+                            <span class="ma-card__edition-separator"
+                              >&nbsp;</span
+                            >
+                            <span class="ma-card__edition-total">&nbsp;</span>
+                          </p>
+                        </div>
+
+                        <a href="login.html" class="ma-btn ma-btn--gray-dark"
+                          >了解更多</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <!-- more card ...   -->
+              <!-- 01 有價錢 / ACT -->
+<div class="swiper-slide">
+  <article class="ma-card ma-card--act-art">
+    <!-- 左：圖片區 -->
+    <div class="ma-card__media">
+      <img
+        src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=670&auto=format&fit=crop"
+        alt="Artwork"
+      />
+    </div>
+
+    <!-- 右：內容區 -->
+    <div class="ma-card__content">
+      <div class="ma-card__category">
+        <span class="ma-card__category-text">藝術鏈證</span>
+        <span class="ma-card__category-icon" aria-hidden="true"></span>
+      </div>
+
+      <div class="ma-card__header">
+        <h3 class="ma-card__title">Amber Motion</h3>
+        <p class="ma-card__artist">張宇辰</p>
+      </div>
+
+      <div class="ma-card__body">
+        <p class="ma-card__meta">
+          <span class="ma-card__meta-item">油畫 / 畫布</span>
+          <span class="ma-card__meta-item">120 × 90 cm</span>
+        </p>
+
+        <!-- 沒價錢需在 span 填入 &nbsp; 防跑版 -->
+        <div class="ma-card__pricing" aria-label="Artwork pricing">
+          <p class="ma-card__price ma-card__price--crypto">
+            <span class="ma-card__price-value">2.80</span>
+            <span class="ma-card__price-unit">ETH</span>
+          </p>
+          <span class="ma-card__price-equal" aria-hidden="true">≈</span>
+          <p class="ma-card__price ma-card__price--fiat">
+            <span class="ma-card__price-value">&nbsp;</span>
+            <span class="ma-card__price-unit">USD</span>
+          </p>
+        </div>
+
+        <div class="ma-card__footer">
+          <div class="ma-card__info-group">
+            <p class="ma-card__id">M2024ACT000020</p>
+            <p class="ma-card__edition" aria-label="無版數">
+              <span class="ma-card__edition-current">&nbsp;</span>
+              <span class="ma-card__edition-separator">&nbsp;</span>
+              <span class="ma-card__edition-total">&nbsp;</span>
+            </p>
+          </div>
+
+          <a href="confirm.html" class="ma-btn ma-btn--gray-dark">詢問收藏</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<!-- 02 無價錢 / ACT -->
+<div class="swiper-slide">
+  <article class="ma-card ma-card--act-art">
+    <!-- 左：圖片區 -->
+    <div class="ma-card__media">
+      <img
+        src="https://plus.unsplash.com/premium_photo-1664013263421-91e3a8101259?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Artwork"
+      />
+    </div>
+
+    <!-- 右：內容區 -->
+    <div class="ma-card__content">
+      <div class="ma-card__category">
+        <span class="ma-card__category-text">藝術鏈證</span>
+        <span class="ma-card__category-icon" aria-hidden="true"></span>
+      </div>
+
+      <div class="ma-card__header">
+        <h3 class="ma-card__title">Quiet Flame</h3>
+        <p class="ma-card__artist">林柏廷</p>
+      </div>
+
+      <div class="ma-card__body">
+        <p class="ma-card__meta">
+          <span class="ma-card__meta-item">壓克力 / 畫布</span>
+          <span class="ma-card__meta-item">80 × 80 cm</span>
+        </p>
+
+        <!-- 沒價錢需在 span 填入 &nbsp; 防跑版 -->
+        <div class="ma-card__pricing" aria-label="Artwork pricing">
+          <p class="ma-card__price ma-card__price--crypto">
+            <span class="ma-card__price-value">&nbsp;</span>
+            <span class="ma-card__price-unit">&nbsp;</span>
+          </p>
+          <span class="ma-card__price-equal" aria-hidden="true">&nbsp;</span>
+          <p class="ma-card__price ma-card__price--fiat">
+            <span class="ma-card__price-value">&nbsp;</span>
+            <span class="ma-card__price-unit">&nbsp;</span>
+          </p>
+        </div>
+
+        <div class="ma-card__footer">
+          <div class="ma-card__info-group">
+            <p class="ma-card__id">M2024ACT000021</p>
+            <p class="ma-card__edition" aria-label="無版數">
+              <span class="ma-card__edition-current">&nbsp;</span>
+              <span class="ma-card__edition-separator">&nbsp;</span>
+              <span class="ma-card__edition-total">&nbsp;</span>
+            </p>
+          </div>
+
+          <a href="line.html" class="ma-btn ma-btn--gray-dark">了解更多</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<!-- 03 有價錢 / PRINT -->
+<div class="swiper-slide">
+  <article class="ma-card ma-card--print-art">
+    <!-- 左：圖片區 -->
+    <div class="ma-card__media">
+      <img
+        src="https://images.unsplash.com/photo-1579783928621-7a13d66a62d1?q=80&w=690&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Artwork"
+      />
+    </div>
+
+    <!-- 右：內容區 -->
+    <div class="ma-card__content">
+      <div class="ma-card__category">
+        <span class="ma-card__category-text">藏品鏈證</span>
+        <span class="ma-card__category-icon" aria-hidden="true"></span>
+      </div>
+
+      <div class="ma-card__header">
+        <h3 class="ma-card__title">City Glow</h3>
+        <p class="ma-card__artist">陳志宏</p>
+      </div>
+
+      <div class="ma-card__body">
+        <p class="ma-card__meta">
+          <span class="ma-card__meta-item">數位版畫</span>
+          <span class="ma-card__meta-item">60 × 60 cm</span>
+        </p>
+
+        <!-- 沒價錢需在 span 填入 &nbsp; 防跑版 -->
+        <div class="ma-card__pricing" aria-label="Artwork pricing">
+          <p class="ma-card__price ma-card__price--crypto">
+            <span class="ma-card__price-value">0.45</span>
+            <span class="ma-card__price-unit">ETH</span>
+          </p>
+          <span class="ma-card__price-equal" aria-hidden="true">≈</span>
+          <p class="ma-card__price ma-card__price--fiat">
+            <span class="ma-card__price-value">&nbsp;</span>
+            <span class="ma-card__price-unit">USD</span>
+          </p>
+        </div>
+
+        <div class="ma-card__footer">
+          <div class="ma-card__info-group">
+            <p class="ma-card__id">P2024PRT000020</p>
+            <p class="ma-card__edition" aria-label="無版數">
+              <span class="ma-card__edition-current">&nbsp;</span>
+              <span class="ma-card__edition-separator">&nbsp;</span>
+              <span class="ma-card__edition-total">&nbsp;</span>
+            </p>
+          </div>
+
+          <a href="confirm.html" class="ma-btn ma-btn--gray-dark">詢問收藏</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<!-- 04 無價錢 / PRINT -->
+<div class="swiper-slide">
+  <article class="ma-card ma-card--print-art">
+    <!-- 左：圖片區 -->
+    <div class="ma-card__media">
+      <img
+        src="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Artwork"
+      />
+    </div>
+
+    <!-- 右：內容區 -->
+    <div class="ma-card__content">
+      <div class="ma-card__category">
+        <span class="ma-card__category-text">藏品鏈證</span>
+        <span class="ma-card__category-icon" aria-hidden="true"></span>
+      </div>
+
+      <div class="ma-card__header">
+        <h3 class="ma-card__title">Silent Line</h3>
+        <p class="ma-card__artist">劉宇凡</p>
+      </div>
+
+      <div class="ma-card__body">
+        <p class="ma-card__meta">
+          <span class="ma-card__meta-item">限量版畫</span>
+          <span class="ma-card__meta-item">70 × 50 cm</span>
+        </p>
+
+        <!-- 沒價錢需在 span 填入 &nbsp; 防跑版 -->
+        <div class="ma-card__pricing" aria-label="Artwork pricing">
+          <p class="ma-card__price ma-card__price--crypto">
+            <span class="ma-card__price-value">&nbsp;</span>
+            <span class="ma-card__price-unit">&nbsp;</span>
+          </p>
+          <span class="ma-card__price-equal" aria-hidden="true">&nbsp;</span>
+          <p class="ma-card__price ma-card__price--fiat">
+            <span class="ma-card__price-value">&nbsp;</span>
+            <span class="ma-card__price-unit">&nbsp;</span>
+          </p>
+        </div>
+
+        <div class="ma-card__footer">
+          <div class="ma-card__info-group">
+            <p class="ma-card__id">P2024PRT000021</p>
+            <p class="ma-card__edition" aria-label="無版數">
+              <span class="ma-card__edition-current">&nbsp;</span>
+              <span class="ma-card__edition-separator">&nbsp;</span>
+              <span class="ma-card__edition-total">&nbsp;</span>
+            </p>
+          </div>
+
+          <a href="line.html" class="ma-btn ma-btn--gray-dark">了解更多</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<!-- 05 有價錢 / ACT -->
+<div class="swiper-slide">
+  <article class="ma-card ma-card--act-art">
+    <!-- 左：圖片區 -->
+    <div class="ma-card__media">
+      <img
+        src="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Artwork"
+      />
+    </div>
+
+    <!-- 右：內容區 -->
+    <div class="ma-card__content">
+      <div class="ma-card__category">
+        <span class="ma-card__category-text">藝術鏈證</span>
+        <span class="ma-card__category-icon" aria-hidden="true"></span>
+      </div>
+
+      <div class="ma-card__header">
+        <h3 class="ma-card__title">Burning Sky</h3>
+        <p class="ma-card__artist">王子豪</p>
+      </div>
+
+      <div class="ma-card__body">
+        <p class="ma-card__meta">
+          <span class="ma-card__meta-item">混合媒材</span>
+          <span class="ma-card__meta-item">110 × 110 cm</span>
+        </p>
+
+        <!-- 沒價錢需在 span 填入 &nbsp; 防跑版 -->
+        <div class="ma-card__pricing" aria-label="Artwork pricing">
+          <p class="ma-card__price ma-card__price--crypto">
+            <span class="ma-card__price-value">3.20</span>
+            <span class="ma-card__price-unit">ETH</span>
+          </p>
+          <span class="ma-card__price-equal" aria-hidden="true">≈</span>
+          <p class="ma-card__price ma-card__price--fiat">
+            <span class="ma-card__price-value">&nbsp;</span>
+            <span class="ma-card__price-unit">USD</span>
+          </p>
+        </div>
+
+        <div class="ma-card__footer">
+          <div class="ma-card__info-group">
+            <p class="ma-card__id">M2024ACT000022</p>
+            <p class="ma-card__edition" aria-label="無版數">
+              <span class="ma-card__edition-current">&nbsp;</span>
+              <span class="ma-card__edition-separator">&nbsp;</span>
+              <span class="ma-card__edition-total">&nbsp;</span>
+            </p>
+          </div>
+
+          <a href="confirm.html" class="ma-btn ma-btn--gray-dark">詢問收藏</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<!-- 06 無價錢 / ACT -->
+<div class="swiper-slide">
+  <article class="ma-card ma-card--act-art">
+    <!-- 左：圖片區 -->
+    <div class="ma-card__media">
+      <img
+        src="https://images.unsplash.com/photo-1578926375605-eaf7559b1458?q=80&w=1063&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Artwork"
+      />
+    </div>
+
+    <!-- 右：內容區 -->
+    <div class="ma-card__content">
+      <div class="ma-card__category">
+        <span class="ma-card__category-text">藝術鏈證</span>
+        <span class="ma-card__category-icon" aria-hidden="true"></span>
+      </div>
+
+      <div class="ma-card__header">
+        <h3 class="ma-card__title">Void Space</h3>
+        <p class="ma-card__artist">黃詩晴</p>
+      </div>
+
+      <div class="ma-card__body">
+        <p class="ma-card__meta">
+          <span class="ma-card__meta-item">油畫</span>
+          <span class="ma-card__meta-item">140 × 100 cm</span>
+        </p>
+
+        <!-- 沒價錢需在 span 填入 &nbsp; 防跑版 -->
+        <div class="ma-card__pricing" aria-label="Artwork pricing">
+          <p class="ma-card__price ma-card__price--crypto">
+            <span class="ma-card__price-value">&nbsp;</span>
+            <span class="ma-card__price-unit">&nbsp;</span>
+          </p>
+          <span class="ma-card__price-equal" aria-hidden="true">&nbsp;</span>
+          <p class="ma-card__price ma-card__price--fiat">
+            <span class="ma-card__price-value">&nbsp;</span>
+            <span class="ma-card__price-unit">&nbsp;</span>
+          </p>
+        </div>
+
+        <div class="ma-card__footer">
+          <div class="ma-card__info-group">
+            <p class="ma-card__id">M2024ACT000023</p>
+            <p class="ma-card__edition" aria-label="無版數">
+              <span class="ma-card__edition-current">&nbsp;</span>
+              <span class="ma-card__edition-separator">&nbsp;</span>
+              <span class="ma-card__edition-total">&nbsp;</span>
+            </p>
+          </div>
+
+          <a href="line.html" class="ma-btn ma-btn--gray-dark">了解更多</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<!-- 07 有價錢 / PRINT -->
+<div class="swiper-slide">
+  <article class="ma-card ma-card--print-art">
+    <!-- 左：圖片區 -->
+    <div class="ma-card__media">
+      <img
+        src="https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?q=80&w=748&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Artwork"
+      />
+    </div>
+
+    <!-- 右：內容區 -->
+    <div class="ma-card__content">
+      <div class="ma-card__category">
+        <span class="ma-card__category-text">藏品鏈證</span>
+        <span class="ma-card__category-icon" aria-hidden="true"></span>
+      </div>
+
+      <div class="ma-card__header">
+        <h3 class="ma-card__title">Digital Pulse</h3>
+        <p class="ma-card__artist">楊宇軒</p>
+      </div>
+
+      <div class="ma-card__body">
+        <p class="ma-card__meta">
+          <span class="ma-card__meta-item">數位輸出</span>
+          <span class="ma-card__meta-item">40 × 40 cm</span>
+        </p>
+
+        <!-- 沒價錢需在 span 填入 &nbsp; 防跑版 -->
+        <div class="ma-card__pricing" aria-label="Artwork pricing">
+          <p class="ma-card__price ma-card__price--crypto">
+            <span class="ma-card__price-value">0.25</span>
+            <span class="ma-card__price-unit">ETH</span>
+          </p>
+          <span class="ma-card__price-equal" aria-hidden="true">≈</span>
+          <p class="ma-card__price ma-card__price--fiat">
+            <span class="ma-card__price-value">&nbsp;</span>
+            <span class="ma-card__price-unit">USD</span>
+          </p>
+        </div>
+
+        <div class="ma-card__footer">
+          <div class="ma-card__info-group">
+            <p class="ma-card__id">P2024PRT000022</p>
+            <p class="ma-card__edition" aria-label="無版數">
+              <span class="ma-card__edition-current">&nbsp;</span>
+              <span class="ma-card__edition-separator">&nbsp;</span>
+              <span class="ma-card__edition-total">&nbsp;</span>
+            </p>
+          </div>
+
+          <a href="confirm.html" class="ma-btn ma-btn--gray-dark">詢問收藏</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<!-- 08 無價錢 / PRINT -->
+<div class="swiper-slide">
+  <article class="ma-card ma-card--print-art">
+    <!-- 左：圖片區 -->
+    <div class="ma-card__media">
+      <img
+        src="https://plus.unsplash.com/premium_photo-1667239035707-237c1b3adbe3?q=80&w=714&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Artwork"
+      />
+    </div>
+
+    <!-- 右：內容區 -->
+    <div class="ma-card__content">
+      <div class="ma-card__category">
+        <span class="ma-card__category-text">藏品鏈證</span>
+        <span class="ma-card__category-icon" aria-hidden="true"></span>
+      </div>
+
+      <div class="ma-card__header">
+        <h3 class="ma-card__title">Mono Form</h3>
+        <p class="ma-card__artist">李政廷</p>
+      </div>
+
+      <div class="ma-card__body">
+        <p class="ma-card__meta">
+          <span class="ma-card__meta-item">絲網印刷</span>
+          <span class="ma-card__meta-item">50 × 70 cm</span>
+        </p>
+
+        <!-- 沒價錢需在 span 填入 &nbsp; 防跑版 -->
+        <div class="ma-card__pricing" aria-label="Artwork pricing">
+          <p class="ma-card__price ma-card__price--crypto">
+            <span class="ma-card__price-value">&nbsp;</span>
+            <span class="ma-card__price-unit">&nbsp;</span>
+          </p>
+          <span class="ma-card__price-equal" aria-hidden="true">&nbsp;</span>
+          <p class="ma-card__price ma-card__price--fiat">
+            <span class="ma-card__price-value">&nbsp;</span>
+            <span class="ma-card__price-unit">&nbsp;</span>
+          </p>
+        </div>
+
+        <div class="ma-card__footer">
+          <div class="ma-card__info-group">
+            <p class="ma-card__id">P2024PRT000023</p>
+            <p class="ma-card__edition" aria-label="無版數">
+              <span class="ma-card__edition-current">&nbsp;</span>
+              <span class="ma-card__edition-separator">&nbsp;</span>
+              <span class="ma-card__edition-total">&nbsp;</span>
+            </p>
+          </div>
+
+          <a href="line.html" class="ma-btn ma-btn--gray-dark">了解更多</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<!-- 09 有價錢 / ACT -->
+<div class="swiper-slide">
+  <article class="ma-card ma-card--act-art">
+    <!-- 左：圖片區 -->
+    <div class="ma-card__media">
+      <img
+        src="https://plus.unsplash.com/premium_photo-1672178140334-26c7880d4663?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Artwork"
+      />
+    </div>
+
+    <!-- 右：內容區 -->
+    <div class="ma-card__content">
+      <div class="ma-card__category">
+        <span class="ma-card__category-text">藝術鏈證</span>
+        <span class="ma-card__category-icon" aria-hidden="true"></span>
+      </div>
+
+      <div class="ma-card__header">
+        <h3 class="ma-card__title">Crimson Depth</h3>
+        <p class="ma-card__artist">周宇翔</p>
+      </div>
+
+      <div class="ma-card__body">
+        <p class="ma-card__meta">
+          <span class="ma-card__meta-item">油畫 / 畫布</span>
+          <span class="ma-card__meta-item">100 × 120 cm</span>
+        </p>
+
+        <!-- 沒價錢需在 span 填入 &nbsp; 防跑版 -->
+        <div class="ma-card__pricing" aria-label="Artwork pricing">
+          <p class="ma-card__price ma-card__price--crypto">
+            <span class="ma-card__price-value">4.00</span>
+            <span class="ma-card__price-unit">ETH</span>
+          </p>
+          <span class="ma-card__price-equal" aria-hidden="true">≈</span>
+          <p class="ma-card__price ma-card__price--fiat">
+            <span class="ma-card__price-value">&nbsp;</span>
+            <span class="ma-card__price-unit">USD</span>
+          </p>
+        </div>
+
+        <div class="ma-card__footer">
+          <div class="ma-card__info-group">
+            <p class="ma-card__id">M2024ACT000024</p>
+            <p class="ma-card__edition" aria-label="無版數">
+              <span class="ma-card__edition-current">&nbsp;</span>
+              <span class="ma-card__edition-separator">&nbsp;</span>
+              <span class="ma-card__edition-total">&nbsp;</span>
+            </p>
+          </div>
+
+          <a href="confirm.html" class="ma-btn ma-btn--gray-dark">詢問收藏</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+            </div>
+            <!-- 小圓點（一定要在 swiper 裡） -->
+            <div class="swiper-pagination ma-assets__pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- pro-banner -->
+      <section class="ma-section ma-promo">
+        <!-- 背景輪播：只放媒體 -->
+        <div class="swiper ma-promo__swiper">
+          <div class="swiper-wrapper">
+            <!-- Slide 1: JPG -->
+            <div class="swiper-slide">
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://virtual.metaassets.asia/exhibitions/TELI"
+                aria-label="前往許德麗3DVR線上展覽"
+              >
+                <img
+                  src="/meta-new2/images/20260113-許德麗banner-1920x1080-1 1.png"
+                  alt="許德麗藝術作品展覽橫幅"
+                />
+              </a>
+            </div>
+            <!-- Slide 1: JPG -->
+            <div class="swiper-slide">
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://virtual.metaassets.asia/exhibitions/zhaoerdaiart"
+                aria-label="前往趙二呆3DVR線上展覽"
+              >
+                <img
+                  src="https://news.postwings.art/uploads/banners//20251210-%E6%9D%8E%E5%81%A5%E5%84%80banner-1920x1080.jpg"
+                  alt="趙二呆藝術作品展覽橫幅"
+                />
+              </a>
+            </div>
+
+            <!-- Slide 2: JPG -->
+            <div class="swiper-slide">
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://virtual.metaassets.asia/exhibitions/LiChienYi"
+                aria-label="前往李健儀3DVR線上展覽"
+              >
+                <img
+                  src="https://news.postwings.art/uploads/banners//20260106-%E8%B6%99%E4%BA%8C%E5%91%86banner-1920x1080-2.jpg"
+                  alt="李健儀數位藝術展覽橫幅"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- 小圓點 -->
+        <div class="swiper-pagination ma-promo__pagination"></div>
+      </section>
+
+      <!-- collect-art -->
+      <section class="ma-section ma-collect" id="ma-collect">
+        <div class="ma-container">
+          <div class="ma-inner">
+            <!-- Section Header -->
+            <div class="ma-section__header">
+              <h2 class="ma-section__title">收藏推薦</h2>
+              <a href="search-collect.html" class="ma-section__link">more</a>
+            </div>
+          </div>
+
+          <!--
+  顯示規則：
+  - 桌機：每頁顯示 8 個卡片 / - 手機：每頁顯示 4 個卡片
+  - 顯示數量由 index.html 最下方的 Swiper 初始化設定控制
+
+  注意事項（給後端）：
+  - 卡片類型 class（.ma-card--act-art / .ma-card--print-art）
+    由程式依資料類型動態產生，不手動寫死於 HTML
+    .ma-card__category 的<h4>文字有2種: 認證藝術, 藝術藏品
+
+  - 卡片按鈕文字亦由程式判斷：
+    無價格 → 顯示「了解更多」
+    有價格 → 顯示「了解更多」
+
+  - 此SECTION的按鈕連結為: POSTWINGS官網的作品購買頁
+-->
+          <div class="swiper ma-collect__swiper">
+            <!-- Swiper 主體 -->
+            <div class="swiper-wrapper">
+              <!-- 依資料量輸出 n 筆 -->
+
+              <!-- card 01：有價錢 -->
+              <div class="swiper-slide">
+                <article class="ma-card ma-card--act-art">
+                  <!-- 左：圖片區 -->
+                  <div class="ma-card__media">
+                    <img
+                      src="https://images.unsplash.com/photo-1584446922442-7ac6b8c118f3?q=80&w=756&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="Artwork"
+                    />
+                  </div>
+
+                  <!-- 右：內容區 -->
+                  <div class="ma-card__content">
+                    <div class="ma-card__category">
+                      <span class="ma-card__category-text">認證藝術</span>
+                      <span
+                        class="ma-card__category-icon"
+                        aria-hidden="true"
+                      ></span>
+                    </div>
+
+                    <div class="ma-card__header">
+                      <h3 class="ma-card__title">Seeing Eyes</h3>
+                      <p class="ma-card__artist">理查德・博伊德・鄧洛普</p>
+                    </div>
+
+                    <div class="ma-card__body">
+                      <p class="ma-card__meta">
+                        <span class="ma-card__meta-item">丙烯畫 / 畫布</span>
+                        <span class="ma-card__meta-item"
+                          >100 × 100 × 100 cm</span
+                        >
+                      </p>
+
+                      <!-- 沒價錢需在 span 填入 &nbsp; 防跑版 -->
+                      <div
+                        class="ma-card__pricing"
+                        aria-label="Artwork pricing"
+                      >
+                        <p class="ma-card__price ma-card__price--crypto">
+                          <span class="ma-card__price-value">1,000.00</span>
+                          <span class="ma-card__price-unit">ETH</span>
+                        </p>
+                        <span class="ma-card__price-equal" aria-hidden="true"
+                          >≈</span
+                        >
+                        <p class="ma-card__price ma-card__price--fiat">
+                          <span class="ma-card__price-value">1,000.00</span>
+                          <span class="ma-card__price-unit">USD</span>
+                        </p>
+                      </div>
+
+                      <div class="ma-card__footer">
+                        <!-- 編號 / 版數 -->
+                        <div class="ma-card__info-group">
+                          <p class="ma-card__id">M2023APG000147PA</p>
+                          <p class="ma-card__edition">
+                            <span class="ma-card__edition-current">02</span>
+                            <span class="ma-card__edition-separator">/</span>
+                            <span class="ma-card__edition-total">30</span>
+                          </p>
+                        </div>
+
+                        <!-- 收藏推薦區塊按鈕字固定為：了解更多 -->
+                        <a
+                          href="https://virtual.metaassets.asia/artworks/M2024APG000010PA"
+                          class="ma-btn ma-btn--gray-light"
+                          >了解更多</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- card 02：無價錢 -->
+              <div class="swiper-slide">
+                <article class="ma-card ma-card--print-art">
+                  <!-- 左：圖片區 -->
+                  <div class="ma-card__media">
+                    <img
+                      src="https://images.unsplash.com/flagged/photo-1567934150921-7632371abb32?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="Artwork"
+                    />
+                  </div>
+
+                  <!-- 右：內容區 -->
+                  <div class="ma-card__content">
+                    <div class="ma-card__category">
+                      <span class="ma-card__category-text">藝術藏品</span>
+                      <span
+                        class="ma-card__category-icon"
+                        aria-hidden="true"
+                      ></span>
+                    </div>
+
+                    <div class="ma-card__header">
+                      <h3 class="ma-card__title">Seeing Eyes</h3>
+                      <p class="ma-card__artist">理查德・博伊德・鄧洛普</p>
+                    </div>
+
+                    <div class="ma-card__body">
+                      <p class="ma-card__meta">
+                        <span class="ma-card__meta-item">丙烯畫 / 畫布</span>
+                        <span class="ma-card__meta-item"
+                          >100 × 100 × 100 cm</span
+                        >
+                      </p>
+
+                      <!-- 沒價錢需在 span 填入 &nbsp; 防跑版 -->
+                      <div
+                        class="ma-card__pricing"
+                        aria-label="Artwork pricing"
+                      >
+                        <p class="ma-card__price ma-card__price--crypto">
+                          <span class="ma-card__price-value">&nbsp;</span>
+                          <span class="ma-card__price-unit">&nbsp;</span>
+                        </p>
+                        <span class="ma-card__price-equal" aria-hidden="true"
+                          >&nbsp;</span
+                        >
+                        <p class="ma-card__price ma-card__price--fiat">
+                          <span class="ma-card__price-value">&nbsp;</span>
+                          <span class="ma-card__price-unit">&nbsp;</span>
+                        </p>
+                      </div>
+
+                      <div class="ma-card__footer">
+                        <!-- 編號 / 版數 -->
+                        <div class="ma-card__info-group">
+                          <p class="ma-card__id">M2023APG000147PA</p>
+                          <!-- 沒有版數需在 span 填入 &nbsp; 防跑版 -->
+                          <p class="ma-card__edition" aria-label="無版數">
+                            <span class="ma-card__edition-current">&nbsp;</span>
+                            <span class="ma-card__edition-separator"
+                              >&nbsp;</span
+                            >
+                            <span class="ma-card__edition-total">&nbsp;</span>
+                          </p>
+                        </div>
+
+                        <!-- 收藏推薦區塊按鈕字固定為：了解更多 -->
+                        <a
+                          href="https://virtual.metaassets.asia/artworks/M2024APG000001PA"
+                          class="ma-btn ma-btn--gray-light"
+                          >了解更多</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <!-- more card ...   -->
+              <!-- 10 -->
+<div class="swiper-slide">
+  <article class="ma-card ma-card--act-art">
+    <!-- 左：圖片區 -->
+    <div class="ma-card__media">
+      <img
+        src="https://images.unsplash.com/photo-1625043094457-c0e5bb443278?q=80&w=1208&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Artwork"
+      />
+    </div>
+
+    <!-- 右：內容區 -->
+    <div class="ma-card__content">
+      <div class="ma-card__category">
+        <span class="ma-card__category-text">認證藝術</span>
+        <span class="ma-card__category-icon" aria-hidden="true"></span>
+      </div>
+
+      <div class="ma-card__header">
+        <h3 class="ma-card__title">Golden Silence</h3>
+        <p class="ma-card__artist">陳宇安</p>
+      </div>
+
+      <div class="ma-card__body">
+        <p class="ma-card__meta">
+          <span class="ma-card__meta-item">油畫 / 畫布</span>
+          <span class="ma-card__meta-item">100 × 80 cm</span>
+        </p>
+
+        <div class="ma-card__pricing" aria-label="Artwork pricing">
+          <p class="ma-card__price ma-card__price--crypto">
+            <span class="ma-card__price-value">1.80</span>
+            <span class="ma-card__price-unit">ETH</span>
+          </p>
+          <span class="ma-card__price-equal" aria-hidden="true">≈</span>
+          <p class="ma-card__price ma-card__price--fiat">
+            <span class="ma-card__price-value">&nbsp;</span>
+            <span class="ma-card__price-unit">USD</span>
+          </p>
+        </div>
+
+        <div class="ma-card__footer">
+          <div class="ma-card__info-group">
+            <p class="ma-card__id">M2024ACT000030</p>
+            <p class="ma-card__edition" aria-label="無版數">
+              <span class="ma-card__edition-current">&nbsp;</span>
+              <span class="ma-card__edition-separator">&nbsp;</span>
+              <span class="ma-card__edition-total">&nbsp;</span>
+            </p>
+          </div>
+
+          <a
+            href="https://virtual.metaassets.asia/artworks/M2024APG000017PA"
+            class="ma-btn ma-btn--gray-light"
+            >了解更多</a
+          >
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<!-- 11 -->
+<div class="swiper-slide">
+  <article class="ma-card ma-card--print-art">
+    <!-- 左：圖片區 -->
+    <div class="ma-card__media">
+      <img
+        src="https://images.unsplash.com/photo-1578926078640-668b1fb75403?q=80&w=1066&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Artwork"
+      />
+    </div>
+
+    <!-- 右：內容區 -->
+    <div class="ma-card__content">
+      <div class="ma-card__category">
+        <span class="ma-card__category-text">藝術藏品</span>
+        <span class="ma-card__category-icon" aria-hidden="true"></span>
+      </div>
+
+      <div class="ma-card__header">
+        <h3 class="ma-card__title">Light Fragment</h3>
+        <p class="ma-card__artist">王詩涵</p>
+      </div>
+
+      <div class="ma-card__body">
+        <p class="ma-card__meta">
+          <span class="ma-card__meta-item">數位版畫</span>
+          <span class="ma-card__meta-item">60 × 40 cm</span>
+        </p>
+
+        <div class="ma-card__pricing" aria-label="Artwork pricing">
+          <p class="ma-card__price ma-card__price--crypto">
+            <span class="ma-card__price-value">&nbsp;</span>
+            <span class="ma-card__price-unit">&nbsp;</span>
+          </p>
+          <span class="ma-card__price-equal" aria-hidden="true">&nbsp;</span>
+          <p class="ma-card__price ma-card__price--fiat">
+            <span class="ma-card__price-value">&nbsp;</span>
+            <span class="ma-card__price-unit">&nbsp;</span>
+          </p>
+        </div>
+
+        <div class="ma-card__footer">
+          <div class="ma-card__info-group">
+            <p class="ma-card__id">P2024PRT000030</p>
+            <p class="ma-card__edition" aria-label="無版數">
+              <span class="ma-card__edition-current">&nbsp;</span>
+              <span class="ma-card__edition-separator">&nbsp;</span>
+              <span class="ma-card__edition-total">&nbsp;</span>
+            </p>
+          </div>
+
+          <a
+            href="https://virtual.metaassets.asia/artworks/M2024APG000017PA"
+            class="ma-btn ma-btn--gray-light"
+            >了解更多</a
+          >
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<!-- 12 -->
+<div class="swiper-slide">
+  <article class="ma-card ma-card--act-art">
+    <!-- 左：圖片區 -->
+    <div class="ma-card__media">
+      <img
+        src="https://images.unsplash.com/photo-1625043094258-6a84c95124ca?q=80&w=1317&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Artwork"
+      />
+    </div>
+
+    <!-- 右：內容區 -->
+    <div class="ma-card__content">
+      <div class="ma-card__category">
+        <span class="ma-card__category-text">認證藝術</span>
+        <span class="ma-card__category-icon" aria-hidden="true"></span>
+      </div>
+
+      <div class="ma-card__header">
+        <h3 class="ma-card__title">Burning Horizon</h3>
+        <p class="ma-card__artist">李志豪</p>
+      </div>
+
+      <div class="ma-card__body">
+        <p class="ma-card__meta">
+          <span class="ma-card__meta-item">混合媒材</span>
+          <span class="ma-card__meta-item">110 × 100 cm</span>
+        </p>
+
+        <div class="ma-card__pricing" aria-label="Artwork pricing">
+          <p class="ma-card__price ma-card__price--crypto">
+            <span class="ma-card__price-value">3.60</span>
+            <span class="ma-card__price-unit">ETH</span>
+          </p>
+          <span class="ma-card__price-equal" aria-hidden="true">≈</span>
+          <p class="ma-card__price ma-card__price--fiat">
+            <span class="ma-card__price-value">&nbsp;</span>
+            <span class="ma-card__price-unit">USD</span>
+          </p>
+        </div>
+
+        <div class="ma-card__footer">
+          <div class="ma-card__info-group">
+            <p class="ma-card__id">M2024ACT000031</p>
+            <p class="ma-card__edition" aria-label="無版數">
+              <span class="ma-card__edition-current">&nbsp;</span>
+              <span class="ma-card__edition-separator">&nbsp;</span>
+              <span class="ma-card__edition-total">&nbsp;</span>
+            </p>
+          </div>
+
+          <a
+            href="https://virtual.metaassets.asia/artworks/M2024APG000017PA"
+            class="ma-btn ma-btn--gray-light"
+            >了解更多</a
+          >
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<!-- 13 -->
+<div class="swiper-slide">
+  <article class="ma-card ma-card--print-art">
+    <!-- 左：圖片區 -->
+    <div class="ma-card__media">
+      <img
+        src="https://images.unsplash.com/photo-1584441332323-c0473240f3ba?q=80&w=695&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Artwork"
+      />
+    </div>
+
+    <!-- 右：內容區 -->
+    <div class="ma-card__content">
+      <div class="ma-card__category">
+        <span class="ma-card__category-text">藝術藏品</span>
+        <span class="ma-card__category-icon" aria-hidden="true"></span>
+      </div>
+
+      <div class="ma-card__header">
+        <h3 class="ma-card__title">Neon Shape</h3>
+        <p class="ma-card__artist">周柏宇</p>
+      </div>
+
+      <div class="ma-card__body">
+        <p class="ma-card__meta">
+          <span class="ma-card__meta-item">絲網印刷</span>
+          <span class="ma-card__meta-item">50 × 70 cm</span>
+        </p>
+
+        <div class="ma-card__pricing" aria-label="Artwork pricing">
+          <p class="ma-card__price ma-card__price--crypto">
+            <span class="ma-card__price-value">0.30</span>
+            <span class="ma-card__price-unit">ETH</span>
+          </p>
+          <span class="ma-card__price-equal" aria-hidden="true">≈</span>
+          <p class="ma-card__price ma-card__price--fiat">
+            <span class="ma-card__price-value">&nbsp;</span>
+            <span class="ma-card__price-unit">USD</span>
+          </p>
+        </div>
+
+        <div class="ma-card__footer">
+          <div class="ma-card__info-group">
+            <p class="ma-card__id">P2024PRT000031</p>
+            <p class="ma-card__edition" aria-label="無版數">
+              <span class="ma-card__edition-current">&nbsp;</span>
+              <span class="ma-card__edition-separator">&nbsp;</span>
+              <span class="ma-card__edition-total">&nbsp;</span>
+            </p>
+          </div>
+
+          <a
+            href="https://virtual.metaassets.asia/artworks/M2024APG000017PA"
+            class="ma-btn ma-btn--gray-light"
+            >了解更多</a
+          >
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<!-- 14 -->
+<div class="swiper-slide">
+  <article class="ma-card ma-card--act-art">
+    <!-- 左：圖片區 -->
+    <div class="ma-card__media">
+      <img
+        src="https://images.unsplash.com/photo-1581337204873-ef36aa186caa?q=80&w=1156&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Artwork"
+      />
+    </div>
+
+    <!-- 右：內容區 -->
+    <div class="ma-card__content">
+      <div class="ma-card__category">
+        <span class="ma-card__category-text">認證藝術</span>
+        <span class="ma-card__category-icon" aria-hidden="true"></span>
+      </div>
+
+      <div class="ma-card__header">
+        <h3 class="ma-card__title">White Storm</h3>
+        <p class="ma-card__artist">黃嘉琪</p>
+      </div>
+
+      <div class="ma-card__body">
+        <p class="ma-card__meta">
+          <span class="ma-card__meta-item">油畫</span>
+          <span class="ma-card__meta-item">130 × 100 cm</span>
+        </p>
+
+        <div class="ma-card__pricing" aria-label="Artwork pricing">
+          <p class="ma-card__price ma-card__price--crypto">
+            <span class="ma-card__price-value">&nbsp;</span>
+            <span class="ma-card__price-unit">&nbsp;</span>
+          </p>
+          <span class="ma-card__price-equal" aria-hidden="true">&nbsp;</span>
+          <p class="ma-card__price ma-card__price--fiat">
+            <span class="ma-card__price-value">&nbsp;</span>
+            <span class="ma-card__price-unit">&nbsp;</span>
+          </p>
+        </div>
+
+        <div class="ma-card__footer">
+          <div class="ma-card__info-group">
+            <p class="ma-card__id">M2024ACT000032</p>
+            <p class="ma-card__edition" aria-label="無版數">
+              <span class="ma-card__edition-current">&nbsp;</span>
+              <span class="ma-card__edition-separator">&nbsp;</span>
+              <span class="ma-card__edition-total">&nbsp;</span>
+            </p>
+          </div>
+
+          <a
+            href="https://virtual.metaassets.asia/artworks/M2024APG000017PA"
+            class="ma-btn ma-btn--gray-light"
+            >了解更多</a
+          >
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<!-- 15 -->
+<div class="swiper-slide">
+  <article class="ma-card ma-card--print-art">
+    <!-- 左：圖片區 -->
+    <div class="ma-card__media">
+      <img
+        src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?q=80&w=758&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Artwork"
+      />
+    </div>
+
+    <!-- 右：內容區 -->
+    <div class="ma-card__content">
+      <div class="ma-card__category">
+        <span class="ma-card__category-text">藝術藏品</span>
+        <span class="ma-card__category-icon" aria-hidden="true"></span>
+      </div>
+
+      <div class="ma-card__header">
+        <h3 class="ma-card__title">Urban Flow</h3>
+        <p class="ma-card__artist">林志遠</p>
+      </div>
+
+      <div class="ma-card__body">
+        <p class="ma-card__meta">
+          <span class="ma-card__meta-item">數位輸出</span>
+          <span class="ma-card__meta-item">45 × 45 cm</span>
+        </p>
+
+        <div class="ma-card__pricing" aria-label="Artwork pricing">
+          <p class="ma-card__price ma-card__price--crypto">
+            <span class="ma-card__price-value">0.22</span>
+            <span class="ma-card__price-unit">ETH</span>
+          </p>
+          <span class="ma-card__price-equal" aria-hidden="true">≈</span>
+          <p class="ma-card__price ma-card__price--fiat">
+            <span class="ma-card__price-value">&nbsp;</span>
+            <span class="ma-card__price-unit">USD</span>
+          </p>
+        </div>
+
+        <div class="ma-card__footer">
+          <div class="ma-card__info-group">
+            <p class="ma-card__id">P2024PRT000032</p>
+            <p class="ma-card__edition" aria-label="無版數">
+              <span class="ma-card__edition-current">&nbsp;</span>
+              <span class="ma-card__edition-separator">&nbsp;</span>
+              <span class="ma-card__edition-total">&nbsp;</span>
+            </p>
+          </div>
+
+          <a
+            href="https://virtual.metaassets.asia/artworks/M2024APG000017PA"
+            class="ma-btn ma-btn--gray-light"
+            >了解更多</a
+          >
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<!-- 16 -->
+<div class="swiper-slide">
+  <article class="ma-card ma-card--act-art">
+    <!-- 左：圖片區 -->
+    <div class="ma-card__media">
+      <img
+        src="https://images.unsplash.com/photo-1578301996581-bf7caec556c0?q=80&w=1051&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Artwork"
+      />
+    </div>
+
+    <!-- 右：內容區 -->
+    <div class="ma-card__content">
+      <div class="ma-card__category">
+        <span class="ma-card__category-text">認證藝術</span>
+        <span class="ma-card__category-icon" aria-hidden="true"></span>
+      </div>
+
+      <div class="ma-card__header">
+        <h3 class="ma-card__title">Blue Depth</h3>
+        <p class="ma-card__artist">楊子涵</p>
+      </div>
+
+      <div class="ma-card__body">
+        <p class="ma-card__meta">
+          <span class="ma-card__meta-item">油畫 / 畫布</span>
+          <span class="ma-card__meta-item">95 × 120 cm</span>
+        </p>
+
+        <div class="ma-card__pricing" aria-label="Artwork pricing">
+          <p class="ma-card__price ma-card__price--crypto">
+            <span class="ma-card__price-value">2.40</span>
+            <span class="ma-card__price-unit">ETH</span>
+          </p>
+          <span class="ma-card__price-equal" aria-hidden="true">≈</span>
+          <p class="ma-card__price ma-card__price--fiat">
+            <span class="ma-card__price-value">&nbsp;</span>
+            <span class="ma-card__price-unit">USD</span>
+          </p>
+        </div>
+
+        <div class="ma-card__footer">
+          <div class="ma-card__info-group">
+            <p class="ma-card__id">M2024ACT000033</p>
+            <p class="ma-card__edition" aria-label="無版數">
+              <span class="ma-card__edition-current">&nbsp;</span>
+              <span class="ma-card__edition-separator">&nbsp;</span>
+              <span class="ma-card__edition-total">&nbsp;</span>
+            </p>
+          </div>
+
+          <a
+            href="https://virtual.metaassets.asia/artworks/M2024APG000017PA"
+            class="ma-btn ma-btn--gray-light"
+            >了解更多</a
+          >
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<!-- 17 -->
+<div class="swiper-slide">
+  <article class="ma-card ma-card--print-art">
+    <!-- 左：圖片區 -->
+    <div class="ma-card__media">
+      <img
+        src="https://images.unsplash.com/photo-1695841396880-2dcd1f83c4e7?q=80&w=697&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Artwork"
+      />
+    </div>
+
+    <!-- 右：內容區 -->
+    <div class="ma-card__content">
+      <div class="ma-card__category">
+        <span class="ma-card__category-text">藝術藏品</span>
+        <span class="ma-card__category-icon" aria-hidden="true"></span>
+      </div>
+
+      <div class="ma-card__header">
+        <h3 class="ma-card__title">Minimal Line</h3>
+        <p class="ma-card__artist">張思遠</p>
+      </div>
+
+      <div class="ma-card__body">
+        <p class="ma-card__meta">
+          <span class="ma-card__meta-item">限量版畫</span>
+          <span class="ma-card__meta-item">70 × 50 cm</span>
+        </p>
+
+        <div class="ma-card__pricing" aria-label="Artwork pricing">
+          <p class="ma-card__price ma-card__price--crypto">
+            <span class="ma-card__price-value">&nbsp;</span>
+            <span class="ma-card__price-unit">&nbsp;</span>
+          </p>
+          <span class="ma-card__price-equal" aria-hidden="true">&nbsp;</span>
+          <p class="ma-card__price ma-card__price--fiat">
+            <span class="ma-card__price-value">&nbsp;</span>
+            <span class="ma-card__price-unit">&nbsp;</span>
+          </p>
+        </div>
+
+        <div class="ma-card__footer">
+          <div class="ma-card__info-group">
+            <p class="ma-card__id">P2024PRT000033</p>
+            <p class="ma-card__edition" aria-label="無版數">
+              <span class="ma-card__edition-current">&nbsp;</span>
+              <span class="ma-card__edition-separator">&nbsp;</span>
+              <span class="ma-card__edition-total">&nbsp;</span>
+            </p>
+          </div>
+
+          <a
+            href="https://virtual.metaassets.asia/artworks/M2024APG000017PA"
+            class="ma-btn ma-btn--gray-light"
+            >了解更多</a
+          >
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<!-- 18 -->
+<div class="swiper-slide">
+  <article class="ma-card ma-card--act-art">
+    <!-- 左：圖片區 -->
+    <div class="ma-card__media">
+      <img
+        src="https://plus.unsplash.com/premium_photo-1674500776034-604db763c427?q=80&w=1075&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Artwork"
+      />
+    </div>
+
+    <!-- 右：內容區 -->
+    <div class="ma-card__content">
+      <div class="ma-card__category">
+        <span class="ma-card__category-text">認證藝術</span>
+        <span class="ma-card__category-icon" aria-hidden="true"></span>
+      </div>
+
+      <div class="ma-card__header">
+        <h3 class="ma-card__title">Scarlet Wave</h3>
+        <p class="ma-card__artist">王浩宇</p>
+      </div>
+
+      <div class="ma-card__body">
+        <p class="ma-card__meta">
+          <span class="ma-card__meta-item">混合媒材</span>
+          <span class="ma-card__meta-item">105 × 105 cm</span>
+        </p>
+
+        <div class="ma-card__pricing" aria-label="Artwork pricing">
+          <p class="ma-card__price ma-card__price--crypto">
+            <span class="ma-card__price-value">3.10</span>
+            <span class="ma-card__price-unit">ETH</span>
+          </p>
+          <span class="ma-card__price-equal" aria-hidden="true">≈</span>
+          <p class="ma-card__price ma-card__price--fiat">
+            <span class="ma-card__price-value">&nbsp;</span>
+            <span class="ma-card__price-unit">USD</span>
+          </p>
+        </div>
+
+        <div class="ma-card__footer">
+          <div class="ma-card__info-group">
+            <p class="ma-card__id">M2024ACT000034</p>
+            <p class="ma-card__edition" aria-label="無版數">
+              <span class="ma-card__edition-current">&nbsp;</span>
+              <span class="ma-card__edition-separator">&nbsp;</span>
+              <span class="ma-card__edition-total">&nbsp;</span>
+            </p>
+          </div>
+
+          <a
+            href="https://virtual.metaassets.asia/artworks/M2024APG000017PA"
+            class="ma-btn ma-btn--gray-light"
+            >了解更多</a
+          >
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+            </div>
+            <!-- 小圓點（一定要在 swiper 裡） -->
+            <div class="swiper-pagination ma-collect__pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- service -->
+      <section class="ma-section ma-service">
+        <div class="ma-container">
+          <div class="ma-inner">
+            <div class="ma-service__intro">
+              <!-- 左邊區塊 -->
+              <div class="ma-service__text">
+                <div class="ma-service__titles">
+                  <h2 class="ma-service__title-zh">
+                    <span>藝術品 X 區塊鏈</span><span>藝術世界的信任系統</span>
+                  </h2>
+
+                  <p class="ma-service__title-en">
+                    <span>Artworks X Blockchain</span>
+                    <span>The Trust System of the Art World</span>
+                  </p>
+                </div>
+
+                <a href="act.html" class="ma-btn ma-btn--outline-gold"
+                  >我想加入鏈證</a
+                >
+              </div>
+              <!-- 右邊區塊 -->
+              <div class="ma-service__desc">
+                <p>
+                  長久以來,藝術世界的信任多仰賴專業眼光、個人聲譽與分散的紀錄系統。
+                </p>
+                <p>
+                  透過將區塊鏈技術導入藝術品的認證與資產管理，我們正在建立一套新的信任系統，讓作品擁有可驗證的身分、清楚的溯源脈絡，以及長期可追溯的紀錄基礎。
+                  這套系統並非取代藝術本身,而是為創作、收藏、傳承與流通，提供一個穩定且可信的制度支撐。
+                </p>
+                <div class="ma-action-group ma-action-group--features">
+                  <div class="ma-action">
+                    <div class="ma-action__icon" aria-hidden="true">
+                      <img src="/meta-new2/images/icon_trust_01.png" alt="" />
+                    </div>
+                    <p>典藏級掃描</p>
+                  </div>
+
+                  <div class="ma-action">
+                    <div class="ma-action__icon" aria-hidden="true">
+                      <img src="/meta-new2/images/icon_trust_02.png" alt="" />
+                    </div>
+                    <p>ACT 資產鏈證</p>
+                  </div>
+
+                  <div class="ma-action">
+                    <div class="ma-action__icon" aria-hidden="true">
+                      <img src="/meta-new2/images/icon_trust_03.png" alt="" />
+                    </div>
+                    <p>數位特徵鑑定</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ma-service__about" id="ma-service__about">
+              <!-- 上邊區塊 -->
+              <div class="ma-service__text">
+                <div class="ma-service__titles">
+                  <h2 class="ma-service__title-zh">
+                    <span>關於 Metaassets</span>
+                  </h2>
+
+                  <p class="ma-service__title-en">
+                    <span>About Metaassets</span>
+                  </p>
+                </div>
+              </div>
+              <!-- 下邊區塊 -->
+              <div class="ma-service__desc">
+                <p>
+                  Metaassets團隊利用區塊鏈技術，協助當代藝術的藝術工作者，持續打造屬於當代藝術的Web3.0生態運用，虛實整合的藝術資產憑證發行服務，讓當代藝術的藝術家可以快速打造屬於自己的當代藝術元宇宙，透過線上虛實整合的展覽服務，擴大當代藝術品的曝光時間與廣度，不受地域影響，也可以與國際接軌，打造無國界的當代藝術展覽服務。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="ma-footer">
+  <div class="ma-container">
+    <div class="ma-inner">
+      <div class="ma-footer__content">
+        <div class="ma-footer__header">
+          <h4 class="ma-footer__heading" aria-hidden="true">Contacts</h4>
+        </div>
+        <div class="ma-footer__groups">
+          <!-- 相關服務 -->
+          <div
+            class="ma-footer__group ma-footer__group--service"
+            aria-label="相關服務"
+          >
+            <h5 class="ma-footer__title">相關服務</h5>
+            <ul class="ma-footer__list">
+              <li>
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                  >藝術資產管理服務</a
+                >
+              </li>
+              <li>
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                  >ACT 藝術資產鏈證發行</a
+                >
+              </li>
+              <li>
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                  >3DVR 線上導覽藝廊 建置</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- 策略聯盟 -->
+          <div
+            class="ma-footer__group ma-footer__group--alliance"
+            aria-label="藝術資產策略聯盟"
+          >
+            <h5 class="ma-footer__title">藝術資產策略聯盟</h5>
+            <ul class="ma-footer__list">
+              <li>
+                <a
+                  href="https://www.bossmen.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >BossMen 博士門</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://uprint.com.tw/about/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >uPrint 布萊特</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://ones-digital.com/zh/%E9%A6%96%E9%A0%81/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Ones 加伊創意</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- 相關企業 -->
+          <div
+            class="ma-footer__group ma-footer__group--partner"
+            aria-label="相關企業"
+          >
+            <h5 class="ma-footer__title">相關企業</h5>
+            <ul class="ma-footer__list">
+              <li>
+                <a
+                  href="https://www.fantasy-tours.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >上順旅行社</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.shunbuilding.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >上順不動產</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.postwings.art/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >POST WINGS 波翼藝術</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- 法律顧問 -->
+          <div
+            class="ma-footer__group ma-footer__group--legal"
+            aria-label="法律顧問"
+          >
+            <h5 class="ma-footer__title">法律顧問</h5>
+            <ul class="ma-footer__list">
+              <li>
+                <a
+                  href="https://www.law-answer.com/firm/071282/c001831.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >五翰法律事務所</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- 聯絡資訊 -->
+          <div
+            class="ma-footer__group ma-footer__group--contact"
+            aria-label="聯絡我們"
+          >
+            <h5 class="ma-footer__title">聯絡我們</h5>
+            <ul class="ma-footer__list">
+              <li>
+                <a href="mailto:service@metaassets.com.tw"
+                  >service@metaassets.com.tw</a
+                >
+              </li>
+              <li><a href="tel:0903257803">0930-257-803</a></li>
+              <li>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=台北市中山區建國北路二段3巷37號B1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  台北市中山區建國北路二段3巷37號B1
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="ma-footer__copyright">
+          <p>Copyright © 2026 元宇宙資產股份有限公司 版權所有</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- 首頁輪播套件 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- ma-hero -->
+    <script>
+      const heroSwiper = new Swiper(".ma-hero__swiper", {
+        loop: true,
+        pagination: {
+          el: ".ma-hero__pagination",
+          clickable: true,
+          bulletClass: "ma-swiper-dot", // 對應您現有的 .dot 樣式
+          bulletActiveClass: "is-active",
+          renderBullet: function (index, className) {
+            return '<span class="' + className + '"></span>';
+          },
+        },
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+      });
+    </script>
+    <!-- ma-assets -->
+    <script>
+      const assetsSwiper = new Swiper(".ma-assets__swiper", {
+        loop: false,
+        watchOverflow: true,
+        roundLengths: true,
+
+        slidesPerView: 1,
+        grid: { rows: 4, fill: "row" },
+        spaceBetween: 48,
+
+        pagination: {
+          el: ".ma-assets__pagination",
+          clickable: true,
+          bulletClass: "ma-swiper-dot",
+          bulletActiveClass: "is-active",
+          renderBullet: (index, className) =>
+            `<span class="${className}"></span>`,
+        },
+
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+            grid: { rows: 4 },
+          },
+        },
+      });
+    </script>
+    <!-- ma-promo -->
+    <script>
+      const promoSwiper = new Swiper(".ma-promo__swiper", {
+        loop: true,
+        pagination: {
+          el: ".ma-promo__pagination",
+          clickable: true,
+          bulletClass: "ma-swiper-dot",
+          bulletActiveClass: "is-active",
+          renderBullet: function (index, className) {
+            return '<span class="' + className + '"></span>';
+          },
+        },
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+      });
+    </script>
+    <!-- ma-assets -->
+    <script>
+      const collectSwiper = new Swiper(".ma-collect__swiper", {
+        loop: false,
+        watchOverflow: true,
+        roundLengths: true,
+
+        slidesPerView: 1,
+        grid: { rows: 4, fill: "row" },
+        spaceBetween: 48,
+
+        pagination: {
+          el: ".ma-collect__pagination",
+          clickable: true,
+          bulletClass: "ma-swiper-dot",
+          bulletActiveClass: "is-active",
+          renderBullet: (index, className) =>
+            `<span class="${className}"></span>`,
+        },
+
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+            grid: { rows: 4 },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,3885 @@
+@charset "UTF-8";
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0;
+}
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block;
+}
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none;
+}
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input { /* 1 */
+  overflow: visible;
+}
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select { /* 1 */
+  text-transform: none;
+}
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none;
+}
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none;
+}
+/* 1) Design tokens & tools */
+/* 顏色 字級 scale 間距系統 圓角 陰影 Z-index 層級 */
+/* =========================================================
+   Project Style Guide (Design Spec Layer)
+   - Tokens only (no component styles here)
+   ========================================================= */
+:root {
+  /* =======================================================
+     1) Colors
+     ======================================================= */
+  /* Core colors */
+  --color-black: #000000; /* Tailwind: text-black / bg-black */
+  --color-white: #ffffff; /* Tailwind: text-white / bg-white */
+  /* Brand */
+  --color-brand-primary: #d8b269; /* 金 */
+  --color-brand-secondary: #000000; /* 黑 */
+  --color-brand-tertiary: #ffffff; /* 白 */
+  --color-brand-primary-mid: #caa965;
+  --color-brand-primary-soft: #e6c98b; /* hover / gradient */
+  --color-brand-primary-dark: #b9964f; /* active / border */
+  /* Neutral / Gray scale */
+  --color-gray-950: #202020;
+  --color-gray-900: #272727;
+  --color-gray-800: #373737;
+  --color-gray-700: #5c5c5c;
+  --color-gray-600: #868686;
+  --color-gray-500: #a9a9a9;
+  --color-gray-400: #c5c5c5;
+  --color-gray-300: #c7c7c7;
+  --color-gray-200: #e8e8e8;
+  /* Overlay / Backdrop */
+  --color-overlay: rgba(0, 0, 0, 0.55);
+  /* Text (base) */
+  --text-color: var(--color-black);
+  /* 危險 / 強調警示色 */
+  --act-danger: #e53737;
+  /* =======================================================
+     2) Link Tokens
+     ======================================================= */
+  /* Base (normal state) */
+  --link-color: var(--text-color); /* 預設跟隨區塊文字色 */
+  --link-decoration: none;
+  --link-underline-offset: 3px;
+  /* Hover / Active */
+  --link-hover-color: var(--color-brand-primary);
+  --link-hover-decoration: underline;
+  /* Motion */
+  --link-transition: 200ms;
+  /* =======================================================
+     3) Border
+     ======================================================= */
+  --border-gray-dark: var(--color-gray-500);
+  --border-gray-light: var(--color-gray-400);
+  --border-white: var(--color-white);
+  /* =======================================================
+     4) Gradients
+     ======================================================= */
+  --gradient-gold: linear-gradient(90deg, #83581c 0%, #efd560 100%);
+  --gradient-gold-reverse: linear-gradient(90deg, #efd560 0%, #83581c 100%);
+  --gradient-dark: linear-gradient(180deg, #000000 0%, #434343 100%);
+  --gradient-dark-soft: linear-gradient(
+    180deg,
+    #000000 0%,
+    #000000 25%,
+    #1f1f1f 50%,
+    #2e2e2e 70%,
+    #3f3f3f 100%
+  );
+  /* =======================================================
+     5) Typography
+     ======================================================= */
+  /* Font family layers */
+  --font-serif: "EB Garamond", "Adobe Garamond Pro", "Noto Serif TC", serif;
+  --font-system:
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  /* Main font (project default) */
+  --font-main: var(--font-serif), var(--font-system);
+  /* Type scale */
+  --fs-h1: clamp(36px, 6vw, 48px);
+  --fs-h2: clamp(28px, 3.6vw, 36px);
+  --fs-h3: clamp(18px, 2.6vw, 24px);
+  --fs-h4: clamp(18px, 2vw, 22px);
+  --fs-h5: clamp(16px, 2vw, 18px);
+  --fs-h6: 16px;
+  --fs-body: 16px; /* Tailwind: text-base */
+  --fs-small: 15px; /* Tailwind: text-sm */
+  /* UI semantic */
+  --fs-ui-title: 18px; /* Tailwind: text-lg */
+  --fs-ui-meta: 14px; /* Tailwind: text-sm */
+  /* Font Weight Scale */
+  --fw-light: 300; /* Tailwind: font-light */
+  --fw-regular: 400; /* Tailwind: font-normal */
+  --fw-medium: 500; /* Tailwind: font-medium */
+  --fw-semibold: 600; /* Tailwind: font-semibold */
+  --fw-bold: 700; /* Tailwind: font-bold */
+  /* Font weight */
+  --fw-h1: var(--fw-semibold);
+  --fw-h2: var(--fw-semibold);
+  --fw-h3: var(--fw-medium);
+  --fw-h4: var(--fw-medium);
+  --fw-h5: var(--fw-medium);
+  --fw-h6: var(--fw-medium);
+  /* Body weight */
+  --fw-body: 400; /* Tailwind: font-normal */
+  --fw-strong: 600; /* Tailwind: font-semibold */
+  /* Line height */
+  --lh-body: 1.6; /* Tailwind: leading-[1.6] (or approx leading-relaxed) */
+  --lh-heading: 1.25; /* Tailwind: leading-tight */
+  /* =======================================================
+     6) Layout: Container
+     ======================================================= */
+  --container-max: 1200px;
+  --container-padding-x-lg: 32px; /* desktop */
+  --container-padding-x-md: 16px; /* tablet */
+  --container-padding-x-sm: 8px; /* mobile */
+  /* =======================================================
+     7) Spacing: Section
+     ======================================================= */
+  /* desktop */
+  --section-padding-top-lg: 24px; /* Tailwind: pt-6 */
+  --section-padding-bottom-lg: 42px; /* Tailwind: approx pb-10(40px) + 2px */
+  /* mobile */
+  --section-padding-top-sm: 16px; /* Tailwind: pt-4 */
+  --section-padding-bottom-sm: 32px; /* Tailwind: pb-8 */
+  /* Spacing (px-based, intuitive) */
+  --space-2: 2px;
+  --space-4: 4px; /* Tailwind: 1 */
+  --space-8: 8px; /* Tailwind: 2 */
+  --space-12: 12px; /* Tailwind: 3 */
+  --space-16: 16px; /* Tailwind: 4 */
+  --space-24: 24px; /* Tailwind: 6 */
+  --space-32: 32px; /* Tailwind: 8 */
+  --space-40: 40px; /* Tailwind: 10 */
+  --space-48: 48px; /* Tailwind: 12 */
+  --space-52: 52px; /* Custom spacing */
+  --space-64: 64px; /* Tailwind: 16 */
+  /* =======================================================
+     8) Radius / Shadow
+     ======================================================= */
+  --radius-sm: 4px; /* Tailwind: rounded */
+  --radius-md: 6px; /* Tailwind: rounded-lg */
+  --radius-lg: 16px; /* Tailwind: rounded-2xl */
+  --box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  /* =======================================================
+     9) Button Spec
+     ======================================================= */
+  --btn-padding-y: 8px; /* Tailwind: py-2 */
+  --btn-padding-x: 24px; /* Tailwind: px-4 */
+  --btn-radius: var(--radius-md); /* Tailwind: rounded-lg */
+  --btn-font-weight: 500; /* Tailwind: font-medium */
+  --btn-transition: 200ms; /* Tailwind: duration-200 */
+  /* =======================================================
+     10) Icon Button Spec
+     ======================================================= */
+  --icon-btn-size: 40px; /* hit area, Tailwind: w-10 h-10 */
+  --icon-btn-radius: var(--radius-md); /* Tailwind: rounded-lg */
+  --icon-btn-transition: var(--btn-transition);
+  /* =======================================================
+     11) Icon Scale
+     ======================================================= */
+  /* UI icon */
+  --icon-xs: 16px;
+  --icon-sm: 20px;
+  --icon-md: 24px;
+  --icon-lg: 32px;
+  --icon-xl: 40px;
+  --icon-2xl: 48px;
+  /* Visual icon */
+  --icon-visual-md: 64px;
+  --icon-visual-lg: 80px;
+  --icon-visual-xl: 96px;
+  /* Dot scale（指示 / 輪播） */
+  --dot-xs: 10px;
+  --dot-md: 12px;
+  /* =======================================================
+     12) Header / Navigation Spec
+     header 與導覽列會用到的 token
+     ======================================================= */
+  /* Header padding */
+  --header-padding-y-mobile: var(--space-24);
+  --header-padding-top-desktop: var(--space-48);
+  --header-padding-bottom-desktop: var(--space-24);
+  --header-padding-y-sticky-desktop: var(--space-24);
+  /* Header layout gap */
+  --header-inner-gap: var(--space-16);
+  --header-action-gap-mobile: var(--space-24);
+  --header-action-gap-desktop: var(--space-24);
+  /* Logo size */
+  --logo-width-sm: 186px;
+  --logo-height-sm: 40px;
+  --logo-width-lg: 200px;
+  --logo-height-lg: 44px;
+  /* Navbar spacing */
+  --navbar-padding-top: var(--space-32);
+  --navbar-padding-bottom: var(--space-24);
+  --navbar-link-gap: var(--space-24);
+  /* Active line under nav link */
+  --nav-active-line-offset: var(--space-4);
+  --nav-active-line-height: 2px;
+  --nav-active-line-radius: 2px;
+  /* =======================================================
+     13) Z-index
+     ======================================================= */
+  --z-base: 1; /* 一般內容層 */
+  --z-header: 100; /* Header / sticky nav */
+  --z-overlay: 200; /* 半透明遮罩（overlay / mask） */
+  --z-drawer: 300; /* 側邊抽屜（drawer） */
+  --z-modal: 1000; /* Modal / Dialog（最高層） */
+  /* =========================================================
+     14) Anchor Offset (for sticky header jump link fix)
+     ========================================================= */
+  /* 預設：mobile header 高度 */
+  --anchor-offset: 64px;
+  /* =======================================================
+     15) Accessibility
+     ======================================================= */
+  --focus-ring: 0 0 0 3px rgba(216, 178, 105, 0.35);
+  /* Tailwind: focus:outline-none focus:ring-[3px] focus:ring-[rgba(216,178,105,0.35)] */
+}
+/* =========================================================
+   Breakpoints Tokens (RWD)
+   設計斷點，以 min-width 為基準
+   此段為 SCSS mixins 用，Tailwind 可忽略
+   ========================================================= */
+/* Desktop */
+/* Tablet */
+/* Mobile */
+/* =========================================================
+   _mixins.scss (recommended)
+   - RWD helpers
+   - Flex semantic helpers (minimal)
+   ========================================================= */
+/* =======================
+   1) RWD Media Query
+   ======================= */
+/* =======================
+   2) Flex Semantics (keep small)
+   ======================= */
+/* =========================================================
+   Flex Mixins (Practical Set)
+   - 目的：常用、語意清楚、避免過度抽象
+   - 命名原則：
+     - flex-center：水平+垂直都置中（不給調，最安全）
+     - flex-align-center：垂直置中，水平可控
+     - flex-between：space-between 常用情境
+     - flex-row / flex-col：只管方向與 gap（不綁對齊）
+========================================================= */
+/* -----------------------------------------
+   1) Generic (完全自訂)
+----------------------------------------- */
+/* -----------------------------------------
+   2) Center (完全置中)
+   - loading / empty state / icon button wrapper
+----------------------------------------- */
+/* -----------------------------------------
+   3) Align center (垂直置中，水平可控)
+   - header bar / list item / toolbar
+----------------------------------------- */
+/* -----------------------------------------
+   4) Between (兩端對齊)
+   - header inner / card header / row split
+----------------------------------------- */
+/* -----------------------------------------
+   5) Row / Col primitives（只管方向）
+   - 不綁 align / justify，避免語意誤導
+----------------------------------------- */
+/* -----------------------------------------
+   6) Inline-flex (需要跟文字同列、或按鈕內排版)
+----------------------------------------- */
+/* -----------------------------------------
+   7) Responsive direction helper
+   - 小版直式、大版橫式（最常用 RWD 需求）
+   - 需搭配你的 respond-min mixin
+----------------------------------------- */
+/* =========================================================
+   Flex Item Utilities
+   - 用在 flex container 內的「子元素」
+========================================================= */
+/* 常用：撐滿剩餘空間（卡片內容 / drawer 主體） */
+/* 2) Base（基底樣式） */
+/* =========================================================
+   Base Styles
+   - Global reset + typography + layout primitives
+   ========================================================= */
+/* ---------------------------------------------------------
+   1) Reset / Normalize (lightweight)
+--------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--anchor-offset);
+}
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  font-size: 16px;
+  line-height: var(--lh-body);
+  color: var(--text-color);
+  letter-spacing: 0.04em;
+}
+/* =========================================================
+   Page Theme (light/dark)
+   ========================================================= */
+.ma-page {
+  /* 預設 light（可以不寫 --light，直接當預設） */
+  --page-bg: var(--color-white);
+  --page-text: var(--color-dark);
+  background: var(--page-bg);
+  color: var(--page-text);
+}
+.ma-page--dark {
+  --page-bg: var(--color-black);
+  --page-text: var(--color-white);
+}
+/* Remove default margins */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+/* Media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+/* ---------------------------------------------------------
+   2) Typography: Element defaults
+--------------------------------------------------------- */
+h1 {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-h1);
+}
+h2 {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-h2);
+}
+h3 {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-h3);
+}
+h4 {
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-h4);
+}
+h5 {
+  font-size: var(--fs-h5);
+  font-weight: var(--fw-h5);
+}
+h6 {
+  font-size: var(--fs-h6);
+  font-weight: var(--fw-h6);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: var(--lh-heading, 1.2);
+}
+/* Paragraph */
+/* Small text */
+small {
+  font-size: var(--fs-small);
+}
+/* link */
+:where(a) {
+  color: inherit;
+  text-decoration: none;
+  text-underline-offset: var(--link-underline-offset);
+  transition: color var(--link-transition), text-decoration var(--link-transition);
+}
+:where(a):hover {
+  color: var(--link-hover-color);
+}
+.ma-link {
+  color: var(--link-color);
+  text-decoration: var(--link-decoration);
+  text-underline-offset: var(--link-underline-offset);
+}
+.ma-link:hover {
+  color: var(--link-hover-color);
+  text-decoration: var(--link-hover-decoration);
+}
+/* ---------------------------------------------------------
+   3) Typography utility classes (可選)
+--------------------------------------------------------- */
+/* H1 */
+.ma-text-h1,
+.heading-h1 {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-h1);
+}
+/* H2 */
+.ma-text-h2,
+.heading-h2 {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-h2);
+}
+/* H3 */
+.ma-text-h3,
+.heading-h3 {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-h3);
+}
+/* H4 */
+.ma-text-h4,
+.heading-h4 {
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-h4);
+}
+/* H5 */
+.ma-text-h5,
+.heading-h5 {
+  font-size: var(--fs-h5);
+  font-weight: var(--fw-h5);
+}
+/* H6 */
+.ma-text-h6,
+.heading-h6 {
+  font-size: var(--fs-h6);
+  font-weight: var(--fw-h6);
+}
+.ma-text-h1,
+.ma-text-h2,
+.ma-text-h3,
+.ma-text-h4,
+.ma-text-h5,
+.ma-text-h6,
+.heading-h1,
+.heading-h2,
+.heading-h3,
+.heading-h4,
+.heading-h5,
+.heading-h6 {
+  line-height: var(--lh-heading, 1.2);
+}
+/* ---------------------------------------------------------
+   4) Layout: Container
+   - Page width & horizontal padding
+--------------------------------------------------------- */
+.ma-container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: clamp(var(--container-padding-x-sm), 4vw, var(--container-padding-x-lg));
+}
+/* ---------------------------------------------------------
+   5) Layout: Inner
+   - Structural wrapper for internal layout
+   - No visual styles, layout only
+   - Commonly used inside header / section / footer
+--------------------------------------------------------- */
+.ma-inner {
+  display: flex;
+  width: 100%;
+}
+/* ---------------------------------------------------------
+   6) Layout: Section
+   - Base spacing + theme inheritance
+--------------------------------------------------------- */
+/* Section block：只管「區塊間距/繼承」，不要塞視覺樣式 */
+.ma-section {
+  background: transparent; /* 吃 page 背景 */
+  color: inherit; /* 吃 page 文字色 */
+  scroll-margin-top: var(--anchor-offset);
+  padding-block: clamp(var(--section-padding-bottom-sm), 3vw, var(--section-padding-bottom-lg));
+  /* 若你上下 padding 想分開可再拆回來
+  padding-top: clamp(...);
+  padding-bottom: clamp(...);
+  */
+}
+/* ---------------------------------------------------------
+   6.1) Section Title (shared)
+   - Default title scale for section headings
+--------------------------------------------------------- */
+.ma-section__title {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-h3);
+}
+/* ---------------------------------------------------------
+   6.2) Section Header (shared)
+   - Divider follows current text color
+   - Header is optional: section can exist without it
+--------------------------------------------------------- */
+/* 共用 */
+.ma-section__header {
+  padding-block: var(--space-24);
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-24);
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: var(--space-48);
+  /* 底線跟著「目前文字色」(= currentColor) */
+  border-bottom: 1px solid currentColor;
+}
+/* ---------------------------------------------------------
+   7) Focus styles (Accessibility)
+--------------------------------------------------------- */
+:focus-visible {
+  outline: 2px solid transparent;
+  box-shadow: var(--focus-ring);
+}
+/* =========================================================
+   Global States
+========================================================= */
+.is-active {
+  /* semantic only */
+}
+.is-scroll-locked {
+  overflow: hidden;
+}
+.is-hidden {
+  display: none !important;
+}
+.is-disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+.is-loading {
+  cursor: wait;
+}
+.is-row {
+  flex-direction: row !important;
+}
+.is-column {
+  flex-direction: column !important;
+}
+/* 3) Layout（版型結構） */
+/* =========================================================
+   Header / Navbar
+   - 上方主導覽列
+   - 含 sticky 狀態
+   - 含 desktop / mobile actions
+   ========================================================= */
+.ma-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  background: var(--color-black);
+  color: var(--color-white);
+  /* =======================================================
+     Header 區塊內的連結預設 token 覆寫
+     因全域 --link-color 預設為黑字，
+     但 header 為黑底，所以在這裡改為白字。
+     ======================================================= */
+  --link-color: var(--color-white);
+  --link-hover-color: var(--color-brand-primary);
+  /* STICKY HEADER 高度（mobile 預設） */
+  padding-block: var(--header-padding-y-mobile);
+  /* =======================================================
+     Sticky 狀態：
+     1. desktop header 高度縮小
+     2. 隱藏桌機主導覽
+     3. 顯示 mobile action（語言 / menu）
+     ======================================================= */
+}
+@media (min-width: 64em) {
+  .ma-header {
+    padding-top: var(--header-padding-top-desktop);
+    padding-bottom: var(--header-padding-bottom-desktop);
+  }
+}
+@media (min-width: 64em) {
+  .ma-header.is-sticky {
+    padding-block: var(--header-padding-y-sticky-desktop);
+  }
+  .ma-header.is-sticky .ma-navbar {
+    display: none;
+  }
+  .ma-header.is-sticky .ma-action-group--desktop {
+    margin-left: auto;
+  }
+  .ma-header.is-sticky .ma-action-group--desktop button {
+    display: none;
+  }
+  .ma-header.is-sticky .ma-action-group--mobile {
+    display: flex;
+    gap: var(--header-inner-gap);
+  }
+}
+.ma-header .ma-inner {
+  display: flex;
+  align-items: "center";
+  justify-content: space-between;
+  gap: var(--header-inner-gap);
+}
+@media (min-width: 64em) {
+  .ma-header .ma-inner {
+    gap: var(--header-inner-gap);
+  }
+}
+.ma-header .ma-header__logo {
+  width: var(--logo-width-sm);
+  height: var(--logo-height-sm);
+}
+@media (min-width: 64em) {
+  .ma-header .ma-header__logo {
+    width: var(--logo-width-lg);
+    height: var(--logo-height-lg);
+  }
+}
+/* =========================================================
+   Header Action Group
+   - 右上角操作區
+   - desktop / mobile 顯示切換
+   ========================================================= */
+.ma-action-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--header-inner-gap);
+  /* Header 內 a 連結共用 link token */
+}
+.ma-action-group a {
+  color: var(--link-color);
+  text-decoration: var(--link-decoration);
+  text-underline-offset: var(--link-underline-offset);
+  transition: color var(--link-transition), text-decoration-color var(--link-transition);
+}
+.ma-action-group a:hover, .ma-action-group a:focus-visible {
+  color: var(--link-hover-color);
+  text-decoration: var(--link-hover-decoration);
+}
+.ma-action-group--desktop {
+  display: none;
+}
+@media (min-width: 64em) {
+  .ma-action-group--desktop {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--header-action-gap-desktop);
+  }
+}
+.ma-action-group--mobile {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--header-action-gap-mobile);
+}
+@media (min-width: 64em) {
+  .ma-action-group--mobile {
+    display: none;
+  }
+}
+/* =========================================================
+   Navbar
+   - 桌機主導覽列
+   ========================================================= */
+.ma-navbar {
+  padding-top: var(--navbar-padding-top);
+  padding-bottom: var(--navbar-padding-bottom);
+  background: var(--color-black);
+  border-bottom: 1px solid var(--border-white);
+  display: none;
+}
+@media (min-width: 64em) {
+  .ma-navbar {
+    display: block;
+  }
+}
+.ma-navbar__links {
+  color: var(--color-white);
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--navbar-link-gap);
+  /* =====================================================
+     Active 狀態底線
+     - 使用 token 控制 offset / height / radius
+     ===================================================== */
+}
+.ma-navbar__links > a {
+  position: relative;
+  display: inline-block;
+  color: var(--link-color);
+  text-decoration: var(--link-decoration);
+  text-underline-offset: var(--link-underline-offset);
+  transition: color var(--link-transition), text-decoration-color var(--link-transition);
+}
+.ma-navbar__links > a:hover, .ma-navbar__links > a:focus-visible {
+  color: var(--link-hover-color);
+  text-decoration: var(--link-hover-decoration);
+}
+.ma-navbar__links > a.is-active::after {
+  position: absolute;
+  content: "";
+  display: block;
+  margin-top: var(--nav-active-line-offset);
+  width: 100%;
+  height: var(--nav-active-line-height);
+  background: var(--gradient-gold-reverse);
+  border-radius: var(--nav-active-line-radius);
+}
+/* =========================================================
+   Mobile Drawer : Language Menu
+   - 語言選單寬度較窄
+   - 文字置中
+   - 下方保留空間
+   ========================================================= */
+.ma-mobile-menu--lang {
+  margin-inline: auto;
+}
+.ma-mobile-menu__links--lang {
+  width: 100%;
+  margin-inline: auto;
+  padding-top: var(--space-32);
+  padding-bottom: var(--space-40);
+  text-align: center;
+  line-height: 2;
+}
+.ma-footer {
+  padding-bottom: clamp(var(--space-32), 5vw, var(--space-64));
+  background: var(--gradient-dark-soft);
+  color: var(--color-white);
+}
+.ma-footer .ma-inner {
+  padding-top: var(--space-52);
+  border-top: 1px solid transparent;
+  border-image: var(--gradient-gold-reverse) 1;
+}
+.ma-footer__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+  align-items: flex-start;
+  width: 100%;
+}
+@media (min-width: 64em) {
+  .ma-footer__content {
+    margin-left: auto;
+    width: 65%;
+  }
+}
+.ma-footer__content > div {
+  width: 100%;
+}
+.ma-footer__header {
+  position: relative;
+  padding-bottom: var(--space-16);
+  border-bottom: 1px solid var(--color-white);
+}
+.ma-footer__header::before {
+  position: absolute;
+  top: calc(var(--space-32) * -1);
+  content: "";
+  display: inline-block;
+  width: var(--icon-sm);
+  height: var(--icon-sm);
+  background-repeat: no-repeat;
+  background-position: center;
+  /* 預設：不顯示 */
+  background-image: url("/meta-new2/images/icon_footer.png");
+}
+@media (min-width: 64em) {
+  .ma-footer__header::before {
+    position: absolute;
+    top: var(--space-8);
+    left: calc(var(--space-48) * -1);
+  }
+}
+.ma-footer__groups {
+  max-height: unset;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  flex-wrap: no-wrap;
+}
+@media (min-width: 64em) {
+  .ma-footer__groups {
+    max-height: 22em;
+    flex-wrap: wrap;
+  }
+}
+.ma-footer__group {
+  width: fit-content;
+}
+.ma-footer__group--contact li:last-child a {
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  font-size: var(--fs-small);
+}
+.ma-footer ul {
+  padding: 0;
+  list-style-type: none;
+}
+.ma-footer ul li::marker {
+  display: none;
+}
+/* 4) Components（元件） */
+/* =========================================================
+   _form.scss
+   - Global form system
+   - Base reset + shared components
+   ========================================================= */
+/* =========================================================
+   Base
+   ========================================================= */
+form {
+  width: 100%;
+}
+/* =========================================================
+   1) Global Form Controls (共用)
+   ========================================================= */
+/*
+  selector 使用 input / textarea / select
+  - 若未來要限縮作用範圍，可改為 .ma-form input...
+*/
+input,
+textarea,
+select {
+  color: var(--color-black);
+  font-family: inherit;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  letter-spacing: 0.04em;
+}
+/* Placeholder 統一 */
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-gray-500);
+  opacity: 1;
+}
+/* Focus 統一（鍵盤與滑鼠） */
+input:focus,
+textarea:focus,
+select:focus,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: none;
+}
+/* 移除瀏覽器預設陰影 */
+input:focus,
+textarea:focus,
+select:focus {
+  box-shadow: none;
+}
+/* =========================================================
+   2) Accessibility Helper
+   ========================================================= */
+.u-sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+/* =========================================================
+   2.1) Form Heading (共用標題)
+   - 語意建議：用 h2（頁面 h1 留給 page title）
+   - Usage: <h2 class="ma-form__title">...</h2>
+   ========================================================= */
+.ma-form__title {
+  margin: 0;
+  font-size: var(--fs-h5);
+  font-weight: var(--fw-h5);
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  color: inherit;
+}
+/* =========================================================
+   3) Field Component (共用欄位)
+   - Block: ma-field
+   ========================================================= */
+.ma-field {
+  --field-bg: var(--color-white);
+  --field-fg: var(--color-black);
+  --field-placeholder: var(--color-gray-500);
+  --field-radius: var(--radius-lg);
+  --field-height: var(--space-52);
+  width: 100%;
+  /* 狀態：錯誤（目前只負責語意，不強制紅框） */
+}
+.ma-field__control {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: var(--space-12) var(--space-16);
+  background: var(--field-bg);
+  border-radius: var(--field-radius);
+}
+.ma-field__input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  color: var(--field-fg);
+}
+.ma-field__input::placeholder {
+  color: var(--field-placeholder);
+}
+.ma-field__error {
+  margin-top: var(--space-12);
+  text-align: center;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: inherit;
+  opacity: 0.95;
+}
+.ma-field__otp {
+  text-align: center;
+}
+/* =========================================================
+   4) Checkbox Component
+   - Block: ma-check
+   - Usage:
+     <label class="ma-check">
+       <input class="ma-check__input" type="checkbox" name="agree" />
+       <span class="ma-check__box" aria-hidden="true"></span>
+       <span class="ma-check__label">我同意服務條款</span>
+     </label>
+
+   - Notes:
+     1) 結構必須是 input + box（相鄰），因為使用 &__input:checked + &__box
+     2) 顏色走主題：--page-bg / --page-text
+   ========================================================= */
+.ma-check {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-12);
+  cursor: pointer;
+  user-select: none;
+  /* Checkbox tokens（可被 section / page 覆寫） */
+  --check-size: 18px;
+  --check-border: var(--page-text); /* 外框色 */
+  --check-bg-checked: var(--page-text); /* 勾選後底色 */
+  --check-tick: var(
+    --color-brand-primary
+  );
+  /* checked 狀態 */
+  /* 鍵盤 focus（A11y） */
+}
+.ma-check__input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.ma-check__box {
+  width: var(--check-size);
+  height: var(--check-size);
+  border: 2px solid var(--check-border);
+  border-radius: 2px;
+  display: inline-block;
+  flex-shrink: 0;
+  position: relative;
+  /* 勾勾（預設隱藏） */
+}
+.ma-check__box::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0px;
+  width: 6px;
+  height: 12px;
+  border: 3px solid var(--check-tick);
+  border-top: 0;
+  border-left: 0;
+  transform: rotate(45deg);
+  opacity: 0;
+}
+.ma-check__label {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+.ma-check__input:checked + .ma-check__box {
+  background: var(--check-bg-checked);
+}
+.ma-check__input:checked + .ma-check__box::after {
+  opacity: 1;
+}
+.ma-check__input:focus-visible + .ma-check__box {
+  outline: 2px solid var(--page-text);
+  outline-offset: 2px;
+}
+/* =========================================================
+   4.1) Radio Component
+   - Block: ma-radio
+   - Usage:
+     <label class="ma-radio">
+       <input class="ma-radio__input" type="radio" name="pay" value="card" />
+       <span class="ma-radio__circle" aria-hidden="true"></span>
+       <span class="ma-radio__label">信用卡</span>
+     </label>
+
+   - Notes:
+     1) 結構必須是 input + circle（相鄰），因為使用 &__input:checked + &__circle
+     2) 顏色走主題：--page-bg / --page-text
+   ========================================================= */
+.ma-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-12);
+  cursor: pointer;
+  user-select: none;
+  /* Radio tokens（可被 section / page 覆寫） */
+  --radio-size: 18px;
+  --radio-border: var(--page-text); /* 外框色 */
+  --radio-bg-checked: var(--page-text); /* 勾選後底色 */
+  --radio-dot: var(
+    --color-brand-primary
+  );
+  /* checked 狀態 */
+  /* 鍵盤 focus（A11y） */
+}
+.ma-radio__input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.ma-radio__circle {
+  width: var(--radio-size);
+  height: var(--radio-size);
+  border: 2px solid var(--radio-border);
+  border-radius: 999px;
+  display: inline-block;
+  flex-shrink: 0;
+  position: relative;
+  /* 中心點（預設隱藏） */
+}
+.ma-radio__circle::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--radio-dot);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.ma-radio__label {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+.ma-radio__input:checked + .ma-radio__circle {
+  background: var(--radio-bg-checked);
+}
+.ma-radio__input:checked + .ma-radio__circle::after {
+  opacity: 1;
+}
+.ma-radio__input:focus-visible + .ma-radio__circle {
+  outline: 2px solid var(--page-text);
+  outline-offset: 2px;
+}
+/* =========================================================
+   5) Form Divider (共用裝飾線)
+   - Block: ma-form-divider
+   - Usage: <span class="ma-form-divider"></span>
+   ========================================================= */
+.ma-form-divider {
+  display: block;
+  width: 100%;
+  height: 1px;
+  border: 1px solid;
+  border-image: var(--gradient-gold-reverse) 1;
+  opacity: 0.9;
+  border-radius: 999px;
+  margin: var(--space-24) 0;
+  /* 修飾用 modifiers */
+}
+.ma-form-divider--tight {
+  margin: var(--space-12) 0;
+}
+.ma-form-divider--loose {
+  margin: var(--space-48) 0;
+}
+.ma-form-divider--center {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* =========================================================
+   5.1) Form Panel (共用灰黑圓角容器)
+   - Block: ma-form-panel
+   - Usage: <article class="ma-form-panel">...</article>
+   ========================================================= */
+.ma-form-panel {
+  margin: auto;
+  background: var(--color-gray-800);
+  border-radius: var(--radius-md);
+  padding: var(--space-32);
+  color: inherit;
+  /* 內部預設排版：有 header、有 body */
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+  align-items: center;
+  /* RWD：小版別太擠 */
+  /* 窄版卡片（login / message 常用） */
+  /* 窄版卡片（login / message 常用） */
+  /* 窄版卡片（line 常用） */
+}
+@media (max-width: 64em) {
+  .ma-form-panel {
+    padding: var(--space-32) var(--space-24);
+  }
+}
+.ma-form-panel__header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: flex-start;
+}
+.ma-form-panel__body {
+  width: 100%;
+}
+.ma-form-panel--compact {
+  width: min(220px, 100%);
+}
+.ma-form-panel--narrow {
+  width: min(520px, 100%);
+}
+.ma-form-panel--center {
+  text-align: center;
+  align-items: center;
+  /* 若 header/body 內有文字，確保一起置中 */
+}
+.ma-form-panel--center .ma-form-panel__body {
+  text-align: center;
+}
+/* =========================================================
+   5.2) Form Stack (表單垂直間距版型)
+   - Block: ma-form-stack
+   - Usage: <form class="ma-form-stack">...</form>
+   ========================================================= */
+.ma-form-stack {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  align-items: center;
+  /* 讓欄位自己 100% */
+  /* 常見：表單內容通常是窄一點 */
+  /* 更鬆的間距（message / line 可用） */
+}
+.ma-form-stack > * {
+  width: 100%;
+}
+.ma-form-stack--narrow {
+  width: min(440px, 100%);
+}
+.ma-form-stack--loose {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+/* =========================================================
+   6) Search Form (元件層：只放「search 特有」的結構與行為)
+   ========================================================= */
+.ma-search-form {
+  /* Icon Buttons inside search */
+  /* 左側放大鏡（純裝飾） */
+  /* Search Input：只保留「search 欄位才需要」的 layout/reset */
+  /* Clear Button */
+}
+.ma-search-form__box {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  /* 🔑 寬度控制在 box */
+  width: 100%;
+  background-color: var(--color-white);
+  border: 1px solid var(--border-gray-light);
+  height: 44px;
+  padding: clamp(var(--space-4), 1vw, var(--space-16));
+  border-radius: var(--radius-lg);
+}
+@media (min-width: 64em) {
+  .ma-search-form__box {
+    width: 60%;
+  }
+}
+.ma-search-form .ma-icon-btn {
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+.ma-search-form .ma-icon-btn:hover {
+  opacity: 1;
+}
+.ma-search-form__icon {
+  pointer-events: none;
+}
+.ma-search-form__input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 0;
+  background: transparent;
+  border: none;
+  /* 移除 browser 預設 search 樣式 */
+}
+.ma-search-form__input::-webkit-search-decoration, .ma-search-form__input::-webkit-search-cancel-button, .ma-search-form__input::-webkit-search-results-button, .ma-search-form__input::-webkit-search-results-decoration {
+  display: none;
+}
+/* =========================================================
+   Form Actions
+   - 依 button 數量自動排版
+========================================================= */
+.ma-form__actions {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-12);
+  /* 預設：直覺是滿寬 */
+  /* 兩顆以上：自動均分 */
+  /* 小版：仍然直排（若你想） */
+}
+.ma-form__actions > .ma-btn {
+  flex: 1 1 auto;
+}
+.ma-form__actions > .ma-btn + .ma-btn {
+  flex: 1 1 0;
+}
+@media (max-width: 480px) {
+  .ma-form__actions {
+    flex-direction: column;
+  }
+}
+/* ma-btn：文字導向、可擴充的按鈕基底 */
+.ma-btn {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-8);
+  padding: var(--btn-padding-y) var(--btn-padding-x);
+  border-radius: var(--btn-radius);
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 200ms, color 200ms, opacity 200ms;
+}
+/* 按鈕失效樣式 */
+.ma-btn:disabled,
+.ma-btn.is-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+/* =========================================================
+   Button Variants – Color Based
+   ========================================================= */
+/* 黑底白字 */
+.ma-btn--black-white {
+  background: var(--color-gray-950);
+  color: var(--color-white);
+}
+/* 黑底金字 */
+.ma-btn--black-gold {
+  background: var(--color-gray-950);
+  color: var(--color-brand-primary);
+}
+/* 深灰 */
+.ma-btn--gray-dark {
+  background: var(--color-gray-700);
+  color: var(--color-white);
+}
+.ma-btn--gray-dark:hover {
+  background: var(--color-gray-950);
+  color: var(--color-brand-primary);
+}
+/* 淺灰 */
+.ma-btn--gray-light {
+  background: var(--color-gray-300);
+  color: var(--color-gray-800);
+}
+.ma-btn--gray-light:hover {
+  background: var(--color-brand-primary-mid);
+  color: var(--color-white);
+}
+/* 金色 */
+.ma-btn--gold {
+  background: var(--gradient-gold-reverse);
+  color: var(--color-white);
+}
+.ma-btn--gold:hover {
+  opacity: 0.9;
+}
+/* 金框 */
+.ma-btn--outline-gold {
+  color: var(--color-white);
+  border-radius: 0;
+  border: 1px solid;
+  border-image: var(--gradient-gold-reverse) 1;
+}
+/* 金框(非漸層) */
+.ma-btn--outline-gold-solid {
+  color: var(--color-brand-primary);
+  border: 1px solid var(--color-brand-primary);
+}
+/* 金框(非漸層、方形) */
+.ma-btn--outline-gold-solid-square {
+  color: var(--color-brand-primary);
+  background: var(--color-black);
+  border: 1px solid var(--color-brand-primary);
+}
+/* 像連結的按鈕 */
+.ma-btn--link-gold {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--color-brand-primary);
+  font-size: var(--fs-body);
+  cursor: pointer;
+}
+.ma-btn--link-gold:hover {
+  text-decoration: underline;
+}
+/* =========================================================
+   ma-icon-btn：圖示導向按鈕
+   - 僅呈現 icon，無文字
+   - 常用於 header / toolbar / 控制項
+   ========================================================= */
+.ma-icon-btn {
+  /* -------------------------------------------------------
+     1) Reset / Base
+     ------------------------------------------------------- */
+  background: none;
+  border: none;
+  padding: 0;
+  /* -------------------------------------------------------
+     2) Layout
+     ------------------------------------------------------- */
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  /* -------------------------------------------------------
+     3) Size
+     ------------------------------------------------------- */
+  width: var(--icon-btn-size);
+  height: var(--icon-btn-size);
+  /* -------------------------------------------------------
+     4) Typography / Interaction
+     ------------------------------------------------------- */
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+.ma-card {
+  /* ===== 可覆寫變數（預設值） ===== */
+  --card-bg: var(--color-gray-200);
+  --card-fg: var(--color-gray-800);
+  --card-header-divider: var(--color-gray-700);
+  /* 類別色字 */
+  --card-category-color: var(--color-gray-600);
+  /* icon 預設 */
+  --card-category-icon: none;
+  background: var(--card-bg);
+  color: var(--card-fg);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-radius: var(--radius-md);
+  align-items: stretch;
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  /* ===== 文字特調 ===== */
+  /* ===== modifier：只改變數（不要直接打子元素） ===== */
+  /* ===== elements ===== */
+  /* 價格區 */
+  /* 編號 / 版數 區 */
+  /* 版數 */
+}
+@media (min-width: 64em) {
+  .ma-card {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-8);
+    align-items: stretch;
+  }
+}
+.ma-card__category-text {
+  font-size: var(--fs-h5);
+  font-weight: var(--fw-h5);
+}
+.ma-card__title {
+  font-size: var(--fs-h6);
+  font-weight: var(--fw-h6);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ma-card__artist {
+  font-size: var(--fs-h5);
+  font-weight: var(--fw-h5);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ma-card--act-art {
+  --card-category-color: var(--color-brand-primary);
+  /* 先給預設，可被 section 覆蓋 */
+  --card-category-icon: url("/meta-new2/images/icon_assets_actart.png");
+}
+.ma-card--print-art {
+  --card-category-color: var(--color-gray-600);
+  --card-category-icon: url("/meta-new2/images/icon_assets_printart.png");
+}
+.ma-card__media {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+@media (min-width: 64em) {
+  .ma-card__media {
+    flex: 0 0 40%;
+    display: flex;
+    align-self: stretch;
+    height: unset;
+  }
+}
+.ma-card__media img {
+  position: absolute;
+  width: 100%;
+  height: 100%; /* 關鍵 ③：吃滿容器高度 */
+  object-fit: cover; /* 不變形裁切 */
+  display: block;
+}
+.ma-card__content {
+  padding: var(--space-24) var(--space-24);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  /* 讓內容區撐滿卡片高度 */
+  flex: 1 1 auto;
+  height: 100%;
+}
+@media (min-width: 64em) {
+  .ma-card__content {
+    width: 60%;
+  }
+}
+.ma-card__header {
+  padding-bottom: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  border-bottom: 1px solid var(--card-header-divider);
+}
+.ma-card__body {
+  /* 吃掉中間剩餘高度 */
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  font-size: var(--fs-small);
+}
+.ma-card__pricing {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-8);
+  /* 沒有價格時保持高度 */
+  min-height: 1.5em;
+}
+.ma-card__info-group {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-16);
+  flex-wrap: wrap;
+}
+@media (min-width: 64em) {
+  .ma-card__info-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-0);
+  }
+}
+.ma-card__edition {
+  /* 沒有版數時保持高度 */
+  min-height: 1.5em;
+}
+.ma-card__footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+  font-size: var(--fs-small);
+}
+.ma-card__footer .ma-btn {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.ma-card__category {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-8);
+  align-items: center;
+  font-weight: var(--fw-bold);
+  margin-bottom: var(--space-4);
+  color: var(--card-category-color);
+}
+.ma-card__meta span {
+  display: block;
+}
+.ma-card__category-icon {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: var(--icon-xs);
+  height: var(--icon-xs);
+  background-repeat: no-repeat;
+  background-position: center;
+  /* 預設：不顯示 */
+  background-image: var(--card-category-icon);
+}
+/* =========================================================
+   List (Block)
+   ========================================================= */
+.ma-list__wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-64);
+}
+.ma-list__grid {
+  --list-gap: var(--space-48);
+  display: flex;
+  flex-direction: row;
+  gap: var(--list-gap);
+  flex-wrap: wrap;
+}
+@media (min-width: 64em) {
+  .ma-list__grid > .ma-list__item {
+    flex: 0 0 calc(50% - var(--list-gap) / 2);
+    max-width: calc(50% - var(--list-gap) / 2);
+  }
+}
+.ma-list__grid--single > .ma-list__item {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+@media (min-width: 64em) {
+  .ma-list__grid--single > .ma-list__item {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+.ma-list__item {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+/* --- 抽屜選單核心樣式 --- */
+/* JS 尚未接手前，避免頁面切換時先閃出抽屜 */
+html:not(.is-js-ready) .ma-overlay,
+html:not(.is-js-ready) .ma-drawer {
+  visibility: hidden;
+  pointer-events: none;
+  transition: none !important;
+}
+.ma-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--color-overlay);
+  z-index: var(--z-overlay);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0s linear 0.25s;
+}
+.ma-overlay.is-show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 0.25s ease, visibility 0s linear 0s;
+}
+/* --- Drawer --- */
+.ma-drawer {
+  position: fixed;
+  top: var(--anchor-offset);
+  right: 0;
+  min-width: min(100%, 20rem);
+  z-index: var(--z-drawer);
+  transform: translateX(110%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.25s ease, opacity 0.25s ease, visibility 0s linear 0.25s;
+  outline: none;
+}
+.ma-drawer.is-open {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: transform 0.25s ease, opacity 0.25s ease, visibility 0s linear 0s;
+}
+.ma-drawer__panel {
+  width: 100%;
+  height: 100%;
+  background: var(--color-gray-800);
+  display: flex;
+  flex-direction: column;
+}
+.ma-drawer__header {
+  min-height: 4.75rem;
+  padding: var(--space-16) var(--space-20);
+  background: var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ma-drawer__logo {
+  display: inline-flex;
+  align-items: center;
+}
+.ma-drawer__logo img {
+  display: block;
+  max-width: 10rem;
+  height: auto;
+}
+.ma-drawer__tools {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+}
+/* --- Drawer Menu --- */
+.ma-mobile-menu {
+  flex: 1;
+  background-color: var(--color-gray-800);
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.ma-mobile-menu.is-hidden {
+  display: none;
+}
+/* --- tabs --- */
+.ma-mobile-menu__tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #434343;
+}
+.ma-mobile-menu__tab {
+  position: relative;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--color-white);
+  min-height: 4rem;
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+}
+.ma-mobile-menu__tab.is-active::after {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 0;
+  height: 1px;
+  background: var(--color-brand-primary);
+}
+/* --- panel --- */
+.ma-mobile-menu__panel {
+  flex: 1;
+  padding: var(--space-48) var(--space-24);
+  overflow-y: auto;
+}
+.ma-mobile-menu__panel[hidden] {
+  display: none;
+}
+.ma-mobile-menu__links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-16);
+}
+.ma-mobile-menu__links a {
+  color: var(--color-white);
+  text-decoration: none;
+  line-height: 1.6;
+}
+.ma-mobile-menu__links a.is-active {
+  color: var(--color-brand-primary);
+}
+/* 語言選單可沿用 */
+.ma-mobile-menu__links--lang {
+  padding-top: var(--space-32);
+}
+/* --- footer --- */
+.ma-mobile-menu__footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: auto;
+}
+.ma-mobile-menu__footer-btn {
+  min-height: var(--space-48);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: #5a5a5a;
+  color: var(--color-white);
+  border: 0;
+}
+.ma-mobile-menu__footer-btn--dark {
+  background: #2c2c2c;
+}
+.ma-mobile-menu__footer-btn.is-active {
+  color: var(--color-brand-primary);
+}
+/* 舊樣式保留相容 */
+.ma-mobile-menu a.is-active {
+  color: var(--color-brand-primary);
+}
+.ma-mobile-btn {
+  background-color: var(--color-gray-950);
+}
+.ma-mobile-btn.white {
+  color: var(--color-white);
+}
+.ma-mobile-btn.gold {
+  color: var(--color-brand-primary);
+}
+/* =========================================================
+   漢堡按鈕 → 開啟後變 X
+   說明：
+   1. 平常沿用原本的 icon_bar.png
+   2. 當 JS 幫 #menu-toggle 加上 .is-active 時
+      隱藏原本 img，改用 ::before / ::after 畫出 X
+   3. 不需改 HEADER.EJS 結構，PHP 工程師也較好接手
+========================================================= */
+#menu-toggle {
+  position: relative;
+}
+#menu-toggle img {
+  display: block;
+  transition: opacity 0.2s ease;
+}
+#menu-toggle.is-active img {
+  opacity: 0;
+}
+/* 開啟狀態時顯示 X */
+#menu-toggle.is-active::before,
+#menu-toggle.is-active::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.5rem;
+  height: 2px;
+  background-color: var(--color-white);
+  transform-origin: center;
+}
+/* 斜線 1 */
+#menu-toggle.is-active::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+/* 斜線 2 */
+#menu-toggle.is-active::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+/* Swiper 容器一定要有高度，wrapper/slide 也要 100% */
+.swiper,
+.swiper-wrapper,
+.swiper-slide {
+  height: 100%;
+}
+.swiper {
+  --swiper-pagination-safe: var(--space-52);
+  padding-bottom: var(--swiper-pagination-safe);
+}
+.swiper-slide {
+  position: relative;
+}
+.swiper-pagination {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-16);
+}
+.swiper-pagination .ma-swiper-dot:only-child {
+  display: none;
+}
+/* --- 輪播分頁點（如果用 Swiper，優先用 .swiper-pagination；此為客製點） --- */
+.ma-swiper-dot {
+  width: var(--dot-xs);
+  height: var(--dot-xs);
+  border-radius: 50%;
+  background-color: var(--color-gray-700);
+  cursor: pointer;
+}
+@media (min-width: 64em) {
+  .ma-swiper-dot {
+    width: var(--dot-md);
+    height: var(--dot-md);
+  }
+}
+.ma-swiper-dot.is-active {
+  background-color: var(--color-gray-500);
+}
+/* components/_breadcrumb.scss */
+.ma-breadcrumb {
+  padding: var(--space-16) 0;
+  font-size: var(--font-sm);
+  /* =========================
+     White background (default)
+     ========================= */
+  /*
+    &--light {
+      background-color: var(--color-white);
+      color: var(--color-gray-700);
+
+      a {
+        color: var(--color-gray-700);
+
+        &:hover {
+          color: var(--color-brand-primary);
+        }
+      }
+
+      //[aria-current="page"] {
+      .is-active {
+        color: var(--color-gray-900);
+        font-weight: 500;
+      }
+    }
+  */
+  /* =========================
+     Dark background
+     ========================= */
+  /*
+  &--dark {
+    background-color: var(--color-black);
+    color: rgba(255, 255, 255, 0.75);
+
+    a {
+      color: rgba(255, 255, 255, 0.75);
+
+      &:hover {
+        color: var(--color-brand-primary-soft);
+      }
+    }
+
+    //[aria-current="page"] {
+    .is-active {
+      color: #ffffff;
+      font-weight: 500;
+    }
+
+    &__item:not(:last-child)::after {
+      color: rgba(255, 255, 255, 0.4);
+    }
+  }
+    */
+}
+.ma-breadcrumb__list {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-8);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.ma-breadcrumb__item:not(:last-child)::after {
+  content: ">";
+  margin-left: var(--space-8);
+  opacity: 0.6;
+}
+/* =========================================================
+   Pagination Component
+   - Block: ma-pagination
+   - Elements: __btn, __pages, __ellipsis
+   - States: .is-active, .is-disabled
+   ========================================================= */
+.ma-pagination {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-12);
+  justify-content: center;
+  /* ✅ 跟著 page 主題字色走（.ma-page 的 color） */
+  color: inherit;
+  /* active 狀態（保留你說的：金底 OK） */
+  --pagination-active-bg: var(--color-brand-primary);
+  --pagination-active-fg: var(--color-black);
+  /* hover 想變金色 */
+  --pagination-hover: var(--color-brand-primary);
+}
+.ma-pagination__btn {
+  min-width: 44px;
+  height: 44px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  /* ✅ 字色跟著主題 */
+  color: inherit;
+  /* ✅ 邊框跟著字色（最穩：currentColor） */
+  border: 1px solid currentColor;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+  /* 箭頭按鈕（如果你真的要比一般字大，留；不然可整段刪掉） */
+}
+.ma-pagination__btn:hover:not(.is-active):not(:disabled) {
+  color: var(--pagination-hover);
+  border-color: currentColor; /* hover 時邊框跟著 hover 字色 */
+}
+.ma-pagination__btn.is-active {
+  background: var(--pagination-active-bg);
+  color: var(--pagination-active-fg);
+  border-color: var(--pagination-active-bg);
+  cursor: default;
+}
+.ma-pagination__btn:disabled, .ma-pagination__btn.is-disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.ma-pagination__btn--prev, .ma-pagination__btn--next {
+  padding: 0;
+  line-height: 1;
+}
+.ma-pagination__pages {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  max-width: 60vw;
+  overflow: hidden;
+}
+.ma-pagination__ellipsis {
+  min-width: 24px;
+  text-align: center;
+  /* ✅ 省掉 color-mix：用透明度就好，也能跟著主題字色 */
+  opacity: 0.6;
+  user-select: none;
+  pointer-events: none;
+}
+@media (max-width: 768px) {
+  .ma-pagination {
+    gap: var(--space-8);
+  }
+  .ma-pagination__pages {
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .ma-pagination__pages::-webkit-scrollbar {
+    display: none;
+  }
+}
+/*
+@import "./badge";
+@import "./modal";
+*/
+/* 5) Pages（頁面覆蓋） */
+/* =========================================================
+   _index.scss
+   ========================================================= */
+/* ma-hero */
+.ma-hero,
+.ma-promo {
+  padding-top: 0;
+}
+.ma-hero {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  background: var(--color-black);
+  /* Swiper 對應CLASS */
+}
+@media (min-width: 64em) {
+  .ma-hero {
+    height: 520px;
+  }
+}
+.ma-hero .ma-container {
+  height: 100%;
+}
+.ma-hero .ma-inner {
+  pointer-events: none;
+  position: absolute;
+  z-index: 3;
+  height: 100%;
+}
+.ma-hero__text {
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+  align-items: flex-start;
+  justify-content: center;
+  color: var(--color-white);
+}
+.ma-hero__titles {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.ma-hero__title-en {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-light);
+}
+.ma-hero__title-zh {
+  font-weight: var(--fw-medium);
+}
+.ma-hero__subtitle {
+  font-size: var(--fs-h3);
+}
+.ma-hero__desc {
+  margin-top: var(--space-8);
+}
+.ma-hero__overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(217, 217, 217, 0) 0%, rgba(104, 104, 104, 0.5192) 51.92%, #000000 100%);
+}
+.ma-hero__swiper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.ma-hero__swiper img,
+.ma-hero__swiper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ma-hero ~ .ma-assets {
+  background: var(--gradient-dark-soft);
+}
+.ma-hero ~ .ma-collect {
+  background: var(--color-white);
+  color: var(--color-black);
+}
+.ma-hero ~ .ma-collect .ma-section__header {
+  border-bottom: 1px solid var(--page-bg);
+}
+/* ma-assets */
+.ma-assets {
+  padding-block: var(--space-48);
+}
+.ma-assets .ma-card {
+  /* theme override：只改 ma-card 的變數 */
+  --card-bg: var(--color-gray-800);
+  --card-fg: var(--color-white);
+  --card-header-divider: var(--color-gray-600);
+}
+.ma-assets .ma-card--act-art {
+  --card-category-color: var(--color-brand-primary);
+  --card-category-icon: url("/meta-new2/images/icon_assets_actart.png");
+}
+.ma-assets .ma-card--print-art {
+  --card-category-icon: url("/meta-new2/images/icon_assets_printart.png");
+}
+/* ma-promo */
+.ma-promo {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  /* Swiper 對應CLASS */
+}
+@media (min-width: 64em) {
+  .ma-promo {
+    height: 440px;
+  }
+}
+.ma-promo__swiper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.ma-promo__swiper img,
+.ma-promo__swiper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* ma-collect */
+.ma-collect {
+  padding-top: var(--space-48);
+}
+.ma-collect .ma-card {
+  /* theme override：只改 ma-card 的變數 */
+  --card-bg: var(--color-gray-200);
+  --card-fg: var(--color-gray-800);
+  --card-header-divider: var(--color-gray-700);
+  /* 類別色字 */
+  --card-category-color: var(--color-gray-600);
+}
+.ma-collect .ma-card--act-art {
+  --card-category-icon: url("/meta-new2/images/icon_collect_actart.png");
+}
+.ma-collect .ma-card--print-art {
+  --card-category-icon: url("/meta-new2/images/icon_collect_printart.png");
+}
+/* ma-service */
+.ma-service {
+  background: var(--color-black);
+  padding-top: var(--space-48);
+  padding-bottom: 0;
+  /* 單一 ICON 模組 */
+  /* 圓形 ICON */
+}
+.ma-service .ma-inner {
+  border-top: 1px solid transparent;
+  border-image: var(--gradient-gold-reverse) 1;
+  padding-block: var(--space-32);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  color: var(--color-white);
+}
+.ma-service__intro, .ma-service__about {
+  padding-block: var(--space-32);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-48);
+}
+.ma-service__intro .ma-btn {
+  margin-top: var(--space-16);
+  width: fit-content;
+}
+@media (min-width: 50em) {
+  .ma-service__intro {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-32);
+  }
+  .ma-service__intro .ma-service__text {
+    width: 40%;
+  }
+  .ma-service__intro .ma-service__desc {
+    width: 60%;
+  }
+}
+.ma-service__about {
+  scroll-margin-top: var(--anchor-offset);
+  gap: var(--space-16);
+  padding: var(--space-48) var(--space-32);
+  border-top: 1px solid var(--color-gray-500);
+}
+.ma-service__about .ma-service__title-zh {
+  padding-bottom: var(--space-8);
+}
+.ma-service__desc {
+  width: 100%;
+}
+.ma-service__desc p {
+  font-size: var(--fs-small);
+}
+.ma-service__title-zh,
+.ma-service p {
+  padding-bottom: var(--space-16);
+}
+.ma-service__title-zh span,
+.ma-service p span {
+  display: block;
+}
+.ma-service__title-zh {
+  font-weight: var(--fw-light);
+}
+.ma-service__title-en {
+  font-size: var(--fs-h5);
+}
+.ma-service .ma-action-group--features {
+  margin-top: var(--space-32);
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.ma-service .ma-action {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  align-items: center;
+  gap: var(--space-12);
+}
+.ma-service .ma-action__icon {
+  width: var(--icon-visual-lg);
+  height: var(--icon-visual-lg);
+  border-radius: 50%;
+  border: 1px solid var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+.ma-service .ma-action__icon img {
+  width: 50%;
+  height: auto;
+  object-fit: contain;
+}
+/* =========================================================
+   List Grid (shared layout skeleton)
+   - used by ma-assets / ma-collect (and future sections)
+   ========================================================= */
+.ma-list-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.ma-list-grid__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.ma-list-grid__item {
+  flex: 0 0 calc(50% - 8px); /* desktop 2 cols */
+  min-width: 0;
+}
+@media (max-width: 767px) {
+  .ma-list-grid {
+    gap: 16px;
+  }
+  .ma-list-grid__list {
+    gap: 12px;
+  }
+  .ma-list-grid__item {
+    flex: 0 0 100%; /* mobile 1 col */
+  }
+}
+.ma-desc .ma-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+.ma-desc__title {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-medium);
+  text-transform: none;
+}
+.ma-desc p {
+  font-size: var(--fs-small);
+}
+/* =========================================================
+   ACT Page
+   - Page scope: .ma-act
+   ========================================================= */
+.ma-act {
+  /* =======================================================
+     Page semantic overrides (local only)
+     ======================================================= */
+  /* 主題文字色由 page 控制 */
+  /* 強調色（品牌金） */
+  --act-accent: var(--color-brand-primary);
+  /* 分隔線：來自主題文字色的弱化版 */
+  /* =======================================================
+     Item section
+     ======================================================= */
+  /* =======================================================
+     Main content layout
+     ======================================================= */
+  /* =======================================================
+     Media
+     ======================================================= */
+  /* intro：圖可用 contain */
+  /* step：圖片固定 1:1 */
+  /* =======================================================
+     Content body
+     ======================================================= */
+  /* step 才出現右上角裝飾三角 */
+  /* =======================================================
+     Headings
+     ======================================================= */
+  /* =======================================================
+     CTA
+     ======================================================= */
+  /* =======================================================
+     Badge & accent text
+     ======================================================= */
+  /* =======================================================
+     List
+     ======================================================= */
+  /* =======================================================
+     CTA end item
+     ======================================================= */
+  /* =======================================================
+     Icon cards
+     ======================================================= */
+}
+.ma-act .ma-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-48);
+}
+.ma-act__item {
+  padding: var(--space-48) 0;
+}
+.ma-act__item:not(:last-child) {
+  border-bottom: 1px solid var(--page-text);
+}
+.ma-act__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-48);
+}
+@media (min-width: 50em) {
+  .ma-act__content {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-64);
+    align-items: flex-start;
+  }
+}
+.ma-act__media {
+  width: 100%;
+}
+@media (min-width: 50em) {
+  .ma-act__media {
+    flex: 0 0 30%;
+  }
+}
+.ma-act__media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.ma-act__item--intro .ma-act__media img {
+  object-fit: contain;
+}
+.ma-act__item--step .ma-act__media img {
+  height: 100%;
+}
+.ma-act__body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+  position: relative;
+}
+.ma-act__item--step .ma-act__body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 20px solid var(--act-accent);
+  border-left: 20px solid transparent;
+}
+@media (min-width: 50em) {
+  .ma-act__item--step .ma-act__body::after {
+    border-top: 28px solid var(--act-accent);
+    border-left: 28px solid transparent;
+  }
+}
+.ma-act__page-title {
+  display: none; /* 保留語意/SEO 的頁面主標 */
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-h2);
+  line-height: var(--lh-heading);
+  margin: 0 0 var(--space-16);
+}
+.ma-act__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+.ma-act__no {
+  margin: 0;
+  color: var(--act-accent);
+  font-weight: var(--fw-bold);
+  font-size: clamp(40px, 3vw, 48px);
+}
+@media (max-width: 22.5em) {
+  .ma-act__no {
+    font-size: 2.2em;
+  }
+}
+.ma-act__title {
+  margin: 0;
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-h3);
+}
+.ma-act__kicker {
+  margin: 0 0 var(--space-12);
+  font-weight: var(--fw-medium);
+}
+.ma-act__desc {
+  margin: 0;
+  margin-top: var(--space-12);
+}
+.ma-act__cta {
+  width: 100%;
+}
+@media (min-width: 64em) {
+  .ma-act__cta {
+    width: clamp(240px, 40%, 360px);
+  }
+}
+.ma-act__cta .ma-btn {
+  width: 100%;
+}
+.ma-act__badge {
+  display: inline-block;
+  margin-left: var(--space-8);
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: clamp(18px, 1.2vw, 20px);
+  font-weight: var(--fw-bold);
+  color: var(--act-danger);
+  vertical-align: middle;
+}
+.ma-act__text-accent {
+  color: var(--act-danger);
+  font-weight: var(--fw-bold);
+}
+.ma-act__list {
+  list-style: decimal;
+  padding-left: 1.4em;
+  margin: var(--space-16) 0 0;
+}
+.ma-act__list li::marker {
+  color: currentColor;
+}
+.ma-act__list li:not(:last-child) {
+  margin-bottom: var(--space-8);
+}
+.ma-act__item--cta .ma-act__body {
+  align-items: center;
+}
+.ma-act__icons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-48);
+  margin-top: var(--space-48);
+}
+@media (min-width: 50em) {
+  .ma-act__icons {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-48);
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+.ma-act__icon-card {
+  text-align: center;
+  padding: var(--space-32) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+  flex: 1;
+}
+.ma-act__icon-wrap {
+  width: clamp(72px, 8vw, 96px);
+  height: clamp(72px, 8vw, 96px);
+  border-radius: 999px;
+  border: 2px solid var(--act-accent);
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+}
+.ma-act__icon {
+  width: 100%;
+  height: 100%;
+  padding: clamp(14px, 1.6vw, 22px);
+  object-fit: contain;
+  display: block;
+}
+.ma-act__icon-title {
+  margin: 0;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-h6);
+}
+.ma-act__icon-title span {
+  display: inline-block;
+}
+.ma-act__icon-desc {
+  margin: 0;
+  font-size: var(--fs-small);
+}
+.ma-confirm .ma-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+.ma-confirm__wrap {
+  margin: auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+.ma-confirm__artwork {
+  margin: auto;
+  display: flex;
+  width: 100%;
+}
+.ma-confirm__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-48);
+}
+@media (min-width: 64em) {
+  .ma-confirm__group {
+    border-right: 1px solid white;
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-32);
+    align-items: center;
+  }
+  .ma-confirm__group > .ma-card,
+  .ma-confirm__group > .ma-confirm__prompt {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  .ma-confirm__group > .ma-card {
+    width: 100%;
+  }
+}
+.ma-confirm__prompt {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  text-align: center;
+  padding: var(--space-16);
+}
+.ma-confirm .ma-card__content {
+  width: 100%;
+}
+/* =========================================================
+   _message.scss
+   - Success / Info Message Page
+   - Page scope: .ma-message
+   ========================================================= */
+.ma-message {
+  /* message 內容卡片：改用 .ma-form-panel 當殼
+     所以這裡不要再寫 background / radius / padding */
+  /* 中央 icon 圈圈（message 專有） */
+  /* 文字排版（只留 message 專有的限制） */
+}
+.ma-message .ma-inner {
+  padding: var(--space-64);
+}
+.ma-message__content {
+  /* 若你希望 message 卡片內容永遠置中，可留這兩個 */
+  text-align: center;
+}
+.ma-message__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+.ma-message__icon {
+  width: 84px;
+  height: 84px;
+  border-radius: 999px;
+  border: 3px solid var(--color-brand-primary);
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  align-items: center;
+  justify-content: center;
+}
+.ma-message__icon-img {
+  display: block;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+.ma-message__desc {
+  margin: 0;
+  max-width: 36ch;
+  opacity: 0.92;
+}
+/* 6) Pages（頁面覆蓋） */
+.ma-member-layout .ma-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+@media (min-width: 64em) {
+  .ma-member-layout .ma-inner {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-48);
+  }
+}
+.ma-member-layout__sidebar {
+  text-align: center;
+  padding: 2em 2em 1em 2em;
+  padding: var(--space-32) var(--space-32) var(--space-16) var(--space-32);
+  min-width: 280px;
+  width: fit-content;
+  height: fit-content;
+  flex-shrink: 0;
+  background: var(--color-gray-800);
+  display: none;
+}
+@media (min-width: 64em) {
+  .ma-member-layout__sidebar {
+    display: block;
+  }
+}
+.ma-member-layout__main {
+  flex: 1;
+}
+/* =========================================================
+   Member Menu
+   ========================================================= */
+.ma-member-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.ma-member-profile {
+  font-size: var(--fs-ui-title);
+  margin-bottom: var(--space-16);
+}
+.ma-member-profile__name {
+  color: var(--color-brand-primary);
+}
+.ma-member-menu__link {
+  padding: var(--space-12) var(--space-12);
+  border-top: 1px solid var(--color-gray-500);
+  transition: color var(--link-transition) ease, background-color var(--link-transition) ease;
+}
+.ma-member-menu__link:hover, .ma-member-menu__link:focus-visible {
+  color: var(--color-brand-primary);
+  outline: none;
+}
+.ma-member-menu__link:focus-visible {
+  box-shadow: var(--focus-ring);
+}
+/* active state */
+.ma-member-menu__link.is-active,
+.ma-member-menu__link[aria-current=page] {
+  color: var(--color-brand-primary);
+}
+/* =========================================================
+   Member Assets Page
+   與 ma-assets 視覺接近，但為會員後台資產頁獨立樣式
+   ========================================================= */
+.ma-member-assets {
+  padding: var(--space-32, 32px) 0 var(--space-48, 48px);
+}
+.ma-member-assets__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+.ma-member-assets__list {
+  width: 100%;
+}
+/* =========================================================
+   Card
+   ========================================================= */
+.ma-member-asset-card {
+  --card-category-color: var(--color-brand-primary, #d8b269);
+  --card-category-icon: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+  height: 100%;
+  padding: var(--space-24);
+  color: var(--color-white, #fff);
+  background: var(--color-gray-800);
+  /* 編號 / 版數 區 */
+  /* 當後面有下載連結時才出現 "/" */
+}
+.ma-member-asset-card--act-art {
+  --card-category-color: var(--color-brand-primary, #d8b269);
+  --card-category-icon: url("/meta-new2/images/icon_assets_actart.png");
+}
+.ma-member-asset-card--print-art {
+  --card-category-color: var(--color-gray-600);
+  --card-category-icon: url("/meta-new2/images/icon_assets_printart.png");
+}
+.ma-member-asset-card__top {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-16);
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: var(--space-12);
+  border-bottom: 1px solid var(--color-gray-700);
+}
+.ma-member-asset-card__serial-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.ma-member-asset-card__category {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-8);
+  align-items: center;
+  font-weight: var(--fw-bold);
+  margin-bottom: var(--space-4);
+  color: var(--card-category-color, var(--color-brand-primary, #d8b269));
+}
+.ma-member-asset-card__category-icon {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: var(--icon-xs);
+  height: var(--icon-xs);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: var(--card-category-icon);
+}
+.ma-member-asset-card__setting {
+  flex-shrink: 0;
+  min-width: 56px;
+  padding: 0;
+  color: var(--color-gray-500);
+  font: inherit;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.ma-member-asset-card__setting:hover {
+  color: var(--color-brand-primary, #d8b269);
+}
+.ma-member-asset-card__main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+@media (min-width: 32.25em) {
+  .ma-member-asset-card__main {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-16);
+    align-items: flex-start;
+  }
+}
+.ma-member-asset-card__media {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+}
+@media (min-width: 32.25em) {
+  .ma-member-asset-card__media {
+    flex: 0 0 40%;
+    max-width: 40%;
+    height: 320px;
+  }
+}
+.ma-member-asset-card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top;
+}
+.ma-member-asset-card__content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+@media (min-width: 32.25em) {
+  .ma-member-asset-card__content {
+    flex: 1 1 0;
+  }
+}
+.ma-member-asset-card__header {
+  margin-bottom: var(--space-16);
+}
+.ma-member-asset-card__info-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(0);
+}
+@media (min-width: 64em) {
+  .ma-member-asset-card__info-group {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-16);
+    flex-wrap: wrap;
+  }
+}
+.ma-member-asset-card__footer {
+  margin-top: auto;
+  margin-bottom: var(--space-16);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+  font-size: var(--fs-small);
+}
+.ma-member-asset-card__footer .ma-btn {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.ma-member-asset-card__title {
+  font-size: var(--fs-small);
+}
+.ma-member-asset-card__artist {
+  margin: 0;
+  font-size: var(--fs-ui-title);
+}
+.ma-member-asset-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: var(--space-24);
+}
+.ma-member-asset-card__meta-text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-gray-500);
+}
+.ma-member-asset-card__pricing {
+  margin-bottom: 20px;
+  min-height: 32px;
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-16);
+}
+.ma-member-asset-card__pricing--crypto {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-16);
+}
+.ma-member-asset-card__action-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+.ma-member-asset-card__detail, .ma-member-asset-card__report {
+  border-top: 1px solid var(--color-gray-700);
+  background: var(--color-gray-900);
+}
+.ma-member-asset-card__detail-toggle {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-16);
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--space-16);
+  color: var(--color-white, #fff);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.ma-member-asset-card .ma-member-asset-card__detail-icon {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.25s ease;
+  margin-top: -2px;
+}
+.ma-member-asset-card .ma-member-asset-card__detail-toggle[aria-expanded=true] .ma-member-asset-card__detail-icon {
+  transform: rotate(-135deg);
+}
+.ma-member-asset-card__detail-toggle[aria-expanded=true] .ma-member-asset-card__detail-icon::after {
+  opacity: 0;
+}
+.ma-member-asset-card__detail-panel {
+  display: none;
+  padding: var(--space-16);
+}
+.ma-member-asset-card__detail.is-open .ma-member-asset-card__detail-panel {
+  display: block;
+}
+.ma-member-asset-card__detail-scroll {
+  max-height: 320px;
+  padding: var(--space-16);
+  overflow-y: auto;
+  color: var(--color-gray-500);
+}
+.ma-member-asset-card__report {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-8);
+  align-items: center;
+  padding: var(--space-16);
+}
+.ma-member-asset-card__report-status {
+  color: var(--color-white, #fff);
+}
+.ma-member-asset-card__report-link::before {
+  content: "/";
+  margin: 0 var(--sapce-8);
+  color: var(--color-white);
+}
+.ma-member-asset-card__report-link {
+  color: var(--color-white, #fff);
+  text-decoration: none;
+}
+.ma-member-asset-card__report-link:hover {
+  color: var(--color-brand-primary, #d8b269);
+}
+/* =========================================================
+   Modal
+   ========================================================= */
+/* =========================================================
+   Member Asset Modal
+   ========================================================= */
+.ma-member-asset-modal {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal, 999);
+  display: none;
+}
+.ma-member-asset-modal.is-show {
+  display: block;
+}
+.ma-member-asset-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+.ma-member-asset-modal__dialog {
+  position: relative;
+  z-index: 1;
+  width: min(920px, 100% - 32px);
+  margin: 10vh auto 0;
+  padding: 56px var(--space-48) var(--space-48);
+  color: var(--color-white);
+  background: var(--color-gray-800);
+  border: 1px solid var(--color-gray-700);
+}
+.ma-member-asset-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  color: var(--color-white);
+  font-size: var(--fs-h2);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.ma-member-asset-modal__form {
+  width: 100%;
+}
+.ma-member-asset-modal__row {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-16);
+  align-items: start;
+  flex-wrap: wrap;
+}
+.ma-member-asset-modal__row--top {
+  align-items: center;
+}
+.ma-member-asset-modal__row--price {
+  align-items: center;
+  margin-bottom: 1em;
+}
+.ma-member-asset-modal__title, .ma-member-asset-modal__label {
+  font-size: var(--fs-h5);
+  font-weight: var(--fw-h5);
+}
+.ma-member-asset-modal__label-col {
+  flex-shrink: 0;
+}
+.ma-member-asset-modal__divider {
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin: var(--space-24) 0 var(--space-32);
+  background: var(--color-gray-700);
+}
+.ma-member-asset-modal__option-group {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-24);
+  flex-wrap: wrap;
+  padding: var(--space-16);
+  justify-content: space-around;
+  background: var(--color-gray-700);
+  border-radius: var(--radius-sm);
+}
+.ma-member-asset-modal__price-line {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-24);
+  flex-wrap: wrap;
+  align-items: center;
+}
+.ma-member-asset-modal__field .ma-field__control {
+  height: 40px;
+  padding: 0 var(--space-12);
+  border-radius: 4px;
+}
+.ma-assign-transaction .ma-confrim__wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+.ma-assign-transaction .ma-confirm__artwork {
+  max-height: 400px;
+  width: fit-content;
+}
+@media (min-width: 32.25em) {
+  .ma-assign-transaction .ma-confirm__artwork {
+    max-height: 500px;
+  }
+}
+.ma-assign-transaction .ma-form-panel__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+.ma-assign-transaction .ma-form-panel__header {
+  color: var(--color-brand-primary);
+  padding-bottom: var(--space-12);
+  border-bottom: 1px solid var(--color-gray-700);
+}
+.ma-assign-transaction .ma-assign-transaction-form__group--artwork .ma-assign-transaction-form__group-title {
+  color: var(--color-gray-500);
+}
+.ma-assign-transaction .ma-assign-transaction-form__group--artwork, .ma-assign-transaction .ma-assign-transaction-form__group--location {
+  padding: var(--space-16);
+  background: var(--color-gray-900);
+}
+.ma-assign-transaction .ma-assign-transaction-form__pricing, .ma-assign-transaction .ma-assign-transaction-form__buyer-field {
+  width: 100%;
+}
+@media (min-width: 32.25em) {
+  .ma-assign-transaction .ma-assign-transaction-form__pricing, .ma-assign-transaction .ma-assign-transaction-form__buyer-field {
+    width: 40%;
+  }
+}
+.ma-assign-transaction .ma-assign-transaction-form__pricing {
+  margin-left: auto;
+}
+.ma-assign-transaction .ma-assign-transaction-form__buyer-row {
+  margin-top: var(--space-16);
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-16);
+  align-items: center;
+}
+.ma-assign-transaction .ma-assign-transaction-form__meta {
+  margin-top: var(--space-16);
+}
+.ma-assign-transaction .ma-assign-transaction-form__ma-form-panel {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-16);
+  align-items: center;
+}
+.ma-assign-transaction .ma-assign-transaction-form__exchange {
+  flex-shrink: 0;
+  text-align: right;
+}
+.ma-assign-transaction .ma-assign-transaction-form__options {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-16);
+  flex-wrap: wrap;
+}
+@media (min-width: 32.25em) {
+  .ma-assign-transaction .ma-assign-transaction-form__options {
+    gap: var(--space-24);
+  }
+}
+.ma-assign-transaction .ma-assign-transaction-form__error {
+  color: var(--act-danger);
+}
+/* =========================================================
+   Member Records Page
+   會員後台 / 交易記錄頁
+   ========================================================= */
+.ma-member-records {
+  padding: var(--space-32, 32px) 0 var(--space-48, 48px);
+}
+.ma-member-records__empty {
+  padding: var(--space-48, 48px) var(--space-24, 24px);
+  text-align: center;
+  color: var(--color-gray-400);
+  background: var(--color-gray-800);
+}
+/* =========================================================
+   Record Card
+   ========================================================= */
+.ma-member-record-card {
+  --card-category-color: var(--color-brand-primary, #d8b269);
+  --card-category-icon: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+  height: 100%;
+  padding: var(--space-24);
+  color: var(--color-white);
+  background: var(--color-gray-800);
+}
+.ma-member-record-card--act-art {
+  --card-category-color: var(--color-brand-primary, #d8b269);
+  --card-category-icon: url("/meta-new2/images/icon_assets_actart.png");
+}
+.ma-member-record-card--print-art {
+  --card-category-color: var(--color-gray-600);
+  --card-category-icon: url("/meta-new2/images/icon_assets_printart.png");
+}
+.ma-member-record-card__info-group {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-16);
+}
+.ma-member-record-card__top {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding-bottom: var(--space-12);
+  border-bottom: 1px solid var(--color-gray-700);
+}
+@media (min-width: 37.5em) {
+  .ma-member-record-card__top {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+.ma-member-record-card__top-meta {
+  color: var(--color-gray-500);
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-16);
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+@media (min-width: 64em) {
+  .ma-member-record-card__top-meta {
+    justify-content: flex-end;
+  }
+}
+.ma-member-record-card__category {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-8);
+  align-items: center;
+  margin-bottom: var(--space-4);
+  font-weight: var(--fw-bold);
+  color: var(--card-category-color, var(--color-brand-primary, #d8b269));
+}
+.ma-member-record-card__category-icon {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: var(--icon-xs);
+  height: var(--icon-xs);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: var(--card-category-icon);
+}
+.ma-member-record-card__main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+@media (min-width: 32.25em) {
+  .ma-member-record-card__main {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-24);
+    align-items: stretch;
+  }
+}
+.ma-member-record-card__media {
+  width: 100%;
+  max-height: 380px;
+}
+@media (min-width: 32.25em) {
+  .ma-member-record-card__media {
+    flex: 0 0 35%;
+    max-width: 35%;
+  }
+}
+.ma-member-record-card__media img {
+  display: block;
+  height: 100%;
+  margin: auto;
+  object-fit: contain;
+  object-position: top;
+}
+.ma-member-record-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+@media (min-width: 32.25em) {
+  .ma-member-record-card__content {
+    flex: 1 1 0;
+  }
+}
+.ma-member-record-card__artwork {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding-bottom: var(--space-16);
+  border-bottom: 1px solid var(--color-gray-700);
+}
+.ma-member-record-card__artist {
+  font-size: var(--fs-ui-title);
+}
+.ma-member-record-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.ma-member-record-card__pricing {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-12);
+  align-items: baseline;
+  justify-content: flex-start;
+}
+@media (min-width: 64em) {
+  .ma-member-record-card__pricing {
+    justify-content: flex-end;
+  }
+}
+.ma-member-record-card__transaction {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+  padding-top: var(--space-24, 24px);
+}
+@media (min-width: 64em) {
+  .ma-member-record-card__transaction {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-24, 24px);
+  }
+}
+.ma-member-record-card__location-title {
+  margin-bottom: var(--space-8);
+}
+.ma-member-record-card__location-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.ma-member-record-card__location-name, .ma-member-record-card__location-text {
+  color: var(--color-gray-500);
+}
+.ma-member-record-card__action {
+  display: flex;
+  justify-content: flex-end;
+}
+@media (min-width: 64em) {
+  .ma-member-record-card__action {
+    justify-content: flex-end;
+    flex-shrink: 0;
+  }
+}
+.ma-member-record-card__status {
+  padding: var(--space-8) var(--space-16);
+  color: var(--color-brand-primary, #d8b269);
+  border: 1px solid var(--color-brand-primary, #d8b269);
+}
+.ma-member-record-card__status--done {
+  color: var(--color-brand-primary, #d8b269);
+  border-color: var(--color-brand-primary, #d8b269);
+}
+.ma-transaction-assigned {
+  color: var(--color-white);
+}
+.ma-transaction-assigned .ma-member-layout__main {
+  background: var(--color-gray-800);
+  padding: var(--space-8) var(--space-16);
+}
+.ma-transaction-assigned__header {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-16);
+  align-items: center;
+  justify-content: space-between;
+}
+.ma-transaction-assigned__title {
+  margin: 0;
+  font-size: var(--fs-body);
+  font-weight: 500;
+  color: var(--color-gray-500);
+  padding: var(--space-8) 0;
+}
+.ma-transaction-assigned__nav {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-8);
+  align-items: center;
+}
+.ma-transaction-assigned__nav-btn {
+  padding: var(--space-8);
+  border: 0;
+  background: transparent;
+  color: var(--color-gray-500);
+  cursor: pointer;
+  transition: color 0.2s ease;
+  font-size: var(--fs-ui-title);
+}
+.ma-transaction-assigned__nav-btn:hover {
+  color: var(--color-white);
+}
+.ma-transaction-assigned__list {
+  border-top: 1px solid var(--color-gray-700);
+}
+.ma-transaction-assigned__item {
+  padding: var(--space-8) var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  border-bottom: 1px solid var(--color-gray-700);
+}
+@media (min-width: 37.5em) {
+  .ma-transaction-assigned__item {
+    padding: var(--space-16) var(--space-16);
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-16);
+  }
+}
+.ma-transaction-assigned__meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 90px;
+  color: var(--color-gray-500);
+}
+.ma-transaction-assigned__status, .ma-transaction-assigned__type {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+.ma-transaction-assigned__status {
+  color: var(--color-primary, #c8a15a);
+}
+.ma-transaction-assigned__content {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-12);
+}
+.ma-transaction-assigned__arrow {
+  flex: 0 0 auto;
+  color: var(--color-gray-500);
+  font-size: var(--icon-sm);
+}
+.ma-transaction-assigned__subject {
+  flex-grow: 1;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  color: var(--color-gray-500);
+  text-decoration: none;
+}
+.ma-transaction-assigned__subject:hover {
+  color: var(--color-primary, #c8a15a);
+}
+.ma-transaction-assigned__date {
+  flex-shrink: 0;
+  justify-self: end;
+  color: var(--color-gray-500);
+  font-size: var(--fs-small);
+  white-space: nowrap;
+  margin-left: auto;
+}
+.ma-transaction-assigned__item--new {
+  background: var(--color-gray-900);
+}
+.ma-transaction-assigned__item--new .ma-transaction-assigned__status,
+.ma-transaction-assigned__item--new .ma-transaction-assigned__type,
+.ma-transaction-assigned__item--new .ma-transaction-assigned__subject,
+.ma-transaction-assigned__item--new .ma-transaction-assigned__date {
+  color: var(--color-primary, #c8a15a);
+}
+.ma-transaction-assigned__empty {
+  padding: var(--space-48) var(--space-16);
+  border-top: 1px solid var(--color-gray-700);
+  border-bottom: 1px solid var(--color-gray-700);
+  text-align: center;
+}
+.ma-transaction-assigned__empty-text {
+  margin: 0;
+  color: var(--color-gray-500);
+}
+/* =========================================================
+   Transaction Assigned Detail
+   指定給我的交易 - 詳細內容頁
+   ========================================================= */
+.ma-transaction-assigned-detail {
+  color: var(--color-white);
+  /* =========================
+     message bar
+     ========================= */
+  /* =========================
+     body
+     ========================= */
+  /* =========================
+     section
+     ========================= */
+  /* =========================
+     artwork info
+     ========================= */
+  /* =========================
+     divider
+     ========================= */
+  /* =========================
+     location
+     ========================= */
+  /* =========================
+     actions
+     ========================= */
+}
+.ma-transaction-assigned-detail__panel {
+  padding: var(--space-24);
+  background: var(--color-gray-800);
+  border-radius: var(--radius-sm);
+}
+.ma-transaction-assigned-detail__header {
+  margin-bottom: var(--space-16);
+}
+.ma-transaction-assigned-detail__page-title {
+  margin: 0;
+  font-size: var(--fs-body);
+  font-weight: 500;
+  color: var(--color-gray-500);
+  padding: var(--space-8) 0;
+}
+.ma-transaction-assigned-detail__message-bar {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-8);
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-24);
+  padding: var(--space-8);
+  background: var(--color-gray-900);
+  color: var(--color-gray-500);
+  border: 1px solid var(--color-gray-700);
+}
+.ma-transaction-assigned-detail__back {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  align-items: center;
+  justify-content: center;
+  width: var(--icon-lg);
+  height: var(--icon-lg);
+}
+.ma-transaction-assigned-detail__back:hover {
+  color: var(--color-white);
+}
+.ma-transaction-assigned-detail__message-arrow {
+  font-size: var(--fs-body);
+}
+.ma-transaction-assigned-detail__message-subject {
+  flex: 1 1 auto;
+  font-size: var(--fs-small);
+  font-weight: 500;
+}
+.ma-transaction-assigned-detail__message-date {
+  color: var(--color-gray-500);
+}
+.ma-transaction-assigned-detail__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  align-items: flex-start;
+}
+@media (min-width: 37.5em) {
+  .ma-transaction-assigned-detail__body {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-32);
+  }
+}
+.ma-transaction-assigned-detail__media {
+  width: 100%;
+  max-height: 380px;
+}
+@media (min-width: 32.25em) {
+  .ma-transaction-assigned-detail__media {
+    flex: 0 0 35%;
+    max-width: 35%;
+  }
+}
+.ma-transaction-assigned-detail__media img {
+  display: block;
+  height: 100%;
+  margin: auto;
+  object-fit: contain;
+  object-position: top;
+}
+.ma-transaction-assigned-detail__info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+@media (min-width: 32.25em) {
+  .ma-transaction-assigned-detail__info {
+    gap: var(--space-8);
+    flex: 1 1 0;
+  }
+}
+.ma-transaction-assigned-detail__section {
+  width: 100%;
+}
+.ma-transaction-assigned-detail__section-title {
+  margin: 0 0 var(--space-16);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  color: var(--color-gray-500);
+}
+.ma-transaction-assigned-detail__artwork-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.ma-transaction-assigned-detail__artwork-id {
+  font-size: var(--fs-ui-title);
+  font-weight: 500;
+}
+.ma-transaction-assigned-detail__pricing {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-16);
+}
+.ma-transaction-assigned-detail__divider {
+  margin: var(--space-24) 0;
+  border: 0;
+  border-top: 1px solid var(--color-gray-700);
+}
+.ma-transaction-assigned-detail__location {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.ma-transaction-assigned-detail__actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+  padding-top: var(--space-32);
+}
+.ma-login-change__panel .ma-form__title {
+  width: 100%;
+  color: var(--color-brand-primary);
+  padding-bottom: var(--space-12);
+  border-bottom: 1px solid var(--color-gray-700);
+}
+.ma-login-change-form__row {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-32);
+}
+.ma-login-change-form__row label {
+  flex-shrink: 0;
+}
+.ma-login-change-form__phone-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  flex-grow: 1;
+}
