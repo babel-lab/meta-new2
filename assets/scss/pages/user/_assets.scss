@@ -97,7 +97,7 @@
 
   &__media {
     width: 100%;
-    height: 240px;
+    max-height: 240px;
     overflow: hidden;
 
     @include respond-min($bp-mobile-sm) {
