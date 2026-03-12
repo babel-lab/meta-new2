@@ -3448,7 +3448,7 @@ html:not(.is-js-ready) .ma-drawer {
   color: var(--color-gray-500);
   display: flex;
   flex-direction: row;
-  gap: 0;
+  gap: var(--space-8);
   flex-wrap: wrap;
   justify-content: flex-start;
 }
