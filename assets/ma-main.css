@@ -2676,7 +2676,7 @@ html:not(.is-js-ready) .ma-drawer {
   margin: 0;
   color: var(--act-accent);
   font-weight: var(--fw-bold);
-  font-size: clamp(40px, 3vw, 48px);
+  font-size: clamp(52px, 3vw, 56px);
 }
 @media (max-width: 22.5em) {
   .ma-act__no {
@@ -2685,7 +2685,7 @@ html:not(.is-js-ready) .ma-drawer {
 }
 .ma-act__title {
   margin: 0;
-  font-size: var(--fs-h3);
+  font-size: clamp(28px, 3vw, 36px);
   font-weight: var(--fw-h3);
 }
 .ma-act__kicker {
