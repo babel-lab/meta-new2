@@ -578,6 +578,7 @@ body {
   line-height: var(--lh-body);
   color: var(--text-color);
   letter-spacing: 0.04em;
+  min-height: 100vh;
 }
 /* =========================================================
    Page Theme (light/dark)
@@ -1009,6 +1010,7 @@ small {
   line-height: 2;
 }
 .ma-footer {
+  margin-top: var(--space-16);
   padding-bottom: clamp(var(--space-32), 5vw, var(--space-64));
   background: var(--gradient-dark-soft);
   color: var(--color-white);
@@ -1067,7 +1069,7 @@ small {
 }
 @media (min-width: 64em) {
   .ma-footer__groups {
-    max-height: 22em;
+    max-height: 28em;
     flex-wrap: wrap;
   }
 }
@@ -2370,13 +2372,14 @@ html:not(.is-js-ready) .ma-drawer {
 .ma-promo {
   position: relative;
   width: 100%;
-  height: 400px;
   overflow: hidden;
+  background: var(--color-white);
+  aspect-ratio: 1920/720;
   /* Swiper 對應CLASS */
 }
 @media (min-width: 64em) {
   .ma-promo {
-    height: 440px;
+    aspect-ratio: 1920/620;
   }
 }
 .ma-promo__swiper {
@@ -2389,6 +2392,11 @@ html:not(.is-js-ready) .ma-drawer {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.ma-promo__swiper img {
+  display: block;
+  height: auto;
+  object-fit: contain;
 }
 /* ma-collect */
 .ma-collect {
@@ -2630,6 +2638,11 @@ html:not(.is-js-ready) .ma-drawer {
   height: auto;
   display: block;
   object-fit: cover;
+}
+@media (min-width: 50em) {
+  .ma-act__item--intro .ma-act__media {
+    flex: 0 0 45%;
+  }
 }
 .ma-act__item--intro .ma-act__media img {
   object-fit: contain;
