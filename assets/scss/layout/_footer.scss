@@ -1,4 +1,5 @@
 .ma-footer {
+  margin-top: var(--space-16);
   padding-bottom: clamp(var(--space-32), 5vw, var(--space-64));
   background: var(--gradient-dark-soft);
   color: var(--color-white);
@@ -48,7 +49,7 @@
     @include flex-col(var(--space-16));
     flex-wrap: no-wrap;
     @include respond-min($bp-md) {
-      max-height: 22em;
+      max-height: 28em;
       flex-wrap: wrap;
     }
   }

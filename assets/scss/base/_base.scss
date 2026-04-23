@@ -27,6 +27,8 @@ body {
   color: var(--text-color);
   letter-spacing: 0.04em;
 
+  min-height: 100vh;
+
   @media (max-width: 768px) {
     //font-size: clamp(var(--fs-small), 1.6vw, var(--fs-body));
   }

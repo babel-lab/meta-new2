@@ -69,6 +69,12 @@
 
   /* intro：圖可用 contain */
   &__item--intro {
+    .ma-act__media {
+      @include respond-min($bp-mobile-lg) {
+        flex: 0 0 45%;
+      }
+    }
+
     .ma-act__media img {
       object-fit: contain;
     }
