@@ -267,7 +267,7 @@
                 aria-label="前往許德麗3DVR線上展覽"
               >
                 <img
-                  src="/images/ma-promo-1.png"
+                  src="/images/ma-promo-1.jpg"
                   alt="許德麗藝術作品展覽橫幅"
                 />
               </a>
@@ -281,7 +281,7 @@
                 aria-label="前往趙二呆3DVR線上展覽"
               >
                 <img
-                  src="/images/ma-promo-1.png"
+                  src="/images/ma-promo-2.jpg"
                   alt="趙二呆藝術作品展覽橫幅"
                 />
               </a>
@@ -296,7 +296,7 @@
                 aria-label="前往李健儀3DVR線上展覽"
               >
                 <img
-                  src="/images/ma-promo-1.png"
+                  src="/images/ma-promo-3.jpg"
                   alt="李健儀數位藝術展覽橫幅"
                 />
               </a>
@@ -603,34 +603,7 @@
         },
       });
     </script>
-    <!-- ma-assets -->
-    <script>
-      const assetsSwiper = new Swiper(".ma-assets__swiper", {
-        loop: false,
-        watchOverflow: true,
-        roundLengths: true,
 
-        slidesPerView: 1,
-        grid: { rows: 4, fill: "row" },
-        spaceBetween: 48,
-
-        pagination: {
-          el: ".ma-assets__pagination",
-          clickable: true,
-          bulletClass: "ma-swiper-dot",
-          bulletActiveClass: "is-active",
-          renderBullet: (index, className) =>
-            `<span class="${className}"></span>`,
-        },
-
-        breakpoints: {
-          768: {
-            slidesPerView: 2,
-            grid: { rows: 4 },
-          },
-        },
-      });
-    </script>
     <!-- ma-promo -->
     <script>
       const promoSwiper = new Swiper(".ma-promo__swiper", {
@@ -650,32 +623,174 @@
         },
       });
     </script>
+
+    <!-- 2026/4/30: 新 SWIPER 排列 -->
+
+    <!-- Card List Swiper 共用工具：ma-assets / ma-collect 使用 -->
+    <script>
+      /**
+       * Card List 分頁式 Swiper
+       *
+       * 可設定：
+       * - 小版：幾欄 × 幾列
+       * - 大版：幾欄 × 幾列
+       *
+       * 不改 HTML / SCSS / swiper-bundle.min.js
+       */
+      function createPagedCardSwiper({
+        swiperSelector,
+        paginationSelector,
+        breakpoint = 768,
+
+        // 小版設定
+        mobileColumns = 1,
+        mobileRows = 3,
+
+        // 大版設定
+        desktopColumns = 2,
+        desktopRows = 3,
+
+        gap = 48,
+      }) {
+        const swiperEl = document.querySelector(swiperSelector);
+        if (!swiperEl) return null;
+
+        const wrapper = swiperEl.querySelector(".swiper-wrapper");
+        if (!wrapper) return null;
+
+        const originalCards = Array.from(wrapper.children)
+          .filter((el) => el.classList.contains("swiper-slide"))
+          .map((slide) => slide.innerHTML);
+
+        let swiperInstance = null;
+        let currentModeKey = null;
+
+        function getLayout() {
+          const isDesktop = window.innerWidth >= breakpoint;
+
+          return {
+            columns: isDesktop ? desktopColumns : mobileColumns,
+            rows: isDesktop ? desktopRows : mobileRows,
+            modeKey: isDesktop
+              ? `desktop-${desktopColumns}x${desktopRows}`
+              : `mobile-${mobileColumns}x${mobileRows}`,
+          };
+        }
+
+        function rebuildSlides(columns, rows) {
+          const cardsPerPage = columns * rows;
+
+          wrapper.innerHTML = "";
+
+          for (let i = 0; i < originalCards.length; i += cardsPerPage) {
+            const pageCards = originalCards.slice(i, i + cardsPerPage);
+
+            const pageSlide = document.createElement("div");
+            pageSlide.className = "swiper-slide";
+
+            const pageGrid = document.createElement("div");
+            pageGrid.className = "ma-card-page-grid";
+
+            pageGrid.style.display = "grid";
+            pageGrid.style.gridTemplateColumns = `repeat(${columns}, minmax(0, 1fr))`;
+            pageGrid.style.gap = `${gap}px`;
+            pageGrid.style.width = "100%";
+
+            pageCards.forEach((cardHTML) => {
+              const temp = document.createElement("div");
+              temp.innerHTML = cardHTML.trim();
+
+              Array.from(temp.childNodes).forEach((node) => {
+                pageGrid.appendChild(node);
+              });
+            });
+
+            pageSlide.appendChild(pageGrid);
+            wrapper.appendChild(pageSlide);
+          }
+        }
+
+        function initSwiper() {
+          const { columns, rows, modeKey } = getLayout();
+
+          if (swiperInstance && currentModeKey === modeKey) return;
+
+          if (swiperInstance) {
+            swiperInstance.destroy(true, true);
+            swiperInstance = null;
+          }
+
+          currentModeKey = modeKey;
+
+          rebuildSlides(columns, rows);
+
+          swiperInstance = new Swiper(swiperSelector, {
+            loop: false,
+            watchOverflow: true,
+            roundLengths: true,
+
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            spaceBetween: gap,
+
+            pagination: {
+              el: paginationSelector,
+              clickable: true,
+              bulletClass: "ma-swiper-dot",
+              bulletActiveClass: "is-active",
+              renderBullet: (index, className) =>
+                `<span class="${className}"></span>`,
+            },
+          });
+        }
+
+        initSwiper();
+
+        let resizeTimer = null;
+        window.addEventListener("resize", function () {
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(initSwiper, 150);
+        });
+
+        return {
+          get instance() {
+            return swiperInstance;
+          },
+        };
+      }
+    </script>
+
     <!-- ma-assets -->
     <script>
-      const collectSwiper = new Swiper(".ma-collect__swiper", {
-        loop: false,
-        watchOverflow: true,
-        roundLengths: true,
+      const assetsSwiper = createPagedCardSwiper({
+        swiperSelector: ".ma-assets__swiper",
+        paginationSelector: ".ma-assets__pagination",
+        breakpoint: 768,
 
-        slidesPerView: 1,
-        grid: { rows: 4, fill: "row" },
-        spaceBetween: 48,
+        mobileColumns: 1,
+        mobileRows: 3,
 
-        pagination: {
-          el: ".ma-collect__pagination",
-          clickable: true,
-          bulletClass: "ma-swiper-dot",
-          bulletActiveClass: "is-active",
-          renderBullet: (index, className) =>
-            `<span class="${className}"></span>`,
-        },
+        desktopColumns: 2,
+        desktopRows: 3,
 
-        breakpoints: {
-          768: {
-            slidesPerView: 2,
-            grid: { rows: 4 },
-          },
-        },
+        gap: 48,
+      });
+    </script>
+
+    <!-- ma-collect -->
+    <script>
+      const collectSwiper = createPagedCardSwiper({
+        swiperSelector: ".ma-collect__swiper",
+        paginationSelector: ".ma-collect__pagination",
+        breakpoint: 768,
+
+        mobileColumns: 1,
+        mobileRows: 3,
+
+        desktopColumns: 2,
+        desktopRows: 3,
+
+        gap: 48,
       });
     </script>
   </body>
