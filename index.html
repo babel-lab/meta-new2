@@ -465,8 +465,19 @@
               <div class="swiper-slide">
                 <article class="ma-card ma-card--act-art">
                   <!-- 左：圖片區 -->
-                  <div class="ma-card__media">
-                    <img src="/meta-new2/images/P5模型轉動.gif" alt="Artwork" />
+                  <!-- 2026/6/1: 若是立體作品會是MP4,
+                       ma-card__media 加樣式: .ma-card__media--video -->
+
+                  <div class="ma-card__media ma-card__media--video">
+                    <video
+                      src="/meta-new2/images/P5模型轉動.mp4"
+                      class="ma-card__video"
+                      autoplay
+                      muted
+                      loop
+                      playsinline
+                      preload="metadata"
+                    ></video>
                   </div>
 
                   <!-- 右：內容區 -->
@@ -1232,7 +1243,7 @@
                 <article class="ma-card ma-card--act-art">
                   <!-- 左：圖片區 -->
                   <div class="ma-card__media">
-                    <img src="/meta-new2/images/P6模型轉動.gif" alt="Artwork" />
+                    <img src="/meta-new2/images/P6模型轉動.mp4" alt="Artwork" />
                   </div>
 
                   <!-- 右：內容區 -->
