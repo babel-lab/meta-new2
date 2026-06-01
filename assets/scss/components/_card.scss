@@ -86,7 +86,7 @@
       object-fit: cover; /* 不變形裁切 */
       display: block;
     }
-    &--video {
+    &.ma-card__media--video {
       background: var(--color-black);
       video {
         height: 100%;
