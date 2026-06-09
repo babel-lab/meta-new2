@@ -1729,10 +1729,10 @@ select:focus {
   object-fit: cover; /* 不變形裁切 */
   display: block;
 }
-.ma-card__media--video {
+.ma-card__media.ma-card__media--video {
   background: var(--color-black);
 }
-.ma-card__media--video video {
+.ma-card__media.ma-card__media--video video {
   height: 100%;
   margin: auto;
 }
